@@ -8,4 +8,9 @@ const nextConfig = {
     assetPrefix: '/nextjs/',
 };
 
-export default nextConfig;
+export default {
+  output: 'export',
+  distDir: 'out',  // 静的ファイルの出力先
+  basePath: '/nextjs',
+  assetPrefix: '/nextjs/',
+};
