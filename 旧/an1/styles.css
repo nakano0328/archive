@@ -1,0 +1,158 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+header {
+    background-color: #e6e6fa;
+    padding: 10px;
+    text-align: center;
+}
+
+header h1 a {
+    text-decoration: none; /* 下線を消す */
+    color: inherit; /* 親要素の色を引き継ぐ */
+    outline: none; /* クリック時の青い枠を消す */
+}
+
+header h1 a:focus {
+    outline: none; /* フォーカス時の青い枠を消す */
+}
+
+header h1 a:hover {
+    color: #007bff; /* ホバー時に色を変更 */
+}
+
+.container {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.main-content {
+    flex: 3;
+}
+
+.sidebar {
+    flex: 1;
+    margin-left: 20px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.grid-item {
+    background-color: white;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-decoration: none; /* クリック時に青くならないように */
+    color: inherit; /* 文字の色を親要素に合わせる */
+    user-select: none; /* テキスト選択を無効化 */
+}
+
+.grid-item a {
+    text-decoration: none; /* リンクの青色と下線を無効化 */
+    color: inherit; /* リンクの文字色も親要素に合わせる */
+    outline: none; /* クリック時の青い枠を消す */
+}
+
+.grid-item a:focus {
+    outline: none; /* フォーカス時の青い枠を消す */
+}
+
+.grid-item img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.grid-item-content {
+    padding: 10px;
+}
+
+.grid-item-content h3 {
+    margin-bottom: 15px; /* タイトルと説明の間の余白を増加 */
+}
+
+.grid-item-content p {
+    margin: 15px 0; /* 段落間の余白を増加 */
+}
+
+.grid-item-content p:last-child {
+    text-align: right;
+    margin-top: 25px; /* 最終更新日の上に余白を増加 */
+}
+
+/* タグを四角で囲むスタイル */
+.tag {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 5px 5px 0 0;
+    border: 1px solid #007bff;
+    border-radius: 5px;
+    background-color: #e6e6fa;
+    color: #007bff;
+    font-size: 12px;
+    cursor: pointer;
+    user-select: none; /* タグの選択を無効化 */
+}
+
+.tag:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+.search-box,
+.tag-search,
+.links {
+    background-color: white;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.last-updated {
+    margin-bottom: 15px;
+    text-align: right; /* 最終更新日を右揃え */
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.pagination {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.pagination a,
+.pagination span {
+    text-decoration: none;
+    color: #333;
+    padding: 5px 8px;
+    margin: 0 2px;
+    border: 1px solid #ddd;
+    display: inline-block;
+}
+
+.pagination .current {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+.pagination .disabled {
+    color: #ddd;
+    pointer-events: none;
+}
