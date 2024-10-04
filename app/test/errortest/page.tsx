@@ -1,5 +1,5 @@
 interface PageProps {
-  searchParams: Record<string, any>;
+  searchParams: { [key: string]: string | string[] | undefined };
 }
 
 export default function Page({ searchParams }: PageProps) {
