@@ -1,4 +1,8 @@
-export default function Page({ searchParams }) {
+interface PageProps {
+  searchParams: Record<string, any>;
+}
+
+export default function Page({ searchParams }: PageProps) {
   const error = searchParams?.error;
   if (error) {
     throw new Error("ERROR!!!!!");
