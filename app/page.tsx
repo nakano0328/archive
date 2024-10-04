@@ -1,13 +1,12 @@
-// app/page.tsx
 "use client";
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 
 const Home = () => {
-  const [breadcrumbs, setBreadcrumbs] = useState([]);
-  const [tags, setTags] = useState([]);
-  const [selectedTags, setSelectedTags] = useState([]);
+  const [breadcrumbs, setBreadcrumbs] = useState<string[]>([]);
+  const [tags, setTags] = useState<string[]>([]);
+  const [selectedTags, setSelectedTags] = useState<string[]>([]);
 
   // パンくずリストを生成する関数
   useEffect(() => {
@@ -23,14 +22,14 @@ const Home = () => {
   }, []);
 
   // タグが選択されたときの処理
-  const handleTagClick = (tag) => {
+  const handleTagClick = (tag: string) => {
     if (!selectedTags.includes(tag)) {
       setSelectedTags([...selectedTags, tag]);
     }
   };
 
   // 選択されたタグを削除する処理
-  const removeTag = (tag) => {
+  const removeTag = (tag: string) => {
     setSelectedTags(selectedTags.filter((t) => t !== tag));
   };
 
@@ -96,9 +95,7 @@ const Home = () => {
       </div>
 
       <footer>
-        <p>
-          編集者プロフィール: 山田太郎 - 数学教育歴15年の経験豊富な講師です。
-        </p>
+        <p>編集者プロフィール: 山田太郎 - 数学教育歴15年の経験豊富な講師です。</p>
         <p>お問い合わせ: Email: mathlium@example.com 電話: 03-1234-5678</p>
       </footer>
     </div>
