@@ -1,5 +1,4 @@
-export default function Page({ params, searchParams }) {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+export default function Page({ searchParams }) {
   const error = searchParams?.error;
   if (error) {
     throw new Error("ERROR!!!!!");
