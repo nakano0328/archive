@@ -1,4 +1,5 @@
 // app/not-found.tsx
+'use client'; // クライアントコンポーネントであることを指定
 
 import { useRouter } from 'next/navigation';
 
