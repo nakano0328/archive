@@ -37,7 +37,7 @@ const Home = () => {
     <div>
       <header>
         <h1>
-          <a href="https://jeonglabo.github.io/sotuken3/">Mathlium</a>
+          <a href="@/">Mathlium</a>
         </h1>
         <p>このサイトでは、数学の基礎から応用までをカバーします。</p>
       </header>
