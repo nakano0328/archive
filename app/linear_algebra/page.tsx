@@ -1,9 +1,9 @@
 import Link from "next/link";
-import { metadata } from "@/app/linear_algebra/metadata"; // インポート先を修正
+import { metadata } from "@/app/linear_algebra/metadata"; // メタデータをインポート
 
 export default function LinearAlgebraContents() {
   // メタデータからトピックを取得
-  const topics = Object.keys(metadata);
+  const topics = Object.keys(metadata) as Array<keyof typeof metadata>;
 
   return (
     <div style={{ padding: "20px", backgroundColor: "#f8d7da" }}>
