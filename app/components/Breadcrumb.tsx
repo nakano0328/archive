@@ -4,8 +4,17 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
+// Define the type for serverData
+interface BreadcrumbProps {
+  serverData: {
+    [key: string]: {
+      title: string;
+    };
+  };
+}
+
 // パンくずリストのコンポーネント
-const Breadcrumb = ({ serverData }) => {
+const Breadcrumb = ({ serverData }: BreadcrumbProps) => {
   const pathname = usePathname();
   const [breadcrumbData, setBreadcrumbData] = useState([]);
 
