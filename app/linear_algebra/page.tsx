@@ -1,3 +1,5 @@
+"use client";  // クライアントコンポーネントとして宣言
+
 import Breadcrumb from "@/app/components/Breadcrumb";
 import { useEffect, useState } from "react";
 
