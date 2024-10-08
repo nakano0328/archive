@@ -28,7 +28,6 @@ export default function Header({ onSearch }: HeaderProps) {
           <form
             onSubmit={handleSearchSubmit}
             className="flex items-center gap-2 ml-auto"
-            style={{ marginLeft: 'auto' }}  {/* 追加：検索フォームを右揃えに確実にする */}
           >
             <input
               type="text"
