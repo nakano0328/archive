@@ -64,11 +64,10 @@ export default function LinearAlgebraPage() {
           },
           {}
         )}
-        currentTitle="Linear Algebra" // メインタイトルは英語で表示
         breadcrumbPaths={[
           { path: "/", title: "ホーム" },
           { path: "/linear_algebra", title: "線形代数" }
-        ]} // パス部分は日本語
+        ]}
       />
 
       <h1 className="text-4xl text-center bg-red-100 p-5">
