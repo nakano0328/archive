@@ -1,103 +1,112 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-import Link from "next/link";
+import Head from "next/head";
+import React, { useState } from "react";
+import Card from "./Card"; // HeaderとFooterはlayout.tsxで読み込まれるので不要
+
+const mockData = [
+  {
+    id: 1,
+    title: "線形代数",
+    description: "行列、ベクトルなど",
+    icon: "→",
+    backgroundColor: "#f8d7da",
+    link: "/linear_algebra",
+  },
+  /*{
+    id: 2,
+    title: "幾何学",
+    description: "図形、空間、測量など",
+    icon: "△",
+    backgroundColor: "#d1c4e9",
+    link: "/geometry",
+  },
+  {
+    id: 3,
+    title: "微積分",
+    description: "極限、微分、積分など",
+    icon: "∫",
+    backgroundColor: "#cfe2ff",
+    link: "/calculus",
+  },
+  {
+    id: 4,
+    title: "統計学",
+    description: "データ分析、確率論など",
+    icon: "σ",
+    backgroundColor: "#d4edda",
+    link: "/statistics",
+  },
+  {
+    id: 5,
+    title: "数論",
+    description: "整数論、暗号理論など",
+    icon: "π",
+    backgroundColor: "#fff3cd",
+    link: "/number-theory",
+  },
+  {
+    id: 6,
+    title: "離散数学",
+    description: "グラフ理論、組み合わせ論など",
+    icon: "+",
+    backgroundColor: "#ffebcc",
+    link: "/discrete-math",
+  },*/
+];
 
 const Home = () => {
-  const [breadcrumbs, setBreadcrumbs] = useState<string[]>([]);
-  const [tags, setTags] = useState<string[]>([]);
-  const [selectedTags, setSelectedTags] = useState<string[]>([]);
+  const [filteredData, setFilteredData] = useState(mockData);
 
-  // パンくずリストを生成する関数
-  useEffect(() => {
-    const pathArray = window.location.pathname.split("/").filter(Boolean);
-    const breadcrumbItems = ["ホーム", ...pathArray];
-    setBreadcrumbs(breadcrumbItems);
-  }, []);
-
-  // ダミーデータとして、タグリストをセット
-  useEffect(() => {
-    const dummyTags = ["代数", "線形代数", "幾何学", "統計", "確率論"];
-    setTags(dummyTags);
-  }, []);
-
-  // タグが選択されたときの処理
-  const handleTagClick = (tag: string) => {
-    if (!selectedTags.includes(tag)) {
-      setSelectedTags([...selectedTags, tag]);
+  // 検索ロジック
+  const handleSearch = (term: string) => {
+    if (term.trim() === "") {
+      setFilteredData(mockData); // 空の場合は全データを表示
+    } else {
+      const lowerCaseTerm = term.toLowerCase();
+      const filtered = mockData.filter(
+        (item) =>
+          item.title.toLowerCase().includes(lowerCaseTerm) ||
+          item.description.toLowerCase().includes(lowerCaseTerm)
+      );
+      setFilteredData(filtered);
     }
-  };
-
-  // 選択されたタグを削除する処理
-  const removeTag = (tag: string) => {
-    setSelectedTags(selectedTags.filter((t) => t !== tag));
   };
 
   return (
     <div>
-      <header>
-        <h1>
-          <a href="@/app">Mathlium</a>
-        </h1>
-        <p>このサイトでは、数学の基礎から応用までをカバーします。</p>
-      </header>
+      <Head>
+        <title>数学の探求</title>
+      </Head>
 
-      {/* パンくずリスト */}
-      <nav aria-label="breadcrumb">
-        <div className="breadcrumb-container">
-          <ul className="breadcrumb">
-            {breadcrumbs.map((crumb, index) => (
-              <li key={index}>
-                {index === breadcrumbs.length - 1 ? (
-                  crumb
-                ) : (
-                  <Link href={`/${crumb}`}>{crumb}</Link>
-                )}
-              </li>
-            ))}
-          </ul>
-        </div>
-      </nav>
-
-      {/* タグ検索 */}
-      <div className="tag-search">
-        <h3>タグ検索</h3>
-        <div>
-          {tags.map((tag, index) => (
-            <button key={index} onClick={() => handleTagClick(tag)}>
-              {tag}
-            </button>
-          ))}
-        </div>
-      </div>
-
-      {/* 選択されたタグ */}
-      <div id="selected-tags" className="selected-tags">
-        <h3>選択されたタグ</h3>
-        {selectedTags.map((tag, index) => (
-          <span key={index} className="tag">
-            {tag} <button onClick={() => removeTag(tag)}>×</button>
-          </span>
-        ))}
-      </div>
-
-      {/* リンク集 */}
-      <div className="links">
-        <h3>リンク集</h3>
-        <ul>
-          <li>
-            <Link href="/editor_profile">プロフィール</Link>
-          </li>
-          <li>
-            <Link href="/contact">お問い合わせ</Link>
-          </li>
-        </ul>
-      </div>
-
-      <footer>
-        <p>編集者プロフィール: 山田太郎 - 数学教育歴15年の経験豊富な講師です。</p>
-        <p>お問い合わせ: Email: mathlium@example.com 電話: 03-1234-5678</p>
-      </footer>
+      <main
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+          justifyContent: "center",
+          padding: "20px",
+          gap: "20px",
+        }}
+      >
+        {filteredData.length > 0 ? (
+          filteredData.map((item) => (
+            <div
+              key={item.id}
+              style={{ flexBasis: "30%", boxSizing: "border-box" }}
+            >
+              <Card
+                title={item.title}
+                description={item.description}
+                icon={item.icon}
+                backgroundColor={item.backgroundColor}
+                link={item.link} // 解説ページへのリンクを渡す
+              />
+            </div>
+          ))
+        ) : (
+          <p>該当する結果が見つかりませんでした。</p>
+        )}
+      </main>
     </div>
   );
 };
