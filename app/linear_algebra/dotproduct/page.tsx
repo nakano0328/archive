@@ -1,7 +1,7 @@
 import Breadcrumb from "@/app/components/Breadcrumb";
 
-// メタデータの定義
-export const metaData = {
+// メタデータをコンポーネント内で直接定義
+const metaData = {
   title: "内積",
   description:
     "内積（ドット積）は、ベクトル同士の積の一種で、ベクトルの方向を計算する際に用いられます。",
