@@ -1,9 +1,9 @@
 import fs from "fs";
 import path from "path";
-import Breadcrumb from "../components/Breadcrumb";
+import Breadcrumb from "@/app/components/Breadcrumb";
 
 // サーバーサイドで全てのコンテンツページを動的に取得
-export async function getServerSideProps() {
+const getServerData = () => {
   const baseDir = path.join(process.cwd(), "app/linear_algebra");
 
   // linear_algebraディレクトリ内の全てのサブディレクトリを取得
@@ -29,18 +29,16 @@ export async function getServerSideProps() {
   // 更新日順にソート
   directories.sort((a, b) => new Date(b.updatedAt) - new Date(a.updatedAt));
 
-  return {
-    props: {
-      directories,
-    },
-  };
-}
+  return directories;
+};
 
-const LinearAlgebraPage = ({ directories }) => {
+const LinearAlgebraPage = () => {
+  const serverData = getServerData(); // サーバーサイドでディレクトリ情報を取得
+
   return (
     <div style={{ padding: "20px" }}>
       <Breadcrumb
-        serverData={directories.reduce((acc, dir) => {
+        serverData={serverData.reduce((acc, dir) => {
           acc[dir.name] = { title: dir.title }; // パンくずリスト用にタイトルを設定
           return acc;
         }, {})}
@@ -66,49 +64,44 @@ const LinearAlgebraPage = ({ directories }) => {
           marginTop: "20px",
         }}
       >
-        {directories.map((dir) => (
-          <a
+        {serverData.map((dir) => (
+          <div
             key={dir.name}
-            href={dir.path}
-            style={{ textDecoration: "none", color: "inherit" }}
+            style={{
+              border: "1px solid #ddd",
+              borderRadius: "8px",
+              overflow: "hidden",
+              boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
+              position: "relative", // 右下に最終更新日を固定するため
+            }}
           >
-            <div
-              style={{
-                border: "1px solid #ddd",
-                borderRadius: "8px",
-                overflow: "hidden",
-                boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
-                padding: "15px",
-                transition: "transform 0.2s ease", // アニメーション追加
-                position: "relative",
-              }}
-              onMouseEnter={(e) =>
-                (e.currentTarget.style.transform = "scale(1.05)")
-              } // ホバー時の動き
-              onMouseLeave={(e) =>
-                (e.currentTarget.style.transform = "scale(1)")
-              } // 元に戻す
+            <a
+              href={dir.path}
+              style={{ textDecoration: "none", color: "inherit" }}
             >
-              <h2 style={{ fontSize: "20px", marginTop: "10px" }}>
-                {dir.title}
-              </h2>
-              <p>{dir.description}</p>
+              <div style={{ padding: "15px" }}>
+                <h2 style={{ fontSize: "20px", marginTop: "10px" }}>
+                  {dir.title}
+                </h2>
 
-              {/* 最終更新日を右下に固定 */}
-              <p
-                style={{
-                  fontSize: "12px",
-                  color: "#888",
-                  position: "absolute",
-                  bottom: "10px",
-                  right: "10px",
-                  margin: 0,
-                }}
-              >
-                最終更新日: {new Date(dir.updatedAt).toLocaleDateString()}
-              </p>
-            </div>
-          </a>
+                {/* description に marginBottom を追加 */}
+                <p style={{ marginBottom: "20px" }}>{dir.description}</p>
+
+                {/* 最終更新日を右下に表示 */}
+                <div
+                  style={{
+                    position: "absolute",
+                    bottom: "10px",
+                    right: "10px",
+                    fontSize: "12px",
+                    color: "#888",
+                  }}
+                >
+                  最終更新日: {new Date(dir.updatedAt).toLocaleDateString()}
+                </div>
+              </div>
+            </a>
+          </div>
         ))}
       </div>
     </div>

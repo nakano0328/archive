@@ -19,9 +19,21 @@ export default function DotProductPage() {
   };
 
   return (
-    <div style={{ padding: "20px" }}>
+    <div style={{ padding: "20px", position: "relative" }}>
       {/* パンくずリストの表示 */}
       <Breadcrumb serverData={serverData} />
+
+      {/* 最終更新日をパンくずリストの下かつ右寄せに表示 */}
+      <div
+        style={{
+          fontSize: "12px",
+          color: "#888",
+          marginBottom: "20px",
+          textAlign: "right", // 右寄せに設定
+        }}
+      >
+        最終更新日: {new Date(updatedAt).toLocaleDateString()}
+      </div>
 
       <h1
         style={{ fontSize: "36px", textAlign: "center", marginBottom: "20px" }}
@@ -38,7 +50,7 @@ export default function DotProductPage() {
       </p>
       <ul>
         <li>
-          2つのベクトル <strong>𝑎</strong> = (𝑎₁, 𝑎₂, ..., 𝑎ₙ) と{" "}
+          2つのベクトル <strong>𝑎</strong> = (𝑎₁, 𝑎₂, ..., 𝑎ₙ) と
           <strong>𝑏</strong> = (𝑏₁, 𝑏₂, ..., 𝑏ₙ) が与えられたとき、
           内積は次の式で計算されます：
         </li>
@@ -53,10 +65,6 @@ export default function DotProductPage() {
       <p>
         内積は物理学や工学、コンピュータグラフィックスなど、様々な分野で使用されており、特にベクトルの投影や
         距離の計算において重要な役割を果たします。
-      </p>
-
-      <p style={{ fontSize: "12px", color: "#888", textAlign: "right" }}>
-        最終更新日: {new Date(updatedAt).toLocaleDateString()}
       </p>
     </div>
   );
