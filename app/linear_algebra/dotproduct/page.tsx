@@ -5,12 +5,12 @@ const metaData = {
   title: "内積",
   description:
     "内積（ドット積）は、ベクトル同士の積の一種で、ベクトルの方向を計算する際に用いられます。",
-  updatedAt: "2024-10-08",
+  lastUpdated: "2024-10-08",
 };
 
 // サーバーコンポーネント
 export default function DotProductPage() {
-  const { title, description, updatedAt } = metaData;
+  const { title, description, lastUpdated } = metaData;
 
   // パンくずリストに使用するサーバーサイドデータ
   const serverData = {
@@ -32,7 +32,7 @@ export default function DotProductPage() {
           textAlign: "right", // 右寄せに設定
         }}
       >
-        最終更新日: {new Date(updatedAt).toLocaleDateString()}
+        最終更新日: {new Date(lastUpdated).toLocaleDateString()}
       </div>
 
       <h1
