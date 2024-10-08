@@ -18,7 +18,7 @@ export default function Header({ onSearch }: HeaderProps) {
   return (
     <header className="bg-white shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-        <div className="flex justify-between items-center gap-4">
+        <div className="flex items-center justify-between">
           {/* タイトル：リンクでホームに戻る */}
           <Link href="/" className="text-black hover:text-gray-600 transition-colors">
             <h1 className="text-2xl font-bold m-0">数学の探求</h1>
@@ -28,6 +28,7 @@ export default function Header({ onSearch }: HeaderProps) {
           <form
             onSubmit={handleSearchSubmit}
             className="flex items-center gap-2 ml-auto"
+            style={{ marginLeft: 'auto' }}  {/* 追加：検索フォームを右揃えに確実にする */}
           >
             <input
               type="text"
