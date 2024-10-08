@@ -1,15 +1,14 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import { SearchProvider } from "./contexts/SearchContext";
+import RootWrapper from "./components/RootWrapper";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
   weight: "100 900",
 });
+
 const geistMono = localFont({
   src: "./fonts/GeistMonoVF.woff",
   variable: "--font-geist-mono",
@@ -33,16 +32,9 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
       >
-        {/* ヘッダーに onSearch プロパティを渡す */}
-        <Header onSearch={handleSearch} />
-
-        {/* ページごとのコンテンツ */}
-        <main>{children}</main>
-
-        {/* フッターをページ全体の下部に表示 */}
-        <Footer />
+        <RootWrapper>{children}</RootWrapper>
       </body>
     </html>
   );
