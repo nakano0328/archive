@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { metadata } from "@/app/linear_algebra/metadata";
-import Card from "@/app/components/Card";
+import Card from "@/components/Card";
 import { formatDate } from "@/app/components/formatDate"; // 日付フォーマット関数をインポート
 
 export default function LinearAlgebraContents() {
