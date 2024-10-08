@@ -11,7 +11,7 @@ const Home = () => {
   // パンくずリストを生成する関数
   useEffect(() => {
     const pathArray = window.location.pathname.split("/").filter(Boolean);
-    const breadcrumbItems = ["ホーム", ...pathArray];
+    const breadcrumbItems = [...pathArray];
     setBreadcrumbs(breadcrumbItems);
   }, []);
 
