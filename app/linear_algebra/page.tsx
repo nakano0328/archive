@@ -27,14 +27,21 @@ const fetchServerData = async () => {
 
 const LinearAlgebraPage = () => {
   const [serverData, setServerData] = useState<
-    { name: string; title: string; description: string; updatedAt: string }[]
+    { name: string; title: string; description: string; updatedAt: string; path?: string }[]
   >([]);
 
   useEffect(() => {
     // サーバーサイドでディレクトリ情報を取得
     const fetchData = async () => {
       const data = await fetchServerData();
-      setServerData(data);
+
+      // データに path プロパティを追加する
+      const enrichedData = data.map((dir: { name: string; title: string; description: string; updatedAt: string }) => ({
+        ...dir,
+        path: `/linear_algebra/${dir.name}`, // ここで path を生成
+      }));
+
+      setServerData(enrichedData);
     };
     fetchData();
   }, []);
@@ -86,7 +93,7 @@ const LinearAlgebraPage = () => {
               }}
             >
               <a
-                href={dir.path}
+                href={dir.path}  {/* path を使ってリンクを作成 */}
                 style={{ textDecoration: "none", color: "inherit" }}
               >
                 <div style={{ padding: "15px" }}>
