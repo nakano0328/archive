@@ -1,37 +1,48 @@
-// app/linear_algebra/page.tsx
+import Breadcrumb from '../components/Breadcrumb';
+import Link from 'next/link';
 
+// ページメタデータ
 export const metadata = {
-  title: 'Linear Algebra',
-  description: 'Overview of linear algebra topics.',
+  title: 'Linear Algebra Overview',
+  description: 'This is an overview page for Linear Algebra, covering topics such as dot product, matrices, and more.',
+  lastUpdated: '2024-10-08',
 };
 
 export default function LinearAlgebraPage() {
-  const pages = [
-    {
-      name: 'Dot Product',
-      description: 'This page explains the dot product in linear algebra.',
-      path: '/linear_algebra/dotproduct',
-    },
-    // 他のページもここに追加する
-    {
-      name: 'Another Page',
-      description: 'Description for another page.',
-      path: '/linear_algebra/anotherpage', // 実際のページのパス
-    },
-  ];
-
   return (
     <div>
-      <h1>Linear Algebra Pages</h1>
-      <ul>
-        {pages.map((page, index) => (
-          <li key={index}>
-            <a href={page.path}>
-              {page.name} - {page.description}
-            </a>
+      {/* Breadcrumbの表示 */}
+      <Breadcrumb
+        items={[
+          { name: 'ホーム', href: '/' },
+          { name: '線形代数', href: '/linear_algebra' },
+        ]}
+      />
+
+      {/* ページタイトル */}
+      <h1>線形代数</h1>
+
+      {/* コンテンツの説明 */}
+      <p>ここでは線形代数のさまざまなトピックについて説明します。各トピックを選択して詳細を確認してください。</p>
+
+      {/* 内積ページへのリンク */}
+      <div>
+        <h2>トピック</h2>
+        <ul>
+          <li>
+            <Link href="/linear_algebra/dotproduct">
+              内積の説明を見る
+            </Link>
           </li>
-        ))}
-      </ul>
+          {/* 他のトピックへのリンクも追加可能 */}
+          {/* <li><Link href="/linear_algebra/other_topic">他のトピック</Link></li> */}
+        </ul>
+      </div>
+
+      {/* フッター */}
+      <footer>
+        <p>Last updated: {metadata.lastUpdated}</p>
+      </footer>
     </div>
   );
 }
