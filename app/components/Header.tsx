@@ -20,8 +20,8 @@ export default function Header({ onSearch }: HeaderProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
         <div className="flex justify-between items-center gap-4">
           {/* タイトル：リンクでホームに戻る */}
-          <Link href="/" className="hover:text-gray-600 transition-colors">
-            <h1 className="text-2xl font-bold text-black m-0">数学の探求</h1>
+          <Link href="/" className="text-black hover:text-gray-600 transition-colors">
+            <h1 className="text-2xl font-bold m-0">数学の探求</h1>
           </Link>
 
           {/* 検索フォーム */}
