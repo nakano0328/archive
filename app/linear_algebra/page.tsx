@@ -1,39 +1,34 @@
-import fs from "fs";
-import path from "path";
+"use client"; // クライアントコンポーネントであることを宣言
+
 import Breadcrumb from "@/app/components/Breadcrumb";
+import { useEffect, useState } from "react";
 
-// サーバーサイドで全てのコンテンツページを動的に取得
-const getServerData = () => {
-  const baseDir = path.join(process.cwd(), "app/linear_algebra");
-
-  // linear_algebraディレクトリ内の全てのサブディレクトリを取得
-  const directories = fs
-    .readdirSync(baseDir, { withFileTypes: true })
-    .filter((dirent) => dirent.isDirectory()) // ディレクトリのみを対象
-    .map((dirent) => {
-      const pageModulePath = path.join(baseDir, dirent.name, "page.tsx");
-
-      // 各ページのメタデータを取得
-      if (fs.existsSync(pageModulePath)) {
-        const { metaData } = require(`./${dirent.name}/page`); // ページのメタデータを取得
-        return {
-          name: dirent.name,
-          ...metaData, // metaData内のtitle, description, updatedAtを取得
-          path: `/linear_algebra/${dirent.name}`, // ページへのリンク
-        };
-      }
-      return null;
-    })
-    .filter(Boolean); // nullの要素を除外
-
-  // 更新日順にソート
-  directories.sort((a, b) => new Date(b.updatedAt) - new Date(a.updatedAt));
-
-  return directories;
+// クライアント側でAPIからデータを取得
+const fetchServerData = async () => {
+  try {
+    const response = await fetch("/api/linear_algebra/data");
+    if (!response.ok) {
+      throw new Error("Failed to fetch data from API");
+    }
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error("Error fetching server data:", error);
+    return []; // エラー時は空の配列を返す
+  }
 };
 
 const LinearAlgebraPage = () => {
-  const serverData = getServerData(); // サーバーサイドでディレクトリ情報を取得
+  const [serverData, setServerData] = useState([]);
+
+  useEffect(() => {
+    // サーバーサイドでディレクトリ情報を取得
+    const fetchData = async () => {
+      const data = await fetchServerData();
+      setServerData(data);
+    };
+    fetchData();
+  }, []);
 
   return (
     <div style={{ padding: "20px" }}>
@@ -64,45 +59,49 @@ const LinearAlgebraPage = () => {
           marginTop: "20px",
         }}
       >
-        {serverData.map((dir) => (
-          <div
-            key={dir.name}
-            style={{
-              border: "1px solid #ddd",
-              borderRadius: "8px",
-              overflow: "hidden",
-              boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
-              position: "relative", // 右下に最終更新日を固定するため
-            }}
-          >
-            <a
-              href={dir.path}
-              style={{ textDecoration: "none", color: "inherit" }}
+        {serverData.length > 0 ? (
+          serverData.map((dir) => (
+            <div
+              key={dir.name}
+              style={{
+                border: "1px solid #ddd",
+                borderRadius: "8px",
+                overflow: "hidden",
+                boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
+                position: "relative", // 右下に最終更新日を固定するため
+              }}
             >
-              <div style={{ padding: "15px" }}>
-                <h2 style={{ fontSize: "20px", marginTop: "10px" }}>
-                  {dir.title}
-                </h2>
+              <a
+                href={dir.path}
+                style={{ textDecoration: "none", color: "inherit" }}
+              >
+                <div style={{ padding: "15px" }}>
+                  <h2 style={{ fontSize: "20px", marginTop: "10px" }}>
+                    {dir.title}
+                  </h2>
 
-                {/* description に marginBottom を追加 */}
-                <p style={{ marginBottom: "20px" }}>{dir.description}</p>
+                  {/* description に marginBottom を追加 */}
+                  <p style={{ marginBottom: "20px" }}>{dir.description}</p>
 
-                {/* 最終更新日を右下に表示 */}
-                <div
-                  style={{
-                    position: "absolute",
-                    bottom: "10px",
-                    right: "10px",
-                    fontSize: "12px",
-                    color: "#888",
-                  }}
-                >
-                  最終更新日: {new Date(dir.updatedAt).toLocaleDateString()}
+                  {/* 最終更新日を右下に表示 */}
+                  <div
+                    style={{
+                      position: "absolute",
+                      bottom: "10px",
+                      right: "10px",
+                      fontSize: "12px",
+                      color: "#888",
+                    }}
+                  >
+                    最終更新日: {new Date(dir.updatedAt).toLocaleDateString()}
+                  </div>
                 </div>
-              </div>
-            </a>
-          </div>
-        ))}
+              </a>
+            </div>
+          ))
+        ) : (
+          <p>データがありません。</p>
+        )}
       </div>
     </div>
   );

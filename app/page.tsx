@@ -59,6 +59,7 @@ const Home = () => {
   const [filteredData, setFilteredData] = useState(mockData);
 
   // 検索ロジック
+  /*
   const handleSearch = (term: string) => {
     if (term.trim() === "") {
       setFilteredData(mockData); // 空の場合は全データを表示
@@ -71,7 +72,7 @@ const Home = () => {
       );
       setFilteredData(filtered);
     }
-  };
+  };*/
 
   return (
     <div>
