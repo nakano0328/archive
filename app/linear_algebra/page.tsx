@@ -1,12 +1,4 @@
 import Breadcrumb from '../components/Breadcrumb';
-import Link from 'next/link';
-
-// ページメタデータ
-export const metadata = {
-  title: 'Linear Algebra Overview',
-  description: 'This is an overview page for Linear Algebra, covering topics such as dot product, matrices, and more.',
-  lastUpdated: '2024-10-08',
-};
 
 export default function LinearAlgebraPage() {
   return (
