@@ -1,27 +1,23 @@
 import Breadcrumb from "@/app/components/Breadcrumb";
 
-// メタデータをコンポーネント内で直接定義
-const metaData = {
-  title: "内積",
-  description:
-    "内積（ドット積）は、ベクトル同士の積の一種で、ベクトルの方向を計算する際に用いられます。",
-  lastUpdated: "2024-10-08",
-};
-
-// サーバーコンポーネント
 export default function DotProductPage() {
-  const { title, description, lastUpdated } = metaData;
-
-  // パンくずリストに使用するサーバーサイドデータ
-  const serverData = {
-    dotproduct: { title },
-    linear_algebra: { title: "線形代数" }, // 親フォルダ名も日本語にする
+  const metaData = {
+    title: "内積",
+    description:
+      "内積（ドット積）は、ベクトル同士の積の一種で、ベクトルの方向を計算する際に用いられます。",
+    lastUpdated: "2024-10-08",
   };
 
   return (
     <div style={{ padding: "20px", position: "relative" }}>
-      {/* パンくずリストの表示 */}
-      <Breadcrumb serverData={serverData} />
+      {/* Breadcrumbの表示 */}
+      <Breadcrumb
+        items={[
+          { name: 'ホーム', href: '/' },
+          { name: '線形代数', href: '/linear_algebra' },
+          { name: '内積', href: '/linear_algebra/dotproduct' },
+        ]}
+      />
 
       {/* 最終更新日をパンくずリストの下かつ右寄せに表示 */}
       <div
@@ -32,15 +28,15 @@ export default function DotProductPage() {
           textAlign: "right", // 右寄せに設定
         }}
       >
-        最終更新日: {new Date(lastUpdated).toLocaleDateString()}
+        最終更新日: {new Date(metaData.lastUpdated).toLocaleDateString()}
       </div>
 
       <h1
         style={{ fontSize: "36px", textAlign: "center", marginBottom: "20px" }}
       >
-        {title}
+        {metaData.title}
       </h1>
-      <p>{description}</p>
+      <p>{metaData.description}</p>
 
       {/* 内積の解説 */}
       <h2>内積の解説</h2>
