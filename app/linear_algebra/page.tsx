@@ -31,7 +31,6 @@ const LinearAlgebraPage = () => {
   >([]);
 
   useEffect(() => {
-    // サーバーサイドでディレクトリ情報を取得
     const fetchData = async () => {
       const data = await fetchServerData();
 
@@ -44,10 +43,10 @@ const LinearAlgebraPage = () => {
       setServerData(enrichedData);
     };
     fetchData();
-  }, []);
+  }, []);  // useEffect の終了部分に問題がないか確認
 
   return (
-    <div style={{ padding: "20px" }}>
+    <div style={{ padding: "20px" }}>  {/* 正しい JSX の構文を使用 */}
       <Breadcrumb
         serverData={serverData.reduce<Record<string, { title: string }>>(
           (acc, dir) => {
