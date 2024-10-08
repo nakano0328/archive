@@ -1,18 +1,14 @@
-import Breadcrumb from '../components/Breadcrumb';
+import Breadcrumb from '@/app/components/Breadcrumb';
 import Link from 'next/link'; // Linkをインポート
 
 export default function LinearAlgebraPage() {
-  const metadata = {
-    lastUpdated: '2024-10-08',
-  };
-
   return (
     <div>
       {/* Breadcrumbの表示 */}
       <Breadcrumb
         items={[
-          { name: 'ホーム', href: '/' },
-          { name: '線形代数', href: '/linear_algebra' },
+          { name: 'ホーム', href: '@/app/' },
+          { name: '線形代数', href: '@/app/linear_algebra' },
         ]}
       />
 
