@@ -1,6 +1,5 @@
 "use client";
 
-import Head from "next/head";
 import React from "react";
 import Card from "./Card";
 
@@ -21,14 +20,14 @@ interface CardData {
   link: string;
 }
 
-// メタデータをコンポーネント内で定義
+// メタデータ
 const metaData: MetaData = {
   title: "ホーム",
   description: "ホームです",
   updatedAt: "2024-10-08",
 };
 
-// モックデータに型を付与
+// モックデータ
 const mockData: CardData[] = [
   {
     id: 1,
@@ -39,55 +38,50 @@ const mockData: CardData[] = [
     link: "/linear_algebra",
   },
   /*{
-    id: 2,
-    title: "幾何学",
-    description: "図形、空間、測量など",
-    icon: "△",
-    backgroundColor: "#d1c4e9",
-    link: "/geometry",
+  id: 2,
+  title: "幾何学",
+  description: "図形、空間、測量など",
+  icon: "△",
+  backgroundColor: "#d1c4e9",
+  link: "/geometry",
   },
-  {
-    id: 3,
+{
+  id: 3,
     title: "微積分",
-    description: "極限、微分、積分など",
-    icon: "∫",
-    backgroundColor: "#cfe2ff",
-    link: "/calculus",
+      description: "極限、微分、積分など",
+        icon: "∫",
+          backgroundColor: "#cfe2ff",
+            link: "/calculus",
   },
-  {
-    id: 4,
+{
+  id: 4,
     title: "統計学",
-    description: "データ分析、確率論など",
-    icon: "σ",
-    backgroundColor: "#d4edda",
-    link: "/statistics",
+      description: "データ分析、確率論など",
+        icon: "σ",
+          backgroundColor: "#d4edda",
+            link: "/statistics",
   },
-  {
-    id: 5,
+{
+  id: 5,
     title: "数論",
-    description: "整数論、暗号理論など",
-    icon: "π",
-    backgroundColor: "#fff3cd",
-    link: "/number-theory",
+      description: "整数論、暗号理論など",
+        icon: "π",
+          backgroundColor: "#fff3cd",
+            link: "/number-theory",
   },
-  {
-    id: 6,
+{
+  id: 6,
     title: "離散数学",
-    description: "グラフ理論、組み合わせ論など",
-    icon: "+",
-    backgroundColor: "#ffebcc",
-    link: "/discrete-math",
+      description: "グラフ理論、組み合わせ論など",
+        icon: "+",
+          backgroundColor: "#ffebcc",
+            link: "/discrete-math",
   },*/
 ];
 
-const Home = () => {
+export default function Page() {
   return (
     <div>
-      <Head>
-        <title>{metaData.title}</title>
-        <meta name="description" content={metaData.description} />
-      </Head>
-
       <main className="flex flex-wrap justify-center p-5 gap-5">
         {mockData.length > 0 ? (
           mockData.map((item) => (
