@@ -3,6 +3,13 @@
 import Breadcrumb from "@/app/components/Breadcrumb";
 import { useEffect, useState } from "react";
 
+// メタデータの定義
+export const metaData = {
+  title: "線形代数",
+  description: "線形代数のコンテンツページです",
+  updatedAt: "2024-10-08",
+};
+
 // クライアント側でAPIからデータを取得
 const fetchServerData = async () => {
   try {
