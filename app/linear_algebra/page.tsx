@@ -1,8 +1,8 @@
 import Link from "next/link";
-import { metadata } from "@/app/linear_algebra/metadata"; // メタデータをインポート
+import { metadata } from "@/app/linear_algebra/metadata";
+import Card from "@/app/linear_algebra/Card"; // Card コンポーネントをインポート
 
 export default function LinearAlgebraContents() {
-  // メタデータからトピックを取得
   const topics = Object.keys(metadata) as Array<keyof typeof metadata>;
 
   return (
@@ -14,7 +14,6 @@ export default function LinearAlgebraContents() {
         ここでは、線形代数に関連するさまざまなトピックについて説明しています。
       </p>
 
-      {/* コンテンツカードの表示 */}
       <div
         style={{
           display: "grid",
@@ -26,29 +25,13 @@ export default function LinearAlgebraContents() {
           const topic = metadata[topicKey];
           return (
             <Link key={topicKey} href={`/linear_algebra/${topicKey}`}>
-              <div
-                className="content-card"
-                style={{
-                  border: "1px solid #ddd",
-                  borderRadius: "8px",
-                  padding: "20px",
-                  backgroundColor: "white",
-                  boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-                  transition: "transform 0.3s ease",
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = "translateY(-5px)";
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = "translateY(0)";
-                }}
-              >
+              <Card>
                 <h2 style={{ fontSize: "24px", marginBottom: "10px" }}>{topic.title}</h2>
                 <p style={{ marginBottom: "20px" }}>{topic.description}</p>
                 <div style={{ textAlign: "right", fontSize: "12px", color: "#888" }}>
                   最終更新日: {new Date(topic.lastUpdated).toLocaleDateString()}
                 </div>
-              </div>
+              </Card>
             </Link>
           );
         })}
