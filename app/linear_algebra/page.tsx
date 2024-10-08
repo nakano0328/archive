@@ -7,8 +7,8 @@ export default function LinearAlgebraPage() {
       {/* Breadcrumbの表示 */}
       <Breadcrumb
         items={[
-          { name: 'ホーム', href: '@/app/' },
-          { name: '線形代数', href: '@/app/linear_algebra' },
+          { name: 'ホーム', href: '/' },
+          { name: '線形代数', href: '/linear_algebra' },
         ]}
       />
 

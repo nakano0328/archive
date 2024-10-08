@@ -13,9 +13,9 @@ export default function CrossProductPage() {
       {/* Breadcrumbの表示 */}
       <Breadcrumb
         items={[
-          { name: 'ホーム', href: '@/app' },
-          { name: '線形代数', href: '@/app/linear_algebra' },
-          { name: '外積', href: '@/app/linear_algebra/crossproduct' },
+          { name: 'ホーム', href: '/' },
+          { name: '線形代数', href: '/linear_algebra' },
+          { name: '外積', href: '/linear_algebra/crossproduct' },
         ]}
       />
 
