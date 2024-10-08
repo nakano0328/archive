@@ -25,13 +25,19 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // onSearch関数の定義
+  const handleSearch = (term: string) => {
+    console.log("Search term:", term);
+    // 検索処理をここに追加することができます
+  };
+
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {/* ヘッダーをページ全体の上部に表示 */}
-        <Header />
+        {/* ヘッダーに onSearch プロパティを渡す */}
+        <Header onSearch={handleSearch} />
 
         {/* ページごとのコンテンツ */}
         <main>{children}</main>
