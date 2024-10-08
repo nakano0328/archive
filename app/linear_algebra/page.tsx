@@ -31,15 +31,15 @@ export default function LinearAlgebraPage() {
               内積の説明を見る
             </Link>
           </li>
+          <li>
+            <Link href="/linear_algebra/crossproduct">
+              外積について
+            </Link>
+          </li>
           {/* 他のトピックへのリンクも追加可能 */}
           {/* <li><Link href="/linear_algebra/other_topic">他のトピック</Link></li> */}
         </ul>
       </div>
-
-      {/* フッター */}
-      <footer>
-        <p>Last updated: {metadata.lastUpdated}</p>
-      </footer>
     </div>
   );
 }

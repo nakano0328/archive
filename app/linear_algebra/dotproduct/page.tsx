@@ -13,9 +13,9 @@ export default function DotProductPage() {
       {/* Breadcrumbの表示 */}
       <Breadcrumb
         items={[
-          { name: 'ホーム', href: '/' },
-          { name: '線形代数', href: '/linear_algebra' },
-          { name: '内積', href: '/linear_algebra/dotproduct' },
+          { name: 'ホーム', href: '@/app/' },
+          { name: '線形代数', href: '@/app/linear_algebra' },
+          { name: '内積', href: '@/app/linear_algebra/dotproduct' },
         ]}
       />
 
