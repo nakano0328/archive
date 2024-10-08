@@ -2,16 +2,34 @@
 
 import Head from "next/head";
 import React from "react";
-import Card from "./Card"; // HeaderとFooterはlayout.tsxで読み込まれるので不要
+import Card from "./Card";
+
+// メタデータの型定義
+interface MetaData {
+  title: string;
+  description: string;
+  updatedAt: string;
+}
+
+// カードデータの型定義
+interface CardData {
+  id: number;
+  title: string;
+  description: string;
+  icon: string;
+  backgroundColor: string;
+  link: string;
+}
 
 // メタデータをコンポーネント内で定義
-const metaData = {
+const metaData: MetaData = {
   title: "ホーム",
   description: "ホームです",
   updatedAt: "2024-10-08",
 };
 
-const mockData = [
+// モックデータに型を付与
+const mockData: CardData[] = [
   {
     id: 1,
     title: "線形代数",
@@ -20,7 +38,7 @@ const mockData = [
     backgroundColor: "#f8d7da",
     link: "/linear_algebra",
   },
-  {/*{
+  /*{
     id: 2,
     title: "幾何学",
     description: "図形、空間、測量など",
@@ -59,7 +77,7 @@ const mockData = [
     icon: "+",
     backgroundColor: "#ffebcc",
     link: "/discrete-math",
-  },*/}
+  },*/
 ];
 
 const Home = () => {
@@ -70,27 +88,19 @@ const Home = () => {
         <meta name="description" content={metaData.description} />
       </Head>
 
-      <main
-        style={{
-          display: "flex",
-          flexWrap: "wrap",
-          justifyContent: "center",
-          padding: "20px",
-          gap: "20px",
-        }}
-      >
+      <main className="flex flex-wrap justify-center p-5 gap-5">
         {mockData.length > 0 ? (
           mockData.map((item) => (
             <div
               key={item.id}
-              style={{ flexBasis: "30%", boxSizing: "border-box" }}
+              className="flex-[0_1_calc(33.333%-1rem)] box-border min-w-[300px]"
             >
               <Card
                 title={item.title}
                 description={item.description}
                 icon={item.icon}
                 backgroundColor={item.backgroundColor}
-                link={item.link} // 解説ページへのリンクを渡す
+                link={item.link}
               />
             </div>
           ))
@@ -100,6 +110,4 @@ const Home = () => {
       </main>
     </div>
   );
-};
-
-export default Home;
+}
