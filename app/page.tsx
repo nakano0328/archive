@@ -58,6 +58,7 @@ const mockData = [
 const Home = () => {
   const [filteredData, setFilteredData] = useState(mockData);
 
+<<<<<<< HEAD
   // 検索ロジック
   const handleSearch = (term: string) => {
     if (term.trim() === "") {
@@ -70,6 +71,25 @@ const Home = () => {
           item.description.toLowerCase().includes(lowerCaseTerm)
       );
       setFilteredData(filtered);
+=======
+  // パンくずリストを生成する関数
+  useEffect(() => {
+    const pathArray = window.location.pathname.split("/").filter(Boolean);
+    const breadcrumbItems = [...pathArray];
+    setBreadcrumbs(breadcrumbItems);
+  }, []);
+
+  // ダミーデータとして、タグリストをセット
+  useEffect(() => {
+    const dummyTags = ["代数", "線形代数", "幾何学", "統計", "確率論"];
+    setTags(dummyTags);
+  }, []);
+
+  // タグが選択されたときの処理
+  const handleTagClick = (tag: string) => {
+    if (!selectedTags.includes(tag)) {
+      setSelectedTags([...selectedTags, tag]);
+>>>>>>> 187d63e48f951d894111f2f49733bf4d66f5accc
     }
   };
 
