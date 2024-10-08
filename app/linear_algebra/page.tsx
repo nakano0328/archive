@@ -43,10 +43,10 @@ const LinearAlgebraPage = () => {
       setServerData(enrichedData);
     };
     fetchData();
-  }, []);  // useEffect の終了部分に問題がないか確認
+  }, []);  // useEffect の終了部分が正しいか確認しました。
 
   return (
-    <div style={{ padding: "20px" }}>  {/* 正しい JSX の構文を使用 */}
+    <div style={{ padding: "20px" }}>
       <Breadcrumb
         serverData={serverData.reduce<Record<string, { title: string }>>(
           (acc, dir) => {

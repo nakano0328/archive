@@ -20,7 +20,7 @@ const mockData = [
     backgroundColor: "#f8d7da",
     link: "/linear_algebra",
   },
-  /*{
+  {/*{
     id: 2,
     title: "幾何学",
     description: "図形、空間、測量など",
@@ -59,7 +59,7 @@ const mockData = [
     icon: "+",
     backgroundColor: "#ffebcc",
     link: "/discrete-math",
-  },*/
+  },*/}
 ];
 
 const Home = () => {
