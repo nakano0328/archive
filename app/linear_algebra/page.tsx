@@ -1,5 +1,3 @@
-"use client"; // クライアントコンポーネントであることを宣言
-
 import Breadcrumb from "@/app/components/Breadcrumb";
 import { useEffect, useState } from "react";
 
@@ -10,7 +8,7 @@ const metaData = {
   updatedAt: "2024-10-08",
 };
 
-// クライアント側でAPIからデータを取得
+// サーバーからデータを取得する関数
 const fetchServerData = async () => {
   try {
     const response = await fetch("/api/linear_algebra/data");
@@ -26,7 +24,9 @@ const fetchServerData = async () => {
 };
 
 const LinearAlgebraPage = () => {
-  const [serverData, setServerData] = useState([]);
+  const [serverData, setServerData] = useState<
+    { name: string; title: string; description: string; updatedAt: string }[]
+  >([]);
 
   useEffect(() => {
     // サーバーサイドでディレクトリ情報を取得
@@ -40,10 +40,13 @@ const LinearAlgebraPage = () => {
   return (
     <div style={{ padding: "20px" }}>
       <Breadcrumb
-        serverData={serverData.reduce((acc, dir) => {
-          acc[dir.name] = { title: dir.title }; // パンくずリスト用にタイトルを設定
-          return acc;
-        }, {})}
+        serverData={serverData.reduce<Record<string, { title: string }>>(
+          (acc, dir) => {
+            acc[dir.name] = { title: dir.title }; // パンくずリスト用にタイトルを設定
+            return acc;
+          },
+          {}
+        )}
       />
 
       <h1
