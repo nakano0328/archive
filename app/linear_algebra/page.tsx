@@ -3,8 +3,8 @@
 import Breadcrumb from "@/app/components/Breadcrumb";
 import { useEffect, useState } from "react";
 
-// メタデータの定義
-export const metaData = {
+// メタデータをコンポーネント内で定義
+const metaData = {
   title: "線形代数",
   description: "線形代数のコンテンツページです",
   updatedAt: "2024-10-08",
@@ -54,8 +54,10 @@ const LinearAlgebraPage = () => {
           padding: "20px",
         }}
       >
-        線形代数
+        {metaData.title}
       </h1>
+
+      <p>{metaData.description}</p>
 
       {/* ページコンテンツをリスト形式で表示 */}
       <div
