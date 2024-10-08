@@ -1,6 +1,11 @@
 import Breadcrumb from '../components/Breadcrumb';
+import Link from 'next/link'; // Linkをインポート
 
 export default function LinearAlgebraPage() {
+  const metadata = {
+    lastUpdated: '2024-10-08',
+  };
+
   return (
     <div>
       {/* Breadcrumbの表示 */}
