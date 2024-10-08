@@ -4,6 +4,12 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
+// Define the type for breadcrumb items
+interface BreadcrumbItem {
+  path: string;
+  name: string;
+}
+
 // Define the type for serverData
 interface BreadcrumbProps {
   serverData: {
@@ -16,7 +22,9 @@ interface BreadcrumbProps {
 // パンくずリストのコンポーネント
 const Breadcrumb = ({ serverData }: BreadcrumbProps) => {
   const pathname = usePathname();
-  const [breadcrumbData, setBreadcrumbData] = useState([]);
+
+  // useState の初期化時に正しい型を指定
+  const [breadcrumbData, setBreadcrumbData] = useState<BreadcrumbItem[]>([]);
 
   useEffect(() => {
     // パスを "/" で分割し、各セクションに対応するサーバーサイドからのデータを取得
@@ -38,7 +46,7 @@ const Breadcrumb = ({ serverData }: BreadcrumbProps) => {
       };
     });
 
-    setBreadcrumbData(breadcrumbData);
+    setBreadcrumbData(breadcrumbData); // 型が一致するためエラーは発生しない
   }, [pathname, serverData]);
 
   return (
