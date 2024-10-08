@@ -12,35 +12,32 @@ export default function LinearAlgebraContents() {
       {/* Breadcrumbの表示 */}
       <Breadcrumb
         items={[
-          { name: "ホーム", href: "/" },
           { name: "線形代数", href: "/linear_algebra" },
         ]}
       />
 
-      <h1
+      <div
         style={{
-          fontSize: "36px",
-          textAlign: "center",
-          marginBottom: "20px",
-          backgroundColor: "#f8d7da", // 赤い背景を追加
-          padding: "10px",
+          backgroundColor: "#f8d7da", // 赤い背景
+          padding: "20px",
           borderRadius: "5px",
+          marginBottom: "40px", // 他の要素との間隔
         }}
       >
-        線形代数のコンテンツ
-      </h1>
+        <h1
+          style={{
+            fontSize: "36px",
+            textAlign: "center",
+            marginBottom: "10px",
+          }}
+        >
+          線形代数のコンテンツ
+        </h1>
 
-      <p
-        style={{
-          textAlign: "center",
-          marginBottom: "40px",
-          backgroundColor: "#f8d7da", // 赤い背景を追加
-          padding: "10px",
-          borderRadius: "5px",
-        }}
-      >
-        ここでは、線形代数に関連するさまざまなトピックについて説明しています。
-      </p>
+        <p style={{ textAlign: "center" }}>
+          ここでは、線形代数に関連するさまざまなトピックについて説明しています。
+        </p>
+      </div>
 
       <div
         style={{
