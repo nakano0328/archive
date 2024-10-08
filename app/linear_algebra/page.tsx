@@ -34,15 +34,20 @@ const fetchServerData = async (): Promise<ServerData[]> => {
 
 export default function LinearAlgebraPage() {
   const [serverData, setServerData] = useState<ServerData[]>([]);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await fetchServerData();
-      const enrichedData = data.map((dir) => ({
-        ...dir,
-        path: `/linear_algebra/${dir.name}`,
-      }));
-      setServerData(enrichedData);
+      try {
+        const data = await fetchServerData();
+        const enrichedData = data.map((dir) => ({
+          ...dir,
+          path: `/linear_algebra/${dir.name}`,
+        }));
+        setServerData(enrichedData);
+      } catch (err) {
+        setError("データの取得に失敗しました。");
+      }
     };
 
     fetchData();
@@ -58,6 +63,11 @@ export default function LinearAlgebraPage() {
           },
           {}
         )}
+        currentTitle="Linear Algebra" // メインタイトルは英語で表示
+        breadcrumbPaths={[
+          { path: "/", title: "ホーム" },
+          { path: "/linear_algebra", title: "線形代数" }
+        ]} // パス部分は日本語
       />
 
       <h1 className="text-4xl text-center bg-red-100 p-5">
@@ -67,7 +77,9 @@ export default function LinearAlgebraPage() {
       <p className="my-4">{metaData.description}</p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-5">
-        {serverData.length > 0 ? (
+        {error ? (
+          <p className="text-red-500">{error}</p>
+        ) : serverData.length > 0 ? (
           serverData.map((dir) => (
             <div
               key={dir.name}
