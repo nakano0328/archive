@@ -20,10 +20,10 @@ export async function GET() {
         if (fs.existsSync(pageModulePath)) {
           try {
             // 動的インポートに明示的に型を指定
-            const module: { metaData: MetaData } = await import(
-              `../../linear_algebra/${dirent.name}/page`
+            const pageModule: { metaData: MetaData } = await import(
+              `@/app/linear_algebra/${dirent.name}/page`
             );
-            const { metaData } = module;
+            const { metaData } = pageModule;
             return {
               name: dirent.name,
               ...metaData,
