@@ -1,12 +1,9 @@
 import Breadcrumb from "@/app/components/Breadcrumb";
+import { metadata } from "@/app/linear_algebra/metadata";
+import { formatDate } from "@/app/components/formatDate"; // 日付フォーマット関数をインポート
 
 export default function CrossProductPage() {
-  const metaData = {
-    title: "外積",
-    description:
-      "外積（クロス積）は、3次元ベクトル同士の積の一種で、ベクトルの垂直方向のベクトルを計算する際に用いられます。",
-    lastUpdated: "2024-10-08",
-  };
+  const metaData = metadata.crossproduct;
 
   return (
     <div style={{ padding: "20px", position: "relative" }}>
@@ -14,7 +11,7 @@ export default function CrossProductPage() {
       <Breadcrumb
         items={[
           { name: '線形代数', href: '/linear_algebra' },
-          { name: '外積', href: '/linear_algebra/crossproduct' },
+          { name: metaData.title, href: '/linear_algebra/crossproduct' },
         ]}
       />
 
@@ -27,7 +24,7 @@ export default function CrossProductPage() {
           textAlign: "right", // 右寄せに設定
         }}
       >
-        最終更新日: {new Date(metaData.lastUpdated).toLocaleDateString()}
+        最終更新日: {formatDate(metaData.lastUpdated)}
       </div>
 
       <h1

@@ -1,12 +1,12 @@
 import Breadcrumb from "@/app/components/Breadcrumb";
-import { metadata } from "@/app/linear_algebra/metadata"; // メタデータをインポート
+import { metadata } from "@/app/linear_algebra/metadata";
+import { formatDate } from "@/app/components/formatDate"; // 日付フォーマット関数をインポート
 
 export default function DotProductPage() {
-  // メタデータを取得
   const metaData = metadata.dotproduct;
 
   return (
-    <div style={{ padding: "20px", position: "relative" }}>
+    <div style={{ padding: "20px" }}>
       {/* Breadcrumbの表示 */}
       <Breadcrumb
         items={[
@@ -24,11 +24,11 @@ export default function DotProductPage() {
           textAlign: "right", // 右寄せに設定
         }}
       >
-        最終更新日: {new Date(metaData.lastUpdated).toLocaleDateString()}
+        最終更新日: {formatDate(metaData.lastUpdated)}
       </div>
 
       <h1
-        style={{ fontSize: "36px", textAlign: "center", marginBottom: "20px" }}
+        style={{ fontSize: "36px", textAlign: "center", marginBottom: "20px", color: "black" }} // タイトルが青くならないように
       >
         {metaData.title}
       </h1>
