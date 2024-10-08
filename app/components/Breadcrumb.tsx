@@ -1,81 +1,46 @@
-"use client";
+'use client';
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useRouter } from 'next/router';
+import Link from 'next/link';
+import { useEffect, useState } from 'react';
 
-// Define the type for breadcrumb items
-interface BreadcrumbItem {
-  path: string;
-  name: string;
-}
-
-// Define the type for serverData
-interface BreadcrumbProps {
-  serverData: {
-    [key: string]: {
-      title: string;
-    };
-  };
-}
-
-// パンくずリストのコンポーネント
-const Breadcrumb = ({ serverData }: BreadcrumbProps) => {
-  const pathname = usePathname();
-
-  // useState の初期化時に正しい型を指定
-  const [breadcrumbData, setBreadcrumbData] = useState<BreadcrumbItem[]>([]);
-
-  useEffect(() => {
-    // パスを "/" で分割し、各セクションに対応するサーバーサイドからのデータを取得
-    const pathParts = pathname.split("/").filter(Boolean);
-    const breadcrumbData = pathParts.map((part, index) => {
-      const currentPath = `/${pathParts.slice(0, index + 1).join("/")}`;
-
-      // 各ページのメタデータを動的に読み込み
-      let title = serverData[part]?.title || part;
-
-      // "linear_algebra" を "線形代数" に変換
-      if (part === "linear_algebra") {
-        title = "線形代数";
-      }
-
-      return {
-        path: currentPath,
-        name: title,
-      };
-    });
-
-    setBreadcrumbData(breadcrumbData); // 型が一致するためエラーは発生しない
-  }, [pathname, serverData]);
-
-  return (
-    <nav
-      style={{
-        backgroundColor: "white",
-        padding: "10px",
-        borderRadius: "8px",
-        boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
-        marginBottom: "20px",
-      }}
-    >
-      <Link href="/" style={{ textDecoration: "none", color: "black" }}>
-        ホーム
-      </Link>
-      {breadcrumbData.length > 0 && " > "}
-      {breadcrumbData.map((item, index) => (
-        <span key={item.path}>
-          <Link
-            href={item.path}
-            style={{ textDecoration: "none", color: "black" }}
-          >
-            {item.name}
-          </Link>
-          {index < breadcrumbData.length - 1 && " > "}
-        </span>
-      ))}
-    </nav>
-  );
+// パス名と表示する名前を対応させるマッピング
+const breadcrumbMap: { [key: string]: string } = {
+  'linear_algebra': '線形代数',
+  'dotproduct': '内積',
+  // 必要に応じて他のパスと名前も追加できます
+  // 'another_path': 'Another Display Name',
 };
 
-export default Breadcrumb;
+export default function Breadcrumb() {
+  const router = useRouter();
+  const [breadcrumbs, setBreadcrumbs] = useState<Array<{ name: string, href: string }>>([]);
+
+  useEffect(() => {
+    if (router) {
+      // パスを分割して各階層に対するパンくずリストを生成
+      const pathArray = router.asPath.split('/').filter((path) => path);
+      const breadcrumbList = pathArray.map((path, index) => {
+        const href = '/' + pathArray.slice(0, index + 1).join('/');
+        const name = breadcrumbMap[path] || path; // パスに対応する名前がない場合、そのままパスを表示
+        return { name, href };
+      });
+
+      // ホームを追加
+      setBreadcrumbs([{ name: 'ホーム', href: ' > ' }, ...breadcrumbList]);
+    }
+  }, [router]);
+
+  return (
+    <nav aria-label="パンくずリスト">
+      <ol>
+        {breadcrumbs.map((breadcrumb, index) => (
+          <li key={index}>
+            <Link href={breadcrumb.href}>{breadcrumb.name}</Link>
+            {index < breadcrumbs.length - 1 && ' > '}
+          </li>
+        ))}
+      </ol>
+    </nav>
+  );
+}
