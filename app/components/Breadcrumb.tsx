@@ -12,35 +12,29 @@ const breadcrumbMap: { [key: string]: string } = {
   // 'another_path': 'Another Display Name',
 };
 
-export default function Breadcrumb() {
-  const router = useRouter();
-  const [breadcrumbs, setBreadcrumbs] = useState<Array<{ name: string, href: string }>>([]);
+interface BreadcrumbProps {
+  serverData: {
+    [key: string]: { title: string };
+  };
+}
 
-  useEffect(() => {
-    if (router) {
-      // パスを分割して各階層に対するパンくずリストを生成
-      const pathArray = router.asPath.split('/').filter((path) => path);
-      const breadcrumbList = pathArray.map((path, index) => {
-        const href = '/' + pathArray.slice(0, index + 1).join('/');
-        const name = breadcrumbMap[path] || path; // パスに対応する名前がない場合、そのままパスを表示
-        return { name, href };
-      });
-
-      // ホームを追加
-      setBreadcrumbs([{ name: 'ホーム', href: ' > ' }, ...breadcrumbList]);
-    }
-  }, [router]);
+export default function Breadcrumb({ serverData }: BreadcrumbProps) {
+  const breadcrumbItems = Object.keys(serverData).map((key) => ({
+    title: serverData[key].title,
+    href: `/${key}`,
+  }));
 
   return (
     <nav aria-label="パンくずリスト">
       <ol>
-        {breadcrumbs.map((breadcrumb, index) => (
+        {breadcrumbItems.map((item, index) => (
           <li key={index}>
-            <Link href={breadcrumb.href}>{breadcrumb.name}</Link>
-            {index < breadcrumbs.length - 1 && ' > '}
+            <a href={item.href}>{item.title}</a>
+            {index < breadcrumbItems.length - 1 && ' / '}
           </li>
         ))}
       </ol>
     </nav>
   );
 }
+
