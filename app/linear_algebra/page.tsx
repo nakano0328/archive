@@ -45,13 +45,14 @@ export default function LinearAlgebraPage() {
           path: `/linear_algebra/${dir.name}`,
         }));
         setServerData(enrichedData);
-      } catch (err) {
+      } catch {
         setError("データの取得に失敗しました。");
       }
     };
 
     fetchData();
   }, []);
+
 
   return (
     <main className="p-5">
