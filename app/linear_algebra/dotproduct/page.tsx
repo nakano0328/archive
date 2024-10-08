@@ -1,12 +1,9 @@
 import Breadcrumb from "@/app/components/Breadcrumb";
+import { metadata } from "@/app/linear_algebra/metadata"; // メタデータをインポート
 
 export default function DotProductPage() {
-  const metaData = {
-    title: "内積",
-    description:
-      "内積（ドット積）は、ベクトル同士の積の一種で、ベクトルの方向を計算する際に用いられます。",
-    lastUpdated: "2024-10-08",
-  };
+  // メタデータを取得
+  const metaData = metadata.dotproduct;
 
   return (
     <div style={{ padding: "20px", position: "relative" }}>
@@ -14,7 +11,7 @@ export default function DotProductPage() {
       <Breadcrumb
         items={[
           { name: '線形代数', href: '/linear_algebra' },
-          { name: '内積', href: '/linear_algebra/dotproduct' },
+          { name: metaData.title, href: '/linear_algebra/dotproduct' },
         ]}
       />
 
