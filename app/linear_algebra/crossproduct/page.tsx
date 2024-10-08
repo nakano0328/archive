@@ -1,7 +1,15 @@
 import Breadcrumb from "@/app/components/Breadcrumb";
 
+// メタデータをコンポーネント内で直接定義
+const metaData = {
+  title: "外積",
+  description:
+    "外積（クロス積）は、3次元ベクトル同士の積の一種で、ベクトルの垂直方向のベクトルを計算する際に用いられます。",
+  updatedAt: "2024-10-08",
+};
+
 // サーバーコンポーネント
-export default function CrossProductPage({ metaData }) {
+export default function CrossProductPage() {
   const { title, description, updatedAt } = metaData;
 
   // パンくずリストに使用するサーバーサイドデータ
@@ -57,20 +65,4 @@ export default function CrossProductPage({ metaData }) {
       </p>
     </div>
   );
-}
-
-// getStaticPropsでメタデータを取得
-export async function getStaticProps() {
-  const metaData = {
-    title: "外積",
-    description:
-      "外積（クロス積）は、3次元ベクトル同士の積の一種で、ベクトルの垂直方向のベクトルを計算する際に用いられます。",
-    updatedAt: "2024-10-08",
-  };
-
-  return {
-    props: {
-      metaData,
-    },
-  };
 }
