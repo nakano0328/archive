@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import Card from "./Card";
+import Card from "./components/Card1";
 
 // カードデータの型定義
 interface CardData {

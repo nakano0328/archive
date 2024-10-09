@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import RootWrapper from "./components/RootWrapper";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import SearchWrapper from "./components/SearchWrapper"; // クライアントサイドのコンポーネント
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -16,11 +18,11 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: 'ホーム',
-  description: 'ホームです',
+  title: "ホーム",
+  description: "ホームです",
   openGraph: {
-    title: 'ホーム',
-    description: 'ホームです',
+    title: "ホーム",
+    description: "ホームです",
   },
 };
 
@@ -34,7 +36,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
       >
-        <RootWrapper>{children}</RootWrapper>
+        <Header />
+        <SearchWrapper>{children}</SearchWrapper>
+        <Footer />
       </body>
     </html>
   );
