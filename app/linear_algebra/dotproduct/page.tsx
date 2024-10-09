@@ -1,6 +1,17 @@
 import Breadcrumb from "@/app/components/Breadcrumb";
 import { metadata } from "@/app/linear_algebra/metadata";
 import { formatDate } from "@/app/components/formatDate"; // 日付フォーマット関数をインポート
+import { InlineMath } from "react-katex"; // InlineMath をインポート
+
+// ページのメタデータを動的に生成
+export async function generateMetadata() {
+  const metaData = metadata.dotproduct;
+
+  return {
+    title: metaData.title, // タイトルをメタデータから設定
+    description: metaData.description, // 必要に応じて説明も追加できます
+  };
+}
 
 export default function DotProductPage() {
   const metaData = metadata.dotproduct;
@@ -58,6 +69,11 @@ export default function DotProductPage() {
         内積は物理学や工学、コンピュータグラフィックスなど、様々な分野で使用されており、特にベクトルの投影や
         距離の計算において重要な役割を果たします。
       </p>
+
+      <p>
+        インラインで数式を表示します: <InlineMath math="c = \pm\sqrt{a^2 + b^2}" />
+      </p>
+
     </div>
   );
 }

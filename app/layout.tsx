@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import "./globals.css";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import SearchWrapper from "./components/SearchWrapper"; // クライアントサイドのコンポーネント
+import "@/app/globals.css";
+import Header from "@/app/components/Header";
+import Footer from "@/app/components/Footer";
+import SearchWrapper from "@/app/components/SearchWrapper"; // クライアントサイドのコンポーネント
+import 'katex/dist/katex.min.css';
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",

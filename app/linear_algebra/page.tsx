@@ -1,82 +1,89 @@
 import Link from "next/link";
-import Breadcrumb from "@/app/components/Breadcrumb"; // パンくずリストを追加
-import { metadata } from "@/app/linear_algebra/metadata";
+import Breadcrumb from "@/app/components/Breadcrumb";
+import { metadata as topicsMetadata } from "@/app/linear_algebra/metadata"; // コンテンツのメタデータをインポート
 import Card from "@/app/components/Card2";
-import { formatDate } from "@/app/components/formatDate"; // 日付フォーマット関数をインポート
+import { formatDate } from "@/app/components/formatDate";
+
+// ページのメタデータ（ブラウザのタイトル設定など）
+export const metadata = {
+  title: "線形代数",
+};
 
 export default function LinearAlgebraContents() {
-  const topics = Object.keys(metadata) as Array<keyof typeof metadata>;
+  const topics = Object.keys(topicsMetadata) as Array<keyof typeof topicsMetadata>;
 
   return (
-    <div style={{ padding: "20px" }}>
-      {/* Breadcrumbの表示 */}
-      <Breadcrumb items={[{ name: "線形代数", href: "/linear_algebra" }]} />
+    <>
+      <div style={{ padding: "20px" }}>
+        {/* Breadcrumbの表示 */}
+        <Breadcrumb items={[{ name: "線形代数", href: "/linear_algebra" }]} />
 
-      <div
-        style={{
-          backgroundColor: "#f8d7da", // 赤い背景
-          padding: "20px",
-          borderRadius: "5px",
-          marginBottom: "40px", // 他の要素との間隔
-        }}
-      >
-        <h1
+        <div
           style={{
-            fontSize: "36px",
-            textAlign: "center",
-            marginBottom: "10px",
+            backgroundColor: "#f8d7da", // 赤い背景
+            padding: "20px",
+            borderRadius: "5px",
+            marginBottom: "40px", // 他の要素との間隔
           }}
         >
-          線形代数のコンテンツ
-        </h1>
+          <h1
+            style={{
+              fontSize: "36px",
+              textAlign: "center",
+              marginBottom: "10px",
+            }}
+          >
+            線形代数のコンテンツ
+          </h1>
 
-        <p style={{ textAlign: "center" }}>
-          ここでは、線形代数に関連するさまざまなトピックについて説明しています。
-        </p>
-      </div>
+          <p style={{ textAlign: "center" }}>
+            ここでは、線形代数に関連するさまざまなトピックについて説明しています。
+          </p>
+        </div>
 
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
-          gap: "20px",
-        }}
-      >
-        {topics.map((topicKey) => {
-          const topic = metadata[topicKey];
-          return (
-            <Link
-              key={topicKey}
-              href={`/linear_algebra/${topicKey}`}
-              style={{ textDecoration: "none" }}
-            >
-              <Card>
-                <h2
-                  style={{
-                    fontSize: "24px",
-                    marginBottom: "10px",
-                    color: "black",
-                  }}
-                >
-                  {topic.title}
-                </h2>
-                <p style={{ marginBottom: "20px", color: "black" }}>
-                  {topic.description}
-                </p>
-                <div
-                  style={{
-                    textAlign: "right",
-                    fontSize: "12px",
-                    color: "#888",
-                  }}
-                >
-                  最終更新日: {formatDate(topic.lastUpdated)}
-                </div>
-              </Card>
-            </Link>
-          );
-        })}
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+            gap: "20px",
+          }}
+        >
+          {topics.map((topicKey) => {
+            const topic = topicsMetadata[topicKey];
+            return (
+              <Link
+                key={topicKey}
+                href={`/linear_algebra/${topicKey}`}
+                style={{ textDecoration: "none" }}
+              >
+                <Card>
+                  <h2
+                    style={{
+                      fontSize: "24px",
+                      marginBottom: "10px",
+                      color: "black",
+                    }}
+                  >
+                    {topic.title}
+                  </h2>
+                  <p style={{ marginBottom: "20px", color: "black" }}>
+                    {topic.description}
+                  </p>
+                  <div
+                    style={{
+                      textAlign: "right",
+                      fontSize: "12px",
+                      color: "#888",
+                    }}
+                  >
+                    最終更新日: {formatDate(topic.lastUpdated)}
+                  </div>
+                </Card>
+              </Link>
+            );
+          })}
+        </div>
       </div>
-    </div>
+    </>
   );
 }
