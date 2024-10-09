@@ -7,7 +7,7 @@ const Header = () => {
       {/* サイトタイトルをリンクにする */}
       <h1>
         <Link href="/" style={{ textDecoration: "none", color: "inherit" }}>
-          数学の探求
+          数理とシンフォニー
         </Link>
       </h1>
     </header>
