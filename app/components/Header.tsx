@@ -1,13 +1,14 @@
 import React from "react";
+import Link from 'next/link';
 
 const Header = () => {
   return (
     <header>
       {/* サイトタイトルをリンクにする */}
       <h1>
-        <a href="/" style={{ textDecoration: "none", color: "inherit" }}>
+        <Link href="/" style={{ textDecoration: "none", color: "inherit" }}>
           数学の探求
-        </a>
+        </Link>
       </h1>
     </header>
   );
