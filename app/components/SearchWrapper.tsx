@@ -5,25 +5,40 @@ import SearchBar from "./SearchBar"; // 既存のSearchBarコンポーネント�
 import Link from "next/link"; // ページ遷移用のLinkコンポーネントをインポート
 import Card from "./Card2"; // カード形式のコンテンツを表示
 
-const SearchWrapper = ({ children }: { children: React.ReactNode }) => {
-  const [searchResults, setSearchResults] = useState<any[]>([]);
-  const [hasSearched, setHasSearched] = useState(false); // 検索が行われたかどうかを追跡
+// 検索結果の型定義
+interface SearchResult {
+  key: string;
+  title: string;
+  description: string;
+  lastUpdated: string;
+}
 
-  const handleSearch = (results: any[]) => {
+const SearchWrapper = ({ children }: { children: React.ReactNode }) => {
+  const [searchResults, setSearchResults] = useState<SearchResult[]>([]);
+  const [hasSearched, setHasSearched] = useState<boolean>(false);
+
+  const handleSearch = (results: SearchResult[]) => {
     if (results.length === 0) {
-      setHasSearched(false); // 空の検索の場合は検索を行っていない状態にする
+      setHasSearched(false);
       setSearchResults([]);
     } else {
-      setHasSearched(true); // 検索が実行されたことを設定
-      setSearchResults(results); // 検索結果を設定
+      setHasSearched(true);
+      setSearchResults(results);
     }
   };
 
   return (
-    <div className="container flex">
+    <div className="container flex" style={{ flexDirection: "row-reverse" }}>
+      {/* サイドバー（検索バーを含む）を右側に配置 */}
+      <div className="sidebar w-1/4 p-4 bg-gray-100">
+        <div className="search-container mb-4">
+          <h3 className="text-lg font-semibold mb-2">サイト内検索</h3>
+          <SearchBar setSearchResults={handleSearch} /> {/* 検索バー */}
+        </div>
+      </div>
+
       {/* メインコンテンツ */}
       <div className="main-content flex-grow p-4">
-        {/* 検索結果がある場合 */}
         {searchResults.length > 0 ? (
           <div>
             <h2>検索結果:</h2>
@@ -34,7 +49,7 @@ const SearchWrapper = ({ children }: { children: React.ReactNode }) => {
                   key={index}
                   passHref
                   onClick={() => setSearchResults([])} // クリックで検索結果をクリア
-                  style={{ textDecoration: "none" }} // リンク全体にアンダーラインを削除
+                  style={{ textDecoration: "none" }}
                 >
                   <Card>
                     <h3 style={{ color: "black", textDecoration: "none" }}>
@@ -52,28 +67,18 @@ const SearchWrapper = ({ children }: { children: React.ReactNode }) => {
             </div>
           </div>
         ) : (
-          // 検索結果がない場合
           <>
             {hasSearched ? (
-              // 検索が行われた後、結果がない場合は「一致する検索結果はありません」を表示
               <div style={{ textAlign: "center", marginTop: "50px" }}>
                 <p style={{ fontSize: "1.5rem", color: "red" }}>
                   一致する検索結果はありません
                 </p>
               </div>
             ) : (
-              // 検索が行われていない場合は元のコンテンツを表示
               <div>{children}</div>
             )}
           </>
         )}
-      </div>
-      {/* サイドバー（検索バーを含む）を右側に配置 */}
-      <div className="sidebar w-1/4 p-4 bg-gray-100">
-        <div className="search-container mb-4">
-          <h3 className="text-lg font-semibold mb-2">サイト内検索</h3>
-          <SearchBar setSearchResults={handleSearch} /> {/* 検索バー */}
-        </div>
       </div>
     </div>
   );

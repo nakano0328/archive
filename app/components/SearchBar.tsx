@@ -1,14 +1,22 @@
 "use client";
 
 import { useState } from "react";
-import { metadata } from "@/app/allmetadata";
+import { metadata } from "@/app/allmetadata"; // メタデータをインポート
 
-const SearchBar = ({
-  setSearchResults,
-}: {
-  setSearchResults: (results: any[]) => void;
-}) => {
-  const [query, setQuery] = useState("");
+// 検索結果の型定義
+interface SearchResult {
+  key: string;
+  title: string;
+  description: string;
+  lastUpdated: string;
+}
+
+interface SearchBarProps {
+  setSearchResults: (results: SearchResult[]) => void;
+}
+
+const SearchBar = ({ setSearchResults }: SearchBarProps) => {
+  const [query, setQuery] = useState<string>("");
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
@@ -19,7 +27,7 @@ const SearchBar = ({
     }
 
     const searchTerm = query.toLowerCase();
-    const filteredResults = Object.entries(metadata)
+    const filteredResults: SearchResult[] = Object.entries(metadata)
       .map(([key, meta]) => ({
         key,
         title: meta.title,
