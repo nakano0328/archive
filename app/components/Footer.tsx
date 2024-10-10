@@ -7,7 +7,7 @@ const Footer = () => {
         textAlign: "center",
       }}
     >
-      <p>&copy; 2024 数理とシンフォニー. 勉強頑張るそい</p>
+      <p>&copy; 2024 数学シンフォニー. 勉強頑張るそい</p>
     </footer>
   );
 };

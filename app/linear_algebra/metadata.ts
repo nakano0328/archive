@@ -3,7 +3,7 @@ export const metadata = {
     title: "内積",
     description:
       "内積（ドット積）は、ベクトル同士の積の一種で、ベクトルの方向を計算する際に用いられます。",
-    lastUpdated: "2024-10-08",
+    lastUpdated: "2024-10-10",
   },
   crossproduct: {
     title: "外積",
