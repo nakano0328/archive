@@ -4,7 +4,6 @@ import "@/app/globals.css";
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
 import SearchWrapper from "@/app/components/SearchWrapper"; // クライアントサイドのコンポーネント
-import 'katex/dist/katex.min.css';
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
