@@ -22,6 +22,8 @@ p {
 
 details {
   background-color: #f8adf4f6;
+  border-radius: 10px; /*角を丸く*/
+  border: 1px solid #000000; /* 黒いふちをつける */
 }
 
 footer {
