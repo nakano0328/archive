@@ -12,6 +12,7 @@
     "better-react-mathjax": "^2.0.3",
     "katex": "^0.16.11",
     "next": "14.2.14",
+    "pyodide": "^0.26.2",
     "react": "^18",
     "react-dom": "^18",
     "react-katex": "^3.0.1"
