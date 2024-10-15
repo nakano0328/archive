@@ -51,7 +51,7 @@ export default function DotProductPage() {
       {/* 内積の解説 */}
       <h2>内積の解説</h2>
       <p>
-        ベクトル積には、内積（Dot Product または Inner Product）と外積（Cross Product または Vector Product）の2種類があります。
+        ベクトル積には、内積（Dot Product または Inner Product）と外積（Cross Product または Vector Product）の2種類があります。<br />
         それぞれの計算結果や意味、応用方法には大きな違いがあります。これをしっかり理解しておくことが重要です。
         <br />
         <br />
@@ -98,7 +98,45 @@ export default function DotProductPage() {
 
       <p>これらのベクトルはグラフで表すと以下のようになります。</p>
 
+      <p>ここにコマンドを記す。</p>
 
+      <p>これらのベクトルの足し算を式で表すと以下のようになります。</p>
+
+      <CenteredEquation
+        equation="\mathbf{a}+\mathbf{b}= \begin{bmatrix}
+        1 \\ 3 \\
+        \end{bmatrix} + \begin{bmatrix}
+        5 \\ 1 \\
+        \end{bmatrix} = \begin{bmatrix}
+        1+5 \\ 3+1 \\
+        \end{bmatrix} = \begin{bmatrix}
+        6 \\ 4 \\
+        \end{bmatrix}"
+      />
+
+      <p>これらのベクトルの足し算をグラフで表すと以下のようになります。</p>
+
+      <p>ここにコマンドを記す。</p>
+
+      <p>
+        同じように内積でも図解をします。<br />
+        まず初めに式で表すと以下のようになります。
+      </p>
+
+      <CenteredEquation
+        equation="\mathbf{a}\cdot\mathbf{b}=\begin{bmatrix} 1 \ 3 \\\end{bmatrix}\begin{bmatrix}  5 \\ 1 \\\end{bmatrix}=1\cdot5+3\cdot1=8"
+      />
+
+      <p>これらのベクトルの内積をグラフで表すと以下のようになります。</p>
+
+      <p>ここにコマンドを記す。</p>
+
+      <p>解説を見たい方は以下を見て下さい。</p>
+
+      <details>
+        <summary>解説を見る</summary>
+        <p>ここに解説が表示されます。</p>
+      </details>
 
       <p>ここまで頑張った</p>
     </div>
