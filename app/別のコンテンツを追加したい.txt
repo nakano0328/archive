@@ -1,2 +1,0 @@
-1.app/page.tsxの中のモックデータを追加する。
-2.app/components/SearchBar.tsxにmetadataのimportのパスを追加する。
