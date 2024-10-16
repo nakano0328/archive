@@ -74,9 +74,10 @@ export default function DotProductPage() {
       </p>
 
       <CenteredEquation
-        equation="\mathbf{a}\cdot\mathbf{b}=\mathbf{a}^{T}\mathbf{b}=\mathbf{b}^{T}\mathbf{a}
-        \\[10pt]
-        \mathbf{a}\cdot\mathbf{b}= \|\mathbf{a}\|\|\mathbf{b}\|\cos{\theta}"
+        equation="\begin{align*}
+        \mathbf{a}\cdot\mathbf{b} &= \mathbf{a}^{T}\mathbf{b} = \mathbf{b}^{T}\mathbf{a} \notag \\
+        \mathbf{a}\cdot\mathbf{b} &= \|\mathbf{a}\|\|\mathbf{b}\|\cos{\theta}
+        \end{align*}"
       />
 
       <p>
@@ -85,15 +86,11 @@ export default function DotProductPage() {
       </p>
 
       <CenteredEquation
-        equation="\mathbf{a}= \begin{bmatrix}
-        1 \\ 3 \\
-        \end{bmatrix}
-
-        \\[10pt]
-
-        \mathbf{b}= \begin{bmatrix}
-        5 \\ 1 \\
-        \end{bmatrix}"
+        equation="\begin{align*}
+        \mathbf{a} &= \begin{bmatrix} 1 \\ 3 \end{bmatrix} \notag \\
+        \mathbf{b} &= \begin{bmatrix} 5 \\ 1 \end{bmatrix}
+        \end{align*}
+        "
       />
 
       <p>これらのベクトルはグラフで表すと以下のようになります。</p>
