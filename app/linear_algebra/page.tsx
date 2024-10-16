@@ -11,7 +11,9 @@ export const metadata = {
 };
 
 export default function LinearAlgebraContents() {
-  const topics = Object.keys(topicsMetadata) as Array<keyof typeof topicsMetadata>;
+  const topics = Object.keys(topicsMetadata) as Array<
+    keyof typeof topicsMetadata
+  >;
 
   return (
     <>
@@ -27,15 +29,7 @@ export default function LinearAlgebraContents() {
             marginBottom: "40px", // 他の要素との間隔
           }}
         >
-          <h1
-            style={{
-              fontSize: "36px",
-              textAlign: "center",
-              marginBottom: "10px",
-            }}
-          >
-            線形代数のコンテンツ
-          </h1>
+          <h1 className="title">線形代数のコンテンツ</h1>
 
           <p style={{ textAlign: "center" }}>
             ここでは、線形代数に関連するさまざまなトピックについて説明しています。
@@ -51,7 +45,7 @@ export default function LinearAlgebraContents() {
         >
           {topics.map((topicKey) => {
             const topic = topicsMetadata[topicKey];
-            const imagePath = `/linear_algebra/${topicKey}/thumb.jpg`;
+            const imagePath = `/linear_algebra/${topicKey}/thumb.png`;
 
             return (
               <Link
@@ -66,13 +60,7 @@ export default function LinearAlgebraContents() {
                     alt={topic.title}
                     width={300} // 横幅はそのまま
                     height={150} // 必須だが実際のスタイルに影響しない
-                    style={{
-                      width: "100%",
-                      height: "150px", // 高さを半分くらいに調整
-                      borderRadius: "5px",
-                      marginBottom: "10px",
-                      objectFit: "cover", // 画像の切り取り表示を改善
-                    }}
+                    className="thumb"
                   />
                   <h2
                     style={{

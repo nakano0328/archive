@@ -10,6 +10,12 @@ h3 {
   margin: 0;
 }
 
+h1.title {
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
 main {
   width: 100%; /* 横幅を全体に広げる */
   padding: 20px; /* コンテンツ内の余白を確保 */
@@ -21,8 +27,8 @@ p {
 }
 
 details {
-  background-color: #f8adf467;
-  border-radius: 10px; /*角を丸く*/
+  /*background-color: #f8f9fa;*/
+  border-radius: 3px; /*角を丸く*/
   border: 1px solid #00000080; /* 黒いふちをつける */
 }
 
@@ -123,4 +129,23 @@ header h3 {
     width: 100%; /* サイドバーも全幅を使用する */
     margin-right: 0; /* モバイルでは右側の余白を削除 */
   }
+}
+
+p.command {
+  background-color: #00ff00;
+}
+
+.Breadcrumb {
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 20px;
+  text-align: right;
+}
+
+.thumb {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  object-fit: cover;
 }
