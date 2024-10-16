@@ -14,6 +14,7 @@ export default function LinearAlgebraContents() {
   const topics = Object.keys(topicsMetadata) as Array<
     keyof typeof topicsMetadata
   >;
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
   return (
     <>
@@ -45,7 +46,7 @@ export default function LinearAlgebraContents() {
         >
           {topics.map((topicKey) => {
             const topic = topicsMetadata[topicKey];
-            const imagePath = `/linear_algebra/${topicKey}/thumb.png`;
+            const imagePath = `${basePath}/linear_algebra/${topicKey}/thumb.png`;
 
             return (
               <Link
