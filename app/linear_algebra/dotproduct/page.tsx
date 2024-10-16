@@ -6,6 +6,8 @@ import CenteredEquation from "@/app/components/CenteredEquation";
 import { InlineMath } from "react-katex";
 import Image from "next/image";
 import ImageModal from "@/app/components/ImageModal";
+import nextConfig from "@/next.config.mjs";
+const BASE_PATH = nextConfig.basePath || "";
 
 // ページのメタデータを動的に生成
 export async function generateMetadata() {
@@ -19,7 +21,7 @@ export async function generateMetadata() {
 
 export default function DotProductPage() {
   const metaData = metadata.dotproduct;
-  const imagePath = `/linear_algebra/dotproduct`;
+  const imagePath = `${BASE_PATH}/linear_algebra/dotproduct`;
 
   return (
     <div style={{ padding: "20px" }}>
