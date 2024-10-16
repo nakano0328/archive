@@ -19,8 +19,7 @@ export async function generateMetadata() {
 
 export default function DotProductPage() {
   const metaData = metadata.dotproduct;
-  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
-  const imagePath = `${basePath}/linear_algebra/dotproduct`;
+  const imagePath = `/linear_algebra/dotproduct`;
 
   return (
     <div style={{ padding: "20px" }}>
