@@ -3,6 +3,7 @@ import Breadcrumb from "@/app/components/Breadcrumb";
 import { metadata as topicsMetadata } from "@/app/linear_algebra/metadata"; // コンテンツのメタデータをインポート
 import Card from "@/app/components/Card2";
 import { formatDate } from "@/app/components/formatDate";
+import Image from "next/image"; // Imageをインポート
 
 // ページのメタデータ（ブラウザのタイトル設定など）
 export const metadata = {
@@ -50,6 +51,8 @@ export default function LinearAlgebraContents() {
         >
           {topics.map((topicKey) => {
             const topic = topicsMetadata[topicKey];
+            const imagePath = `/linear_algebra/${topicKey}/thumb.jpg`;
+
             return (
               <Link
                 key={topicKey}
@@ -57,6 +60,20 @@ export default function LinearAlgebraContents() {
                 style={{ textDecoration: "none" }}
               >
                 <Card>
+                  {/* サムネイル画像の読み込み */}
+                  <Image
+                    src={imagePath}
+                    alt={topic.title}
+                    width={300} // 横幅はそのまま
+                    height={150} // 必須だが実際のスタイルに影響しない
+                    style={{
+                      width: "100%",
+                      height: "150px", // 高さを半分くらいに調整
+                      borderRadius: "5px",
+                      marginBottom: "10px",
+                      objectFit: "cover", // 画像の切り取り表示を改善
+                    }}
+                  />
                   <h2
                     style={{
                       fontSize: "24px",
