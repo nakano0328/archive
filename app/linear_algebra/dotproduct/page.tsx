@@ -120,6 +120,16 @@ export default function DotProductPage() {
       </p>
 
       <ImageModal imagePath={`${imagePath}/vector.png`} />
+      <br />
+      <br />
+
+      <Link
+        href="https://colab.research.google.com/github/jeonglabo/nextjs/blob/main/notebook/linear_algebra/dotproduct/vector.ipynb"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        このリンク先でグラフを出します
+      </Link>
 
       <p>これらのベクトルの足し算を式で表すと以下のようになります。</p>
 
@@ -142,6 +152,16 @@ export default function DotProductPage() {
       </p>
 
       <ImageModal imagePath={`${imagePath}/plus.png`} />
+      <br />
+      <br />
+
+      <Link
+        href="https://colab.research.google.com/github/jeonglabo/nextjs/blob/main/notebook/linear_algebra/dotproduct/plus.ipynb"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        このリンク先でグラフを出します
+      </Link>
 
       <p>
         同じように内積でも図解をします。
@@ -158,6 +178,16 @@ export default function DotProductPage() {
       </p>
 
       <ImageModal imagePath={`${imagePath}/dot.png`} />
+      <br />
+      <br />
+
+      <Link
+        href="https://colab.research.google.com/github/jeonglabo/nextjs/blob/main/notebook/linear_algebra/dotproduct/dot.ipynb"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        このリンク先でグラフを出します
+      </Link>
 
       <p>解説を見たい方は以下を見て下さい。</p>
 
