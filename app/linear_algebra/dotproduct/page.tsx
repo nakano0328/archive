@@ -199,7 +199,7 @@ export default function DotProductPage() {
           &nbsp;&nbsp;&nbsp;
           <InlineMath math="\mathbf{a}\cdot\mathbf{b} = \|\mathbf{a}\|\|\mathbf{b}\|\cos{\theta}" />
           <br />
-          これを以下のように書き換える。
+          これを以下のように書き換えます。
           <br />
           &nbsp;&nbsp;&nbsp;
           <InlineMath math="\mathbf{a}\cdot\mathbf{b} = \|\mathbf{a}\|\cos{\theta}\|\mathbf{b}\|" />
@@ -210,7 +210,7 @@ export default function DotProductPage() {
           <InlineMath math="\mathbf{b}" />
           &nbsp;に射影(projection)したものと&nbsp;
           <InlineMath math="\mathbf{b}" />
-          &nbsp;のノルムの積を意味する。
+          &nbsp;のノルムの積を意味します。
         </p>
       </details>
     </div>

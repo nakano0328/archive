@@ -14,6 +14,14 @@ export default function LinearAlgebraContents() {
   const topics = Object.keys(topicsMetadata) as Array<
     keyof typeof topicsMetadata
   >;
+
+  // 最終更新日順にソート
+  const sortedTopics = topics.sort((a, b) => {
+    const dateA = new Date(topicsMetadata[a].lastUpdated).getTime();
+    const dateB = new Date(topicsMetadata[b].lastUpdated).getTime();
+    return dateB - dateA;
+  });
+
   const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
   return (
@@ -44,7 +52,7 @@ export default function LinearAlgebraContents() {
             gap: "20px",
           }}
         >
-          {topics.map((topicKey) => {
+          {sortedTopics.map((topicKey) => {
             const topic = topicsMetadata[topicKey];
             const imagePath = `${basePath}/linear_algebra/${topicKey}/thumb.png`;
 
