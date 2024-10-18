@@ -11,7 +11,7 @@ export default function Breadcrumb({ items }: BreadcrumbProps) {
   return (
     <nav
       aria-label="パンくずリスト"
-      style={{ backgroundColor: "#ffffff", padding: "10px" }}
+      style={{ backgroundColor: "#ffffff", padding: "10px", border: "1px solid #b0b0b0" }}
     >
       <ol
         style={{

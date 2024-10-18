@@ -26,8 +26,6 @@ const Card: React.FC<CardProps> = ({
           borderRadius: "8px",
           textAlign: "center",
           transition: "transform 0.3s ease",
-          boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-          border: "1px solid #ddd",
           height: "150px",
         }}
         onMouseEnter={(e) => {
