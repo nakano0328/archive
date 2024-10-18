@@ -22,8 +22,8 @@ main {
 }
 
 p {
-  font-size: 17px; /* サイズはpx, em, rem, %などで指定可能 */
-  line-height: 2; /* 行間を文字サイズの1.5倍に設定 */
+  font-size: 17px;
+  line-height: 2; /* 行間を文字サイズの2倍に設定 */
 }
 
 details {
@@ -43,7 +43,7 @@ footer {
 }
 
 header {
-  background-color: #e6e6fa;
+  background-color: #ffffff;
   padding: 10px;
   text-align: center;
 }
@@ -76,7 +76,7 @@ header h3 {
 }
 
 .sidebar {
-  padding: 20px;
+  padding: 15px;
   margin-left: auto; /* サイドバーを右端に寄せる */
   margin-right: 20px; /* 右端との間に余白を追加 */
   box-sizing: border-box;
@@ -119,14 +119,13 @@ header h3 {
   background-color: #0056b3;
 }
 
-/* レスポンシブ対応 */
-@media (max-width: 768px) {
+/* すでにあるグローバルスタイル */
+@media (max-width: 1050px) {
   .container {
-    flex-direction: column; /* モバイルでは縦に並べる */
+    flex-direction: column; /* コンテンツとサイドバーを縦に並べる */
   }
   .sidebar {
-    width: 200px; /* 幅を少し狭くする */
-    margin-right: 10px;
+    margin: 0 20px;
   }
 }
 

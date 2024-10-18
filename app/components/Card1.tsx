@@ -22,13 +22,20 @@ const Card: React.FC<CardProps> = ({
         style={{
           backgroundColor,
           padding: "20px",
-          margin: "10px",
+          margin: "20px",
           borderRadius: "8px",
           textAlign: "center",
-          flex: "1",
           transition: "transform 0.3s ease",
+          boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+          border: "1px solid #ddd",
+          height: "150px",
         }}
-        className="card"
+        onMouseEnter={(e) => {
+          e.currentTarget.style.transform = "translateY(-5px)";
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.transform = "translateY(0)";
+        }}
       >
         <h3 style={{ fontSize: "2em", margin: "10px 0" }}>{icon}</h3>
         <h3>{title}</h3>

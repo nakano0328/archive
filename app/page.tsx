@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import Card from "./components/Card1";
+import Card1 from "./components/Card1";
 
 // カードデータの型定義
 interface CardData {
@@ -23,14 +23,14 @@ const mockData: CardData[] = [
     backgroundColor: "#f8d7da",
     link: "/linear_algebra",
   },
-  /*{
+  {
     id: 2,
     title: "幾何学",
     description: "図形、空間、測量など",
     icon: "△",
     backgroundColor: "#d1c4e9",
     link: "/geometry",
-  },
+  } /*
   {
     id: 3,
     title: "微積分",
@@ -62,32 +62,36 @@ const mockData: CardData[] = [
     icon: "+",
     backgroundColor: "#ffebcc",
     link: "/discrete-math",
-  },*/
+  },*/,
 ];
 
 export default function Page() {
   return (
-    <div>
-      <main className="flex flex-wrap justify-center p-5 gap-5">
-        {mockData.length > 0 ? (
-          mockData.map((item) => (
-            <div
-              key={item.id}
-              className="flex-[0_1_calc(33.333%-1rem)] box-border min-w-[300px]"
-            >
-              <Card
-                title={item.title}
-                description={item.description}
-                icon={item.icon}
-                backgroundColor={item.backgroundColor}
-                link={item.link}
-              />
-            </div>
-          ))
-        ) : (
-          <p>該当する結果が見つかりませんでした。</p>
-        )}
-      </main>
+    <div
+      style={{
+        display: "grid",
+        gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+        gap: "20px",
+      }}
+    >
+      {mockData.length > 0 ? (
+        mockData.map((item) => (
+          <div
+            key={item.id}
+            className="flex-[0_1_calc(33.333%-1rem)] box-border min-w-[300px]"
+          >
+            <Card1
+              title={item.title}
+              description={item.description}
+              icon={item.icon}
+              backgroundColor={item.backgroundColor}
+              link={item.link}
+            />
+          </div>
+        ))
+      ) : (
+        <p>該当する結果が見つかりませんでした。</p>
+      )}
     </div>
   );
 }

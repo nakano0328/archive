@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Breadcrumb from "@/app/components/Breadcrumb";
 import { metadata as topicsMetadata } from "@/app/linear_algebra/metadata"; // コンテンツのメタデータをインポート
-import Card from "@/app/components/Card2";
+import Card2 from "@/app/components/Card2";
 import { formatDate } from "@/app/components/formatDate";
 import Image from "next/image"; // Imageをインポート
 
@@ -62,7 +62,7 @@ export default function LinearAlgebraContents() {
                 href={`/linear_algebra/${topicKey}`}
                 style={{ textDecoration: "none" }}
               >
-                <Card>
+                <Card2>
                   {/* サムネイル画像の読み込み */}
                   <Image
                     src={imagePath}
@@ -92,7 +92,7 @@ export default function LinearAlgebraContents() {
                   >
                     最終更新日: {formatDate(topic.lastUpdated)}
                   </div>
-                </Card>
+                </Card2>
               </Link>
             );
           })}

@@ -28,15 +28,7 @@ const SearchWrapper = ({ children }: { children: React.ReactNode }) => {
   };
 
   return (
-    <div className="container flex" style={{ flexDirection: "row-reverse" }}>
-      {/* サイドバー（検索バーを含む）を右側に配置 */}
-      <div className="sidebar w-1/4 p-4 bg-gray-100">
-        <div className="search-container mb-4">
-          <h3 className="text-lg font-semibold mb-2">サイト内検索</h3>
-          <SearchBar setSearchResults={handleSearch} /> {/* 検索バー */}
-        </div>
-      </div>
-
+    <div className="container flex">
       {/* メインコンテンツ */}
       <div className="main-content flex-grow p-4">
         {searchResults.length > 0 ? (
@@ -79,6 +71,14 @@ const SearchWrapper = ({ children }: { children: React.ReactNode }) => {
             )}
           </>
         )}
+      </div>
+
+      {/* サイドバー（検索バーを含む）*/}
+      <div className="sidebar">
+        <div className="search-container mb-4">
+          <h3 className="text-lg font-semibold mb-2">サイト内検索</h3>
+          <SearchBar setSearchResults={handleSearch} /> {/* 検索バー */}
+        </div>
       </div>
     </div>
   );
