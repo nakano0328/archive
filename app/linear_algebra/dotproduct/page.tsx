@@ -1,24 +1,25 @@
 import Breadcrumb from "@/app/components/Breadcrumb";
 import { metadata } from "@/app/linear_algebra/metadata";
 import { formatDate } from "@/app/components/formatDate";
-import Link from "next/link";
 import CenteredEquation from "@/app/components/CenteredEquation";
 import { InlineMath } from "react-katex";
 import Image from "next/image";
 import ImageModal from "@/app/components/ImageModal";
+import CustomLink from "@/app/components/CustomLink";
 
 // ページのメタデータを動的に生成
 export async function generateMetadata() {
   const metaData = metadata.dotproduct;
 
   return {
-    title: metaData.title,
+    title: metaData.tabtitle,
     description: metaData.description,
   };
 }
 
 export default function DotProductPage() {
   const metaData = metadata.dotproduct;
+  const crossmetaData = metadata.crossproduct;
   const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
   const imagePath = `${basePath}/linear_algebra/dotproduct`;
 
@@ -38,12 +39,12 @@ export default function DotProductPage() {
         alt={metaData.title}
         width={100}
         height={50}
-        className="thumb"
+        className="thumbpage"
       />
       <h1 className="title">{metaData.title}</h1>
 
       {/* 最終更新日の表示 */}
-      <div className="Breadcrumb">
+      <div className="lastUpdated">
         最終更新日: {formatDate(metaData.lastUpdated)}
       </div>
       <p>{metaData.description}</p>
@@ -61,7 +62,13 @@ export default function DotProductPage() {
         について説明します。外積については以下のページをご覧ください。
       </p>
 
-      <Link href="/linear_algebra/crossproduct">外積のページ</Link>
+      <CustomLink
+        href="/linear_algebra/crossproduct"
+        imageUrl={`${basePath}/linear_algebra/crossproduct/thumb.png`}
+        altText="外積ページのサムネ"
+        siteName={`${crossmetaData.title}`}
+        description={`${crossmetaData.description}`}
+      />
 
       <h2>内積とは</h2>
 
@@ -119,17 +126,18 @@ export default function DotProductPage() {
         &nbsp;です。
       </p>
 
-      <ImageModal imagePath={`${imagePath}/vector.png`} />
+      <ImageModal imagePath={`${imagePath}/vector.png`} altText="ベクトルaとベクトルbを表したグラフ" />
       <br />
       <br />
 
-      <Link
+      <CustomLink
         href="https://colab.research.google.com/github/jeonglabo/nextjs/blob/main/notebook/linear_algebra/dotproduct/vector.ipynb"
+        imageUrl={`${imagePath}/vector.png`}
+        altText="ベクトルaとベクトルbを表したグラフ"
+        siteName="ベクトルの表示"
+        description="ベクトルの表示を行っているコードを示しています。"
         target="_blank"
-        rel="noopener noreferrer"
-      >
-        このリンク先でグラフを出します
-      </Link>
+      />
 
       <p>これらのベクトルの足し算を式で表すと以下のようになります。</p>
 
@@ -151,17 +159,18 @@ export default function DotProductPage() {
         緑の矢印がベクトルの足し算を表します。
       </p>
 
-      <ImageModal imagePath={`${imagePath}/plus.png`} />
+      <ImageModal imagePath={`${imagePath}/plus.png`} altText="ベクトルaとベクトルbの足し算を表したグラフ" />
       <br />
       <br />
 
-      <Link
+      <CustomLink
         href="https://colab.research.google.com/github/jeonglabo/nextjs/blob/main/notebook/linear_algebra/dotproduct/plus.ipynb"
+        imageUrl={`${imagePath}/plus.png`}
+        altText="ベクトルaとベクトルbの足し算を表したグラフ"
+        siteName="ベクトルの足し算の表示"
+        description="ベクトルの足し算の表示を行っているコードを示しています。"
         target="_blank"
-        rel="noopener noreferrer"
-      >
-        このリンク先でグラフを出します
-      </Link>
+      />
 
       <p>
         同じように内積でも図解をします。
@@ -177,17 +186,18 @@ export default function DotProductPage() {
         緑の矢印がベクトルの内積を表します。
       </p>
 
-      <ImageModal imagePath={`${imagePath}/dot.png`} />
+      <ImageModal imagePath={`${imagePath}/dot.png`} altText="ベクトルaとベクトルbの内積を表したグラフ" />
       <br />
       <br />
 
-      <Link
+      <CustomLink
         href="https://colab.research.google.com/github/jeonglabo/nextjs/blob/main/notebook/linear_algebra/dotproduct/dot.ipynb"
+        imageUrl={`${imagePath}/dot.png`}
+        altText="ベクトルaとベクトルbの内積を表したグラフ"
+        siteName="ベクトルの内積の表示"
+        description="ベクトルの内積の表示を行っているコードを示しています。"
         target="_blank"
-        rel="noopener noreferrer"
-      >
-        このリンク先でグラフを出します
-      </Link>
+      />
 
       <p>解説を見たい方は以下を見て下さい。</p>
 

@@ -8,7 +8,7 @@ export async function generateMetadata() {
   const metaData = metadata.crossproduct;
 
   return {
-    title: metaData.title, // タイトルをメタデータから設定
+    title: metaData.tabtitle, // タイトルをメタデータから設定
     description: metaData.description, // 必要に応じて説明も追加できます
   };
 }

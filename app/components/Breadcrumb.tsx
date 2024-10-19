@@ -11,7 +11,7 @@ export default function Breadcrumb({ items }: BreadcrumbProps) {
   return (
     <nav
       aria-label="パンくずリスト"
-      style={{ backgroundColor: "#ffffff", padding: "10px", border: "1px solid #b0b0b0" }}
+      style={{ backgroundColor: "#ffffff", padding: "10px" }}
     >
       <ol
         style={{
@@ -36,7 +36,7 @@ export default function Breadcrumb({ items }: BreadcrumbProps) {
             key={index}
             style={{ display: "flex", alignItems: "center", color: "#000000" }}
           >
-            <span style={{ margin: "0 8px" }}>›</span>
+            <span style={{ margin: "0 8px" }}>&gt;</span>
             <Link
               href={item.href}
               style={{ color: "#000000", textDecoration: "none" }}

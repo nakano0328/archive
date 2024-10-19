@@ -6,9 +6,10 @@ import styles from "./ImageModal.module.css";
 
 interface ImageModalProps {
   imagePath: string;
+  altText: string; // alt用のテキストを受け取るプロパティを追加
 }
 
-const ImageModal = ({ imagePath }: ImageModalProps) => {
+const ImageModal = ({ imagePath, altText }: ImageModalProps) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleImageClick = () => {
@@ -25,7 +26,7 @@ const ImageModal = ({ imagePath }: ImageModalProps) => {
       <div style={{ position: "relative", width: "100%", height: "350px" }}>
         <Image
           src={imagePath}
-          alt="vector"
+          alt={altText} // 動的にaltを指定
           fill
           style={{ objectFit: "contain", cursor: "pointer" }} // styleでobjectFitを指定
           onClick={handleImageClick}
@@ -38,7 +39,7 @@ const ImageModal = ({ imagePath }: ImageModalProps) => {
           <div className={styles.modalContent}>
             <Image
               src={imagePath}
-              alt="vector"
+              alt={altText} // モーダルでも動的にaltを指定
               width={800} // 拡大時の画像の幅
               height={600} // 拡大時の画像の高さ
               style={{ objectFit: "contain" }} // styleでobjectFitを指定

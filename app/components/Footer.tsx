@@ -1,3 +1,5 @@
+import { siteTitle } from "@/app/metadata";
+
 const Footer = () => {
   return (
     <footer
@@ -7,7 +9,7 @@ const Footer = () => {
         textAlign: "center",
       }}
     >
-      <p>&copy; 2024 数学シンフォニー. 勉強頑張るそい</p>
+      <p>&copy; 2024 {siteTitle}. 勉強頑張るそい</p>
     </footer>
   );
 };

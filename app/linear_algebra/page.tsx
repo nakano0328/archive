@@ -4,10 +4,11 @@ import { metadata as topicsMetadata } from "@/app/linear_algebra/metadata"; // �
 import Card2 from "@/app/components/Card2";
 import { formatDate } from "@/app/components/formatDate";
 import Image from "next/image"; // Imageをインポート
+import { siteTitle } from "@/app/metadata"
 
 // ページのメタデータ（ブラウザのタイトル設定など）
 export const metadata = {
-  title: "線形代数",
+  title: `線形代数 - ${siteTitle}`,
 };
 
 export default function LinearAlgebraContents() {
