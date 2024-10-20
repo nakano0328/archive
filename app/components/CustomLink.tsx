@@ -15,8 +15,8 @@ type CustomLinkProps = {
 
 const CustomLink: React.FC<CustomLinkProps> = ({ href, imageUrl, altText, siteName, description, target = "_self", onClick }) => {
     return (
-        <Link href={href}>
-            <div className={styles.customLink} onClick={onClick} style={{ cursor: 'pointer' }}>
+        <Link href={href} target={target} rel="noopener noreferrer">
+            <div className={styles.customLink} onClick={onClick}>
                 <div className={styles.linkContainer}>
                     <Image src={imageUrl} alt={altText} className={styles.linkImage} width={100} height={100} />
                     <div className={styles.linkText}>
