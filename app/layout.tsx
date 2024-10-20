@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "@/app/globals.css";
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
+//import Sidebar from '@/app/components/Sidebar'; // サイドバーをインポート
 import SearchWrapper from "@/app/components/SearchWrapper"; // クライアントサイドのコンポーネント
 
 const geistSans = localFont({
@@ -26,6 +27,7 @@ export const metadata: Metadata = {
   },
 };
 
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -43,3 +45,21 @@ export default function RootLayout({
     </html>
   );
 }
+
+{/*
+export default function Layout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="ja">
+      <body>
+        <Header />
+        <div style={{ display: 'flex' }}>
+          <Sidebar />
+          <div style={{ flexGrow: 1 }}>
+            {children}
+          </div>
+        </div>
+        <Footer />
+      </body>
+    </html>
+  );
+}*/}

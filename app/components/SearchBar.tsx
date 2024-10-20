@@ -1,5 +1,3 @@
-"use client";
-
 import { useState } from "react";
 import { metadata } from "@/app/allmetadata"; // メタデータをインポート
 
@@ -12,7 +10,7 @@ interface SearchResult {
 }
 
 interface SearchBarProps {
-  setSearchResults: (results: SearchResult[]) => void;
+  setSearchResults: (results: SearchResult[] | null) => void; // nullを許容する
 }
 
 const SearchBar = ({ setSearchResults }: SearchBarProps) => {
@@ -21,8 +19,8 @@ const SearchBar = ({ setSearchResults }: SearchBarProps) => {
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!query.trim()) {
-      setSearchResults([]); // 空の検索の場合は結果をリセット
+    if (!query || !query.trim()) {
+      setSearchResults(null); // 空または無効な検索クエリの場合はnullを渡す
       return;
     }
 
@@ -38,6 +36,7 @@ const SearchBar = ({ setSearchResults }: SearchBarProps) => {
 
     setSearchResults(filteredResults);
   };
+
 
   return (
     <form
