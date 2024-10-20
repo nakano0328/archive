@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "@/app/globals.css";
+import { siteTitle } from "@/app/metadata";
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
-//import Sidebar from '@/app/components/Sidebar'; // サイドバーをインポート
-import SearchWrapper from "@/app/components/SearchWrapper"; // クライアントサイドのコンポーネント
+import SearchWrapper from '@/app/components/SearchWrapper';
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -19,47 +19,22 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "ホーム",
-  description: "ホームです",
+  title: `ホーム - ${siteTitle}`,
+  description: "ホームページの一番最初です",
   openGraph: {
     title: "ホーム",
     description: "ホームです",
   },
 };
 
-
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <html lang="ja">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
-      >
-        <Header />
-        <SearchWrapper>{children}</SearchWrapper>
-        <Footer />
-      </body>
-    </html>
-  );
-}
-
-{/*
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ja">
       <body>
         <Header />
-        <div style={{ display: 'flex' }}>
-          <Sidebar />
-          <div style={{ flexGrow: 1 }}>
-            {children}
-          </div>
-        </div>
+        <SearchWrapper>{children}</SearchWrapper>
         <Footer />
       </body>
-    </html>
+    </html >
   );
-}*/}
+}

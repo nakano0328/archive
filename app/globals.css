@@ -42,8 +42,14 @@ footer {
   cursor: pointer; /* カーソルをポインタに */
 }
 
+.layout-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 header {
-  background-color: #133663;
+  background-color: #333;
   padding: 20px;
   text-align: center;
   color: #fff;
@@ -84,10 +90,8 @@ header h3 {
 }
 
 .sidebar {
-  padding: 15px;
+  padding: 18px 10px;
   margin-left: auto; /* サイドバーを右端に寄せる */
-  margin-right: 20px; /* 右端との間に余白を追加 */
-  margin-top: 20px;
   box-sizing: border-box;
 }
 
@@ -130,8 +134,8 @@ header h3 {
 
 /* すでにあるグローバルスタイル */
 @media (max-width: 1050px) {
-  .container {
-    flex-direction: column; /* コンテンツとサイドバーを縦に並べる */
+  .main-content {
+    flex-direction: column;
   }
   .sidebar {
     margin: 0 20px;

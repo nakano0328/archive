@@ -66,8 +66,8 @@ export default function DotProductPage() {
         href="/linear_algebra/crossproduct"
         imageUrl={`${basePath}/linear_algebra/crossproduct/thumb.png`}
         altText="外積ページのサムネ"
-        siteName={`${crossmetaData.title}`}
-        description={`${crossmetaData.description}`}
+        siteName={crossmetaData.title}
+        description={crossmetaData.description}
       />
 
       <h2>内積とは</h2>

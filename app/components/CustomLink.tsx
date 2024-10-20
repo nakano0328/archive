@@ -9,11 +9,12 @@ type CustomLinkProps = {
     siteName: string;
     description: string;
     target?: string;
+    onClick?: () => void;
 };
 
-const CustomLink: React.FC<CustomLinkProps> = ({ href, imageUrl, altText, siteName, description, target = "_self" }) => {
+const CustomLink: React.FC<CustomLinkProps> = ({ href, imageUrl, altText, siteName, description, target = "_self", onClick }) => {
     return (
-        <Link href={href} className={styles.customLink} target={target} rel="noopener noreferrer">
+        <Link href={href} className={styles.customLink} target={target} rel="noopener noreferrer" onClick={onClick}>
             <div className={styles.linkContainer}>
                 <img src={imageUrl} alt={altText} className={styles.linkImage} />
                 <div className={styles.linkText}>
