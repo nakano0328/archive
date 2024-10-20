@@ -1,7 +1,5 @@
-"use client"; // クライアントコンポーネントとして指定
-
 import React from 'react';
-import { metadata } from '@/app/allmetadata'; // allmetadataからインポート
+import { metadata } from '@/app/allmetadata';
 import CustomLink from "@/app/components/CustomLink";
 
 interface SearchResultsProps {
@@ -10,11 +8,10 @@ interface SearchResultsProps {
 }
 
 const SearchResults: React.FC<SearchResultsProps> = ({ query, setQuery }) => {
-    // 検索データをフィルタリング
     const searchData = Object.values(metadata).map(item => ({
         title: item.title,
         description: item.description,
-        path: item.path, // 追加したpathを使用
+        path: item.path,
     }));
 
     const filteredResults = searchData.filter(item =>
@@ -22,7 +19,7 @@ const SearchResults: React.FC<SearchResultsProps> = ({ query, setQuery }) => {
     );
 
     const handleLinkClick = () => {
-        setQuery(''); // ページ遷移時にクエリをリセット
+        setQuery('');
     };
 
     return (
@@ -33,7 +30,7 @@ const SearchResults: React.FC<SearchResultsProps> = ({ query, setQuery }) => {
 
             {filteredResults.length > 0 ? (
                 filteredResults.map((result, index) => (
-                    <div style={{ marginBottom: '20px' }}>
+                    <div key={index} style={{ marginBottom: '20px' }}>
                         <CustomLink
                             href={result.path}
                             imageUrl={`${result.path}/thumb.png`}

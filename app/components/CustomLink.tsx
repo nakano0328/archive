@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 import Link from 'next/link';
 import styles from './CustomLink.module.css';
@@ -14,12 +15,14 @@ type CustomLinkProps = {
 
 const CustomLink: React.FC<CustomLinkProps> = ({ href, imageUrl, altText, siteName, description, target = "_self", onClick }) => {
     return (
-        <Link href={href} className={styles.customLink} target={target} rel="noopener noreferrer" onClick={onClick}>
-            <div className={styles.linkContainer}>
-                <img src={imageUrl} alt={altText} className={styles.linkImage} />
-                <div className={styles.linkText}>
-                    <p className={styles.siteName}>{siteName}</p>
-                    <p className={styles.description}>{description}</p>
+        <Link href={href}>
+            <div className={styles.customLink} onClick={onClick} style={{ cursor: 'pointer' }}>
+                <div className={styles.linkContainer}>
+                    <Image src={imageUrl} alt={altText} className={styles.linkImage} width={100} height={100} />
+                    <div className={styles.linkText}>
+                        <p className={styles.siteName}>{siteName}</p>
+                        <p className={styles.description}>{description}</p>
+                    </div>
                 </div>
             </div>
         </Link>

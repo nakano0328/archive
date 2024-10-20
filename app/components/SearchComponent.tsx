@@ -1,14 +1,10 @@
-import React, { useEffect, useState } from "react";
-import { metadata } from "@/app/allmetadata"; // allmetadata.tsからインポート
+import React, { useState, useEffect } from "react";
+import { metadata } from "@/app/allmetadata";
 
-interface SearchComponentProps {
-    query: string; // サイドバーから渡されるクエリ
-}
-
-const SearchComponent: React.FC<SearchComponentProps> = ({ query }) => {
+const SearchComponent: React.FC = () => {
+    const [query, setQuery] = useState<string>('');
     const [results, setResults] = useState<{ title: string, description: string }[]>([]);
 
-    // allmetadata から検索可能なデータを抽出
     const searchData = Object.values(metadata).map(item => ({
         title: item.title,
         description: item.description,
@@ -18,26 +14,33 @@ const SearchComponent: React.FC<SearchComponentProps> = ({ query }) => {
         if (query === '') {
             setResults([]);
         } else {
-            // フィルタリング処理
             const filteredResults = searchData.filter(item =>
                 item.title.includes(query)
             );
             setResults(filteredResults);
         }
-    }, [query]);
+    }, [query, searchData]); // searchData を依存関係に追加
 
     return (
         <div>
-            {results.length > 0 ? (
-                results.map((result, index) => (
-                    <div key={index}>
-                        <h3>{result.title}</h3>
-                        <p>{result.description}</p>
-                    </div>
-                ))
-            ) : (
-                query !== '' && <div>一致する検索結果はありません</div>
-            )}
+            <input
+                type="text"
+                placeholder="検索..."
+                value={query}
+                onChange={e => setQuery(e.target.value)}
+            />
+            <div>
+                {results.length > 0 ? (
+                    results.map((result, index) => (
+                        <div key={index}>
+                            <h3>{result.title}</h3>
+                            <p>{result.description}</p>
+                        </div>
+                    ))
+                ) : (
+                    query !== '' && <div>一致する検索結果はありません</div>
+                )}
+            </div>
         </div>
     );
 };

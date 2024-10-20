@@ -1,9 +1,18 @@
+// app/allmetadata.ts
 import { metadata as linearAlgebraMetadata } from "@/app/linear_algebra/metadata";
-//import { metadata as geometryMetadata } from "@/app/geometry/metadata"; // 新しいメタデータをインポート
+//import { metadata as geometryMetadata } from "@/app/geometry/metadata";
 
-// メタデータにパスを追加して統合
-const addPath = (metadata: Record<string, any>, basePath: string) => {
-  const updatedMetadata: Record<string, any> = {};
+const addPath = (
+  metadata: Record<
+    string,
+    { title: string; description: string; lastUpdated: string }
+  >,
+  basePath: string
+) => {
+  const updatedMetadata: Record<
+    string,
+    { title: string; description: string; lastUpdated: string; path: string }
+  > = {};
   for (const key in metadata) {
     if (metadata.hasOwnProperty(key)) {
       updatedMetadata[key] = { ...metadata[key], path: `${basePath}/${key}` };
@@ -15,5 +24,4 @@ const addPath = (metadata: Record<string, any>, basePath: string) => {
 export const metadata = {
   ...addPath(linearAlgebraMetadata, "/linear_algebra"),
   //...addPath(geometryMetadata, "/geometry"),
-  // 他のメタデータも同様に追加
 };
