@@ -1,0 +1,50 @@
+@keyframes rainbow {
+  0% {
+    color: red;
+  }
+  14% {
+    color: orange;
+  }
+  28% {
+    color: yellow;
+  }
+  42% {
+    color: green;
+  }
+  57% {
+    color: blue;
+  }
+  71% {
+    color: indigo;
+  }
+  85% {
+    color: violet;
+  }
+  100% {
+    color: red;
+  }
+}
+
+@keyframes glow {
+  0%,
+  100% {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8),
+      0 0 20px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 0, 255, 0.8),
+      0 0 40px rgba(255, 0, 255, 1), 0 0 50px rgba(255, 0, 255, 1),
+      0 0 60px rgba(255, 0, 255, 1), 0 0 70px rgba(255, 0, 255, 1);
+  }
+  50% {
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.8),
+      0 0 10px rgba(255, 255, 255, 0.8), 0 0 15px rgba(255, 0, 255, 0.8),
+      0 0 20px rgba(255, 0, 255, 1), 0 0 25px rgba(255, 0, 255, 1),
+      0 0 30px rgba(255, 0, 255, 1), 0 0 35px rgba(255, 0, 255, 1);
+  }
+}
+
+.rainbowText {
+  font-size: 3em;
+  font-weight: bold;
+  text-align: center;
+  animation: rainbow 5s infinite, glow 2s infinite;
+  margin: 40px 0px;
+}
