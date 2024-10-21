@@ -9,7 +9,7 @@ const SearchWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) =>
 
     return (
         <div style={{ display: 'flex' }} className='main-content'>
-            <div style={{ flexGrow: 1 }}>
+            <div style={{ flexGrow: 1 }} className='mainContent'>
                 {query ? (
                     <SearchResults query={query} setQuery={setQuery} /> // 検索クエリがある場合に検索結果を表示
                 ) : (
