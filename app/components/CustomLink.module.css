@@ -1,8 +1,7 @@
 .customLink {
   display: block;
-  text-decoration: none;
-  color: inherit;
   width: 100%;
+  text-decoration: none;
 }
 
 .linkContainer {
@@ -21,8 +20,10 @@
 
 .linkImage {
   width: 160px;
-  height: auto;
+  height: 120px;
   margin-right: 20px;
+  object-fit: cover;
+  image-rendering: auto;
 }
 
 .linkText {

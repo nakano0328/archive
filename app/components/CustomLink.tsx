@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import React from 'react';
 import Link from 'next/link';
-import styles from './CustomLink.module.css';
+import styles from '@/app/components/CustomLink.module.css';
 
 type CustomLinkProps = {
     href: string;
@@ -15,8 +15,8 @@ type CustomLinkProps = {
 
 const CustomLink: React.FC<CustomLinkProps> = ({ href, imageUrl, altText, siteName, description, target = "_self", onClick }) => {
     return (
-        <Link href={href} target={target} rel="noopener noreferrer">
-            <div className={styles.customLink} onClick={onClick}>
+        <Link href={href} target={target} rel="noopener noreferrer" className={styles.customLink}>
+            <div onClick={onClick}>
                 <div className={styles.linkContainer}>
                     <Image src={imageUrl} alt={altText} className={styles.linkImage} width={100} height={100} />
                     <div className={styles.linkText}>

@@ -8,6 +8,8 @@ interface SearchResultsProps {
 }
 
 const SearchResults: React.FC<SearchResultsProps> = ({ query, setQuery }) => {
+    const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
     const searchData = Object.values(metadata).map(item => ({
         title: item.title,
         description: item.description,
@@ -33,7 +35,7 @@ const SearchResults: React.FC<SearchResultsProps> = ({ query, setQuery }) => {
                     <div key={index} style={{ marginBottom: '20px' }}>
                         <CustomLink
                             href={result.path}
-                            imageUrl={`${result.path}/thumb.png`}
+                            imageUrl={`${basePath}/${result.path}/thumb.png`}
                             altText={`${result.title}ページのサムネ`}
                             siteName={result.title}
                             description={result.description}
