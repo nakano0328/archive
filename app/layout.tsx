@@ -15,8 +15,10 @@ export const metadata: Metadata = {
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
   return (
-    <html lang="ja">
+    <html lang="ja" style={{ backgroundImage: `url(${basePath}/back.jpg)` }}>
       <body>
         <div className="wrapper">
           <Header />
