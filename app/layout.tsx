@@ -18,9 +18,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
   return (
-    <html lang="ja" style={{ backgroundImage: `url(${basePath}/back.jpg)` }}>
+    <html lang="ja">
       <body>
-        <div className="wrapper">
+        <div className="wrapper" style={{ backgroundImage: `url(${basePath}/back.jpg)` }}>
           <Header />
           <SearchWrapper>{children}</SearchWrapper>
           <Footer />
