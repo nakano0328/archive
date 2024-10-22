@@ -4,7 +4,7 @@ import { metadata as topicsMetadata } from "@/app/linear_algebra/metadata"; // �
 import Card2 from "@/app/components/Card2";
 import { formatDate } from "@/app/components/formatDate";
 import Image from "next/image"; // Imageをインポート
-import { siteTitle } from "@/app/metadata"
+import { siteTitle } from "@/app/metadata";
 
 // ページのメタデータ（ブラウザのタイトル設定など）
 export const metadata = {
@@ -49,7 +49,7 @@ export default function LinearAlgebraContents() {
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+            gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
             gap: "20px",
           }}
         >
@@ -86,7 +86,10 @@ export default function LinearAlgebraContents() {
                   </p>
                   <div
                     style={{
-                      textAlign: "right",
+                      position: "absolute",
+                      bottom: "0",
+                      right: "0",
+                      padding: "14px",
                       fontSize: "12px",
                       color: "#888",
                     }}

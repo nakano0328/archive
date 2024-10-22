@@ -1,14 +1,28 @@
-import Link from 'next/link';
+import Link from "next/link";
+import GoogleForm from "@/app/components/GoogleForm";
+import GoogleComments from "@/app/components/GoogleComments";
 
 const HomePage: React.FC = () => {
-    return (
-        <div>
-            <h1>以下はipynbのテストです。</h1>
-            <Link href="https://colab.research.google.com/github/jeonglabo/nextjs/blob/main/notebook/linear_algebra/dotproduct/command1.ipynb">
-                Go to About Page
-            </Link>
-        </div>
-    );
+  return (
+    <div>
+      <h1>以下はipynbのテストです。</h1>
+      <Link href="https://colab.research.google.com/github/jeonglabo/nextjs/blob/main/notebook/linear_algebra/dotproduct/command1.ipynb">
+        Go to About Page
+      </Link>
+
+      <br />
+      <hr />
+      <br />
+      <h1>コメントフォーム</h1>
+      <GoogleForm />
+
+      <br />
+      <hr />
+      <br />
+
+      <GoogleComments />
+    </div>
+  );
 };
 
 export default HomePage;

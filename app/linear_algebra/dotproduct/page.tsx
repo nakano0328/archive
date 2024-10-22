@@ -126,7 +126,10 @@ export default function DotProductPage() {
         &nbsp;です。
       </p>
 
-      <ImageModal imagePath={`${imagePath}/vector.png`} altText="ベクトルaとベクトルbを表したグラフ" />
+      <ImageModal
+        imagePath={`${imagePath}/vector.png`}
+        altText="ベクトルaとベクトルbを表したグラフ"
+      />
       <br />
       <br />
 
@@ -159,7 +162,10 @@ export default function DotProductPage() {
         緑の矢印がベクトルの足し算を表します。
       </p>
 
-      <ImageModal imagePath={`${imagePath}/plus.png`} altText="ベクトルaとベクトルbの足し算を表したグラフ" />
+      <ImageModal
+        imagePath={`${imagePath}/plus.png`}
+        altText="ベクトルaとベクトルbの足し算を表したグラフ"
+      />
       <br />
       <br />
 
@@ -186,7 +192,10 @@ export default function DotProductPage() {
         緑の矢印がベクトルの内積を表します。
       </p>
 
-      <ImageModal imagePath={`${imagePath}/dot.png`} altText="ベクトルaとベクトルbの内積を表したグラフ" />
+      <ImageModal
+        imagePath={`${imagePath}/dot.png`}
+        altText="ベクトルaとベクトルbの内積を表したグラフ"
+      />
       <br />
       <br />
 
@@ -223,6 +232,12 @@ export default function DotProductPage() {
           &nbsp;のノルムの積を意味します。
         </p>
       </details>
+
+      <br />
+      <br />
+      <hr />
+      <br />
+      <br />
     </div>
   );
 }
