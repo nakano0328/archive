@@ -1,8 +1,47 @@
+/* グローバルリセット */
+html,
 body {
+  height: 100%; /* ページ全体を100%の高さに */
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, sans-serif;
-  background-color: #f5f5d6;
+  background-image: url(/back.jpg); /* 背景画像 */
+}
+
+/* ページ全体のラッパー */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* ビューポート全体の高さを占める */
+}
+
+main {
+  width: 100%;
+  padding: 20px; /* コンテンツ内の余白 */
+  flex: 1; /* メインコンテンツが余分なスペースを埋める */
+}
+
+/* ヘッダー */
+header {
+  background-color: #f8f8f8;
+  padding: 20px;
+  text-align: center;
+  color: #333;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+  padding: 10px;
+  background-color: #f8f8f8; /* フッターの背景色 */
+  text-align: center;
+  margin-top: auto; /* フッターを画面の一番下に配置 */
+}
+
+/* タイトルのスタイル */
+h1.title {
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 h1,
@@ -10,75 +49,20 @@ h3 {
   margin: 0;
 }
 
-h1.title {
-  font-size: 36px;
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-main {
-  width: 100%; /* 横幅を全体に広げる */
-  padding: 20px; /* コンテンツ内の余白を確保 */
-}
-
 p {
   font-size: 17px;
   line-height: 2; /* 行間を文字サイズの2倍に設定 */
 }
 
-details {
-  /*background-color: #f8f9fa;*/
-  border-radius: 3px; /*角を丸く*/
-  border: 1px solid #00000080; /* 黒いふちをつける */
-}
-
-header {
-  background-color: #d6d6f5;
-  padding: 20px;
-  text-align: center;
-  color: #555;
-}
-
-footer {
-  padding: 20px;
-  background-color: #f1f1f1;
-  text-align: center;
-}
-
-.card:hover {
-  transform: translateY(-5px); /* ホバー時に少し上に動く */
-  cursor: pointer; /* カーソルをポインタに */
-}
-
-header h1 a {
-  text-decoration: none; /* 下線を消す */
-  color: inherit; /* 親要素の色を引き継ぐ */
-  cursor: pointer; /* カーソルがリンクに変更される */
-}
-
-/* オプション: ヘッダーテキストを太字やサイズ変更にする */
-header h1,
-header h2,
-header h3 {
-  font-weight: bold;
-  font-size: 2em; /* 必要に応じてサイズを調整 */
-  margin: 0;
-}
-
-.lastUpdated {
-  color: #888;
-  text-align: right;
-  font-size: 14px;
-  margin-bottom: 20px;
-}
-
+/* サイドバーとメインコンテンツのレイアウト */
 .container {
   display: flex;
   flex-wrap: nowrap; /* サイドバーとメインコンテンツを横並びにする */
-  width: 100%; /* 横幅を全体に広げる */
-  margin: 0; /* コンテンツを画面いっぱいに広げる */
+  width: 100%;
+  margin: 0;
 }
 
+/* メインコンテンツのパディング */
 .main-content {
   padding-top: 30px;
   padding-bottom: 50px;
@@ -92,6 +76,7 @@ header h3 {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.01); /* オプション: 境界をはっきりさせるための影 */
 }
 
+/* サイドバー */
 .sidebar {
   padding: 0px 10px;
   box-sizing: border-box;
@@ -99,62 +84,57 @@ header h3 {
 
 /* サイト内検索のスタイル */
 .sidebar .search-container {
-  background-color: #f5f5f5; /* 背景色をサイト内検索部分だけに適用 */
+  background-color: #f5f5f5;
   padding: 20px;
-  border-radius: 8px; /* 角を丸くする */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 少し影を追加 */
-  width: 100%; /* 全体の幅を確保 */
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
   box-sizing: border-box;
 }
 
 .sidebar .search-container form {
-  display: flex; /* 横並びに配置 */
-  align-items: center; /* 垂直方向の中央揃え */
+  display: flex;
+  align-items: center;
 }
 
 .sidebar .search-container input {
-  flex: 1; /* 入力欄が残りのスペースを使う */
+  flex: 1;
   border: 1px solid #ccc;
   padding: 5px;
-  border-radius: 4px 0 0 4px; /* 左側のみ丸める */
+  border-radius: 4px 0 0 4px;
 }
 
 .sidebar .search-container button {
-  width: auto; /* ボタンの幅を自動調整 */
   background-color: #007bff;
   color: white;
   border: none;
-  padding: 5px 15px; /* ボタン内の余白を調整 */
-  border-radius: 0 4px 4px 0; /* ボタンの右側のみ角を丸める */
+  padding: 5px 15px;
+  border-radius: 0 4px 4px 0;
   cursor: pointer;
-  white-space: nowrap; /* ボタン内のテキストが折り返されないようにする */
+  white-space: nowrap;
 }
 
 .sidebar .search-container button:hover {
   background-color: #0056b3;
 }
 
-/* すでにあるグローバルスタイル */
+/* レスポンシブ対応 */
 @media (max-width: 1050px) {
   .main-content {
     flex-direction: column;
   }
   .sidebar {
-    margin: 0 20px;
+    margin: 30px 0px;
   }
 }
 
-p.command {
-  background-color: #00ff00;
-}
-
+/* 画像のスタイル */
 .thumb {
   width: 100%;
   height: 150px;
   object-fit: cover;
   border-radius: 5px;
   margin-bottom: 10px;
-  object-fit: cover;
 }
 
 .thumbpage {
@@ -163,4 +143,16 @@ p.command {
   object-fit: cover;
   border-radius: 5px;
   margin-bottom: 10px;
+}
+
+p.command {
+  background-color: #00ff00;
+}
+
+.breadcrumb {
+  background-color: #e8ecf181;
+  padding: "10px";
+  border-top: 1px solid #333;
+  border-bottom: 1px solid #333;
+  margin: 30px 0px;
 }

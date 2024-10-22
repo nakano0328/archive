@@ -18,9 +18,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ja">
       <body>
-        <Header />
-        <SearchWrapper>{children}</SearchWrapper>
-        <Footer />
+        <div className="wrapper">
+          <Header />
+          <SearchWrapper>{children}</SearchWrapper>
+          <Footer />
+        </div>
       </body>
     </html >
   );

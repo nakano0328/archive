@@ -11,7 +11,7 @@ export default function Breadcrumb({ items }: BreadcrumbProps) {
   return (
     <nav
       aria-label="パンくずリスト"
-      style={{ backgroundColor: "#eee", padding: "10px" }}
+      className='breadcrumb'
     >
       <ol
         style={{
@@ -20,7 +20,7 @@ export default function Breadcrumb({ items }: BreadcrumbProps) {
           alignItems: "center",
           gap: "8px",
           margin: 0,
-          padding: 0,
+          padding: "10px",
         }}
       >
         {/* ホーム文字 */}
