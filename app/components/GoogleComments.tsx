@@ -53,7 +53,6 @@ const GoogleComments: React.FC = () => {
         if (currentUrl) {
           // データを CommentData 型にマッピングし、公開設定をチェック
           const formattedData = data.map((row) => {
-            console.log("Row data:", row); // 各行のデータを出力して確認
             return {
               Name: row['Name'] || '',  // CSVの列名に対応
               Mail: row['Mail'] || '',
@@ -65,11 +64,9 @@ const GoogleComments: React.FC = () => {
           });
 
           // フィルタリング処理：isPublicが"1"かつPathが一致するもののみ表示
-          const filteredData = formattedData.filter((comment) => {
-            const normalizedPath = normalizeUrl(comment.Path);
-            console.log("Comparing paths: Current URL:", currentUrl, " | Spreadsheet Path:", normalizedPath);
-            return normalizedPath === currentUrl && comment.isPublic === '1';
-          });
+          const filteredData = formattedData.filter((comment) =>
+            normalizeUrl(comment.Path) === currentUrl && comment.isPublic === '1'
+          );
 
           setComments(filteredData);
         }
