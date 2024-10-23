@@ -35,7 +35,7 @@ const GoogleComments: React.FC = () => {
     const fetchComments = async () => {
       try {
         const data = await d3.csv(
-          "https://docs.google.com/spreadsheets/d/1kRxLHAa49oQGuy0l9pezKxIXnkRFhH8MP7wL0grFgA8/export?format=csv&range=A3:E"
+          "https://docs.google.com/spreadsheets/d/1kRxLHAa49oQGuy0l9pezKxIXnkRFhH8MP7wL0grFgA8/export?format=csv&range=A3:F"
         );
 
         if (currentUrl) {
@@ -48,6 +48,8 @@ const GoogleComments: React.FC = () => {
             Path: row["Path"] || "", // E列に相当するパスを取得
             isPublic: row["isPublic"] || "0", // 公開フラグを取得（デフォルトは非公開）
           }));
+
+          //console.log("Filtered Data:", formattedData); // フィルタリング前のデータを標示
 
           // フィルタリング処理：isPublicが"1"かつPathが一致するもののみ表示
           const filteredData = formattedData.filter(

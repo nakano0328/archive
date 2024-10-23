@@ -28,7 +28,7 @@ const GoogleForm = () => {
         <input
           name="entry.1814434943"
           placeholder="名前"
-          defaultValue="名無し"
+          defaultValue="名無しのごんべ"
           required
         />
       </p>

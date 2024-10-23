@@ -36,7 +36,8 @@ export default function Breadcrumb({ items }: BreadcrumbProps) {
             key={index}
             style={{ display: "flex", alignItems: "center", color: "#000000" }}
           >
-            <span style={{ margin: "0 8px" }}>&gt;</span>
+            <span style={{ margin: '0px 8px', width: '0', height: '0', borderTop: '5px solid transparent', borderBottom: '5px solid transparent', borderLeft: '10px solid black' }} />
+
             <Link
               href={item.href}
               style={{ color: "#000000", textDecoration: "none" }}
