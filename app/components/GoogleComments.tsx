@@ -1,21 +1,21 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
-import * as d3 from "d3-fetch";
+import React, { useEffect, useState } from 'react';
+import * as d3 from 'd3-fetch';
 
 interface CommentData {
   Name: string;
   Mail: string;
   Timestamp: string;
   Comments: string;
-  Path: string; // E列のURLやパスを格納
+  Path: string; // E列のパスを格納
   isPublic: string; // 公開フラグの列
 }
 
 // URLの正規化関数を追加
 const normalizeUrl = (url: string) => {
-  // パス名のみを取得し、末尾のスラッシュを除去
-  let normalizedUrl = url.replace(/\/$/, "");
+  // パス名のみを取得し、末尾のスラッシュを除去、クエリパラメータを無視
+  const normalizedUrl = url.split('?')[0].replace(/\/$/, ''); // 'let'を'const'に変更
   return normalizedUrl;
 };
 
@@ -26,7 +26,7 @@ const GoogleComments: React.FC = () => {
 
   useEffect(() => {
     // クライアントサイドでのみ実行される
-    if (typeof window !== "undefined") {
+    if (typeof window !== 'undefined') {
       setCurrentUrl(normalizeUrl(window.location.pathname)); // パス名のみを正規化して現在のURLを設定
     }
   }, []);
@@ -34,32 +34,33 @@ const GoogleComments: React.FC = () => {
   useEffect(() => {
     const fetchComments = async () => {
       try {
-        const data = await d3.csv(
-          "https://docs.google.com/spreadsheets/d/1kRxLHAa49oQGuy0l9pezKxIXnkRFhH8MP7wL0grFgA8/export?format=csv&range=A3:F"
-        );
+        const data = await d3.csv("https://docs.google.com/spreadsheets/d/1kRxLHAa49oQGuy0l9pezKxIXnkRFhH8MP7wL0grFgA8/export?format=csv&range=A3:F");
 
         if (currentUrl) {
-          // データを CommentData 型にマッピングし、フィルタリング
-          const formattedData = data.map((row) => ({
-            Name: row["Name"] || "", // CSVの列名に対応
-            Mail: row["Mail"] || "",
-            Timestamp: row["Timestamp"] || "",
-            Comments: row["Comments"] || "",
-            Path: row["Path"] || "", // E列に相当するパスを取得
-            isPublic: row["isPublic"] || "0", // 公開フラグを取得（デフォルトは非公開）
-          }));
-
-          //console.log("Filtered Data:", formattedData); // フィルタリング前のデータを標示
+          // データを CommentData 型にマッピングし、公開設定をチェック
+          const formattedData = data.map((row) => {
+            console.log("Row data:", row); // 各行のデータを出力して確認
+            return {
+              Name: row['Name'] || '',  // CSVの列名に対応
+              Mail: row['Mail'] || '',
+              Timestamp: row['Timestamp'] || '',
+              Comments: row['Comments'] || '',
+              Path: row['Path'] || '',  // E列に相当するパスを取得
+              isPublic: row['isPublic'] || '',  // 公開フラグをそのまま取得（デフォルト値なし）
+            };
+          });
 
           // フィルタリング処理：isPublicが"1"かつPathが一致するもののみ表示
-          const filteredData = formattedData.filter(
-            (comment) => comment.Path === currentUrl && comment.isPublic === "1"
+          const filteredData = formattedData.filter((comment) =>
+            normalizeUrl(comment.Path) === currentUrl && comment.isPublic === '1'
           );
+
+          console.log("Filtered Data:", filteredData); // フィルタリング後のデータを表示
 
           setComments(filteredData);
         }
-      } catch (err) {
-        setError("データの取得に失敗しました");
+      } catch {
+        setError('データの取得に失敗しました'); // 'err'変数を削除
       }
     };
 
@@ -77,7 +78,7 @@ const GoogleComments: React.FC = () => {
   }
 
   if (comments.length === 0) {
-    return <div>一致するコメントはありません。</div>;
+    return <div>一致する公開コメントはありません。</div>;
   }
 
   return (
