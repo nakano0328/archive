@@ -15,7 +15,7 @@ interface CommentData {
 // URLの正規化関数を追加
 const normalizeUrl = (url: string) => {
   // パス名のみを取得し、末尾のスラッシュを除去、クエリパラメータを無視
-  const normalizedUrl = url.split('?')[0].replace(/\/$/, ''); // 'let'を'const'に変更
+  const normalizedUrl = url.split('?')[0].replace(/\/$/, '');
   return normalizedUrl;
 };
 
@@ -51,23 +51,23 @@ const GoogleComments: React.FC = () => {
           });
 
           // フィルタリング処理：isPublicが"1"かつPathが一致するもののみ表示
-          const filteredData = formattedData.filter((comment) =>
-            normalizeUrl(comment.Path) === currentUrl && comment.isPublic === '1'
-          );
-
-          console.log("Filtered Data:", filteredData); // フィルタリング後のデータを表示
+          const filteredData = formattedData.filter((comment) => {
+            const normalizedPath = normalizeUrl(comment.Path);
+            console.log("Comparing paths: Current URL:", currentUrl, " | Spreadsheet Path:", normalizedPath);
+            return normalizedPath === currentUrl && comment.isPublic === '1';
+          });
 
           setComments(filteredData);
         }
       } catch {
-        setError('データの取得に失敗しました'); // 'err'変数を削除
+        setError('データの取得に失敗しました');
       }
     };
 
     if (currentUrl) {
       fetchComments(); // currentUrlが設定された後にデータを取得
     }
-  }, [currentUrl]); // currentUrlの変更に対応
+  }, [currentUrl]);
 
   if (error) {
     return <div>{error}</div>;
