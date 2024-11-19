@@ -6,6 +6,7 @@ import { InlineMath } from "react-katex";
 import Image from "next/image";
 import ImageModal from "@/app/components/ImageModal";
 import CustomLink from "@/app/components/CustomLink";
+import GoogleForm from "@/app/components/GoogleForm";
 
 // ページのメタデータを動的に生成
 export async function generateMetadata() {
@@ -238,6 +239,8 @@ export default function DotProductPage() {
       <hr />
       <br />
       <br />
+      <h1>コメントフォーム</h1>
+      <GoogleForm />
     </div>
   );
 }
