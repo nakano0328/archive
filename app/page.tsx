@@ -1,7 +1,6 @@
-"use client";
-
 import React from "react";
 import Card1 from "./components/Card1";
+import { siteTitle } from "@/app/metadata";
 
 // カードデータの型定義
 interface CardData {
@@ -12,6 +11,28 @@ interface CardData {
   backgroundColor: string;
   link: string;
 }
+
+export const metadata = {
+  title: `ホーム - ${siteTitle}`,
+  description: "ホームです。",
+  openGraph: {
+    title: `ホーム - ${siteTitle}`,
+    description: "ホームです。",
+    url: "https://jeonglabo.github.io/nextjs/",
+    images: [
+      {
+        url: "/path-to-thumbnail-image.jpg",
+        alt: "ホームのサムネイル",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `ホーム - ${siteTitle}`,
+    description: "ホームです。",
+    images: ["/path-to-thumbnail-image.jpg"],
+  },
+};
 
 // モックデータ
 const mockData: CardData[] = [

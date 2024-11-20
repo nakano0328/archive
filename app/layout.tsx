@@ -1,18 +1,7 @@
-import type { Metadata } from "next";
 import "@/app/globals.css";
-import { siteTitle } from "@/app/metadata";
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
-import SearchWrapper from '@/app/components/SearchWrapper';
-
-export const metadata: Metadata = {
-  title: `ホーム - ${siteTitle}`,
-  description: "ホームページの一番最初です",
-  openGraph: {
-    title: "ホーム",
-    description: "ホームです",
-  },
-};
+import SearchWrapper from "@/app/components/SearchWrapper";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
@@ -20,12 +9,15 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ja">
       <body>
-        <div className="wrapper" style={{ backgroundImage: `url(${basePath}/back.jpg)` }}>
+        <div
+          className="wrapper"
+          style={{ backgroundImage: `url(${basePath}/back.jpg)` }}
+        >
           <Header />
           <SearchWrapper>{children}</SearchWrapper>
           <Footer />
         </div>
       </body>
-    </html >
+    </html>
   );
 }
