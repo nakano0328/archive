@@ -3,7 +3,6 @@
 import React, { useEffect, useState, useRef } from "react";
 
 const GoogleForm = () => {
-  const [submitted, setSubmitted] = useState(false);
   const [showMessage, setShowMessage] = useState(false);
   const [currentPath, setCurrentPath] = useState("");
   const formRef = useRef<HTMLFormElement | null>(null);
@@ -15,7 +14,6 @@ const GoogleForm = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSubmitted(true);
     setShowMessage(true);
 
     // フォームの送信
@@ -89,7 +87,6 @@ const GoogleForm = () => {
         />
       </form>
 
-      {/* iframeを別の要素として配置し、完全に非表示にする */}
       <iframe
         id="hidden_iframe"
         name="hidden_iframe"
