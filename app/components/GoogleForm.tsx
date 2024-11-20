@@ -1,34 +1,35 @@
 "use client";
 
-import { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef } from "react";
 
 const GoogleForm = () => {
   const [submitted, setSubmitted] = useState(false);
-  const [currentPath, setCurrentPath] = useState<string>("");
-
-  // フォーム参照を取得
-  const formRef = useRef<HTMLFormElement>(null);
+  const [showMessage, setShowMessage] = useState(false);
+  const [currentPath, setCurrentPath] = useState("");
+  const formRef = useRef<HTMLFormElement | null>(null);
 
   useEffect(() => {
-    // 現在のページパスを取得
     const path = window.location.pathname;
     setCurrentPath(path);
   }, []);
 
-  const handleFormSubmit = () => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
     setSubmitted(true);
+    setShowMessage(true);
 
-    // フォーム内容をリセット
-    if (formRef.current) {
-      formRef.current.reset();
-    }
+    // フォームの送信
+    e.currentTarget.submit();
+
+    // フォームをリセット
+    formRef.current?.reset();
   };
 
   return (
-    <div>
-      {/* フォーム送信後のメッセージを表示 */}
-      {submitted && (
+    <div className="space-y-4">
+      {showMessage && (
         <div
+          className="p-4 mb-4 text-green-700 bg-green-100 rounded-lg"
           style={{
             backgroundColor: "#d4edda",
             color: "#155724",
@@ -38,7 +39,7 @@ const GoogleForm = () => {
             textAlign: "center",
           }}
         >
-          送信しました。ありがとうございます！
+          送信が完了しました。ありがとうございます。
         </div>
       )}
 
@@ -47,10 +48,8 @@ const GoogleForm = () => {
         action="https://docs.google.com/forms/d/e/1FAIpQLSerknIKtmj4M41TIierMy5s-jMwNdj92CzXXuCPfaeEn3t5yw/formResponse"
         target="hidden_iframe"
         method="post"
-        onSubmit={(e) => {
-          e.preventDefault(); // デフォルト動作を停止
-          handleFormSubmit(); // フォーム送信処理
-        }}
+        onSubmit={handleSubmit}
+        className="space-y-4"
       >
         <p>
           <input
@@ -58,6 +57,7 @@ const GoogleForm = () => {
             placeholder="名前"
             defaultValue="名無しのごんべ"
             required
+            className="w-full p-2 border rounded"
           />
         </p>
         <p>
@@ -65,6 +65,7 @@ const GoogleForm = () => {
             name="entry.238144512"
             placeholder="メールアドレス"
             type="email"
+            className="w-full p-2 border rounded"
           />
         </p>
         <p>
@@ -75,23 +76,28 @@ const GoogleForm = () => {
             cols={40}
             maxLength={400}
             required
+            className="w-full p-2 border rounded"
           ></textarea>
         </p>
-        {/* ページURLを隠しフィールドに送信 */}
         <input type="hidden" name="entry.2025028027" value={currentPath} />
 
-        <input type="submit" id="submitbutton" value="送信" />
-        <iframe
-          onLoad={() => {
-            if (submitted) {
-              console.log("フォームが送信されました");
-            }
-          }}
-          id="hidden_iframe"
-          name="hidden_iframe"
-          style={{ display: "none" }}
-        ></iframe>
+        <input
+          type="submit"
+          id="submitbutton"
+          value="送信"
+          className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 cursor-pointer"
+        />
       </form>
+
+      {/* iframeを別の要素として配置し、完全に非表示にする */}
+      <iframe
+        id="hidden_iframe"
+        name="hidden_iframe"
+        style={{ display: "none" }}
+        width="0"
+        height="0"
+        frameBorder="0"
+      />
     </div>
   );
 };
