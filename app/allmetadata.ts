@@ -1,5 +1,6 @@
+// app/allmetadata.ts
 import { metadata as linearAlgebraMetadata } from "@/app/linear_algebra/metadata";
-// import { metadata as geometryMetadata } from "@/app/geometry/metadata";
+//import { metadata as geometryMetadata } from "@/app/geometry/metadata";
 
 const addPath = (
   metadata: Record<
@@ -20,7 +21,7 @@ const addPath = (
   return updatedMetadata;
 };
 
-export const allMetadata = {
-  linear_algebra: addPath(linearAlgebraMetadata, "/linear_algebra"),
-  // geometry: addPath(geometryMetadata, "/geometry"),
+export const metadata = {
+  ...addPath(linearAlgebraMetadata, "/linear_algebra"),
+  //...addPath(geometryMetadata, "/geometry"),
 };

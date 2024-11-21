@@ -17,7 +17,7 @@ export default function DotProductPage() {
 
   return (
     <>
-      <DynamicMetadata topicKey="linear_algebra" metaKey={`${metaData.title}`} />
+      <DynamicMetadata topicKey={`${metaData.title}`} metaKey={`${metaData.title}`} />
 
       <div style={{ padding: "20px" }}>
         {/* パンくずリストのの表示 */}
