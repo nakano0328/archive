@@ -21,7 +21,7 @@ export const metadata = {
     url: "https://jeonglabo.github.io/nextjs/",
     images: [
       {
-        url: "/path-to-thumbnail-image.jpg",
+        url: "./icon.png",
         alt: "ホームのサムネイル",
       },
     ],
@@ -30,7 +30,7 @@ export const metadata = {
     card: "summary_large_image",
     title: `ホーム - ${siteTitle}`,
     description: "ホームです。",
-    images: ["/path-to-thumbnail-image.jpg"],
+    images: ["./icon.png"],
   },
 };
 
