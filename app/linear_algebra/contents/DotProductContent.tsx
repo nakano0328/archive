@@ -6,7 +6,6 @@ import { InlineMath } from "react-katex";
 import Image from "next/image";
 import ImageModal from "@/app/components/ImageModal";
 import CustomLink from "@/app/components/CustomLink";
-import GoogleForm from "@/app/components/GoogleForm";
 
 export default function DotProductContent() {
   const metaData = metadata.dotproduct;
