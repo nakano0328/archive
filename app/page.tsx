@@ -1,5 +1,5 @@
 import React from "react";
-import Card1 from "./components/Card1";
+import Card1 from "@/app/components/Card1";
 import { siteTitle } from "@/app/metadata";
 
 // カードデータの型定義
@@ -12,7 +12,14 @@ interface CardData {
   link: string;
 }
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+console.log("BasePath: ", basePath);
+
+
+
 export const metadata = {
+  basePath: process.env.NEXT_PUBLIC_BASE_PATH || "",
+
   title: `ホーム - ${siteTitle}`,
   description: "ホームです。",
   openGraph: {
@@ -21,7 +28,7 @@ export const metadata = {
     url: "https://jeonglabo.github.io/nextjs/",
     images: [
       {
-        url: "./icon.png",
+        url: `${basePath}/icon.png`,
         alt: "ホームのサムネイル",
       },
     ],
@@ -30,7 +37,7 @@ export const metadata = {
     card: "summary_large_image",
     title: `ホーム - ${siteTitle}`,
     description: "ホームです。",
-    images: ["./icon.png"],
+    images: [`${basePath}/icon.png`,],
   },
 };
 

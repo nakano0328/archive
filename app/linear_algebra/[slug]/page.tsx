@@ -6,9 +6,9 @@ import CrossProductContent from "@/app/linear_algebra/contents/CrossProductConte
 import GoogleForm from "@/app/components/GoogleForm";
 
 interface PageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
 // 静的に生成するパスのパラメータを定義
@@ -26,7 +26,8 @@ const contentComponents = {
   // 他のコンポーネントを追加
 };
 
-export async function generateMetadata({ params }: PageProps) {
+export async function generateMetadata(props: PageProps) {
+  const params = await props.params;
   const metaData = linearAlgebraMetadata[params.slug];
 
   if (!metaData) {
@@ -61,7 +62,8 @@ export async function generateMetadata({ params }: PageProps) {
   };
 }
 
-export default function Page({ params }: PageProps) {
+export default async function Page(props: PageProps) {
+  const params = await props.params;
   const ContentComponent =
     contentComponents[params.slug as keyof typeof contentComponents];
 
