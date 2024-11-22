@@ -1,8 +1,9 @@
 // app/linear_algebra/[slug]/page.tsx
 import { notFound } from "next/navigation";
-import { metadata as linearAlgebraMetadata } from "../metadata";
-import DotProductContent from "../contents/DotProductContent";
-import CrossProductContent from "../contents/CrossProductContent";
+import { metadata as linearAlgebraMetadata } from "@/app/linear_algebra/metadata";
+import DotProductContent from "@/app/linear_algebra/contents/DotProductContent";
+import CrossProductContent from "@/app/linear_algebra/contents/CrossProductContent";
+import GoogleForm from "@/app/components/GoogleForm";
 
 interface PageProps {
   params: {
@@ -35,13 +36,13 @@ export async function generateMetadata({ params }: PageProps) {
     };
   }
 
-  const baseUrl = "https://jeonglabo.github.io";
+  const baseUrl = "https://jeonglabo.github.io/nextjs";
 
   return {
-    title: metaData.title,
+    title: metaData.tabtitle,
     description: metaData.description,
     openGraph: {
-      title: metaData.title,
+      title: metaData.tabtitle,
       description: metaData.description,
       url: `${baseUrl}/linear_algebra/${params.slug}`,
       images: [
@@ -53,7 +54,7 @@ export async function generateMetadata({ params }: PageProps) {
     },
     twitter: {
       card: "summary_large_image",
-      title: metaData.title,
+      title: metaData.tabtitle,
       description: metaData.description,
       images: [`${baseUrl}/linear_algebra/${params.slug}/thumb.png`],
     },
@@ -68,5 +69,16 @@ export default function Page({ params }: PageProps) {
     notFound();
   }
 
-  return <ContentComponent />;
+  return (
+    <>
+      <ContentComponent />
+      <br />
+      <br />
+      <hr />
+      <div style={{ padding: "20px" }}>
+        <h1>コメントフォーム</h1>
+        <GoogleForm />
+      </div>
+    </>
+  );
 }

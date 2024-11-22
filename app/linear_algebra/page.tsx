@@ -64,37 +64,47 @@ export default function LinearAlgebraContents() {
                 style={{ textDecoration: "none" }}
               >
                 <Card2>
-                  {/* サムネイル画像の読み込み */}
-                  <Image
-                    src={imagePath}
-                    alt={topic.title}
-                    width={300} // 横幅はそのまま
-                    height={150} // 必須だが実際のスタイルに影響しない
-                    className="thumb"
-                  />
-                  <h2
-                    style={{
-                      fontSize: "24px",
-                      marginBottom: "10px",
-                      color: "black",
-                    }}
-                  >
-                    {topic.title}
-                  </h2>
-                  <p style={{ marginBottom: "20px", color: "black" }}>
-                    {topic.description}
-                  </p>
                   <div
                     style={{
-                      position: "absolute",
-                      bottom: "0",
-                      right: "0",
-                      padding: "14px",
-                      fontSize: "12px",
-                      color: "#888",
+                      display: "flex",
+                      flexDirection: "column",
+                      justifyContent: "space-between",
+                      height: "100%",
                     }}
                   >
-                    最終更新日: {formatDate(topic.lastUpdated)}
+                    <div>
+                      {/* サムネイル画像の読み込み */}
+                      <Image
+                        src={imagePath}
+                        alt={topic.title}
+                        width={300} // 横幅はそのまま
+                        height={150} // 必須だが実際のスタイルに影響しない
+                        className="thumb"
+                      />
+                      <h2
+                        style={{
+                          fontSize: "24px",
+                          marginBottom: "10px",
+                          color: "black",
+                        }}
+                      >
+                        {topic.title}
+                      </h2>
+                      <p style={{ marginBottom: "20px", color: "black" }}>
+                        {topic.description}
+                      </p>
+                    </div>
+                    {/* 最終更新日を右下に配置 */}
+                    <div
+                      style={{
+                        textAlign: "right",
+                        fontSize: "12px",
+                        color: "#888",
+                        marginTop: "auto", // 最下部に配置
+                      }}
+                    >
+                      最終更新日: {formatDate(topic.lastUpdated)}
+                    </div>
                   </div>
                 </Card2>
               </Link>

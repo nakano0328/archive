@@ -4,10 +4,10 @@
 
 2.allmetadata.ts に metadata ファイルをインポートする。
 
-3.app/components/DynamicMetadata に metadata ファイルをインポートする
-
 〇新しいページを作るとき
 
-1.public/[directory]/[pages]/にサムネイル画像 "thumb.jpg" を追加する。
+1.public/[directory]/[pages]/ にサムネイル画像 "thumb.jpg" を追加する。
 
 2.app/[directory]/metadata にメタデータを追加する。
+
+3.app/[slug]/page.tsx にインポートを追加する。

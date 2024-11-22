@@ -223,14 +223,6 @@ export default function DotProductContent() {
           &nbsp;のノルムの積を意味します。
         </p>
       </details>
-
-      <br />
-      <br />
-      <hr />
-      <br />
-      <br />
-      <h1>コメントフォーム</h1>
-      <GoogleForm />
     </div>
   );
 }
