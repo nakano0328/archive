@@ -180,6 +180,10 @@ export default function pageContent() {
         target="_blank"
       />
 
+      <p>
+        この結果、外積は −14 となります。この値はベクトルの方向に垂直な（つまり、2次元空間の外に向かう）z軸方向の大きさを示しています。
+      </p>
+
       <h2>3次元の外積</h2>
 
       <p>
@@ -187,8 +191,40 @@ export default function pageContent() {
         <br />
         外積の結果として得られるベクトルは、2つのベクトルが生成する平面に垂直です。大きさは2つのベクトルが生成する面積と等しいです。
         <br />
-        以上のことを説明します。
+        外積の特徴は以下の通りです。
       </p>
+      <ul>
+        <li>
+          <b>垂直性</b>
+        </li>
+        <p>
+          生成されるベクトルは、元の2つのベクトル&nbsp;
+          <InlineMath math="\mathbf{a}" />
+          &nbsp;と&nbsp;
+          <InlineMath math="\mathbf{b}" />
+          &nbsp;の両方に垂直（直交）します。
+        </p>
+        <li>
+          <b>大きさ</b>
+        </li>
+        <p>
+          外積ベクトルの大きさは、元のベクトルの大きさとそれらが成す角度&nbsp;
+          <InlineMath math="\mathbf{\theta}" />
+          &nbsp;の正弦（sin）に比例します。<br />
+          &nbsp;
+          <InlineMath math="\mathbf{a}\times\mathbf{b} =\|\mathbf{a}\|\|\mathbf{b}\|\sin{\theta}" />
+          &nbsp;
+        </p>
+        <li>
+          <b>右手系</b>
+        </li>
+        <p>
+          外積の向きは「右ねじの法則」に従って決まります。<br />
+          人差し指を
+
+          の方向に回転させたとき、親指が指す方向が外積ベクトルの方向になります。
+        </p>
+      </ul>
     </div>
   );
 }
