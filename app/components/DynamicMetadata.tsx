@@ -1,60 +1,79 @@
-import React from "react";
-import Head from "next/head";
-import { metadata as linearAlgebraMetadata } from "@/app/linear_algebra/metadata";
-// import { metadata as geometryMetadata } from "@/app/geometry/metadata";
+import { Metadata } from "next";
+import { MetadataCollection, MetaDataItem } from "@/types/metadata";
+import { metadata as linearalgebraMetadata } from "@/app/linear_algebra/metadata";
+//import { metadata as geometryMetadata } from "@/app/geometry/metadata";
 
-// トピックごとのメタデータの型を定義
-type Metadata = {
-    title: string;
-    tabtitle: string;
-    description: string;
-    lastUpdated: string;
-    topic: string;
+interface DynamicMetadataProps {
+  topicKey: string;
+  metaKey: string;
+}
+
+// メタデータのマッピング
+const metadataMapping: Record<string, MetadataCollection> = {
+  linear_algebra: linearalgebraMetadata,
+  //geometry: geometryMetadata,
+  // 必要に応じて他のトピックを追加
 };
 
-type Topics = {
-    linear_algebra: Record<string, Metadata>;
-    // geometry: Record<string, Metadata>;
+// 特定のトピックとキーに基づいてメタデータを取得する関数
+const getMetaData = (topic: string, key: string): MetaDataItem | undefined => {
+  const topicMetadata = metadataMapping[topic];
+  if (!topicMetadata) {
+    console.warn(`Metadata not found for topic: ${topic}`);
+    return undefined;
+  }
+
+  const metadata = topicMetadata[key];
+  if (!metadata) {
+    console.warn(`Metadata not found for key: ${key} in topic: ${topic}`);
+    return undefined;
+  }
+
+  return metadata;
 };
 
-// トピックごとのメタデータをマッピング
-const topics: Topics = {
-    linear_algebra: linearAlgebraMetadata,
-    // geometry: geometryMetadata,
-};
+export function generateMetadata({
+  topicKey,
+  metaKey,
+}: DynamicMetadataProps): Metadata {
+  const metaData = getMetaData(topicKey, metaKey);
 
-type DynamicMetadataProps = {
-    topicKey: keyof Topics; // トピックキーの型
-    metaKey: string; // メタデータキーの型
-};
+  if (!metaData) {
+    return {
+      title: "Not Found",
+      description: "Content not found",
+    };
+  }
 
-const DynamicMetadata: React.FC<DynamicMetadataProps> = ({ topicKey, metaKey }) => {
-    // トピックに対応するメタデータを取得
-    const topicMetadata = topics[topicKey];
+  const baseUrl = "https://jeonglabo.github.io";
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
-    const metaData = topicMetadata[metaKey];
+  return {
+    title: metaData.title,
+    description: metaData.description,
+    openGraph: {
+      title: metaData.title,
+      description: metaData.description,
+      url: `${baseUrl}/${metaData.topic}/${metaData.title}`,
+      images: [
+        {
+          url: `${basePath}/${metaData.topic}/${metaData.title}/thumb.png`,
+          alt: metaData.description,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: metaData.title,
+      description: metaData.description,
+      images: [`${basePath}/${metaData.topic}/${metaData.title}/thumb.png`],
+    },
+  };
+}
 
-    return (
-        <Head>
-            <title>{metaData.title}</title>
-            <meta name="description" content={metaData.description} />
-            <meta property="og:title" content={metaData.title} />
-            <meta property="og:description" content={metaData.description} />
-            <meta property="og:url" content={`https://jeonglabo.github.io/${metaData.topic}/${metaData.title}`} />
-            <meta
-                property="og:image"
-                content={`https://jeonglabo.github.io/${metaData.topic}/${metaData.title}/thumb.png`}
-            />
-            <meta property="og:image:alt" content={metaData.description} />
-            <meta name="twitter:card" content="summary_large_image" />
-            <meta name="twitter:title" content={metaData.title} />
-            <meta name="twitter:description" content={metaData.description} />
-            <meta
-                name="twitter:image"
-                content={`https://jeonglabo.github.io/${metaData.topic}/${metaData.title}/thumb.png`}
-            />
-        </Head>
-    );
-};
-
-export default DynamicMetadata;
+export default function DynamicMetadata({
+  topicKey,
+  metaKey,
+}: DynamicMetadataProps) {
+  return null;
+}

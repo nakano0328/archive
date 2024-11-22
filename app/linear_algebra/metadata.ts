@@ -1,6 +1,7 @@
 import { siteTitle } from "@/app/metadata";
+import { MetadataCollection } from "@/types/metadata";
 
-export const metadata = {
+export const metadata: MetadataCollection = {
   dotproduct: {
     title: "内積とは",
     tabtitle: `内積とは - ${siteTitle}`,
