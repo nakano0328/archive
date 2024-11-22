@@ -7,7 +7,7 @@ export const metadata: MetadataCollection = {
     tabtitle: `内積とは - ${siteTitle}`,
     description:
       "内積は、ベクトル同士の積の一種で、ベクトルの方向を計算する際などに用いられます。",
-    lastUpdated: "2024-10-22",
+    lastUpdated: "2024-11-22",
     topic: "linear_algebra",
   },
   crossproduct: {
