@@ -7,23 +7,28 @@ import Image from "next/image";
 import ImageModal from "@/app/components/ImageModal";
 import CustomLink from "@/app/components/CustomLink";
 
-export default function DotProductContent() {
-  const metaData = metadata.dotproduct;
-  const crossmetaData = metadata.crossproduct;
+export default function pageContent() {
+  const pagename: string = "dotproduct"; //ここを変更
+
+  const metaData = metadata[pagename];
   const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
-  const imagePath = `${basePath}/linear_algebra/dotproduct`;
+  const imagePath = `${basePath}/${metaData.topic}/${pagename}`;
+  const notePath = `https://colab.research.google.com/github/jeonglabo/nextjs/blob/main/notebook/${metaData.topic}/${pagename}`;
+
+  const crossmetaData = metadata.crossproduct;
 
   return (
     <div style={{ padding: "20px" }}>
-      {/* パンくずリストのの表示 */}
       <Breadcrumb
         items={[
-          { name: "線形代数", href: "/linear_algebra" },
-          { name: metaData.title, href: `/linear_algebra/${metaData.title}` },
+          { name: "線形代数", href: `/${metaData.topic}` },
+          {
+            name: metaData.title,
+            href: `/${metaData.topic}/${pagename}`,
+          },
         ]}
       />
 
-      {/* サムネイル画像の表示 */}
       <Image
         src={`${imagePath}/thumb.png`}
         alt={metaData.title}
@@ -33,7 +38,6 @@ export default function DotProductContent() {
       />
       <h1 className="title">{metaData.title}</h1>
 
-      {/* 最終更新日の表示 */}
       <div className="lastUpdated">
         最終更新日: {formatDate(metaData.lastUpdated)}
       </div>
@@ -124,7 +128,7 @@ export default function DotProductContent() {
       <br />
 
       <CustomLink
-        href="https://colab.research.google.com/github/jeonglabo/nextjs/blob/main/notebook/linear_algebra/dotproduct/vector.ipynb"
+        href={`${notePath}/vector.ipynb`}
         imageUrl={`${imagePath}/vector.png`}
         altText="ベクトルaとベクトルbを表したグラフ"
         siteName="ベクトルの表示"
@@ -160,7 +164,7 @@ export default function DotProductContent() {
       <br />
 
       <CustomLink
-        href="https://colab.research.google.com/github/jeonglabo/nextjs/blob/main/notebook/linear_algebra/dotproduct/plus.ipynb"
+        href={`${notePath}/vector.ipynb`}
         imageUrl={`${imagePath}/plus.png`}
         altText="ベクトルaとベクトルbの足し算を表したグラフ"
         siteName="ベクトルの足し算の表示"
@@ -190,7 +194,7 @@ export default function DotProductContent() {
       <br />
 
       <CustomLink
-        href="https://colab.research.google.com/github/jeonglabo/nextjs/blob/main/notebook/linear_algebra/dotproduct/dot.ipynb"
+        href={`${notePath}/dot.ipynb`}
         imageUrl={`${imagePath}/dot.png`}
         altText="ベクトルaとベクトルbの内積を表したグラフ"
         siteName="ベクトルの内積の表示"

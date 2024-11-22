@@ -72,12 +72,12 @@ export default function Page({ params }: PageProps) {
   return (
     <>
       <ContentComponent />
-      <br />
-      <br />
       <hr />
-      <div style={{ padding: "20px" }}>
+      <div style={{ margin: "20px" }}>
         <h1>コメントフォーム</h1>
-        <GoogleForm />
+        <div style={{ margin: "0px 10px" }}>
+          <GoogleForm />
+        </div>
       </div>
     </>
   );

@@ -90,10 +90,9 @@ const GoogleForm = () => {
       <iframe
         id="hidden_iframe"
         name="hidden_iframe"
-        style={{ display: "none" }}
+        style={{ display: "none", border: "none" }}
         width="0"
         height="0"
-        frameBorder="0"
       />
     </div>
   );
