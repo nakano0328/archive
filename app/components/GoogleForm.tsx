@@ -1,16 +1,14 @@
 "use client";
 
-import React, { useEffect, useState, useRef } from "react";
+import React, { useRef, useState } from "react";
 
-const GoogleForm = () => {
+interface GoogleFormProps {
+  currentPath: string; // サーバーから取得する
+}
+
+const GoogleForm: React.FC<GoogleFormProps> = ({ currentPath }) => {
   const [showMessage, setShowMessage] = useState(false);
-  const [currentPath, setCurrentPath] = useState("");
   const formRef = useRef<HTMLFormElement | null>(null);
-
-  useEffect(() => {
-    const path = window.location.pathname;
-    setCurrentPath(path);
-  }, []);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();

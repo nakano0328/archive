@@ -78,7 +78,7 @@ export default async function Page(props: PageProps) {
       <div style={{ margin: "20px" }}>
         <h1>コメントフォーム</h1>
         <div style={{ margin: "0px 10px" }}>
-          <GoogleForm />
+          <GoogleForm currentPath={`/linear_algebra/${params.slug}`} />
         </div>
       </div>
     </>

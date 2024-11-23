@@ -1,6 +1,5 @@
 import Link from "next/link";
 import GoogleForm from "@/app/components/GoogleForm";
-import GoogleComments from "@/app/components/GoogleComments";
 
 const HomePage: React.FC = () => {
   return (
@@ -14,13 +13,7 @@ const HomePage: React.FC = () => {
       <hr />
       <br />
       <h1>コメントフォーム</h1>
-      <GoogleForm />
-
-      <br />
-      <hr />
-      <br />
-
-      <GoogleComments />
+      <GoogleForm currentPath="/test/pagetest" />
     </div>
   );
 };

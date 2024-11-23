@@ -2,7 +2,6 @@ import style1 from "./test1.module.css";
 import style2 from "./test2.module.css";
 import "@/app/test/csstest/test3.css";
 import GoogleForm from "@/app/components/GoogleForm";
-import GoogleComments from "@/app/components/GoogleComments";
 
 export default function Page() {
   return (
@@ -15,13 +14,8 @@ export default function Page() {
       <hr />
       <br />
       <h1>コメントフォーム</h1>
-      <GoogleForm />
+      <GoogleForm currentPath="/test/csstest" />
 
-      <br />
-      <hr />
-      <br />
-
-      <GoogleComments />
     </>
   );
 }
