@@ -15,7 +15,7 @@ export const metadata: MetadataCollection = {
     tabtitle: `外積とは - ${siteTitle}`,
     description:
       "外積は、ベクトル同士の積の一種で、ベクトルに垂直なベクトルを計算するために使用されます。",
-    lastUpdated: "2024-10-11",
+    lastUpdated: "2024-11-25",
     topic: "linear_algebra",
   },
   // 他のトピックもここに追加できます
