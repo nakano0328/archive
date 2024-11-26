@@ -1,16 +1,16 @@
 //import { metadata } from "@/app/linear_algebra/metadata";
 import CenteredEquation from "@/app/components/CenteredEquation";
 import { InlineMath } from "react-katex";
-//import ImageModal from "@/app/components/ImageModal";
-//import CustomLink from "@/app/components/CustomLink";
+import ImageModal from "@/app/components/ImageModal";
+import CustomLink from "@/app/components/CustomLink";
 
 export default function pageContent() {
-  //const pagename: string = "vector"; //ここを変更
+  const pagename: string = "vector"; //ここを変更
 
   //const metaData = metadata[pagename];
-  //const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
-  //const imagePath = `${basePath}/${metaData.topic}/${pagename}`;
-  //const notePath = `https://colab.research.google.com/github/jeonglabo/nextjs/blob/main/notebook/${metaData.topic}/${pagename}`;
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+  const imagePath = `${basePath}/linear_algebra/${pagename}`;
+  const notePath = `https://colab.research.google.com/github/jeonglabo/nextjs/blob/main/notebook/linear_algebra/${pagename}`;
 
   return (
     <>
@@ -43,6 +43,8 @@ export default function pageContent() {
         <li>
           点Aから点Bに向かうベクトルは&nbsp;
           <InlineMath math="\overrightarrow{AB}" />
+          &nbsp;と表されます。また、原点から点Aに向かうベクトルは&nbsp;
+          <InlineMath math="\overrightarrow{OA}" />
           &nbsp;と表されます。
         </li>
         <li>
@@ -63,29 +65,73 @@ export default function pageContent() {
 
       <h2 className="caption">ベクトルの演算</h2>
       <p>以下にベクトルの演算式を記します。</p>
-      <h3>加法</h3>
-      <CenteredEquation equation="\bm{a}+\bm{b}=\bm{c}" />
+      <h3>スカラー倍</h3>
 
+      <h3>足し算</h3>
+      <CenteredEquation
+        equation="\begin{align*}
+        \overrightarrow{AB} + \overrightarrow{BC} &= \overrightarrow{AC} \\
+        \bm{a}+\bm{b} = (a_x,a_y)+(b_x,b_y) &= (a_x+b_x,a_y+b_y)
+        \end{align*}"
+      />
       <p>
-        交換法則が成り立つ:{" "}
-        <b>
-          v<sub>1</sub>→ + v<sub>2</sub>→ = v<sub>2</sub>→ + v<sub>1</sub>→ = v
-          <sub>3</sub>→
-        </b>
+        AからBに向かうベクトル&nbsp;
+        <InlineMath math="\overrightarrow{AB}" />
+        &nbsp;とBからCに向かうベクトル&nbsp;
+        <InlineMath math="\overrightarrow{BC}" />
+        &nbsp;を足すことで、AからCに向かうベクトル&nbsp;
+        <InlineMath math="\overrightarrow{AC}" />
+        &nbsp;を表します。
       </p>
 
+      <p>
+        足し算を図で表すと以下のようになります。赤のベクトル&nbsp;
+        <InlineMath math="\bm{a}" />
+        &nbsp;と青の&nbsp;
+        <InlineMath math="\bm{b}" />
+        &nbsp;の足し算の結果が緑の&nbsp;
+        <InlineMath math="\bm{c}" />
+        &nbsp;となります。
+        <br />
+        このように、ベクトル同士の足し算では、1つ目のベクトルの先端からもう1つのベクトルをつなげて新しいベクトルを作ることができます。
+      </p>
+      <ImageModal
+        imagePath={`${imagePath}/plus.png`}
+        altText="ベクトルaとベクトルbの足し算を表したグラフ"
+      />
+      <CustomLink
+        href={`${notePath}/plus.ipynb`}
+        imageUrl={`${imagePath}/plus.png`}
+        altText="ベクトルaとベクトルbの足し算を表したグラフ"
+        siteName="ベクトルの足し算の表示"
+        description="ベクトルの足し算の表示を行っているコードを示しています。"
+        target="_blank"
+      />
+
+      <p>
+        また、ベクトルの足し算では交換法則が成り立ちます。足す順番を変えてもベクトルcは同じになります。
+        <br />
+        これは成分同士の足し算のほうを考えればわかりやすいです。
+      </p>
+
+      <br />
       <h3>引き算</h3>
+      <CenteredEquation
+        equation="\begin{align*}
+        \overrightarrow{OA} - \overrightarrow{OB} &= \overrightarrow{BA} \\
+        \bm{a}-\bm{b} = (a_x,a_y)+(b_x,b_y) &= (a_x-b_x,a_y-b_y)
+        \end{align*}"
+      />
       <p>
-        例:{" "}
-        <b>
-          v<sub>3</sub>→ = v<sub>1</sub>→ − v<sub>2</sub>→
-        </b>
-      </p>
-      <p>
-        <b>
-          v<sub>3</sub>→ = v<sub>1</sub>→ − v<sub>2</sub>→ = −(v<sub>2</sub>→ −
-          v<sub>1</sub>→) = v<sub>1</sub>→ + (−v<sub>2</sub>→)
-        </b>
+        引き算を図で表すと以下のようになります。赤のベクトル&nbsp;
+        <InlineMath math="\bm{a}" />
+        &nbsp;と青の&nbsp;
+        <InlineMath math="\bm{b}" />
+        &nbsp;の引き算の結果が緑の&nbsp;
+        <InlineMath math="\bm{c}" />
+        &nbsp;となります。
+        <br />
+        このように、ベクトル同士の引き算では、ベクトルの先端同士をつなげて新しいベクトルを作ることができます。
       </p>
 
       <h3>スカラー倍</h3>

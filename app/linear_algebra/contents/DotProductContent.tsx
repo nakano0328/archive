@@ -136,7 +136,7 @@ export default function pageContent() {
       <br />
 
       <CustomLink
-        href={`${notePath}/vector.ipynb`}
+        href={`${notePath}/plus.ipynb`}
         imageUrl={`${imagePath}/plus.png`}
         altText="ベクトルaとベクトルbの足し算を表したグラフ"
         siteName="ベクトルの足し算の表示"
