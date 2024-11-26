@@ -6,8 +6,10 @@
 
 〇新しいページを作るとき
 
-1.public/[directory]/[pages]/ にサムネイル画像 "thumb.jpg" を追加する。
+1.public/(directory)/(pages)/ にサムネイル画像 "thumb.jpg" を追加する。
 
-2.app/[directory]/metadata にメタデータを追加する。
+2.app/(directory)/metadata にメタデータを追加する。
 
 3.app/[slug]/page.tsx にインポートを追加する。
+
+4.app/[slug]/page.tsx の contentComponents を追加する

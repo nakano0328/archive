@@ -1,9 +1,13 @@
 // app/linear_algebra/[slug]/page.tsx
 import { notFound } from "next/navigation";
+import Breadcrumb from "@/app/components/Breadcrumb";
 import { metadata as linearAlgebraMetadata } from "@/app/linear_algebra/metadata";
 import DotProductContent from "@/app/linear_algebra/contents/DotProductContent";
 import CrossProductContent from "@/app/linear_algebra/contents/CrossProductContent";
+import VectorContent from "@/app/linear_algebra/contents/VectorContent";
 import GoogleForm from "@/app/components/GoogleForm";
+import Image from "next/image";
+import { formatDate } from "@/app/components/formatDate";
 
 interface PageProps {
   params: Promise<{
@@ -23,6 +27,7 @@ export async function generateStaticParams() {
 const contentComponents = {
   dotproduct: DotProductContent,
   crossproduct: CrossProductContent,
+  vector: VectorContent,
   // 他のコンポーネントを追加
 };
 
@@ -66,6 +71,8 @@ export default async function Page(props: PageProps) {
   const params = await props.params;
   const ContentComponent =
     contentComponents[params.slug as keyof typeof contentComponents];
+  const metaData = linearAlgebraMetadata[params.slug];
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
   if (!ContentComponent) {
     notFound();
@@ -73,12 +80,39 @@ export default async function Page(props: PageProps) {
 
   return (
     <>
-      <ContentComponent />
-      <hr />
-      <div style={{ margin: "20px" }}>
-        <h1>コメントフォーム</h1>
-        <div style={{ margin: "0px 10px" }}>
-          <GoogleForm currentPath={`/linear_algebra/${params.slug}`} />
+      <div style={{ padding: "20px" }}>
+        <Breadcrumb
+          items={[
+            { name: "線形代数", href: `/${metaData.topic}` },
+            {
+              name: metaData.title,
+              href: `/${metaData.topic}/${params.slug}`,
+            },
+          ]}
+        />
+
+        <Image
+          src={`${basePath}/${metaData.topic}/${params.slug}/thumb.png`}
+          alt={metaData.title}
+          width={100}
+          height={50}
+          className="thumbpage"
+        />
+        <h1 className="title">{metaData.title}</h1>
+
+        <div className="lastUpdated">
+          最終更新日: {formatDate(metaData.lastUpdated)}
+        </div>
+        <p>{metaData.description}</p>
+
+        {/* ページコンテンツ */}
+        <ContentComponent />
+        <hr />
+        <div style={{ margin: "20px" }}>
+          <h1>コメントフォーム</h1>
+          <div style={{ margin: "0px 10px" }}>
+            <GoogleForm currentPath={`/linear_algebra/${params.slug}`} />
+          </div>
         </div>
       </div>
     </>

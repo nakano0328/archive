@@ -1,9 +1,6 @@
-import Breadcrumb from "@/app/components/Breadcrumb";
 import { metadata } from "@/app/linear_algebra/metadata";
-import { formatDate } from "@/app/components/formatDate";
 import CenteredEquation from "@/app/components/CenteredEquation";
 import { InlineMath } from "react-katex";
-import Image from "next/image";
 import ImageModal from "@/app/components/ImageModal";
 import CustomLink from "@/app/components/CustomLink";
 
@@ -18,32 +15,7 @@ export default function pageContent() {
   const dotmetaData = metadata.dotproduct;
 
   return (
-    <div style={{ padding: "20px" }}>
-      <Breadcrumb
-        items={[
-          { name: "線形代数", href: `/${metaData.topic}` },
-          {
-            name: metaData.title,
-            href: `/${metaData.topic}/${pagename}`,
-          },
-        ]}
-      />
-
-      <Image
-        src={`${imagePath}/thumb.png`}
-        alt={metaData.title}
-        width={100}
-        height={50}
-        className="thumbpage"
-      />
-      <h1 className="title">{metaData.title}</h1>
-
-      <div className="lastUpdated">
-        最終更新日: {formatDate(metaData.lastUpdated)}
-      </div>
-      <p>{metaData.description}</p>
-
-      {/* ページコンテンツ */}
+    <>
       <h2>ベクトル積について</h2>
       <p>
         ベクトル積には、内積（Dot Product または Inner Product）と外積（Cross
@@ -106,6 +78,68 @@ export default function pageContent() {
         \end{align*}"
       />
 
+      <h2>3次元の外積</h2>
+
+      <p>
+        外積は、3次元空間で定義される2つのベクトルから新たなベクトルを生成する演算です。
+        <br />
+        外積の特徴は以下の通りです。
+      </p>
+      <ul>
+        <li>
+          <b>直行</b>
+        </li>
+        <p>
+          生成されるベクトルは、元の2つのベクトル&nbsp;
+          <InlineMath math="\mathbf{a}" />
+          &nbsp;と&nbsp;
+          <InlineMath math="\mathbf{b}" />
+          &nbsp;の両方に垂直（直交）します。
+        </p>
+        <li>
+          <b>右ねじの法則</b>
+        </li>
+        <p>
+          外積の向きは「右ねじの法則」に従って決まります。
+          <br />
+          人差し指を1つ目のベクトル方向にむけ、2つ目のベクトルの方向に回転させたとき、親指が指す方向が外積ベクトルの方向になります。
+        </p>
+      </ul>
+
+      <p>
+        2つのベクトル&nbsp;
+        <InlineMath math="\mathbf{a}" />
+        &nbsp;と&nbsp;
+        <InlineMath math="\mathbf{b}" />
+        &nbsp;をこのように定義します。
+      </p>
+
+      <CenteredEquation
+        equation="\begin{align*}
+        \mathbf{a} = (a_x,a_y,a_z) \notag \\
+        \mathbf{b} = (b_x,b_y,b_z)
+        \end{align*}"
+      />
+
+      <p>この時、外積の計算は以下の行列式で行います。</p>
+      <CenteredEquation
+        equation="\mathbf{a} \times \mathbf{b} = 
+          \begin{vmatrix}
+          \vec{i} & \vec{j} & \vec{k} \\
+          a_x & a_y & a_z \\
+          b_x & b_y & b_z
+          \end{vmatrix}"
+      />
+      <p>
+        ここで&nbsp;
+        <InlineMath math="\vec{i} , \vec{j} , \vec{k}" />
+        &nbsp;はそれぞれx軸、y軸、z軸の単位ベクトルを表しています。
+        <br />
+        この式を計算すると以下のようになります。行列式を扱えない方はこちらを覚えましょう。
+      </p>
+
+      <CenteredEquation equation="\mathbf{a} \times \mathbf{b} = (a_y b_z - a_z b_y , a_z b_x - a_x b_z , a_x b_y - a_y b_x)" />
+
       <h2>具体例 - 2次元の外積</h2>
 
       <p>
@@ -118,8 +152,8 @@ export default function pageContent() {
 
       <CenteredEquation
         equation="\begin{align*}
-        \mathbf{a} &= \begin{bmatrix} 1 \\ 3 \end{bmatrix} \notag \\
-        \mathbf{b} &= \begin{bmatrix} 5 \\ 1 \end{bmatrix}
+        \mathbf{a} &= \begin{bmatrix} 3 \\ 1 \end{bmatrix} \notag \\
+        \mathbf{b} &= \begin{bmatrix} 1 \\ 4 \end{bmatrix}
         \end{align*}
         "
       />
@@ -154,7 +188,7 @@ export default function pageContent() {
         まず初めに外積を式で表すと以下のようになります。
       </p>
 
-      <CenteredEquation equation="\mathbf{a}\times\mathbf{b}=1 \cdot 1 - 3 \cdot 5 = 1 - 15 = -14" />
+      <CenteredEquation equation="\mathbf{a}\times\mathbf{b}=5 \cdot 3 - 1 \cdot 1 = 15 - 1 = 14" />
 
       <p>
         これらのベクトルの外積をグラフで表すと以下のようになります。
@@ -181,50 +215,9 @@ export default function pageContent() {
       />
 
       <p>
-        この結果、外積は -14 となります。この値はベクトルの方向に垂直な（つまり、2次元空間の外に向かう）z軸方向の大きさを示しています。
+        この結果、外積は -14
+        となります。この値はベクトルの方向に垂直な（つまり、2次元空間の外に向かう）z軸方向の大きさを示しています。
       </p>
-
-      <h2>3次元の外積</h2>
-
-      <p>
-        外積は、3次元空間で定義される2つのベクトルから新たなベクトルを生成する演算です。
-        <br />
-        外積の結果として得られるベクトルは、2つのベクトルが生成する平面に垂直です。大きさは2つのベクトルが生成する面積と等しいです。
-        <br />
-        外積の特徴は以下の通りです。
-      </p>
-      <ul>
-        <li>
-          <b>垂直性</b>
-        </li>
-        <p>
-          生成されるベクトルは、元の2つのベクトル&nbsp;
-          <InlineMath math="\mathbf{a}" />
-          &nbsp;と&nbsp;
-          <InlineMath math="\mathbf{b}" />
-          &nbsp;の両方に垂直（直交）します。
-        </p>
-        <li>
-          <b>大きさ</b>
-        </li>
-        <p>
-          外積ベクトルの大きさは、元のベクトルの大きさとそれらが成す角度&nbsp;
-          <InlineMath math="\mathbf{\theta}" />
-          &nbsp;の正弦（sin）に比例します。<br />
-          &nbsp;
-          <InlineMath math="\mathbf{a}\times\mathbf{b} =\|\mathbf{a}\|\|\mathbf{b}\|\sin{\theta}" />
-          &nbsp;
-        </p>
-        <li>
-          <b>右手系</b>
-        </li>
-        <p>
-          外積の向きは「右ねじの法則」に従って決まります。<br />
-          人差し指を
-
-          の方向に回転させたとき、親指が指す方向が外積ベクトルの方向になります。
-        </p>
-      </ul>
-    </div>
+    </>
   );
 }

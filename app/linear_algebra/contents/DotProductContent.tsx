@@ -1,9 +1,6 @@
-import Breadcrumb from "@/app/components/Breadcrumb";
 import { metadata } from "@/app/linear_algebra/metadata";
-import { formatDate } from "@/app/components/formatDate";
 import CenteredEquation from "@/app/components/CenteredEquation";
 import { InlineMath } from "react-katex";
-import Image from "next/image";
 import ImageModal from "@/app/components/ImageModal";
 import CustomLink from "@/app/components/CustomLink";
 
@@ -18,32 +15,7 @@ export default function pageContent() {
   const crossmetaData = metadata.crossproduct;
 
   return (
-    <div style={{ padding: "20px" }}>
-      <Breadcrumb
-        items={[
-          { name: "線形代数", href: `/${metaData.topic}` },
-          {
-            name: metaData.title,
-            href: `/${metaData.topic}/${pagename}`,
-          },
-        ]}
-      />
-
-      <Image
-        src={`${imagePath}/thumb.png`}
-        alt={metaData.title}
-        width={100}
-        height={50}
-        className="thumbpage"
-      />
-      <h1 className="title">{metaData.title}</h1>
-
-      <div className="lastUpdated">
-        最終更新日: {formatDate(metaData.lastUpdated)}
-      </div>
-      <p>{metaData.description}</p>
-
-      {/* ページコンテンツ */}
+    <>
       <h2>ベクトル積について</h2>
       <p>
         ベクトル積には、内積（Dot Product または Inner Product）と外積（Cross
@@ -226,6 +198,6 @@ export default function pageContent() {
           &nbsp;のノルムの積を意味します。
         </p>
       </details>
-    </div>
+    </>
   );
 }
