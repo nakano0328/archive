@@ -40,15 +40,15 @@ export default function pageContent() {
 
       <p>
         任意のベクトル&nbsp;
-        <InlineMath math="\mathbf{a}" />
+        <InlineMath math="\bm{a}" />
         &nbsp;と&nbsp;
-        <InlineMath math="\mathbf{b}" />
+        <InlineMath math="\bm{b}" />
         &nbsp;の外積は次式のように定義されます。
       </p>
 
       <CenteredEquation
         equation="\begin{align*}
-        \mathbf{a}\times\mathbf{b} &=\|\mathbf{a}\|\|\mathbf{b}\|\sin{\theta}
+        \bm{a}\times\bm{b} &=\|\bm{a}\|\|\bm{b}\|\sin{\theta}
         \end{align*}"
       />
 
@@ -66,15 +66,15 @@ export default function pageContent() {
 
       <p>
         2次元の任意のベクトル&nbsp;
-        <InlineMath math="\mathbf{a}" />
+        <InlineMath math="\bm{a}" />
         &nbsp;と&nbsp;
-        <InlineMath math="\mathbf{b}" />
+        <InlineMath math="\bm{b}" />
         &nbsp;の外積は次式のように定義されます。
       </p>
 
       <CenteredEquation
         equation="\begin{align*}
-        \mathbf{a}\times\mathbf{b} = a_1 b_2 - a_2 b_1
+        \bm{a}\times\bm{b} = a_1 b_2 - a_2 b_1
         \end{align*}"
       />
 
@@ -91,9 +91,9 @@ export default function pageContent() {
         </li>
         <p>
           生成されるベクトルは、元の2つのベクトル&nbsp;
-          <InlineMath math="\mathbf{a}" />
+          <InlineMath math="\bm{a}" />
           &nbsp;と&nbsp;
-          <InlineMath math="\mathbf{b}" />
+          <InlineMath math="\bm{b}" />
           &nbsp;の両方に垂直（直交）します。
         </p>
         <li>
@@ -108,22 +108,22 @@ export default function pageContent() {
 
       <p>
         2つのベクトル&nbsp;
-        <InlineMath math="\mathbf{a}" />
+        <InlineMath math="\bm{a}" />
         &nbsp;と&nbsp;
-        <InlineMath math="\mathbf{b}" />
+        <InlineMath math="\bm{b}" />
         &nbsp;をこのように定義します。
       </p>
 
       <CenteredEquation
         equation="\begin{align*}
-        \mathbf{a} = (a_x,a_y,a_z) \notag \\
-        \mathbf{b} = (b_x,b_y,b_z)
+        \bm{a} = (a_x,a_y,a_z) \notag \\
+        \bm{b} = (b_x,b_y,b_z)
         \end{align*}"
       />
 
       <p>この時、外積の計算は以下の行列式で行います。</p>
       <CenteredEquation
-        equation="\mathbf{a} \times \mathbf{b} = 
+        equation="\bm{a} \times \bm{b} = 
           \begin{vmatrix}
           \vec{i} & \vec{j} & \vec{k} \\
           a_x & a_y & a_z \\
@@ -138,31 +138,31 @@ export default function pageContent() {
         この式を計算すると以下のようになります。行列式を扱えない方はこちらを覚えましょう。
       </p>
 
-      <CenteredEquation equation="\mathbf{a} \times \mathbf{b} = (a_y b_z - a_z b_y , a_z b_x - a_x b_z , a_x b_y - a_y b_x)" />
+      <CenteredEquation equation="\bm{a} \times \bm{b} = (a_y b_z - a_z b_y , a_z b_x - a_x b_z , a_x b_y - a_y b_x)" />
 
       <h2>具体例 - 2次元の外積</h2>
 
       <p>
         例を与えて考えてみましょう。ベクトル&nbsp;
-        <InlineMath math="\mathbf{a}" />
+        <InlineMath math="\bm{a}" />
         &nbsp;と&nbsp;
-        <InlineMath math="\mathbf{b}" />
+        <InlineMath math="\bm{b}" />
         &nbsp;を以下のような数字を与えた2次元ベクトルとします。
       </p>
 
       <CenteredEquation
         equation="\begin{align*}
-        \mathbf{a} &= \begin{bmatrix} 3 \\ 1 \end{bmatrix} \notag \\
-        \mathbf{b} &= \begin{bmatrix} 1 \\ 4 \end{bmatrix}
+        \bm{a} &= \begin{bmatrix} 3 \\ 1 \end{bmatrix} \notag \\
+        \bm{b} &= \begin{bmatrix} 1 \\ 4 \end{bmatrix}
         \end{align*}
         "
       />
 
       <p>
         これらのベクトルはグラフで表すと以下のようになります。赤い矢印がベクトル&nbsp;
-        <InlineMath math="\mathbf{a}" />
+        <InlineMath math="\bm{a}" />
         &nbsp;で、青い矢印がベクトル&nbsp;
-        <InlineMath math="\mathbf{b}" />
+        <InlineMath math="\bm{b}" />
         &nbsp;です。
       </p>
 
@@ -188,7 +188,7 @@ export default function pageContent() {
         まず初めに外積を式で表すと以下のようになります。
       </p>
 
-      <CenteredEquation equation="\mathbf{a}\times\mathbf{b}=5 \cdot 3 - 1 \cdot 1 = 15 - 1 = 14" />
+      <CenteredEquation equation="\bm{a}\times\bm{b}=5 \cdot 3 - 1 \cdot 1 = 15 - 1 = 14" />
 
       <p>
         これらのベクトルの外積をグラフで表すと以下のようになります。

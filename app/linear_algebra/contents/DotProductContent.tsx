@@ -45,24 +45,24 @@ export default function pageContent() {
 
       <p>
         任意のベクトル&nbsp;
-        <InlineMath math="\mathbf{a}" />
+        <InlineMath math="\bm{a}" />
         &nbsp;と&nbsp;
-        <InlineMath math="\mathbf{b}" />
+        <InlineMath math="\bm{b}" />
         &nbsp;の内積は次式のように定義されます。
       </p>
 
       <CenteredEquation
         equation="\begin{align*}
-        \mathbf{a}\cdot\mathbf{b} &= \mathbf{a}^{\mathbf{T}}\mathbf{b} = \mathbf{b}^{\mathbf{T}}\mathbf{a} \notag \\
-        \mathbf{a}\cdot\mathbf{b} &= \|\mathbf{a}\|\|\mathbf{b}\|\cos{\theta}
+        \bm{a}\cdot\bm{b} &= \bm{a}^{\bm{T}}\bm{b} = \bm{b}^{\bm{T}}\bm{a} \notag \\
+        \bm{a}\cdot\bm{b} &= \|\bm{a}\|\|\bm{b}\|\cos{\theta}
         \end{align*}"
       />
 
       <p>
         ここで&nbsp;
-        <InlineMath math="\mathbf{a}^{\mathbf{T}}" />
+        <InlineMath math="\bm{a}^{\bm{T}}" />
         &nbsp;は&nbsp;
-        <InlineMath math="\mathbf{a}" />
+        <InlineMath math="\bm{a}" />
         &nbsp;の転置を表しています。
       </p>
 
@@ -70,25 +70,25 @@ export default function pageContent() {
 
       <p>
         例を与えて考えてみましょう。ベクトル&nbsp;
-        <InlineMath math="\mathbf{a}" />
+        <InlineMath math="\bm{a}" />
         &nbsp;と&nbsp;
-        <InlineMath math="\mathbf{b}" />
+        <InlineMath math="\bm{b}" />
         &nbsp;を以下のような数字を与えた2次元ベクトルとします。
       </p>
 
       <CenteredEquation
         equation="\begin{align*}
-        \mathbf{a} &= \begin{bmatrix} 1 \\ 3 \end{bmatrix} \notag \\
-        \mathbf{b} &= \begin{bmatrix} 5 \\ 1 \end{bmatrix}
+        \bm{a} &= \begin{bmatrix} 1 \\ 3 \end{bmatrix} \notag \\
+        \bm{b} &= \begin{bmatrix} 5 \\ 1 \end{bmatrix}
         \end{align*}
         "
       />
 
       <p>
         これらのベクトルはグラフで表すと以下のようになります。赤い矢印がベクトル&nbsp;
-        <InlineMath math="\mathbf{a}" />
+        <InlineMath math="\bm{a}" />
         &nbsp;で、青い矢印がベクトル&nbsp;
-        <InlineMath math="\mathbf{b}" />
+        <InlineMath math="\bm{b}" />
         &nbsp;です。
       </p>
 
@@ -111,7 +111,7 @@ export default function pageContent() {
       <p>これらのベクトルの足し算を式で表すと以下のようになります。</p>
 
       <CenteredEquation
-        equation="\mathbf{a}+\mathbf{b}= \begin{bmatrix}
+        equation="\bm{a}+\bm{b}= \begin{bmatrix}
         1 \\ 3 \\
         \end{bmatrix} + \begin{bmatrix}
         5 \\ 1 \\
@@ -150,7 +150,7 @@ export default function pageContent() {
         まず初めに式で表すと以下のようになります。
       </p>
 
-      <CenteredEquation equation="\mathbf{a}\cdot\mathbf{b}=\begin{bmatrix} 1 \ 3 \\\end{bmatrix}\begin{bmatrix}  5 \\ 1 \\\end{bmatrix}=1\cdot5+3\cdot1=8" />
+      <CenteredEquation equation="\bm{a}\cdot\bm{b}=\begin{bmatrix} 1 \ 3 \\\end{bmatrix}\begin{bmatrix}  5 \\ 1 \\\end{bmatrix}=1\cdot5+3\cdot1=8" />
 
       <p>
         これらのベクトルの内積をグラフで表すと以下のようになります。
@@ -182,19 +182,19 @@ export default function pageContent() {
           内積は以下のように表されます。
           <br />
           &nbsp;&nbsp;&nbsp;
-          <InlineMath math="\mathbf{a}\cdot\mathbf{b} = \|\mathbf{a}\|\|\mathbf{b}\|\cos{\theta}" />
+          <InlineMath math="\bm{a}\cdot\bm{b} = \|\bm{a}\|\|\bm{b}\|\cos{\theta}" />
           <br />
           これを以下のように書き換えます。
           <br />
           &nbsp;&nbsp;&nbsp;
-          <InlineMath math="\mathbf{a}\cdot\mathbf{b} = \|\mathbf{a}\|\cos{\theta}\|\mathbf{b}\|" />
+          <InlineMath math="\bm{a}\cdot\bm{b} = \|\bm{a}\|\cos{\theta}\|\bm{b}\|" />
           <br />
           これはベクトル&nbsp;
-          <InlineMath math="\mathbf{a}" />
+          <InlineMath math="\bm{a}" />
           &nbsp;をベクトル&nbsp;
-          <InlineMath math="\mathbf{b}" />
+          <InlineMath math="\bm{b}" />
           &nbsp;に射影(projection)したものと&nbsp;
-          <InlineMath math="\mathbf{b}" />
+          <InlineMath math="\bm{b}" />
           &nbsp;のノルムの積を意味します。
         </p>
       </details>

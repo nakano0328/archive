@@ -16,7 +16,7 @@ export default function Card({ children }: CardProps) {
         backgroundColor: "white",
         boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
         transition: "transform 0.3s ease",
-        height: "380px",
+        height: "410px",
       }}
       onMouseEnter={(e) => {
         e.currentTarget.style.transform = "translateY(-5px)";
