@@ -9,7 +9,7 @@ export default function pageContent() {
 
   const metaData = metadata[pagename];
   const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
-  const imagePath = `${basePath}/${metaData.topic}/${pagename}`;
+  //const imagePath = `${basePath}/${metaData.topic}/${pagename}`;
   //const notePath = `https://colab.research.google.com/github/jeonglabo/nextjs/blob/main/notebook/${metaData.topic}/${pagename}`;
 
   return (
