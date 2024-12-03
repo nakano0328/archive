@@ -80,6 +80,20 @@ export default function pageContent() {
         また、マイナス倍されると向きが反対になります。その様子を表したものが以下の図の緑のベクトルになります。
       </p>
 
+      <ImageModal
+        imagePath={`${imagePath}/scalar.png`}
+        altText="ベクトルv_aのスカラー倍をしたものを表しています。"
+      />
+      <CustomLink
+        href={`${notePath}/scalar.ipynb`}
+        imageUrl={`${imagePath}/scalar.png`}
+        altText="ベクトルv_aのスカラー倍をしたものを表したグラフ"
+        siteName="ベクトルのスカラー倍の表示"
+        description="ベクトルのスカラー倍の表示を行っているコードを示しています。"
+        target="_blank"
+      />
+
+      <br />
       <h3>足し算</h3>
       <CenteredEquation
         equation="\begin{align*}
@@ -145,26 +159,6 @@ export default function pageContent() {
         &nbsp;となります。
         <br />
         このように、ベクトル同士の引き算では、ベクトルの先端同士をつなげて新しいベクトルを作ることができます。
-      </p>
-
-      <h3>スカラー倍</h3>
-      <p>
-        例:{" "}
-        <b>
-          2v<sub>1</sub>→
-        </b>
-        ,{" "}
-        <b>
-          12v<sub>1</sub>→
-        </b>
-        ,{" "}
-        <b>
-          −v<sub>1</sub>→
-        </b>
-      </p>
-      <p>
-        <i>スカラー倍 (Scalar Multiplication)</i>{" "}
-        はベクトルの長さや向きを変える。
       </p>
 
       <h2>位置ベクトル</h2>
