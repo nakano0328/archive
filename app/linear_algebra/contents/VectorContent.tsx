@@ -66,6 +66,19 @@ export default function pageContent() {
       <h2 className="caption">ベクトルの演算</h2>
       <p>以下にベクトルの演算式を記します。</p>
       <h3>スカラー倍</h3>
+      <p>
+        ベクトルをスカラー倍すると、ベクトルの大きさが変わります。
+        <br />
+        例えば2倍すると、ベクトルの大きさが2倍になります。
+        <br />
+        以下は、赤いベクトル&nbsp;
+        <InlineMath math="\overrightarrow{v_a}" />
+        &nbsp;と2倍された青いベクトル&nbsp;
+        <InlineMath math="\overrightarrow{2v_a}" />
+        &nbsp; を表します。
+        <br />
+        また、マイナス倍されると向きが反対になります。その様子を表したものが以下の図の緑のベクトルになります。
+      </p>
 
       <h3>足し算</h3>
       <CenteredEquation
