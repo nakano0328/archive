@@ -63,6 +63,25 @@ export default function pageContent() {
         </li>
       </ol>
 
+      <p>
+        ここで、&nbsp;
+        <InlineMath math="\overrightarrow{AB}" />
+        &nbsp;の表し方について説明します。
+        <br />
+        点Aと点Bは以下のような座標を持っているとします。
+        <br />
+        <InlineMath math="点A: (a_x, a_y)" />
+        <br />
+        <InlineMath math="点B: (b_x, b_y)" />
+        <br />
+        点Aから点Bに向かうベクトルは、点Aから点Bに向かう矢印として表されます。
+        <br />
+        このベクトルの成分は、点Bの座標から点Aの座標を引いたものになります。式で表すと以下の通りです。
+        <br />
+      </p>
+
+      <CenteredEquation equation="\overrightarrow{AB} = (b_x - a_x, b_y - a_y)" />
+
       <h2 className="caption">ベクトルの演算</h2>
       <p>以下にベクトルの演算式を記します。</p>
       <h3>スカラー倍</h3>
