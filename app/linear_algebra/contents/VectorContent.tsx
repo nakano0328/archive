@@ -171,165 +171,28 @@ export default function pageContent() {
       <p>
         引き算を図で表すと以下のようになります。赤のベクトル&nbsp;
         <InlineMath math="\bm{a}" />
-        &nbsp;と青の&nbsp;
+        &nbsp;と青のベクトル&nbsp;
         <InlineMath math="\bm{b}" />
-        &nbsp;の引き算の結果が緑の&nbsp;
+        &nbsp;の引き算の結果が緑のベクトル&nbsp;
         <InlineMath math="\bm{c}" />
         &nbsp;となります。
         <br />
         このように、ベクトル同士の引き算では、ベクトルの先端同士をつなげて新しいベクトルを作ることができます。
       </p>
 
-      <h2>位置ベクトル</h2>
-      <p>
-        座標平面上の位置ベクトルは始点が原点 <b>(0,0)</b> である。
-      </p>
-      <p>
-        例: 点 <b>A(2,2)</b>、点 <b>B(6,4)</b> の位置ベクトル <b>AB−→−</b> は、
-        <b>A</b> から <b>B</b> へのベクトル。
-      </p>
-
-      <h2>座標変換</h2>
-      <ul>
-        <li>
-          <b>A:</b> <b>(x→−2, y→−2) → (0,0)</b>
-        </li>
-        <li>
-          <b>B:</b> <b>(x→−2, y→−2) → (4,2)</b>
-        </li>
-      </ul>
-
-      <h2>定理</h2>
-      <p>
-        点{" "}
-        <b>
-          P<sub>1</sub>=(x<sub>1</sub>, y<sub>1</sub>)
-        </b>
-        、点{" "}
-        <b>
-          P<sub>2</sub>=(x<sub>2</sub>, y<sub>2</sub>)
-        </b>{" "}
-        の場合：
-      </p>
-      <p>
-        <b>
-          P<sub>1</sub>P<sub>2</sub>−→−−=(x<sub>2</sub>−x<sub>1</sub>, y
-          <sub>2</sub>−y<sub>1</sub>)
-        </b>
-      </p>
-
-      <h2>ベクトルの演算と性質</h2>
-      <h3>加法</h3>
-      <p>
-        ベクトル{" "}
-        <b>
-          v<sub>1</sub>→=(a,b)
-        </b>{" "}
-        と{" "}
-        <b>
-          v<sub>2</sub>→=(c,d)
-        </b>{" "}
-        の場合：
-      </p>
-      <p>
-        <b>
-          v<sub>1</sub>→+v<sub>2</sub>→=(a+c, b+d)
-        </b>
-      </p>
-
-      <h3>引き算</h3>
-      <p>
-        <b>
-          v<sub>1</sub>→−v<sub>2</sub>→=(a<sub>1</sub>, b<sub>1</sub>)−(a
-          <sub>2</sub>, b<sub>2</sub>)=(a<sub>1</sub>−a<sub>2</sub>, b
-          <sub>1</sub>−b<sub>2</sub>)
-        </b>
-      </p>
-
-      <h3>スカラー倍</h3>
-      <p>
-        <b>nv→=(na, nb)</b>
-      </p>
-
-      <h3>ノルムと内積</h3>
-      <p>
-        <b>ノルム (ベクトルの長さ)</b>
-      </p>
-      <p>
-        ベクトル{" "}
-        <b>
-          v→=(v<sub>1</sub>,v<sub>2</sub>)
-        </b>{" "}
-        の場合：
-      </p>
-      <p>
-        <b>
-          ∥v→∥=√(v<sub>1</sub>
-          <sup>2</sup>+v<sub>2</sub>
-          <sup>2</sup>)
-        </b>
-      </p>
-      <p>
-        一般のベクトル{" "}
-        <b>
-          v→=(v<sub>1</sub>,v<sub>2</sub>,…,v<sub>n</sub>)
-        </b>{" "}
-        の場合：
-      </p>
-      <p>
-        <b>
-          ∥v→∥=√(∑<sub>k=1</sub>
-          <sup>n</sup>v<sub>k</sub>
-          <sup>2</sup>)
-        </b>
-      </p>
-
-      <h3>ノルムの性質</h3>
-      <ul>
-        <li>
-          <b>∥v→∥≥0</b>
-        </li>
-        <li>
-          <b>∥v→∥=0⟺v→=0→</b>
-        </li>
-        <li>
-          <b>∥nv→∥=|n|∥v→∥</b> （<i>n</i> はスカラー）
-        </li>
-      </ul>
-
-      <h3>単位ベクトル (Unit Vector)</h3>
-      <p>
-        長さが1のベクトル：<b>u→=v→/∥v→∥</b>
-      </p>
-      <p>
-        例：2次元では <b>(1,0)</b>, <b>(0,1)</b>、3次元では <b>(1,0,0)</b>,{" "}
-        <b>(0,1,0)</b>, <b>(0,0,1)</b>
-      </p>
-      <p>
-        標準単位ベクトル：
-        <b>
-          e<sub>1</sub>→, e<sub>2</sub>→, e<sub>3</sub>→
-        </b>
-      </p>
-
-      <h3>距離 (Distance)</h3>
-      <p>
-        点{" "}
-        <b>
-          A=(x<sub>1</sub>, y<sub>1</sub>)
-        </b>{" "}
-        と点{" "}
-        <b>
-          B=(x<sub>2</sub>, y<sub>2</sub>)
-        </b>{" "}
-        の間の距離 <b>d</b> は：
-      </p>
-      <p>
-        <b>
-          d=√((x<sub>2</sub>−x<sub>1</sub>)<sup>2</sup> + (y<sub>2</sub>−y
-          <sub>1</sub>)<sup>2</sup>)
-        </b>
-      </p>
+      <ImageModal
+        imagePath={`${imagePath}/minus.png`}
+        altText="ベクトルaとベクトルbの引き算を表したグラフ"
+      />
+      <CustomLink
+        href={`${notePath}/minus.ipynb`}
+        imageUrl={`${imagePath}/minus.png`}
+        altText="ベクトルaとベクトルbの引き算を表したグラフ"
+        siteName="ベクトルの引き算の表示"
+        description="ベクトルの引き算の表示を行っているコードを示しています。"
+        target="_blank"
+      />
+      <br />
     </>
   );
 }

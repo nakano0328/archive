@@ -19,10 +19,10 @@ export const metadata: MetadataCollection = {
     topic: "linear_algebra",
   },
   vector: {
-    title: "ベクトルとは",
-    tabtitle: `ベクトルとは - ${siteTitle}`,
+    title: "ベクトルの演算",
+    tabtitle: `ベクトルの演算 - ${siteTitle}`,
     description:
-      "ベクトルは、向きと大きさを持つ量のことで、線形代数の基本的な概念になります。",
+      "ベクトルの基本概念や足し算、引き算、スカラー倍について説明しています",
     lastUpdated: "2024-11-26",
     topic: "linear_algebra",
   },
