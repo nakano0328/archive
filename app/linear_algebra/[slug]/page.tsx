@@ -2,12 +2,14 @@
 import { notFound } from "next/navigation";
 import Breadcrumb from "@/app/components/Breadcrumb";
 import { metadata as linearAlgebraMetadata } from "@/app/linear_algebra/metadata";
-import DotProductContent from "@/app/linear_algebra/contents/DotProductContent";
-import CrossProductContent from "@/app/linear_algebra/contents/CrossProductContent";
-import VectorContent from "@/app/linear_algebra/contents/VectorContent";
 import GoogleForm from "@/app/components/GoogleForm";
 import Image from "next/image";
 import { formatDate } from "@/app/components/formatDate";
+
+import DotProductContent from "@/app/linear_algebra/contents/DotProductContent";
+import CrossProductContent from "@/app/linear_algebra/contents/CrossProductContent";
+import VectorContent from "@/app/linear_algebra/contents/VectorContent";
+import Vector2Content from "@/app/linear_algebra/contents/Vector2Content";
 
 interface PageProps {
   params: Promise<{
@@ -28,6 +30,7 @@ const contentComponents = {
   dotproduct: DotProductContent,
   crossproduct: CrossProductContent,
   vector: VectorContent,
+  vector2: Vector2Content,
   // 他のコンポーネントを追加
 };
 

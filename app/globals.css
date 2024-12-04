@@ -57,7 +57,7 @@ h3 {
 
 p {
   font-size: 17px;
-  line-height: 2; /* 行間を文字サイズの2倍に設定 */
+  line-height: 1.7; /* 行間を文字サイズの2倍に設定 */
 }
 
 li {

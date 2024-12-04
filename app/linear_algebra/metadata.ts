@@ -23,7 +23,14 @@ export const metadata: MetadataCollection = {
     tabtitle: `ベクトルの演算 - ${siteTitle}`,
     description:
       "ベクトルの基本概念や足し算、引き算、スカラー倍について説明しています",
-    lastUpdated: "2024-11-26",
+    lastUpdated: "2024-12-04",
+    topic: "linear_algebra",
+  },
+  vector2: {
+    title: "ベクトルのノルムと距離",
+    tabtitle: `ベクトルのノルムと距離 - ${siteTitle}`,
+    description: "ベクトルのノルム、距離について説明しています",
+    lastUpdated: "2024-12-04",
     topic: "linear_algebra",
   },
   // 他のトピックもここに追加できます
