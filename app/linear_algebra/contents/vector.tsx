@@ -57,7 +57,7 @@ export default function pageContent() {
         <li>
           特別に、0ベクトルは&nbsp;
           <InlineMath math="\overrightarrow{0}" />
-          &nbsp;と表される。
+          &nbsp;と表されます。
         </li>
       </ol>
 

@@ -4,7 +4,7 @@ import ImageModal from "@/app/components/ImageModal";
 import CustomLink from "@/app/components/CustomLink";
 
 export default function pageContent() {
-  const pagename: string = "vector2"; //ここを変更
+  const pagename: string = "norm"; //ここを変更
 
   const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
   const imagePath = `${basePath}/linear_algebra/${pagename}`;
@@ -12,7 +12,7 @@ export default function pageContent() {
 
   return (
     <>
-      <h2 className="caption">ノルム</h2>
+      <h2 className="caption">ノルムの定義</h2>
       <p>
         ベクトルのノルムは、ベクトルの大きさを表す量です。
         <br />
@@ -43,6 +43,26 @@ export default function pageContent() {
         \end{align*}"
       />
 
+      <p>
+        これらは三平方の定理から導かれています。
+        <br />
+        図で表すと以下のようになります。
+      </p>
+
+      <ImageModal
+        imagePath={`${imagePath}/norm.png`}
+        altText="ベクトルのノルムが三平方の定理から求められていることを表したグラフ"
+      />
+      <CustomLink
+        href={`${notePath}/norm.ipynb`}
+        imageUrl={`${imagePath}/norm.png`}
+        altText="ベクトルのノルムが三平方の定理から求められていることを表したグラフ"
+        siteName="ベクトルのノルムの表示"
+        description="ベクトルのノルムが三平方の定理から求められていることを表したコードを示しています。"
+        target="_blank"
+      />
+
+      <h2 className="caption">ノルムの性質</h2>
       <p>ノルムの性質として以下のことがあげられます。</p>
       <ul>
         <li>
@@ -62,6 +82,20 @@ export default function pageContent() {
             <br />
             &nbsp;
             <InlineMath math="\|\overrightarrow{v}\| = 0 \iff \overrightarrow{v} = \overrightarrow{0}" />
+            &nbsp;
+          </p>
+        </li>
+        <li>
+          ベクトルのノルムが1の場合、そのベクトルは単位ベクトルと呼ばれます。
+          <p>
+            基本的に、単位ベクトルはベクトルの向きだけを表すために使われます。<br />
+            単位ベクトルは以下のようにeで表されることが多いです。
+            <br />
+            また、任意のベクトルのみを使用しても、単位ベクトルを作ることができます。
+            <br />
+            &nbsp;
+            <InlineMath math="\bm{e} = \frac{\overrightarrow{v}}{\|\overrightarrow{v}\|}" />
+            &nbsp;
           </p>
         </li>
         <li>
@@ -71,6 +105,7 @@ export default function pageContent() {
             <br />
             &nbsp;
             <InlineMath math="\|c\overrightarrow{v}\| = |c|\|\overrightarrow{v}\|" />
+            &nbsp;
           </p>
         </li>
       </ul>

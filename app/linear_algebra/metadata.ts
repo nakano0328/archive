@@ -26,11 +26,11 @@ export const metadata: MetadataCollection = {
     lastUpdated: "2024-12-04",
     topic: "linear_algebra",
   },
-  vector2: {
-    title: "ベクトルのノルムと距離",
-    tabtitle: `ベクトルのノルムと距離 - ${siteTitle}`,
-    description: "ベクトルのノルム、距離について説明しています",
-    lastUpdated: "2024-12-04",
+  norm: {
+    title: "ベクトルのノルム",
+    tabtitle: `ベクトルのノルム - ${siteTitle}`,
+    description: "ノルムの定義、性質について説明しています",
+    lastUpdated: "2024-12-05",
     topic: "linear_algebra",
   },
   // 他のトピックもここに追加できます

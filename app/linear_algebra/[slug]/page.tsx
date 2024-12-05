@@ -6,10 +6,10 @@ import GoogleForm from "@/app/components/GoogleForm";
 import Image from "next/image";
 import { formatDate } from "@/app/components/formatDate";
 
-import DotProductContent from "@/app/linear_algebra/contents/DotProductContent";
-import CrossProductContent from "@/app/linear_algebra/contents/CrossProductContent";
-import VectorContent from "@/app/linear_algebra/contents/VectorContent";
-import Vector2Content from "@/app/linear_algebra/contents/Vector2Content";
+import DotProductContent from "@/app/linear_algebra/contents/dotproduct";
+import CrossProductContent from "@/app/linear_algebra/contents/crossproduct";
+import VectorContent from "@/app/linear_algebra/contents/vector";
+import NormContent from "@/app/linear_algebra/contents/norm";
 
 interface PageProps {
   params: Promise<{
@@ -30,7 +30,7 @@ const contentComponents = {
   dotproduct: DotProductContent,
   crossproduct: CrossProductContent,
   vector: VectorContent,
-  vector2: Vector2Content,
+  norm: NormContent,
   // 他のコンポーネントを追加
 };
 
@@ -112,7 +112,7 @@ export default async function Page(props: PageProps) {
         <ContentComponent />
         <hr />
         <div style={{ margin: "20px" }}>
-          <h1>コメントフォーム</h1>
+          <h2 className="caption">コメントフォーム</h2>
           <div style={{ margin: "0px 10px" }}>
             <GoogleForm currentPath={`/linear_algebra/${params.slug}`} />
           </div>
