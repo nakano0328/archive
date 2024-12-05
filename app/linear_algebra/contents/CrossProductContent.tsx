@@ -16,7 +16,7 @@ export default function pageContent() {
 
   return (
     <>
-      <h2>ベクトル積について</h2>
+      <h2 className="caption">ベクトル積について</h2>
       <p>
         ベクトル積には、内積（Dot Product または Inner Product）と外積（Cross
         Product または Vector Product）の2種類があります。
@@ -36,7 +36,7 @@ export default function pageContent() {
         description={dotmetaData.description}
       />
 
-      <h2>外積とは</h2>
+      <h2 className="caption">外積とは</h2>
 
       <p>
         任意のベクトル&nbsp;
@@ -58,7 +58,7 @@ export default function pageContent() {
         一般的には3次元のほうがより多く扱われますが、イメージを持つためにも2次元の外積の説明にも目を通してください。
       </p>
 
-      <h2>2次元の外積</h2>
+      <h2 className="caption">2次元の外積</h2>
 
       <p>
         2次元ベクトルの場合、外積はスカラー量として計算されます。また、結果はベクトルの成分に対して「z方向の疑似的なベクトル」として扱われます。
@@ -78,7 +78,7 @@ export default function pageContent() {
         \end{align*}"
       />
 
-      <h2>3次元の外積</h2>
+      <h2 className="caption">3次元の外積</h2>
 
       <p>
         外積は、3次元空間で定義される2つのベクトルから新たなベクトルを生成する演算です。
@@ -88,22 +88,23 @@ export default function pageContent() {
       <ul>
         <li>
           <b>直行</b>
+          <p>
+            生成されるベクトルは、元の2つのベクトル&nbsp;
+            <InlineMath math="\bm{a}" />
+            &nbsp;と&nbsp;
+            <InlineMath math="\bm{b}" />
+            &nbsp;の両方に垂直（直交）します。
+          </p>
         </li>
-        <p>
-          生成されるベクトルは、元の2つのベクトル&nbsp;
-          <InlineMath math="\bm{a}" />
-          &nbsp;と&nbsp;
-          <InlineMath math="\bm{b}" />
-          &nbsp;の両方に垂直（直交）します。
-        </p>
+
         <li>
           <b>右ねじの法則</b>
+          <p>
+            外積の向きは「右ねじの法則」に従って決まります。
+            <br />
+            人差し指を1つ目のベクトル方向にむけ、2つ目のベクトルの方向に回転させたとき、親指が指す方向が外積ベクトルの方向になります。
+          </p>
         </li>
-        <p>
-          外積の向きは「右ねじの法則」に従って決まります。
-          <br />
-          人差し指を1つ目のベクトル方向にむけ、2つ目のベクトルの方向に回転させたとき、親指が指す方向が外積ベクトルの方向になります。
-        </p>
       </ul>
 
       <p>
@@ -140,7 +141,7 @@ export default function pageContent() {
 
       <CenteredEquation equation="\bm{a} \times \bm{b} = (a_y b_z - a_z b_y , a_z b_x - a_x b_z , a_x b_y - a_y b_x)" />
 
-      <h2>具体例 - 2次元の外積</h2>
+      <h2 className="caption">具体例 - 2次元の外積</h2>
 
       <p>
         例を与えて考えてみましょう。ベクトル&nbsp;

@@ -16,7 +16,7 @@ export default function pageContent() {
 
   return (
     <>
-      <h2>ベクトル積について</h2>
+      <h2 className="caption">ベクトル積について</h2>
       <p>
         ベクトル積には、内積（Dot Product または Inner Product）と外積（Cross
         Product または Vector Product）の2種類があります。
@@ -36,7 +36,7 @@ export default function pageContent() {
         description={crossmetaData.description}
       />
 
-      <h2>内積とは</h2>
+      <h2 className="caption">内積とは</h2>
 
       <p>
         内積は、特に機械学習の分野で非常に重要です。ベクトル同士の類似度を計算する際に使用されるコサイン類似度とも深く関わっています。
@@ -66,7 +66,7 @@ export default function pageContent() {
         &nbsp;の転置を表しています。
       </p>
 
-      <h2>具体例</h2>
+      <h2 className="caption">具体例</h2>
 
       <p>
         例を与えて考えてみましょう。ベクトル&nbsp;
@@ -198,6 +198,7 @@ export default function pageContent() {
           &nbsp;のノルムの積を意味します。
         </p>
       </details>
+      <br />
     </>
   );
 }

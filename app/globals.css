@@ -180,3 +180,7 @@ details {
   border-radius: 3px; /*角を丸く*/
   border: 1px solid #00000080; /* 黒いふちをつける */
 }
+
+ul li p {
+  margin-top: 5px;
+}
