@@ -9,6 +9,11 @@ export default function Page() {
   return (
     <div>
       <RainbowText />
+      <div align="center">
+        <p>
+          ぼくのかんがえたさいきょうのぺーじ！
+        </p>
+      </div?
     </div>
   );
 }
