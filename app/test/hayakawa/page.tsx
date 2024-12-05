@@ -9,11 +9,11 @@ export default function Page() {
   return (
     <div>
       <RainbowText />
-      <div align="center">
+      <div style={{ textAlign: 'center' }}>
         <p>
           ぼくのかんがえたさいきょうのぺーじ！
         </p>
-      </div?
+      </div>
     </div>
   );
 }
