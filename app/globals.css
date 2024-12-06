@@ -186,11 +186,11 @@ ul li p {
 }
 
 .container {
-  text-align: center;
+  max-width: 90%;
   font-size: "1.5em";
   margin: 20px 0;
   background-color: #ffffff; /*背景を白く*/
-  padding: 10px;
+  padding: 10px 40px;
   border-radius: 10px; /*角を丸く*/
   border: 1px solid #000000; /* 黒いふちをつける */
 }

@@ -1,4 +1,5 @@
 import CenteredEquation from "@/app/components/CenteredEquation";
+import { metadata } from "@/app/linear_algebra/metadata";
 import { InlineMath } from "react-katex";
 import ImageModal from "@/app/components/ImageModal";
 import CustomLink from "@/app/components/CustomLink";
@@ -27,11 +28,23 @@ export default function pageContent() {
           <p>
             それぞれのベクトルが線形独立であることです。つまり、どのベクトルも他のベクトルの線形結合で表すことができないことです。詳しくは以下を見てください。
           </p>
+          <CustomLink
+            href="/linear_algebra/lin_indep"
+            imageUrl={`${basePath}/linear_algebra/lin_indep/thumb.png`}
+            altText="線形独立と線形従属のサムネ"
+            siteName={metadata.lin_indep.title}
+            description={metadata.lin_indep.description}
+          />
+        </li>
+        <li>
+          生成する空間
+          <p>
+            任意のベクトル&nbsp;
+            <InlineMath math="\bm{v}\in\bm{V}" />
+            &nbsp;は、基底ベクトルの線形結合で表すことができることです。
+          </p>
         </li>
       </ul>
-
-
-
 
       <p>
         標準座標系では、基底ベクトルは&nbsp;

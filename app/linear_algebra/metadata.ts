@@ -43,7 +43,7 @@ export const metadata: MetadataCollection = {
   lin_indep: {
     title: "線形独立と線形従属",
     tabtitle: `線形独立と線形従属 - ${siteTitle}`,
-    description: "線形独立と線形従属について説明しています",
+    description: "線形独立と線形従属について定義、性質、例を説明しています",
     lastUpdated: "2024-12-06",
     topic: "linear_algebra",
   },
