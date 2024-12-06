@@ -10,6 +10,8 @@ import DotProductContent from "@/app/linear_algebra/contents/dotproduct";
 import CrossProductContent from "@/app/linear_algebra/contents/crossproduct";
 import VectorContent from "@/app/linear_algebra/contents/vector";
 import NormContent from "@/app/linear_algebra/contents/norm";
+import BasisContent from "@/app/linear_algebra/contents/basis";
+import Lin_indepContent from "@/app/linear_algebra/contents/lin_indep";
 
 interface PageProps {
   params: Promise<{
@@ -31,6 +33,8 @@ const contentComponents = {
   crossproduct: CrossProductContent,
   vector: VectorContent,
   norm: NormContent,
+  basis: BasisContent,
+  lin_indep: Lin_indepContent,
   // 他のコンポーネントを追加
 };
 

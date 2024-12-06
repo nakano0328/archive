@@ -33,5 +33,19 @@ export const metadata: MetadataCollection = {
     lastUpdated: "2024-12-05",
     topic: "linear_algebra",
   },
+  basis: {
+    title: "基底",
+    tabtitle: `基底 - ${siteTitle}`,
+    description: "基底について説明しています",
+    lastUpdated: "2024-12-06",
+    topic: "linear_algebra",
+  },
+  lin_indep: {
+    title: "線形独立と線形従属",
+    tabtitle: `線形独立と線形従属 - ${siteTitle}`,
+    description: "線形独立と線形従属について説明しています",
+    lastUpdated: "2024-12-06",
+    topic: "linear_algebra",
+  },
   // 他のトピックもここに追加できます
 };

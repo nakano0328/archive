@@ -184,3 +184,13 @@ details {
 ul li p {
   margin-top: 5px;
 }
+
+.container {
+  text-align: center;
+  font-size: "1.5em";
+  margin: 20px 0;
+  background-color: #ffffff; /*背景を白く*/
+  padding: 10px;
+  border-radius: 10px; /*角を丸く*/
+  border: 1px solid #000000; /* 黒いふちをつける */
+}
