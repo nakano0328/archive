@@ -105,6 +105,7 @@ export default async function Page(props: PageProps) {
           height={50}
           className="thumbpage"
         />
+        <hr />
         <h1 className="title">{metaData.title}</h1>
 
         <div className="lastUpdated">

@@ -20,7 +20,7 @@ export default function Breadcrumb({ items }: BreadcrumbProps) {
           alignItems: "center",
           gap: "8px",
           margin: 0,
-          padding: "10px",
+          padding: "10px 10px 5px",
         }}
       >
         {/* ホーム文字 */}

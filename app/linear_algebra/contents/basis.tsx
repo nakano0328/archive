@@ -35,6 +35,7 @@ export default function pageContent() {
             siteName={metadata.lin_indep.title}
             description={metadata.lin_indep.description}
           />
+          <br />
         </li>
         <li>
           生成する空間
