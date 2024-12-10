@@ -47,17 +47,62 @@ export default function pageContent() {
         </li>
       </ul>
 
+      <h2 className="caption">新しい座標系と基底の導入</h2>
+      <ol>
+        <li>
+          <b>基底ベクトルの定義:</b>
+          <p>
+            標準座標系では、基底ベクトルは&nbsp;
+            <InlineMath math="\mathbf{e}_x = (1, 0)" />
+            &nbsp;と&nbsp;
+            <InlineMath math="\mathbf{e}_y = (0, 1)" />
+            &nbsp;です。これらがデフォルトの基底ベクトル（標準基底）です。
+            点&nbsp;
+            <InlineMath math="(2, 3)" />
+            &nbsp;は標準基底で表すと、&nbsp;
+            <InlineMath math="2\mathbf{e}_x + 3\mathbf{e}_y" />
+            &nbsp;となります。
+          </p>
+          <img src={`${imagePath}/standard_basis.png`} alt="標準基底の図" />
+        </li>
+        <li>
+          <b>新しい基底の導入:</b>
+          <p>
+            新しい基底&nbsp;
+            <InlineMath math="B" />
+            &nbsp;を&nbsp;
+            <InlineMath math="\begin{bmatrix} 1 & 1 \\ 1 & -1 \end{bmatrix}" />
+            &nbsp;と定義しています。これにより、新しい座標系が定義されます。
+            新しい基底を使うと、同じベクトルを異なる座標として表すことができます。
+          </p>
+          <img src={`${imagePath}/new_basis.png`} alt="新しい基底の図" />
+        </li>
+        <li>
+          <b>新しい基底を用いた座標表現:</b>
+          <p>
+            例として、元の座標&nbsp;
+            <InlineMath math="(2, 2)" />
+            &nbsp;を新しい基底&nbsp;
+            <InlineMath math="B" />
+            &nbsp;の座標系で表現する過程が示されています。
+            新しい基底での表現は次のように行われます:
+            <InlineMath math="\begin{bmatrix} 2 \\ 2 \end{bmatrix} = k_1 \begin{bmatrix} 1 \\ 1 \end{bmatrix} + k_2 \begin{bmatrix} 1 \\ -1 \end{bmatrix}" />
+            これを行列形式で書くと、
+            <InlineMath math="\begin{bmatrix} 2 \\ 2 \end{bmatrix} = \begin{bmatrix} 1 & 1 \\ 1 & -1 \end{bmatrix} \begin{bmatrix} k_1 \\ k_2 \end{bmatrix}" />
+            これを解くことで、新しい基底での座標&nbsp;
+            <InlineMath math="\begin{bmatrix} k_1 \\ k_2 \end{bmatrix}" />
+            &nbsp;が得られます。
+          </p>
+          <img src={`${imagePath}/coordinate_transformation.png`} alt="座標変換の図" />
+        </li>
+      </ol>
+
+      <h2 className="caption">まとめ</h2>
       <p>
-        標準座標系では、基底ベクトルは&nbsp;
-        <InlineMath math="e_x=(1,0)" />
-        &nbsp;と&nbsp;
-        <InlineMath math="e_y=(0,1)" />
-        &nbsp;です。これらがデフォルトの基底ベクトル（標準基底）です。
-        <br />
-        例えば点(2,3)は標準基底で表すと、&nbsp;
-        <InlineMath math="2e_x+3e_y" />
-        &nbsp;となります。
+        新しい基底を導入することで、同じベクトルや点を異なる視点から表現できます。これにより、座標系を変換して問題を解決する際に便利です。
+        このページの内容は、座標変換や異なる基底でのベクトルの表現方法についての理解を深める助けとなります。
       </p>
+      <br />
     </>
   );
 }
