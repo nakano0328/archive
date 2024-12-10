@@ -5,16 +5,14 @@ export const metadata: MetadataCollection = {
   dotproduct: {
     title: "内積とは",
     tabtitle: `内積とは - ${siteTitle}`,
-    description:
-      "内積は、ベクトル同士の積の一種で、ベクトルの方向を計算する際などに用いられます。",
+    description: "内積の定義や計算方法、性質について説明しています。",
     lastUpdated: "2024-11-26",
     topic: "linear_algebra",
   },
   crossproduct: {
     title: "外積とは",
     tabtitle: `外積とは - ${siteTitle}`,
-    description:
-      "外積は、ベクトル同士の積の一種で、ベクトルに垂直なベクトルを計算するために使用されます。",
+    description: "外積の定義や計算方法、性質について説明しています。",
     lastUpdated: "2024-11-26",
     topic: "linear_algebra",
   },
@@ -22,28 +20,28 @@ export const metadata: MetadataCollection = {
     title: "ベクトルの演算",
     tabtitle: `ベクトルの演算 - ${siteTitle}`,
     description:
-      "ベクトルの基本概念や足し算、引き算、スカラー倍について説明しています",
+      "ベクトルの和、スカラー倍、内積、外積など、ベクトルの演算について説明しています。",
     lastUpdated: "2024-12-04",
     topic: "linear_algebra",
   },
   norm: {
     title: "ベクトルのノルム",
     tabtitle: `ベクトルのノルム - ${siteTitle}`,
-    description: "ノルムの定義、性質について説明しています",
+    description: "ベクトルの大きさを表すノルムについて説明しています。",
     lastUpdated: "2024-12-05",
     topic: "linear_algebra",
   },
   basis: {
     title: "基底",
     tabtitle: `基底 - ${siteTitle}`,
-    description: "基底について説明しています",
-    lastUpdated: "2024-12-06",
+    description: "ベクトル空間の基底について定義、性質、例を説明しています。",
+    lastUpdated: "2024-12-10",
     topic: "linear_algebra",
   },
   lin_indep: {
     title: "線形独立と線形従属",
     tabtitle: `線形独立と線形従属 - ${siteTitle}`,
-    description: "線形独立と線形従属について定義、性質、例を説明しています",
+    description: "ベクトルの線形独立性と線形従属性について説明しています。",
     lastUpdated: "2024-12-06",
     topic: "linear_algebra",
   },
