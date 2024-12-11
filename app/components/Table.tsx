@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import styles from "./TableOfContents.module.css"; // CSSモジュールのインポート
+import styles from "./Table.module.css"; // CSSモジュールのインポート
 
 type Heading = {
   id: string;

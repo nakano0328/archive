@@ -5,7 +5,7 @@ import { metadata as linearAlgebraMetadata } from "@/app/linear_algebra/metadata
 import GoogleForm from "@/app/components/GoogleForm";
 import Image from "next/image";
 import { formatDate } from "@/app/components/formatDate";
-import TableOfContents from "@/app/components/TableOfContents";
+import Table from "@/app/components/Table";
 
 import DotProductContent from "@/app/linear_algebra/contents/dotproduct";
 import CrossProductContent from "@/app/linear_algebra/contents/crossproduct";
@@ -119,7 +119,7 @@ export default async function Page(props: PageProps) {
         <p>{metaData.description}</p>
 
         <aside style={{ width: "20%" }}>
-          <TableOfContents contentRef={contentRef} />
+          <Table contentRef={contentRef} />
         </aside>
 
         {/* ページコンテンツ */}
