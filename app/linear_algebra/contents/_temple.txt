@@ -12,8 +12,6 @@ export default function pageContent() {
   const imagePath = `${basePath}/${metaData.topic}/${pagename}`;
   const notePath = `https://colab.research.google.com/github/jeonglabo/nextjs/blob/main/notebook/${metaData.topic}/${pagename}`;
 
-  const crossmetaData = metadata.crossproduct;
-
   return (
     <>
       

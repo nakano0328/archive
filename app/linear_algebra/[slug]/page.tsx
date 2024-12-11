@@ -5,6 +5,7 @@ import { metadata as linearAlgebraMetadata } from "@/app/linear_algebra/metadata
 import GoogleForm from "@/app/components/GoogleForm";
 import Image from "next/image";
 import { formatDate } from "@/app/components/formatDate";
+import TableOfContents from "@/app/components/TableOfContents";
 
 import DotProductContent from "@/app/linear_algebra/contents/dotproduct";
 import CrossProductContent from "@/app/linear_algebra/contents/crossproduct";
@@ -12,7 +13,8 @@ import VectorContent from "@/app/linear_algebra/contents/vector";
 import NormContent from "@/app/linear_algebra/contents/norm";
 import BasisContent from "@/app/linear_algebra/contents/basis";
 import Lin_indepContent from "@/app/linear_algebra/contents/lin_indep";
-import SimultaneousEquationsContent from "@/app/linear_algebra/contents/SimultaneousEquations";
+import SimultaneousEquationsContent from "@/app/linear_algebra/contents/simultaneousequations";
+import MatrixContent from "@/app/linear_algebra/contents/matrix";
 
 interface PageProps {
   params: Promise<{
@@ -36,7 +38,8 @@ const contentComponents = {
   norm: NormContent,
   basis: BasisContent,
   lin_indep: Lin_indepContent,
-  SimultaneousEquations: SimultaneousEquationsContent,
+  simultaneousequations: SimultaneousEquationsContent,
+  matrix: MatrixContent,
   // 他のコンポーネントを追加
 };
 
@@ -114,6 +117,10 @@ export default async function Page(props: PageProps) {
           最終更新日: {formatDate(metaData.lastUpdated)}
         </div>
         <p>{metaData.description}</p>
+
+        <aside style={{ width: "20%" }}>
+          <TableOfContents contentRef={contentRef} />
+        </aside>
 
         {/* ページコンテンツ */}
         <ContentComponent />
