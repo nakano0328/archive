@@ -2,7 +2,6 @@ import { metadata } from "@/app/linear_algebra/metadata";
 import CenteredEquation from "@/app/components/CenteredEquation";
 import { InlineMath } from "react-katex";
 import ImageModal from "@/app/components/ImageModal";
-import CustomLink from "@/app/components/CustomLink";
 
 export default function pageContent() {
   const pagename: string = "matrix"; //ここを変更
@@ -10,11 +9,10 @@ export default function pageContent() {
   const metaData = metadata[pagename];
   const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
   const imagePath = `${basePath}/${metaData.topic}/${pagename}`;
-  const notePath = `https://colab.research.google.com/github/jeonglabo/nextjs/blob/main/notebook/${metaData.topic}/${pagename}`;
 
   return (
     <>
-      <h2 className="caption" id="1">
+      <h2 className="caption">
         行列とは
       </h2>
       <p>
@@ -35,7 +33,7 @@ export default function pageContent() {
 
       <p>基本的に大文字の英語で行列を表します。</p>
 
-      <h3 id="1.1">用語の説明</h3>
+      <h3>用語の説明</h3>
       <ul>
         <li>
           <b>行</b>
@@ -98,10 +96,10 @@ export default function pageContent() {
         altText="行と列を図として表したもの"
       />
 
-      <h2 className="caption" id="2">
+      <h2 className="caption">
         特殊な行列
       </h2>
-      <h3 id="2.1">単位行列</h3>
+      <h3>単位行列</h3>
       <p>
         単位行列は、対角成分が1で、それ以外の成分が0の正方行列です。単位行列は&nbsp;
         <InlineMath math="I" />
@@ -127,7 +125,7 @@ export default function pageContent() {
         <InlineMath math="AI = IA = A" />
       </p>
 
-      <h3 id="2.2">ゼロ行列</h3>
+      <h3>ゼロ行列</h3>
       <p>
         ゼロ行列は、全ての成分が0の行列です。ゼロ行列は&nbsp;
         <InlineMath math="O" />

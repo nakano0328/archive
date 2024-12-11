@@ -4,7 +4,7 @@ import { InlineMath } from "react-katex";
 export default function pageContent() {
   return (
     <>
-      <h2 className="caption">連立方程式の行列表現</h2>
+      <h2 className="caption" >連立方程式の行列表現</h2>
       <p>
         連立方程式は、行列を使って表現することができます。行列を使うことで、連立方程式の解法が効率的に行えるようになります。
         <br />
@@ -58,7 +58,7 @@ export default function pageContent() {
         &nbsp; をまとめて拡大係数行列と呼びます。
       </p>
 
-      <h2 className="caption">連立方程式の解法</h2>
+      <h2 className="caption" >連立方程式の解法</h2>
       <p>
         連立方程式の解法には、行列の逆行列を使う方法や、ガウスの消去法などがあります。
         <br />
@@ -88,7 +88,7 @@ export default function pageContent() {
         &nbsp; を使って求めることができます。
       </p>
 
-      <h2 className="caption">二元連立方程式の解法</h2>
+      <h2 className="caption" >二元連立方程式の解法</h2>
       <p>以下の二元連立方程式を行列表現を使用して解きます。</p>
 
       <CenteredEquation
@@ -150,7 +150,7 @@ export default function pageContent() {
         また、連立方程式を行列で表現することで、効率的に解法を行うことができます。
       </p>
 
-      <h2 className="caption">三元方程式の解法</h2>
+      <h2 className="caption" >三元方程式の解法</h2>
       <p>以下の三元方程式を行列表現を使用して解きます。</p>
       <CenteredEquation
         equation="\begin{cases}

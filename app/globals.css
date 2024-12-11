@@ -50,6 +50,13 @@ h2.caption {
   font-size: 28px;
 }
 
+h2.commentform {
+  background-color: #535460;
+  color: #ffffff;
+  padding: 15px 25px;
+  font-size: 28px;
+}
+
 h1,
 h3 {
   margin: 0;

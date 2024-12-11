@@ -1,64 +1,59 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
-import styles from "./Table.module.css"; // CSSモジュールのインポート
+import React, { useState, useEffect } from "react";
 
-type Heading = {
-  id: string;
-  text: string;
-  level: number;
-};
-
-interface TableOfContentsProps {
-  contentRef: React.RefObject<HTMLElement>;
-}
-
-const TableOfContents: React.FC<TableOfContentsProps> = ({ contentRef }) => {
-  const [headings, setHeadings] = useState<Heading[]>([]);
+const Table = () => {
+  const [headings, setHeadings] = useState<HTMLHeadingElement[]>([]);
 
   useEffect(() => {
-    if (contentRef?.current) {
-      const extractedHeadings = Array.from(
-        contentRef.current.querySelectorAll("h1, h2, h3, h4, h5, h6")
-      ).map((heading) => ({
-        id:
-          heading.id ||
-          heading.textContent?.trim().toLowerCase().replace(/\s+/g, "-") ||
-          "",
-        text: heading.textContent || "",
-        level: parseInt(heading.tagName.replace("H", ""), 10),
-      }));
+    // class="caption" を持つすべての h2 要素を取得
+    const elements = Array.from(
+      document.querySelectorAll("h2.caption")
+    ) as HTMLHeadingElement[];
 
-      setHeadings(extractedHeadings);
-    }
-  }, [contentRef]);
+    // 各要素に上から順に id を付与
+    elements.forEach((element, index) => {
+      element.id = `heading-${index + 1}`;
+    });
 
-  const handleClick = (id: string) => {
-    const target = document.getElementById(id);
-    if (target) {
-      target.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+    console.log(elements); // デバッグ用に抽出された要素を表示
+
+    setHeadings(elements);
+  }, []);
+
+  if (headings.length === 0) return null;
 
   return (
-    <nav aria-label="目次">
-      <ul className={styles.tableOfContents}>
-        {headings.map(({ id, text, level }) => (
-          <li key={id} style={{ marginLeft: `${(level - 1) * 1.5}rem` }}>
-            <a
-              href={`#${id}`}
-              onClick={(e) => {
-                e.preventDefault();
-                handleClick(id);
-              }}
-            >
-              {text}
-            </a>
-          </li>
-        ))}
-      </ul>
+    <nav aria-label="目次" style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
+      <div style={{
+        border: '1px solid #ccc',
+        borderRadius: '8px',
+        padding: '16px',
+        width: '80%',
+        maxWidth: '600px',
+        backgroundColor: '#f9f9f9'
+      }}>
+        <h2 style={{ textAlign: 'center' }}>目次</h2>
+        <ul style={{
+          listStyleType: 'none',
+          padding: 0,
+          margin: 0
+        }}>
+          {headings.map((heading) => (
+            <li key={heading.id} style={{ marginBottom: '8px' }}>
+              <a
+                href={`#${heading.id}`}
+                className="text-blue-600 hover:text-blue-800 transition-colors"
+                style={{ textDecoration: 'none' }}
+              >
+                {heading.textContent}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
     </nav>
   );
 };
 
-export default TableOfContents;
+export default Table;

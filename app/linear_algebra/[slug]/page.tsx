@@ -13,7 +13,7 @@ import VectorContent from "@/app/linear_algebra/contents/vector";
 import NormContent from "@/app/linear_algebra/contents/norm";
 import BasisContent from "@/app/linear_algebra/contents/basis";
 import Lin_indepContent from "@/app/linear_algebra/contents/lin_indep";
-import SimultaneousEquationsContent from "@/app/linear_algebra/contents/simultaneousequations";
+import Eq_Matrix from "@/app/linear_algebra/contents/eq_matrix";
 import MatrixContent from "@/app/linear_algebra/contents/matrix";
 
 interface PageProps {
@@ -38,7 +38,7 @@ const contentComponents = {
   norm: NormContent,
   basis: BasisContent,
   lin_indep: Lin_indepContent,
-  simultaneousequations: SimultaneousEquationsContent,
+  eq_matrix: Eq_Matrix,
   matrix: MatrixContent,
   // 他のコンポーネントを追加
 };
@@ -118,15 +118,13 @@ export default async function Page(props: PageProps) {
         </div>
         <p>{metaData.description}</p>
 
-        <aside style={{ width: "20%" }}>
-          <Table contentRef={contentRef} />
-        </aside>
+        <Table />
 
         {/* ページコンテンツ */}
         <ContentComponent />
         <hr />
         <div style={{ margin: "20px" }}>
-          <h2 className="caption">コメントフォーム</h2>
+          <h2 className="commentform">コメントフォーム</h2>
           <div style={{ margin: "0px 10px" }}>
             <GoogleForm currentPath={`/linear_algebra/${params.slug}`} />
           </div>

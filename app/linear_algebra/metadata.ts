@@ -45,7 +45,7 @@ export const metadata: MetadataCollection = {
     lastUpdated: "2024-12-06",
     topic: "linear_algebra",
   },
-  simultaneousequations: {
+  eq_matrix: {
     title: "連立方程式の行列表現",
     tabtitle: `連立方程式の行列表現 - ${siteTitle}`,
     description:
