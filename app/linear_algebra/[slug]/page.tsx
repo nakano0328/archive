@@ -12,6 +12,7 @@ import VectorContent from "@/app/linear_algebra/contents/vector";
 import NormContent from "@/app/linear_algebra/contents/norm";
 import BasisContent from "@/app/linear_algebra/contents/basis";
 import Lin_indepContent from "@/app/linear_algebra/contents/lin_indep";
+import SimultaneousEquationsContent from "@/app/linear_algebra/contents/SimultaneousEquations";
 
 interface PageProps {
   params: Promise<{
@@ -35,6 +36,7 @@ const contentComponents = {
   norm: NormContent,
   basis: BasisContent,
   lin_indep: Lin_indepContent,
+  SimultaneousEquations: SimultaneousEquationsContent,
   // 他のコンポーネントを追加
 };
 

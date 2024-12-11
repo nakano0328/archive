@@ -45,5 +45,12 @@ export const metadata: MetadataCollection = {
     lastUpdated: "2024-12-06",
     topic: "linear_algebra",
   },
+  SimultaneousEquations: {
+    title: "連立方程式の行列表現",
+    tabtitle: `連立方程式の行列表現 - ${siteTitle}`,
+    description: "連立方程式を行列を使って表現する方法について説明しています。",
+    lastUpdated: "2024-12-11",
+    topic: "linear_algebra",
+  },
   // 他のトピックもここに追加できます
 };
