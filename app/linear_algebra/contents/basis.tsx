@@ -1,16 +1,9 @@
-import CenteredEquation from "@/app/components/CenteredEquation";
 import { metadata } from "@/app/linear_algebra/metadata";
 import { InlineMath } from "react-katex";
-import ImageModal from "@/app/components/ImageModal";
 import CustomLink from "@/app/components/CustomLink";
 
 export default function pageContent() {
-  const pagename: string = "basis"; //ここを変更
-
   const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
-  const imagePath = `${basePath}/linear_algebra/${pagename}`;
-  const notePath = `https://colab.research.google.com/github/jeonglabo/nextjs/blob/main/notebook/linear_algebra/${pagename}`;
-
   return (
     <>
       <h2 className="caption">基底ベクトルの定義</h2>
