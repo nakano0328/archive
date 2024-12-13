@@ -5,42 +5,52 @@ import Card2 from "@/app/components/Card2";
 import { formatDate } from "@/app/components/formatDate";
 import Image from "next/image"; // Imageをインポート
 import { siteTitle } from "@/app/metadata";
+import { Pagination } from "@/app/components/Pagination_linear_algebra";
 
 // ページのメタデータ（ブラウザのタイトル設定など）
 export const metadata = {
   title: `線形代数 - ${siteTitle}`,
 };
 
-export default function LinearAlgebraContents() {
+export default function LinearAlgebraContents({
+  searchParams,
+}: {
+  searchParams: { page?: string };
+}) {
+  const ITEMS_PER_PAGE = 6; // 1ページあたりの表示件数
+  const currentPage = Number(searchParams.page) || 1;
+
   const topics = Object.keys(topicsMetadata) as Array<
     keyof typeof topicsMetadata
   >;
-
-  // 最終更新日順にソート
   const sortedTopics = topics.sort((a, b) => {
     const dateA = new Date(topicsMetadata[a].lastUpdated).getTime();
     const dateB = new Date(topicsMetadata[b].lastUpdated).getTime();
     return dateB - dateA;
   });
 
+  // ページネーション用の計算
+  const totalPages = Math.ceil(sortedTopics.length / ITEMS_PER_PAGE);
+  const start = (currentPage - 1) * ITEMS_PER_PAGE;
+  const end = start + ITEMS_PER_PAGE;
+  const paginatedTopics = sortedTopics.slice(start, end);
+
   const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
   return (
     <>
       <div style={{ padding: "20px" }}>
-        {/* Breadcrumbの表示 */}
         <Breadcrumb items={[{ name: "線形代数", href: "/linear_algebra" }]} />
 
         <div
           style={{
-            backgroundColor: "#f8d7da", // 赤い背景
+            backgroundColor: "#f8d7da",
             padding: "20px",
             borderRadius: "5px",
-            marginBottom: "40px", // 他の要素との間隔
+            marginBottom: "40px",
           }}
         >
           <h1 className="title">線形代数のコンテンツ</h1>
-
           <p style={{ textAlign: "center" }}>
             ここでは、線形代数に関連するさまざまなトピックについて説明しています。
           </p>
@@ -53,7 +63,7 @@ export default function LinearAlgebraContents() {
             gap: "20px",
           }}
         >
-          {sortedTopics.map((topicKey) => {
+          {paginatedTopics.map((topicKey) => {
             const topic = topicsMetadata[topicKey];
             const imagePath = `${basePath}/linear_algebra/${topicKey}/thumb.png`;
 
@@ -73,12 +83,11 @@ export default function LinearAlgebraContents() {
                     }}
                   >
                     <div>
-                      {/* サムネイル画像の読み込み */}
                       <Image
                         src={imagePath}
                         alt={topic.title}
-                        width={300} // 横幅はそのまま
-                        height={150} // 必須だが実際のスタイルに影響しない
+                        width={300}
+                        height={150}
                         className="thumb"
                       />
                       <h2
@@ -111,6 +120,12 @@ export default function LinearAlgebraContents() {
             );
           })}
         </div>
+
+        <Pagination
+          currentPage={currentPage}
+          totalPages={totalPages}
+          basePath={basePath}
+        />
       </div>
     </>
   );

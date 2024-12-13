@@ -17,7 +17,8 @@ import Eq_Matrix from "@/app/linear_algebra/contents/eq_matrix";
 import MatrixContent from "@/app/linear_algebra/contents/matrix";
 import Matrix_opeContent from "@/app/linear_algebra/contents/matrix_ope";
 import Inverse_MatrixContent from "@/app/linear_algebra/contents/inverse_matrix";
-import DeterminantConten from "@/app/linear_algebra/contents/determinant";
+import DeterminantContent from "@/app/linear_algebra/contents/determinant";
+import Cofactor_matrixContent from "@/app/linear_algebra/contents/cofactor_matrix";
 
 interface PageProps {
   params: Promise<{
@@ -45,9 +46,12 @@ const contentComponents = {
   matrix: MatrixContent,
   matrix_ope: Matrix_opeContent,
   inverse_matrix: Inverse_MatrixContent,
-  determinant: DeterminantConten,
+  determinant: DeterminantContent,
+  cofactor_matrix: Cofactor_matrixContent,
   // 他のコンポーネントを追加
 };
+
+const itemsPerPage = 12;
 
 export async function generateMetadata(props: PageProps) {
   const params = await props.params;

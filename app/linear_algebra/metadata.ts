@@ -75,10 +75,17 @@ export const metadata: MetadataCollection = {
     lastUpdated: "2024-12-13",
     topic: "linear_algebra",
   },
-  determinant: { 
+  determinant: {
     title: "行列式",
     tabtitle: `行列式 - ${siteTitle}`,
     description: "行列式の定義、求め方、性質について説明しています。",
+    lastUpdated: "2024-12-13",
+    topic: "linear_algebra",
+  },
+  cofactor_matrix: {
+    title: "余因子行列と余因子展開",
+    tabtitle: `余因子行列と余因子展開 - ${siteTitle}`,
+    description: "余因子行列と余因子展開について説明しています。",
     lastUpdated: "2024-12-13",
     topic: "linear_algebra",
   },

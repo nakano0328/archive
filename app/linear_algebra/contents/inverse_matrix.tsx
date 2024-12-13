@@ -1,11 +1,14 @@
+import { metadata } from "@/app/linear_algebra/metadata";
 import CenteredEquation from "@/app/components/CenteredEquation";
 import { InlineMath } from "react-katex";
+import CustomLink from "@/app/components/CustomLink";
 
 export default function pageContent() {
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
   return (
     <>
       <h2 className="caption">逆行列の定義</h2>
-    
+
       <p>
         逆行列とは、ある行列&nbsp;
         <InlineMath math="A" />
@@ -13,23 +16,23 @@ export default function pageContent() {
         <InlineMath math="A^{-1}" />
         &nbsp;のことを指します。
       </p>
-    
+
       <CenteredEquation equation="AA^{-1} = A^{-1}A = I" />
-    
+
       <p>
         ここで、
         <InlineMath math="I" />
         &nbsp;は単位行列を表します。逆行列は、元の行列と逆行列を掛け合わせると単位行列になるという性質を持っています。
       </p>
-    
+
       <h2 className="caption">逆行列の求め方</h2>
-    
+
       <p>
         逆行列を求める方法には、いくつかの手法があります。ここでは、逆行列を求める基本的な手法について説明します。
       </p>
-    
+
       <h3>1. 掃き出し法（ガウスの消去法）</h3>
-    
+
       <p>
         掃き出し法は、連立方程式を解く際に使用される手法です。逆行列を求める際にも、掃き出し法を用いることができます。
         <br />
@@ -114,7 +117,17 @@ export default function pageContent() {
         &nbsp;は行列&nbsp;
         <InlineMath math="A" />
         &nbsp;の余因子行列（adjugate matrix）を表します。
+        <br />
+        余因子展開については以下を参照してください。
       </p>
+
+      <CustomLink
+        href="/linear_algebra/cofactor_matrix"
+        imageUrl={`${basePath}/linear_algebra/cofactor_matrix/thumb.png`}
+        altText="余因子行列と余因子展開ページのサムネ"
+        siteName={metadata.cofactor_matrix.title}
+        description={metadata.cofactor_matrix.description}
+      />
 
       <h2 className="caption">逆行列が存在しない場合</h2>
 
