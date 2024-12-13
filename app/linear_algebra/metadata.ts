@@ -68,5 +68,19 @@ export const metadata: MetadataCollection = {
     lastUpdated: "2024-12-13",
     topic: "linear_algebra",
   },
+  inverse_matrix: {
+    title: "逆行列",
+    tabtitle: `逆行列 - ${siteTitle}`,
+    description: "逆行列の定義、求め方、性質について説明しています。",
+    lastUpdated: "2024-12-13",
+    topic: "linear_algebra",
+  },
+  determinant: { 
+    title: "行列式",
+    tabtitle: `行列式 - ${siteTitle}`,
+    description: "行列式の定義、求め方、性質について説明しています。",
+    lastUpdated: "2024-12-13",
+    topic: "linear_algebra",
+  },
   // 他のトピックもここに追加できます
 };

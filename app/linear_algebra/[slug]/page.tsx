@@ -16,6 +16,8 @@ import Lin_indepContent from "@/app/linear_algebra/contents/lin_indep";
 import Eq_Matrix from "@/app/linear_algebra/contents/eq_matrix";
 import MatrixContent from "@/app/linear_algebra/contents/matrix";
 import Matrix_opeContent from "@/app/linear_algebra/contents/matrix_ope";
+import Inverse_MatrixContent from "@/app/linear_algebra/contents/inverse_matrix";
+import DeterminantConten from "@/app/linear_algebra/contents/determinant";
 
 interface PageProps {
   params: Promise<{
@@ -42,6 +44,8 @@ const contentComponents = {
   eq_matrix: Eq_Matrix,
   matrix: MatrixContent,
   matrix_ope: Matrix_opeContent,
+  inverse_matrix: Inverse_MatrixContent,
+  determinant: DeterminantConten,
   // 他のコンポーネントを追加
 };
 

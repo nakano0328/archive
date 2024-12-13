@@ -1,8 +1,6 @@
 import { metadata } from "@/app/linear_algebra/metadata";
 import CenteredEquation from "@/app/components/CenteredEquation";
-import { InlineMath } from "react-katex";
 import ImageModal from "@/app/components/ImageModal";
-import CustomLink from "@/app/components/CustomLink";
 
 export default function pageContent() {
   const pagename: string = "matrix_ope"; //ここを変更
@@ -10,8 +8,7 @@ export default function pageContent() {
   const metaData = metadata[pagename];
   const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
   const imagePath = `${basePath}/${metaData.topic}/${pagename}`;
-  const notePath = `https://colab.research.google.com/github/jeonglabo/nextjs/blob/main/notebook/${metaData.topic}/${pagename}`;
-
+  
   return (
     <>
       <h2 className="caption">行列の演算</h2>
@@ -62,7 +59,18 @@ export default function pageContent() {
         行列の積とは、2つの行列を掛け合わせることです。
         <br />
         行列Aと行列Bの積ABを計算するには、Aの行とBの列の要素を掛け合わせて足し合わせます。
+        <br />
+        図で表すと以下のようになります。
       </p>
+      <ImageModal
+        imagePath={`${imagePath}/matrix_product.png`}
+        altText="行列の積の計算方法"
+      />
+      <p>
+        このように行列の積は、行列Aの行と行列Bの列の要素を掛け合わせて足し合わせることで求めることができます。
+      </p>
+
+      <CenteredEquation equation="\begin{pmatrix} a_{11} & a_{12} \\ a_{21} & a_{22} \end{pmatrix} \begin{pmatrix} b_{11} & b_{12} \\ b_{21} & b_{22} \end{pmatrix} = \begin{pmatrix} a_{11}b_{11} + a_{12}b_{21} & a_{11}b_{12} + a_{12}b_{22} \\ a_{21}b_{11} + a_{22}b_{21} & a_{21}b_{12} + a_{22}b_{22} \end{pmatrix}" />
 
       <p>例えば、行列AとBの積は次のようになります。</p>
       <CenteredEquation equation="AB = \begin{pmatrix} a_{11}b_{11} + a_{12}b_{21} & a_{11}b_{12} + a_{12}b_{22} \\ a_{21}b_{11} + a_{22}b_{21} & a_{21}b_{12} + a_{22}b_{22} \end{pmatrix}" />

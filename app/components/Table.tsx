@@ -26,26 +26,25 @@ const Table = () => {
   return (
     <nav
       aria-label="目次"
-      style={{ display: "flex", justifyContent: "center", marginTop: "20px" }}
+      style={{ display: "flex", justifyContent: "center"}}
     >
       <div
         style={{
           border: "1px solid #ccc",
           borderRadius: "8px",
-          padding: "16px",
-          width: "80%",
-          maxWidth: "600px",
+          padding: "0px 16px",
+          width: "50%",
           backgroundColor: "#f9f9f9",
         }}
       >
         <h2 style={{ textAlign: "center" }}>目次</h2>
+        <hr />
         <ul
-          style={{
-            listStyleType: "none",
-            padding: 0,
-            margin: 0,
-          }}
-        >
+        style={{
+          listStyleType: "disc",
+          paddingLeft: "30px",
+        }}
+      >
           {headings.map((heading) => (
             <li key={heading.id} style={{ marginBottom: "8px" }}>
               <a
