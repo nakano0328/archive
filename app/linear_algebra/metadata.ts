@@ -60,5 +60,13 @@ export const metadata: MetadataCollection = {
     lastUpdated: "2024-12-11",
     topic: "linear_algebra",
   },
+  matrix_ope: {
+    title: "行列の演算",
+    tabtitle: `行列の演算 - ${siteTitle}`,
+    description:
+      "行列の和、スカラー倍、積など、行列の演算について説明しています。",
+    lastUpdated: "2024-12-13",
+    topic: "linear_algebra",
+  },
   // 他のトピックもここに追加できます
 };
