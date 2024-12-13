@@ -3,6 +3,7 @@ import CenteredEquation from "@/app/components/CenteredEquation";
 import { InlineMath } from "react-katex";
 import ImageModal from "@/app/components/ImageModal";
 import CustomLink from "@/app/components/CustomLink";
+import Image from "next/image";
 
 export default function pageContent() {
   const pagename: string = "determinant"; //ここを変更
@@ -10,7 +11,6 @@ export default function pageContent() {
   const metaData = metadata[pagename];
   const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
   const imagePath = `${basePath}/${metaData.topic}/${pagename}`;
-  const notePath = `https://colab.research.google.com/github/jeonglabo/nextjs/blob/main/notebook/${metaData.topic}/${pagename}`;
 
   return (
     <>
@@ -67,7 +67,7 @@ export default function pageContent() {
         以下がサラスの方法を用いた3次正方行列の行列式の計算例です。
       </p>
 
-      <img
+      <Image
         src={`${imagePath}/sarasu.gif`}
         alt="行列式の計算方法"
         style={{ width: "90%", height: "auto" }}

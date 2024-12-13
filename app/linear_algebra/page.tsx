@@ -1,130 +1,33 @@
-import Link from "next/link";
 import Breadcrumb from "@/app/components/Breadcrumb";
 import { metadata as topicsMetadata } from "@/app/linear_algebra/metadata"; // コンテンツのメタデータをインポート
-import Card2 from "@/app/components/Card2";
-import { formatDate } from "@/app/components/formatDate";
-import Image from "next/image"; // Imageをインポート
 import { siteTitle } from "@/app/metadata";
-import { Pagination } from "@/app/components/Pagination_linear_algebra";
+import Pagination from "@/app/components/Pagination_linear_algebra";
 
 // ページのメタデータ（ブラウザのタイトル設定など）
 export const metadata = {
   title: `線形代数 - ${siteTitle}`,
 };
 
-export default function LinearAlgebraContents({
-  searchParams,
-}: {
-  searchParams: { page?: string };
-}) {
-  const ITEMS_PER_PAGE = 6; // 1ページあたりの表示件数
-  const currentPage = Number(searchParams.page) || 1;
+export default function LinearAlgebraContents() {
+  const topics = Object.keys(topicsMetadata);
 
-  const topics = Object.keys(topicsMetadata) as Array<
-    keyof typeof topicsMetadata
-  >;
+  // 最終更新日順にソート
   const sortedTopics = topics.sort((a, b) => {
     const dateA = new Date(topicsMetadata[a].lastUpdated).getTime();
     const dateB = new Date(topicsMetadata[b].lastUpdated).getTime();
     return dateB - dateA;
   });
 
-  // ページネーション用の計算
-  const totalPages = Math.ceil(sortedTopics.length / ITEMS_PER_PAGE);
-  const start = (currentPage - 1) * ITEMS_PER_PAGE;
-  const end = start + ITEMS_PER_PAGE;
-  const paginatedTopics = sortedTopics.slice(start, end);
-
-  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
-
   return (
     <>
       <div style={{ padding: "20px" }}>
+        {/* Breadcrumbの表示 */}
         <Breadcrumb items={[{ name: "線形代数", href: "/linear_algebra" }]} />
 
-        <div
-          style={{
-            backgroundColor: "#f8d7da",
-            padding: "20px",
-            borderRadius: "5px",
-            marginBottom: "40px",
-          }}
-        >
-          <h1 className="title">線形代数のコンテンツ</h1>
-          <p style={{ textAlign: "center" }}>
-            ここでは、線形代数に関連するさまざまなトピックについて説明しています。
-          </p>
-        </div>
-
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
-            gap: "20px",
-          }}
-        >
-          {paginatedTopics.map((topicKey) => {
-            const topic = topicsMetadata[topicKey];
-            const imagePath = `${basePath}/linear_algebra/${topicKey}/thumb.png`;
-
-            return (
-              <Link
-                key={topicKey}
-                href={`/linear_algebra/${topicKey}`}
-                style={{ textDecoration: "none" }}
-              >
-                <Card2>
-                  <div
-                    style={{
-                      display: "flex",
-                      flexDirection: "column",
-                      justifyContent: "space-between",
-                      height: "100%",
-                    }}
-                  >
-                    <div>
-                      <Image
-                        src={imagePath}
-                        alt={topic.title}
-                        width={300}
-                        height={150}
-                        className="thumb"
-                      />
-                      <h2
-                        style={{
-                          fontSize: "24px",
-                          marginBottom: "10px",
-                          color: "black",
-                        }}
-                      >
-                        {topic.title}
-                      </h2>
-                      <p style={{ marginBottom: "20px", color: "black" }}>
-                        {topic.description}
-                      </p>
-                    </div>
-                    {/* 最終更新日を右下に配置 */}
-                    <div
-                      style={{
-                        textAlign: "right",
-                        fontSize: "12px",
-                        color: "#888",
-                        marginTop: "auto", // 最下部に配置
-                      }}
-                    >
-                      最終更新日: {formatDate(topic.lastUpdated)}
-                    </div>
-                  </div>
-                </Card2>
-              </Link>
-            );
-          })}
-        </div>
-
         <Pagination
-          currentPage={currentPage}
-          totalPages={totalPages}
-          basePath={basePath}
+          items={sortedTopics}
+          itemsPerPage={6}
+          topicsMetadata={topicsMetadata}
         />
       </div>
     </>

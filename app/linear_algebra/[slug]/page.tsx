@@ -51,8 +51,6 @@ const contentComponents = {
   // 他のコンポーネントを追加
 };
 
-const itemsPerPage = 12;
-
 export async function generateMetadata(props: PageProps) {
   const params = await props.params;
   const metaData = linearAlgebraMetadata[params.slug];
