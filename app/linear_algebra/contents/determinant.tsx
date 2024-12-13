@@ -44,18 +44,18 @@ export default function pageContent() {
       <h3>2次正方行列の行列式</h3>
       <p>
       2次正方行列&nbsp;
-        <InlineMath math="A = \begin{pmatrix} a & b \\ c & d \end{pmatrix}" />
+        <InlineMath math="A = \begin{pmatrix} a_{11} & a_{12} \\ a_{21} & a_{22} \end{pmatrix}" />
         &nbsp;の行列式は次のように定義されます。
       </p>
-      <CenteredEquation equation="|A| = ad - bc" />
+      <CenteredEquation equation="|A| = a_{11}a_{22} - a_{12}a_{21}" />
 
       <h3>3次正方行列の行列式</h3>
       <p>
         3次正方行列&nbsp;
-        <InlineMath math="A = \begin{pmatrix} a & b & c \\ d & e & f \\ g & h & i \end{pmatrix}" />
+        <InlineMath math="A = \begin{pmatrix} a_{11} & a_{12} & a_{13} \\ a_{21} & a_{22} & a_{23} \\ a_{31} & a_{32} & a_{33} \end{pmatrix}" />
         &nbsp;の行列式は次のように定義されます。
       </p>
-      <CenteredEquation equation="|A| = aei + bfg + cdh - ceg - bdi - afh" />
+      <CenteredEquation equation="|A| = a_{11} a_{22} a_{33} + a_{12} a_{23} a_{31} + a_{13} a_{21} a_{32} - a_{13} a_{22} a_{31} - a_{11} a_{23} a_{32} - a_{12} a_{21} a_{33} " />
       <p>
         この方法はサラスの方法と呼ばれ、行列式の計算方法の一つです。
       </p>
