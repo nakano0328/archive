@@ -30,6 +30,9 @@ export default function LinearAlgebraContents() {
           topicsMetadata={topicsMetadata}
         />
       </div>
+      <div style={{ textAlign: "right", marginRight: "30px" }}>
+        <a href="#">ページトップに戻る</a>
+      </div>
     </>
   );
 }

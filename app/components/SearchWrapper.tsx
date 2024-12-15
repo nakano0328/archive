@@ -17,11 +17,6 @@ const SearchWrapper: React.FC<{ children: React.ReactNode }> = ({
         ) : (
           children // 検索クエリがない場合に通常のページコンテンツを表示
         )}
-        <div style={{ textAlign: "right", marginRight: "30px" }}>
-          <a href="#" onClick={() => window.scrollTo(0, 0)}>
-            ページトップに戻る
-          </a>
-        </div>
       </div>
       <Sidebar setQuery={setQuery} /> {/* サイドバーに検索クエリを設定 */}
     </div>

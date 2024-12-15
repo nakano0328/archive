@@ -86,7 +86,14 @@ export const metadata: MetadataCollection = {
     title: "余因子行列と余因子展開",
     tabtitle: `余因子行列と余因子展開 - ${siteTitle}`,
     description: "余因子行列と余因子展開について説明しています。",
-    lastUpdated: "2024-12-13",
+    lastUpdated: "2024-12-15",
+    topic: "linear_algebra",
+  },
+  eignvalue: {
+    title: "固有値と固有ベクトル",
+    tabtitle: `固有値と固有ベクトル - ${siteTitle}`,
+    description: "行列の固有値と固有ベクトルについて説明しています。",
+    lastUpdated: "2024-12-15",
     topic: "linear_algebra",
   },
   // 他のトピックもここに追加できます

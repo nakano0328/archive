@@ -19,6 +19,7 @@ import Matrix_opeContent from "@/app/linear_algebra/contents/matrix_ope";
 import Inverse_MatrixContent from "@/app/linear_algebra/contents/inverse_matrix";
 import DeterminantContent from "@/app/linear_algebra/contents/determinant";
 import Cofactor_matrixContent from "@/app/linear_algebra/contents/cofactor_matrix";
+import EignvalueContent from "@/app/linear_algebra/contents/eignvalue";
 
 interface PageProps {
   params: Promise<{
@@ -48,6 +49,7 @@ const contentComponents = {
   inverse_matrix: Inverse_MatrixContent,
   determinant: DeterminantContent,
   cofactor_matrix: Cofactor_matrixContent,
+  eignvalue: EignvalueContent,
   // 他のコンポーネントを追加
 };
 
@@ -136,6 +138,9 @@ export default async function Page(props: PageProps) {
           <div style={{ margin: "0px 10px" }}>
             <GoogleForm currentPath={`/linear_algebra/${params.slug}`} />
           </div>
+        </div>
+        <div style={{ textAlign: "right", marginRight: "30px" }}>
+          <a href="#">ページトップに戻る</a>
         </div>
       </div>
     </>

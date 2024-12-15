@@ -70,6 +70,8 @@ export default function pageContent() {
       <Image
         src={`${imagePath}/sarasu.gif`}
         alt="行列式の計算方法"
+        width={600} // 適切な幅を指定してください
+        height={400} // 適切な高さを指定してください
         style={{ width: "90%", height: "auto" }}
       />
 
