@@ -103,5 +103,12 @@ export const metadata: MetadataCollection = {
     lastUpdated: "2024-12-19",
     topic: "linear_algebra",
   },
+  diagonalization: {
+    title: "行列の対角化",
+    tabtitle: `行列の対角化 - ${siteTitle}`,
+    description: "行列の対角化のやり方について説明しています。",
+    lastUpdated: "2024-12-19",
+    topic: "linear_algebra",
+  },
   // 他のトピックもここに追加できます
 };

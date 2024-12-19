@@ -39,6 +39,18 @@ export default function pageContent() {
         description={metadata.eign_property.description}
       />
 
+      <p>
+        また、固有値の使用される時の有名な例として行列の対角化があります。行列の対角化については以下のページにまとめています。
+      </p>
+
+      <CustomLink
+        href="/linear_algebra/diagonalization"
+        imageUrl={`${basePath}/linear_algebra/diagonalization/thumb.png`}
+        altText="対角化ページのサムネ"
+        siteName={metadata.diagonalization.title}
+        description={metadata.diagonalization.description}
+      />
+
       <h2 className="caption">求め方</h2>
       <p>
         方程式&nbsp;
@@ -60,7 +72,6 @@ export default function pageContent() {
         <InlineMath math="\det(A-\lambda I)=0" />
         は固有値を求めるための方程式です。これを固有方程式と呼びます。
       </p>
-
       <h2 className="caption">2次正方行列の例題</h2>
       <p>
         行列
@@ -110,10 +121,14 @@ export default function pageContent() {
         \end{pmatrix}\begin{pmatrix}x \\ y \end{pmatrix}=\begin{pmatrix}0 \\ 0 \end{pmatrix}"
       />
       <p>
+        これを解くと
+        <InlineMath math="x_1-x_2=0" />
+        となります。
+        <br />
         よって
         <InlineMath math="\lambda=1" />
         に対する固有ベクトルは
-        <InlineMath math="\bm{x_1} = \begin{pmatrix}1 \\ 1 \end{pmatrix}" />
+        <InlineMath math="\bm{x_1} = c_1\begin{pmatrix}1 \\ 1 \end{pmatrix}" />
         とわかります。
         <br />
         <br />
@@ -130,13 +145,16 @@ export default function pageContent() {
         \end{pmatrix}\begin{pmatrix}x \\ y \end{pmatrix}=\begin{pmatrix}0 \\ 0 \end{pmatrix}"
       />
       <p>
+        これを解くと
+        <InlineMath math="x_1+x_2=0" />
+        となります。
+        <br />
         よって
         <InlineMath math="\lambda=3" />
         に対する固有ベクトルは
-        <InlineMath math="\bm{x_2} = \begin{pmatrix}1 \\ -1 \end{pmatrix}" />
+        <InlineMath math="\bm{x_2} = c_2\begin{pmatrix}1 \\ -1 \end{pmatrix}" />
         とわかります。
       </p>
-
       <h2 className="caption">3次正方行列の例題</h2>
       <p>
         3次正方行列
@@ -150,19 +168,19 @@ export default function pageContent() {
         の固有値を求めましょう。
       </p>
       <p>
-        まず、固有方程式&nbsp;
+        まず、固有方程式
         <InlineMath math="\det(B-\lambda I)=0" />
         を解きます。
       </p>
       <CenteredEquation
-        equation="\begin{align*}
-        \det(B-\lambda I) &= \begin{vmatrix}
-        1-\lambda & 2 & 3 \\
-        0 & 4-\lambda & 5 \\
-        0 & 0 & 6-\lambda
-        \end{vmatrix} \\
-        &= (1-\lambda)(4-\lambda)(6-\lambda)
-        \end{align*}"
+        equation={`\\begin{align*}
+        \\det(B-\\lambda I) &= \\begin{vmatrix}
+        1-\\lambda & 2 & 3 \\\\
+        0 & 4-\\lambda & 5 \\\\
+        0 & 0 & 6-\\lambda
+        \\end{vmatrix} \\\\
+        &= (1-\\lambda)(4-\\lambda)(6-\\lambda)
+        \\end{align*}`}
       />
       <p>
         この方程式を解くと、固有値は
@@ -170,7 +188,7 @@ export default function pageContent() {
         です。
       </p>
       <p>
-        次に、各固有値に対応する固有ベクトルを求めます。
+        次に、固有値に対応する固有ベクトルを求めます。
         <br />
         <br />
         <InlineMath math="\lambda=1" />
@@ -187,7 +205,7 @@ export default function pageContent() {
         よって
         <InlineMath math="\lambda=1" />
         に対する固有ベクトルは
-        <InlineMath math="\bm{x_1} = \begin{pmatrix}1 \\ -\frac{5}{3} \\ 1 \end{pmatrix}" />
+        <InlineMath math="\bm{x_1} = c_1\begin{pmatrix}1 \\ -\frac{5}{3} \\ 1 \end{pmatrix}" />
         とわかります。
         <br />
         <br />
@@ -205,7 +223,7 @@ export default function pageContent() {
         よって
         <InlineMath math="\lambda=4" />
         に対する固有ベクトルは
-        <InlineMath math="\bm{x_2} = \begin{pmatrix}1 \\ -\frac{3}{2} \\ 0 \end{pmatrix}" />
+        <InlineMath math="\bm{x_2} = c_2\begin{pmatrix}1 \\ -\frac{3}{2} \\ 0 \end{pmatrix}" />
         とわかります。
         <br />
         <br />
@@ -223,7 +241,7 @@ export default function pageContent() {
         よって
         <InlineMath math="\lambda=6" />
         に対する固有ベクトルは
-        <InlineMath math="\bm{x_3} = \begin{pmatrix}1 \\ 1 \\ 0 \end{pmatrix}" />
+        <InlineMath math="\bm{x_3} = c_3\begin{pmatrix}1 \\ 1 \\ 0 \end{pmatrix}" />
         とわかります。
       </p>
     </>

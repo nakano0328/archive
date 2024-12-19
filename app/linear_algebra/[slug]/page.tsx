@@ -21,6 +21,7 @@ import DeterminantContent from "@/app/linear_algebra/contents/determinant";
 import Cofactor_matrixContent from "@/app/linear_algebra/contents/cofactor_matrix";
 import Eign_SolveContent from "@/app/linear_algebra/contents/eign_solve";
 import Eign_PropertyContent from "@/app/linear_algebra/contents/eign_property";
+import DiagonalizationContent from "@/app/linear_algebra/contents/diagonalization";
 
 interface PageProps {
   params: Promise<{
@@ -52,6 +53,7 @@ const contentComponents = {
   cofactor_matrix: Cofactor_matrixContent,
   eign_solve: Eign_SolveContent,
   eign_property: Eign_PropertyContent,
+  diagonalization: DiagonalizationContent,
   // 他のコンポーネントを追加
 };
 
