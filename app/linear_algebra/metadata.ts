@@ -89,11 +89,18 @@ export const metadata: MetadataCollection = {
     lastUpdated: "2024-12-15",
     topic: "linear_algebra",
   },
-  eignvalue: {
-    title: "固有値と固有ベクトル",
-    tabtitle: `固有値と固有ベクトル - ${siteTitle}`,
-    description: "行列の固有値と固有ベクトルについて説明しています。",
-    lastUpdated: "2024-12-15",
+  eign_solve: {
+    title: "固有値と固有ベクトルの求め方",
+    tabtitle: `固有値と固有ベクトルの求め方 - ${siteTitle}`,
+    description: "行列の固有値と固有ベクトルの求め方について説明しています。",
+    lastUpdated: "2024-12-19",
+    topic: "linear_algebra",
+  },
+  eign_property: {
+    title: "固有値と固有ベクトルの性質",
+    tabtitle: `固有値と固有ベクトルの性質 - ${siteTitle}`,
+    description: "固有値と固有ベクトルの性質について説明しています。",
+    lastUpdated: "2024-12-19",
     topic: "linear_algebra",
   },
   // 他のトピックもここに追加できます

@@ -13,13 +13,14 @@ import VectorContent from "@/app/linear_algebra/contents/vector";
 import NormContent from "@/app/linear_algebra/contents/norm";
 import BasisContent from "@/app/linear_algebra/contents/basis";
 import Lin_indepContent from "@/app/linear_algebra/contents/lin_indep";
-import Eq_Matrix from "@/app/linear_algebra/contents/eq_matrix";
+import Eq_MatrixContent from "@/app/linear_algebra/contents/eq_matrix";
 import MatrixContent from "@/app/linear_algebra/contents/matrix";
 import Matrix_opeContent from "@/app/linear_algebra/contents/matrix_ope";
 import Inverse_MatrixContent from "@/app/linear_algebra/contents/inverse_matrix";
 import DeterminantContent from "@/app/linear_algebra/contents/determinant";
 import Cofactor_matrixContent from "@/app/linear_algebra/contents/cofactor_matrix";
-import EignvalueContent from "@/app/linear_algebra/contents/eignvalue";
+import Eign_SolveContent from "@/app/linear_algebra/contents/eign_solve";
+import Eign_PropertyContent from "@/app/linear_algebra/contents/eign_property";
 
 interface PageProps {
   params: Promise<{
@@ -43,13 +44,14 @@ const contentComponents = {
   norm: NormContent,
   basis: BasisContent,
   lin_indep: Lin_indepContent,
-  eq_matrix: Eq_Matrix,
+  eq_matrix: Eq_MatrixContent,
   matrix: MatrixContent,
   matrix_ope: Matrix_opeContent,
   inverse_matrix: Inverse_MatrixContent,
   determinant: DeterminantContent,
   cofactor_matrix: Cofactor_matrixContent,
-  eignvalue: EignvalueContent,
+  eign_solve: Eign_SolveContent,
+  eign_property: Eign_PropertyContent,
   // 他のコンポーネントを追加
 };
 
