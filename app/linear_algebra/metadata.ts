@@ -107,7 +107,7 @@ export const metadata: MetadataCollection = {
     title: "行列の対角化",
     tabtitle: `行列の対角化 - ${siteTitle}`,
     description: "行列の対角化のやり方について説明しています。",
-    lastUpdated: "2024-12-19",
+    lastUpdated: "2024-12-20",
     topic: "linear_algebra",
   },
   // 他のトピックもここに追加できます

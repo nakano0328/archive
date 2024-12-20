@@ -15,6 +15,16 @@ export default function pageContent() {
   return (
     <>
       <h2 className="caption">固有値の性質</h2>
+      <p>固有値と固有ベクトルの求め方は以下のページをご覧ください。</p>
+
+      <CustomLink
+        href="/linear_algebra/eign_solve"
+        imageUrl={`${basePath}/linear_algebra/eign_solve/thumb.png`}
+        altText="固有値と固有ベクトルの求め方ページのサムネ"
+        siteName={metadata.eign_solve.title}
+        description={metadata.eign_solve.description}
+      />
+
       <p>n次正方行列 A の固有値について、以下の性質が成り立ちます。</p>
       <ol>
         <li>

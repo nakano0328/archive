@@ -75,7 +75,11 @@ const GoogleForm: React.FC<GoogleFormProps> = ({ currentPath }) => {
             className="w-full p-2 border rounded"
           ></textarea>
         </p>
-        <input type="hidden" name="entry.2025028027" value={currentPath} />
+        <input
+          type="hidden"
+          name="entry.2025028027"
+          value={`app/${currentPath}`}
+        />
 
         <input
           type="submit"
