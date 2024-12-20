@@ -26,7 +26,7 @@ export default function LinearAlgebraContents() {
 
         <Pagination
           items={sortedTopics}
-          itemsPerPage={6}
+          itemsPerPage={12}
           topicsMetadata={topicsMetadata}
         />
       </div>

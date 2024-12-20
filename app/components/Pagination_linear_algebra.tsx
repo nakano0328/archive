@@ -6,6 +6,7 @@ import Link from "next/link";
 import Card2 from "@/app/components/Card2";
 import { formatDate } from "@/app/components/formatDate";
 import Image from "next/image";
+import styles from "@/app/components/Pagination.module.css";
 
 interface TopicMetadata {
   [key: string]: {
@@ -42,14 +43,7 @@ export default function Pagination({
 
   return (
     <>
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fill, minmax(250px, 1fr))",
-          gap: "20px",
-          marginTop: "20px",
-        }}
-      >
+      <div className={styles.paginationgrid}>
         {currentItems.map((topic) => (
           <Link
             key={topic}
