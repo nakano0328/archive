@@ -89,14 +89,14 @@ export const metadata: MetadataCollection = {
     lastUpdated: "2024-12-15",
     topic: "linear_algebra",
   },
-  eign_solve: {
+  eigen_solve: {
     title: "固有値と固有ベクトルの求め方",
     tabtitle: `固有値と固有ベクトルの求め方 - ${siteTitle}`,
     description: "行列の固有値と固有ベクトルの求め方について説明しています。",
     lastUpdated: "2024-12-19",
     topic: "linear_algebra",
   },
-  eign_property: {
+  eigen_property: {
     title: "固有値と固有ベクトルの性質",
     tabtitle: `固有値と固有ベクトルの性質 - ${siteTitle}`,
     description: "固有値と固有ベクトルの性質について説明しています。",
@@ -107,7 +107,14 @@ export const metadata: MetadataCollection = {
     title: "行列の対角化",
     tabtitle: `行列の対角化 - ${siteTitle}`,
     description: "行列の対角化のやり方について説明しています。",
-    lastUpdated: "2024-12-20",
+    lastUpdated: "2024-12-23",
+    topic: "linear_algebra",
+  },
+  eigen_decomposition: {
+    title: "固有値分解",
+    tabtitle: `固有値分解 - ${siteTitle}`,
+    description: "行列の固有値分解について説明しています。",
+    lastUpdated: "2024-12-23",
     topic: "linear_algebra",
   },
   // 他のトピックもここに追加できます

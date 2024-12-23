@@ -1,16 +1,10 @@
 import { metadata } from "@/app/linear_algebra/metadata";
 import CenteredEquation from "@/app/components/CenteredEquation";
 import { InlineMath } from "react-katex";
-import ImageModal from "@/app/components/ImageModal";
 import CustomLink from "@/app/components/CustomLink";
 
 export default function pageContent() {
-  const pagename: string = "diagonalization"; //ここを変更
-
-  const metaData = metadata[pagename];
   const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
-  const imagePath = `${basePath}/${metaData.topic}/${pagename}`;
-  const notePath = `https://colab.research.google.com/github/jeonglabo/nextjs/blob/main/notebook/${metaData.topic}/${pagename}`;
 
   return (
     <>
@@ -46,15 +40,18 @@ export default function pageContent() {
         <li>行列Aの固有ベクトルを求める。</li>
         <p>固有値と固有ベクトルの求め方は以下のページをご覧ください。</p>
         <CustomLink
-          href="/linear_algebra/eign_solve"
-          imageUrl={`${basePath}/linear_algebra/eign_solve/thumb.png`}
+          href="/linear_algebra/eigen_solve"
+          imageUrl={`${basePath}/linear_algebra/eigen_solve/thumb.png`}
           altText="固有値と固有ベクトルの求め方ページのサムネ"
-          siteName={metadata.eign_solve.title}
-          description={metadata.eign_solve.description}
+          siteName={metadata.eigen_solve.title}
+          description={metadata.eigen_solve.description}
         />
         <li>固有ベクトルを並べた行列を作成する。</li>
         <li>逆行列を求める。</li>
         <li>行列Aを対角化する。</li>
+        <p>行列Aを対角化する際には、以下の式を用います。</p>
+        <CenteredEquation equation="D = P^{-1}AP" />
+        <p>ここで、Dは対角化された行列、Pは固有ベクトルを並べた行列です。</p>
       </ol>
 
       <h2 className="caption">対角化の例</h2>
@@ -106,6 +103,47 @@ export default function pageContent() {
         に対する固有ベクトルは
         <InlineMath math="\bm{x_2} = c_2\begin{pmatrix}1 \\ -1 \end{pmatrix}" />
         とわかります。
+      </p>
+
+      <h3>3.固有ベクトルを並べた行列を作成する</h3>
+      <p>
+        固有ベクトルを並べた行列を作成します。
+        <br />
+        この行列を対角化行列Pとします。
+      </p>
+      <CenteredEquation equation="P = \begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix}" />
+
+      <h3>4.逆行列を求める</h3>
+      <p>
+        行列Pの逆行列を求めます。
+        <br />
+        逆行列は次のように求めることができます。
+      </p>
+
+      <CenteredEquation equation="P^{-1} = \frac{1}{2}\begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix}" />
+
+      <h3>5.行列Aを対角化する</h3>
+      <p>
+        行列Aを対角化します。
+        <br />
+        以下の式により、行列Aを対角化行列Pを用いて対角化します。
+      </p>
+      <CenteredEquation equation="D = P^{-1}AP" />
+      <p>この式のように解くと以下のようになります</p>
+      <CenteredEquation equation="D = \frac{1}{2}\begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix}\begin{pmatrix} 2 & -1 \\ -1 & 2 \end{pmatrix}\begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix} = \begin{pmatrix} 3 & 0 \\ 0 & 1 \end{pmatrix}" />
+      <p>
+        よって、行列Aは対角化された行列Dに変換されました。
+        <br />
+        このように行列Aを対角化することを対角化といいます。
+      </p>
+      <h2 className="caption">対角化の応用</h2>
+      <p>
+        対角化は、行列の累乗や指数関数の計算を簡単にするために利用されます。対角行列は累乗計算が容易であり、行列の指数関数も簡単に求めることができます。
+      </p>
+      <p>例えば、行列Aを対角化した行列Dを用いると、以下のように表せます。</p>
+      <CenteredEquation equation="A^k = P D^k P^{-1}" />
+      <p>
+        ここで、kは正の整数です。この式を利用することで、行列Aの累乗を効率的に計算することが可能となります。
       </p>
     </>
   );

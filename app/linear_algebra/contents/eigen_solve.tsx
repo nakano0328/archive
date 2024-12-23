@@ -32,11 +32,11 @@ export default function pageContent() {
       </p>
 
       <CustomLink
-        href="/linear_algebra/eign_property"
-        imageUrl={`${basePath}/linear_algebra/eign_property/thumb.png`}
+        href="/linear_algebra/eigen_property"
+        imageUrl={`${basePath}/linear_algebra/eigen_property/thumb.png`}
         altText="固有値と固有ベクトルの性質ページのサムネ"
-        siteName={metadata.eign_property.title}
-        description={metadata.eign_property.description}
+        siteName={metadata.eigen_property.title}
+        description={metadata.eigen_property.description}
       />
 
       <p>

@@ -68,9 +68,9 @@ export default function pageContent() {
         <br />
         点Aと点Bは以下のような座標を持っているとします。
         <br />
-        <InlineMath math="点A: (a_x, a_y)" />
+        <InlineMath math="A: (a_x, a_y)" />
         <br />
-        <InlineMath math="点B: (b_x, b_y)" />
+        <InlineMath math="B: (b_x, b_y)" />
         <br />
         点Aから点Bに向かうベクトルは、点Aから点Bに向かう矢印として表されます。
         <br />

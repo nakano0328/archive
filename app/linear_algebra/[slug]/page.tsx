@@ -19,9 +19,10 @@ import Matrix_opeContent from "@/app/linear_algebra/contents/matrix_ope";
 import Inverse_MatrixContent from "@/app/linear_algebra/contents/inverse_matrix";
 import DeterminantContent from "@/app/linear_algebra/contents/determinant";
 import Cofactor_matrixContent from "@/app/linear_algebra/contents/cofactor_matrix";
-import Eign_SolveContent from "@/app/linear_algebra/contents/eign_solve";
-import Eign_PropertyContent from "@/app/linear_algebra/contents/eign_property";
+import Eigen_SolveContent from "@/app/linear_algebra/contents/eigen_solve";
+import Eigen_PropertyContent from "@/app/linear_algebra/contents/eigen_property";
 import DiagonalizationContent from "@/app/linear_algebra/contents/diagonalization";
+import Eigen_DecompositionContent from "@/app/linear_algebra/contents/eigen_decomposition";
 
 interface PageProps {
   params: Promise<{
@@ -51,9 +52,10 @@ const contentComponents = {
   inverse_matrix: Inverse_MatrixContent,
   determinant: DeterminantContent,
   cofactor_matrix: Cofactor_matrixContent,
-  eign_solve: Eign_SolveContent,
-  eign_property: Eign_PropertyContent,
+  eigen_solve: Eigen_SolveContent,
+  eigen_property: Eigen_PropertyContent,
   diagonalization: DiagonalizationContent,
+  eigen_decomposition: Eigen_DecompositionContent,
   // 他のコンポーネントを追加
 };
 

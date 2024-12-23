@@ -5,7 +5,7 @@ import ImageModal from "@/app/components/ImageModal";
 import CustomLink from "@/app/components/CustomLink";
 
 export default function pageContent() {
-  const pagename: string = "eign_property"; //ここを変更
+  const pagename: string = "eigen_property"; //ここを変更
 
   const metaData = metadata[pagename];
   const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
@@ -18,11 +18,11 @@ export default function pageContent() {
       <p>固有値と固有ベクトルの求め方は以下のページをご覧ください。</p>
 
       <CustomLink
-        href="/linear_algebra/eign_solve"
-        imageUrl={`${basePath}/linear_algebra/eign_solve/thumb.png`}
+        href="/linear_algebra/eigen_solve"
+        imageUrl={`${basePath}/linear_algebra/eigen_solve/thumb.png`}
         altText="固有値と固有ベクトルの求め方ページのサムネ"
-        siteName={metadata.eign_solve.title}
-        description={metadata.eign_solve.description}
+        siteName={metadata.eigen_solve.title}
+        description={metadata.eigen_solve.description}
       />
 
       <p>n次正方行列 A の固有値について、以下の性質が成り立ちます。</p>
@@ -113,15 +113,15 @@ export default function pageContent() {
       </p>
 
       <ImageModal
-        imagePath={`${imagePath}/eign_vector.png`}
+        imagePath={`${imagePath}/eigen_vector.png`}
         altText="固有ベクトルの例"
       />
       <br />
       <br />
 
       <CustomLink
-        href={`${notePath}/eign_vector.ipynb`}
-        imageUrl={`${imagePath}/eign_vector.png`}
+        href={`${notePath}/eigen_vector.ipynb`}
+        imageUrl={`${imagePath}/eigen_vector.png`}
         altText="固有ベクトルの図"
         siteName="固有ベクトルの図"
         description="固有ベクトルの図の表示を行っているコードを示しています。"
