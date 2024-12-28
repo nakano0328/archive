@@ -23,6 +23,11 @@ import Eigen_SolveContent from "@/app/linear_algebra/contents/eigen_solve";
 import Eigen_PropertyContent from "@/app/linear_algebra/contents/eigen_property";
 import DiagonalizationContent from "@/app/linear_algebra/contents/diagonalization";
 import Eigen_DecompositionContent from "@/app/linear_algebra/contents/eigen_decomposition";
+import eigen_decomposition_transContent from "@/app/linear_algebra/contents/eigen_decomposition_trans";
+import gauss_jordan_eliminationContent from "@/app/linear_algebra/contents/gauss_jordan_elimination";
+import qr_decompositionContent from "@/app/linear_algebra/contents/qr_decomposition";
+import gram_schmidtContent from "@/app/linear_algebra/contents/gram_schmidt";
+import matrix_rankContent from "@/app/linear_algebra/contents/matrix_rank";
 
 interface PageProps {
   params: Promise<{
@@ -56,6 +61,11 @@ const contentComponents = {
   eigen_property: Eigen_PropertyContent,
   diagonalization: DiagonalizationContent,
   eigen_decomposition: Eigen_DecompositionContent,
+  eigen_decomposition_trans: eigen_decomposition_transContent,
+  gauss_jordan_elimination: gauss_jordan_eliminationContent,
+  qr_decomposition: qr_decompositionContent,
+  gram_schmidt: gram_schmidtContent,
+  matrix_rank: matrix_rankContent,
   // 他のコンポーネントを追加
 };
 
