@@ -153,5 +153,26 @@ export const metadata: MetadataCollection = {
     lastUpdated: "2024-12-28",
     topic: "linear_algebra",
   },
+  singular_value_decomposition: {
+    title: "特異値分解",
+    tabtitle: `特異値分解 - ${siteTitle}`,
+    description: "行列の特異値分解について説明しています。",
+    lastUpdated: "2024-12-29",
+    topic: "linear_algebra",
+  },
+  pseudoinverse: {
+    title: "疑似逆行列",
+    tabtitle: `疑似逆行列 - ${siteTitle}`,
+    description: "行列の疑似逆行列について説明しています。",
+    lastUpdated: "2024-12-29",
+    topic: "linear_algebra",
+  },
+  linear_combination: {
+    title: "線型結合",
+    tabtitle: `線型結合 - ${siteTitle}`,
+    description: "ベクトルの線型結合について説明しています。",
+    lastUpdated: "2024-12-29",
+    topic: "linear_algebra",
+  },
   // 他のトピックもここに追加できます
 };

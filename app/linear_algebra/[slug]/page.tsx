@@ -28,6 +28,9 @@ import gauss_jordan_eliminationContent from "@/app/linear_algebra/contents/gauss
 import qr_decompositionContent from "@/app/linear_algebra/contents/qr_decomposition";
 import gram_schmidtContent from "@/app/linear_algebra/contents/gram_schmidt";
 import matrix_rankContent from "@/app/linear_algebra/contents/matrix_rank";
+import singular_value_decompositionContent from "@/app/linear_algebra/contents/singular_value_decomposition";
+import pseudoinverseContent from "@/app/linear_algebra/contents/pseudoinverse";
+import linear_combinationContent from "@/app/linear_algebra/contents/linear_combination";
 
 interface PageProps {
   params: Promise<{
@@ -66,6 +69,9 @@ const contentComponents = {
   qr_decomposition: qr_decompositionContent,
   gram_schmidt: gram_schmidtContent,
   matrix_rank: matrix_rankContent,
+  singular_value_decomposition: singular_value_decompositionContent,
+  pseudoinverse: pseudoinverseContent,
+  linear_combination: linear_combinationContent,
   // 他のコンポーネントを追加
 };
 
