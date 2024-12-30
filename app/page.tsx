@@ -13,9 +13,6 @@ interface CardData {
 }
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
-console.log("BasePath: ", basePath);
-
-
 
 export const metadata = {
   basePath: process.env.NEXT_PUBLIC_BASE_PATH || "",
@@ -37,7 +34,7 @@ export const metadata = {
     card: "summary_large_image",
     title: `ホーム - ${siteTitle}`,
     description: "ホームです。",
-    images: [`${basePath}/icon.png`,],
+    images: [`${basePath}/icon.png`],
   },
 };
 
@@ -53,11 +50,11 @@ const mockData: CardData[] = [
   },
   {
     id: 2,
-    title: "幾何学",
-    description: "図形、空間、測量など",
-    icon: "△",
+    title: "機械学習",
+    description: "アルゴリズム、データ処理など",
+    icon: "🤖",
     backgroundColor: "#d1c4e9",
-    link: "/geometry",
+    link: "/machine_learning",
   } /*
   {
     id: 3,
