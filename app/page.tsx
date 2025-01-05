@@ -44,7 +44,7 @@ const mockData: CardData[] = [
     id: 1,
     title: "線形代数",
     description: "行列、ベクトルなど",
-    icon: "→",
+    icon: "📈",
     backgroundColor: "#f8d7da",
     link: "/linear_algebra",
   },
