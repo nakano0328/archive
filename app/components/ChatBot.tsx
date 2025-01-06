@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import styles from "./chatbot.module.css";
-import { getBotResponse } from '../utils/botResponses';
+import styles from "@/app/components/chatbot.module.css";
+import { getBotResponse } from '@/app/utils/botResponses';
 
 interface Message {
   text: string;
