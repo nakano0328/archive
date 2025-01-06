@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styles from "./chatbot.module.css";
+import { getBotResponse } from '../utils/botResponses';
 
 interface Message {
   text: string;
@@ -19,9 +20,10 @@ const ChatBot: React.FC<{ onClose: () => void }> = ({ onClose }) => {
     const userMessage = { text: input, isBot: false };
     setMessages(prev => [...prev, userMessage]);
 
-    // ボットの応答（ここは実際のチャットボットAPIと連携する必要があります）
+    // ボットの応答を取得
     setTimeout(() => {
-      const botMessage = { text: "申し訳ありません。現在デモ版のため、応答は制限されています。", isBot: true };
+      const botResponse = getBotResponse(input);
+      const botMessage = { text: botResponse, isBot: true };
       setMessages(prev => [...prev, botMessage]);
     }, 1000);
 
@@ -39,7 +41,7 @@ const ChatBot: React.FC<{ onClose: () => void }> = ({ onClose }) => {
       <div className={styles.container}>
         <div className={styles.header}>
           <h3>チャットアシスタント</h3>
-          <button onClick={onClose}>×</button>
+          <button onClick={onClose}>&times;</button>
         </div>
         <div className={styles.messages}>
           {messages.map((message, index) => (
