@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import styles from "@/app/components/chatbot.module.css";
 
-//import ChatBot from '@/app/components/ChatBot';
-import ChatBot from '@/app/components/OpenAIChatBot';
+import ChatBot from '@/app/components/ChatBot';
+//import ChatBot from '@/app/components/OpenAIChatBot';
 
 interface SidebarProps {
     setQuery: (query: string) => void; // 検索クエリを設定するための関数
