@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import ChatBot from './ChatBot';
+import styles from "./chatbot.module.css";
 
 interface SidebarProps {
     setQuery: (query: string) => void; // 検索クエリを設定するための関数
@@ -6,6 +8,7 @@ interface SidebarProps {
 
 const Sidebar: React.FC<SidebarProps> = ({ setQuery }) => {
     const [inputValue, setInputValue] = useState<string>(''); // ローカルで入力を管理
+    const [showChat, setShowChat] = useState(false);
 
     const handleSearch = () => {
         setQuery(inputValue); // 検索ボタンを押した時にクエリを設定
@@ -52,6 +55,15 @@ const Sidebar: React.FC<SidebarProps> = ({ setQuery }) => {
                     </button>
                 </div>
             </div>
+            <div className={styles.buttoncontainer}>
+                <button
+                    className={styles.toggle}
+                    onClick={() => setShowChat(!showChat)}
+                >
+                    💬 チャットアシスタント
+                </button>
+            </div>
+            {showChat && <ChatBot onClose={() => setShowChat(false)} />}
         </div>
     );
 };
