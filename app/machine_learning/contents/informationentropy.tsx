@@ -38,7 +38,7 @@ export default function pageContent() {
         <br />
         そこで、情報量を数式で定義するなら、おそらく確率値に反比例する値として定義するのが適切でしょう。
       </p>
-      <CenteredEquation equation="\text{Info} \propto \frac{1}{P(X)} \quad \tag{1}" />
+      <CenteredEquation equation="\text{Info} \propto \frac{1}{P(X)}" />
 
       <h2 className="caption">情報量の定義</h2>
       <p>
@@ -46,7 +46,7 @@ export default function pageContent() {
         <InlineMath math="X" />
         &nbsp;に対して、
       </p>
-      <CenteredEquation equation="I(x) = -\log_b(P(X)) \quad \tag{2}" />
+      <CenteredEquation equation="I(x) = -\log_b(P(X))" />
       <p>
         このとき、ログの底&nbsp;
         <InlineMath math="b" />
@@ -57,7 +57,7 @@ export default function pageContent() {
         <br />
         情報量の定義にマイナスが付いているのは、次のようにログが情報量の定義に使用されているためです。
       </p>
-      <CenteredEquation equation="\log_b\left(\frac{1}{P(X)}\right) = -\log_b(P(X)) \quad \tag{3}" />
+      <CenteredEquation equation="\log_b\left(\frac{1}{P(X)}\right) = -\log_b(P(X))" />
       <p>
         情報量を定義する際にわざわざログを使っているのは、以下のような情報の概念を満たす数式である必要があるからです。
       </p>
@@ -78,7 +78,7 @@ export default function pageContent() {
         <InlineMath math="\{x_1, x_2, \ldots, x_n\}" />
         &nbsp;であるとき、情報エントロピーは以下のように定義されます。
       </p>
-      <CenteredEquation equation="H(X) = E[I(X)] = -\sum_{i=1}^{n} P(x_i) \log_b(P(x_i)) \quad \tag{4}" />
+      <CenteredEquation equation="H(X) = E[I(X)] = -\sum_{i=1}^{n} P(x_i) \log_b(P(x_i))" />
       <p>
         ここで、
         <InlineMath math="E[\cdot]" /> は期待値演算子を意味します。
@@ -91,7 +91,7 @@ export default function pageContent() {
       </p>
       <CenteredEquation
         equation="\begin{aligned}
-        \frac{1}{6} \times 100 + \frac{1}{6} \times 200 + \ldots + \frac{1}{6} \times 600 = \sum_{i=1}^{6} P(x_i) M(x_i) \quad \tag{5,6}
+        \frac{1}{6} \times 100 + \frac{1}{6} \times 200 + \ldots + \frac{1}{6} \times 600 = \sum_{i=1}^{6} P(x_i) M(x_i)
         \end{aligned}"
       />
       <p>
@@ -99,7 +99,7 @@ export default function pageContent() {
         <InlineMath math="P(x_i)" />
         &nbsp;&times;&nbsp;情報量の値を合計したものなので、
       </p>
-      <CenteredEquation equation="H(X) = \sum_{i=1}^{n} P(x_i) (-\log_b(P(x_i))) \quad \tag{6}" />
+      <CenteredEquation equation="H(X) = \sum_{i=1}^{n} P(x_i) (-\log_b(P(x_i)))" />
       <p>として計算して得られる値です。</p>
     </>
   );
