@@ -40,3 +40,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# OpenAI Chatbot
+app/components/OpenAIChatBot.tsx
+app/utils/api.ts
