@@ -10,6 +10,7 @@ import Table from "@/app/components/Table";
 import AutoencoderContent from "@/app/machine_learning/contents/autoencoder";
 import AdamContent from "@/app/machine_learning/contents/adam";
 import Gradient_DescentContent from "@/app/machine_learning/contents/gradient_descent";
+import InformationEntropyContent from "@/app/machine_learning/contents/informationentropy";
 
 interface PageProps {
   params: Promise<{
@@ -30,6 +31,7 @@ const contentComponents = {
   autoencoder: AutoencoderContent,
   adam: AdamContent,
   gradient_descent: Gradient_DescentContent,
+  informationentropy: InformationEntropyContent,
   // 他のコンポーネントを追加
 };
 

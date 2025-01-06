@@ -10,9 +10,9 @@ export const metadata: MetadataCollection = {
     topic: "machine_learning",
   },
   adam: {
-    title: "Adam",
-    tabtitle: `Adam - ${siteTitle}`,
-    description: "最適化手法の1つであるAdamについて説明しています。",
+    title: "ADAM",
+    tabtitle: `ADAM - ${siteTitle}`,
+    description: "最適化手法の1つであるADAMについて説明しています。",
     lastUpdated: "2025-01-05",
     topic: "machine_learning",
   },
@@ -21,6 +21,13 @@ export const metadata: MetadataCollection = {
     tabtitle: `勾配降下法 - ${siteTitle}`,
     description: "勾配降下法について説明しています。",
     lastUpdated: "2025-01-05",
+    topic: "machine_learning",
+  },
+  informationentropy: {
+    title: "情報エントロピー",
+    tabtitle: `情報エントロピー - ${siteTitle}`,
+    description: "情報エントロピーについて説明しています。",
+    lastUpdated: "2025-01-06",
     topic: "machine_learning",
   },
 };
