@@ -5,7 +5,7 @@ const Footer = () => {
     <footer
       className="footer"
     >
-      <p>&copy; 2025 {siteTitle}. 私が作成しています。</p>
+      <p>&copy; 2024-2025  {siteTitle}.</p>
     </footer>
   );
 };
