@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from "react";
 import styles from "@/app/components/chatbot.module.css";
-import { getBotResponse } from '@/app/utils/botResponses';
+import { getBotResponse } from "@/app/utils/botResponses";
+import "katex/dist/katex.min.css";
+import { InlineMath } from "react-katex";
 
 interface Message {
   text: string;
@@ -9,29 +11,37 @@ interface Message {
 
 const ChatBot: React.FC<{ onClose: () => void }> = ({ onClose }) => {
   const [messages, setMessages] = useState<Message[]>([
-    { text: "こんにちは！何かお手伝いできることはありますか？", isBot: true }
+    {
+      text: "こんにちは！何かお手伝いできることはありますか？",
+      isBot: true,
+    },
   ]);
-  const [input, setInput] = useState('');
+  const [input, setInput] = useState("");
+  const messagesEndRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [messages]);
 
   const handleSend = () => {
     if (!input.trim()) return;
 
     // ユーザーメッセージを追加
     const userMessage = { text: input, isBot: false };
-    setMessages(prev => [...prev, userMessage]);
+    setMessages((prev) => [...prev, userMessage]);
 
     // ボットの応答を取得
     setTimeout(() => {
       const botResponse = getBotResponse(input);
       const botMessage = { text: botResponse, isBot: true };
-      setMessages(prev => [...prev, botMessage]);
+      setMessages((prev) => [...prev, botMessage]);
     }, 1000);
 
-    setInput('');
+    setInput("");
   };
 
   const handleKeyPress = (e: React.KeyboardEvent) => {
-    if (e.key === 'Enter') {
+    if (e.key === "Enter") {
       handleSend();
     }
   };
@@ -45,10 +55,40 @@ const ChatBot: React.FC<{ onClose: () => void }> = ({ onClose }) => {
         </div>
         <div className={styles.messages}>
           {messages.map((message, index) => (
-            <div key={index} className={message.isBot ? styles.botmessage : styles.usermessage}>
-              {message.text}
+            <div
+              key={index}
+              className={message.isBot ? styles.botmessage : styles.usermessage}
+            >
+              {message.text.split("$").map((part, i) => {
+                if (i % 2 === 1) {
+                  return <InlineMath key={i} math={part} />;
+                } else {
+                  const linkRegex = /\[\[(.*?)\]\]\((.*?)\)/g;
+                  const segments = part.split(linkRegex);
+                  return segments.map((segment, j) => {
+                    if (j % 3 === 1) {
+                      return (
+                        <a
+                          className={styles.messagelink}
+                          key={j}
+                          href={segments[j + 1]}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {segment}
+                        </a>
+                      );
+                    } else if (j % 3 === 2) {
+                      return null;
+                    } else {
+                      return segment;
+                    }
+                  });
+                }
+              })}
             </div>
           ))}
+          <div ref={messagesEndRef} />
         </div>
         <div className={styles.input}>
           <input

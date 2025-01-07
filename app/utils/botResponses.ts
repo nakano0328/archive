@@ -1,13 +1,12 @@
 export const getBotResponse = (input: string): string => {
-  // 入力を正規化（大文字小文字を区別しない）
   const normalizedInput = input.trim().toUpperCase();
 
   switch (normalizedInput) {
-    case "A":
-      return "○";
-    case "B":
-      return "△";
+    case "秘密のコマンドを教えてください":
+      return "[[こちらのページ]](https://jeonglabo.github.io/nextjs/test/testtest) にアクセスしてみな";
+    case "内積の計算式について教えてください。":
+      return "2つのベクトルをそれぞれ $\\bm{a},\\bm{b}$、2つのベクトルのなす角を$\\theta$とすると、内積の計算式は以下の通りです。$\\newline \\bm{a} \\cdot \\bm{b} = |\\bm{a}||\\bm{b}|\\cos\\theta \\newline$ 詳しくは [[こちら]](https://jeonglabo.github.io/nextjs/linear_algebra/dotproduct) を見て下さい。";
     default:
-      return "すみません。よく分かりません。";
+      return "こんにちは！このチャットボットはまだ開発中です。もう少しで完成する予定ですので、楽しみにお待ちくださいね！😊";
   }
 };

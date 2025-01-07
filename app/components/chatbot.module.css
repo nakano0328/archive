@@ -68,7 +68,8 @@
   margin: 5px;
   padding: 8px 12px;
   border-radius: 15px;
-  max-width: 80%;
+  max-width: 83%;
+  word-break: break-all;
 }
 
 .botmessage {
@@ -108,4 +109,9 @@
 
 .input button:hover {
   background: #0056b3;
+}
+
+a.messagelink,
+a.messagelink:visited {
+  color: #007bff;
 }
