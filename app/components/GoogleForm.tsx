@@ -78,7 +78,7 @@ const GoogleForm: React.FC<GoogleFormProps> = ({ currentPath }) => {
         <input
           type="hidden"
           name="entry.2025028027"
-          value={`app/${currentPath}`}
+          value={`app${currentPath}`}
         />
 
         <input
