@@ -23,6 +23,7 @@ const GoogleForm: React.FC<GoogleFormProps> = ({ currentPath }) => {
 
   return (
     <div className="space-y-4">
+      <p>本ページの内容についてのご意見をお聞かせください。</p>
       {showMessage && (
         <div
           className="p-4 mb-4 text-green-700 bg-green-100 rounded-lg"
