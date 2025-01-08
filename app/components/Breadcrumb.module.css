@@ -1,0 +1,36 @@
+.breadcrumb {
+  background-color: #e8ecf181;
+  padding: "10px";
+  border-top: 1px solid #333;
+  border-bottom: 1px solid #333;
+  margin: 30px 0px;
+}
+
+.breadcrumbList {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  padding: 10px 10px 5px;
+}
+
+.breadcrumbItem {
+  display: flex;
+  align-items: center;
+  color: #000000;
+}
+
+.breadcrumbLink {
+  color: #000000;
+  text-decoration: none;
+}
+
+.separator {
+  margin: 0px 8px;
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 10px solid black;
+}

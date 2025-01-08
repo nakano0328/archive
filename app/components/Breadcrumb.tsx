@@ -1,4 +1,5 @@
 import Link from "next/link";
+import styles from "./Breadcrumb.module.css";
 
 interface BreadcrumbProps {
   items: {
@@ -9,39 +10,20 @@ interface BreadcrumbProps {
 
 export default function Breadcrumb({ items }: BreadcrumbProps) {
   return (
-    <nav
-      aria-label="パンくずリスト"
-      className='breadcrumb'
-    >
-      <ol
-        style={{
-          listStyle: "none",
-          display: "flex",
-          alignItems: "center",
-          gap: "8px",
-          margin: 0,
-          padding: "10px 10px 5px",
-        }}
-      >
+    <nav aria-label="パンくずリスト" className={styles.breadcrumb}>
+      <ol className={styles.breadcrumbList}>
         {/* ホーム文字 */}
-        <li>
-          <Link href="/" style={{ color: "#000000", textDecoration: "none" }}>
+        <li className={styles.breadcrumbItem}>
+          <Link href="/" className={styles.breadcrumbLink}>
             ホーム
           </Link>
         </li>
 
         {/* 他のパンくずアイテム */}
         {items.map((item, index) => (
-          <li
-            key={index}
-            style={{ display: "flex", alignItems: "center", color: "#000000" }}
-          >
-            <span style={{ margin: '0px 8px', width: '0', height: '0', borderTop: '5px solid transparent', borderBottom: '5px solid transparent', borderLeft: '10px solid black' }} />
-
-            <Link
-              href={item.href}
-              style={{ color: "#000000", textDecoration: "none" }}
-            >
+          <li key={index} className={styles.breadcrumbItem}>
+            <span className={styles.separator} />
+            <Link href={item.href} className={styles.breadcrumbLink}>
               {item.name}
             </Link>
           </li>

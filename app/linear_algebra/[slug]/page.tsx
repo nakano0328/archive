@@ -124,7 +124,7 @@ export default async function Page(props: PageProps) {
 
   return (
     <>
-      <div style={{ padding: "20px" }}>
+      <div className="mainContainer">
         <Breadcrumb
           items={[
             { name: "線形代数", href: `/${metaData.topic}` },
@@ -155,7 +155,7 @@ export default async function Page(props: PageProps) {
         {/* ページコンテンツ */}
         <ContentComponent />
         <hr />
-        <div style={{ margin: "20px" }}>
+        <div style={{ margin: "5px" }}>
           <h2 className="commentform">コメントフォーム</h2>
           <div style={{ margin: "0px 10px" }}>
             <GoogleForm currentPath={`/linear_algebra/${params.slug}`} />

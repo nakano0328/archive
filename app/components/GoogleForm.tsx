@@ -10,14 +10,17 @@ const GoogleForm: React.FC<GoogleFormProps> = ({ currentPath }) => {
   const [showMessage, setShowMessage] = useState(false);
   const formRef = useRef<HTMLFormElement | null>(null);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setShowMessage(true);
 
-    // フォームの送信
-    e.currentTarget.submit();
+    const formData = new FormData(e.currentTarget);
+    await fetch(e.currentTarget.action, {
+      method: "POST",
+      body: formData,
+      mode: "no-cors",
+    });
 
-    // フォームをリセット
     formRef.current?.reset();
   };
 
@@ -70,8 +73,7 @@ const GoogleForm: React.FC<GoogleFormProps> = ({ currentPath }) => {
             name="entry.911577316"
             placeholder="コメント"
             rows={10}
-            cols={40}
-            maxLength={400}
+            cols={30}
             required
             className="w-full p-2 border rounded"
           ></textarea>
@@ -89,14 +91,6 @@ const GoogleForm: React.FC<GoogleFormProps> = ({ currentPath }) => {
           className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 cursor-pointer"
         />
       </form>
-
-      <iframe
-        id="hidden_iframe"
-        name="hidden_iframe"
-        style={{ display: "none", border: "none" }}
-        width="0"
-        height="0"
-      />
     </div>
   );
 };

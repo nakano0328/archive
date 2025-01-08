@@ -13,6 +13,24 @@
 
 .modalContent {
   position: relative;
-  max-width: 90%;
-  max-height: 90%;
+  width: 90vw; /* ビューポート幅の90% */
+  height: auto; /* 高さは自動調整 */
+  max-height: 90vh; /* ビューポート高さの90%を超えない */
+  display: flex; /* 画像を中央配置 */
+  justify-content: center;
+  align-items: center;
+}
+
+/* スマホ向けのスタイル */
+@media (max-width: 768px) {
+  .modalContent {
+    width: 95vw; /* ビューポート幅の95% */
+    max-height: 85vh; /* ビューポート高さの85%を超えない */
+  }
+
+  .modalContent img {
+    width: 100%;
+    height: auto;
+    max-height: 80vh;
+  }
 }

@@ -53,8 +53,8 @@ h2.caption {
 h2.commentform {
   background-color: #535460;
   color: #ffffff;
-  padding: 15px 25px;
-  font-size: 28px;
+  padding: 15px 10px;
+  font-size: 24px;
 }
 
 h1,
@@ -92,6 +92,10 @@ li {
   background-color: #fafbfc;
   padding: 0px 20px 50px 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.01); /* オプション: 境界をはっきりさせるための影 */
+}
+
+.mainContainer {
+  padding: 20px;
 }
 
 /* サイドバー */
@@ -143,6 +147,50 @@ li {
   }
   .sidebar {
     margin: 30px 0px;
+  }
+}
+/* スマートフォン向けのレスポンシブ対応 */
+@media (max-width: 768px) {
+  .container {
+    max-width: 95%;
+    font-size: 14px;
+    padding: 10px 10px;
+  }
+
+  .mainContainer {
+    padding: 0px;
+  }
+
+  h1.title {
+    font-size: 28px;
+  }
+
+  h2.caption {
+    font-size: 20px;
+    padding: 12px 10px;
+  }
+
+  h2.commentform {
+    font-size: 20px;
+    padding: 12px 8px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  li {
+    font-size: 14px;
+  }
+
+  .lastUpdated {
+    font-size: 12px;
+  }
+
+  /* メインコンテンツのパディング */
+  .main-content {
+    padding-left: 3%;
+    padding-right: 3%;
   }
 }
 

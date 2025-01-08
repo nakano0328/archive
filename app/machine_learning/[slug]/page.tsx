@@ -84,7 +84,7 @@ export default async function Page(props: PageProps) {
 
   return (
     <>
-      <div style={{ padding: "20px" }}>
+      <div className="mainContainer">
         <Breadcrumb
           items={[
             { name: "機械学習", href: `/${metaData.topic}` },
