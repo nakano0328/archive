@@ -12,7 +12,7 @@ interface Message {
 const ChatBot: React.FC<{ onClose: () => void }> = ({ onClose }) => {
   const [messages, setMessages] = useState<Message[]>([
     {
-      text: "こんにちは！何かお手伝いできることはありますか？",
+      text: "こんにちは！このチャットでのやり取りは、サービス向上やサイト改善のために匿名化して活用させていただきます。安心してご利用ください😊",
       isBot: true,
     },
   ]);
