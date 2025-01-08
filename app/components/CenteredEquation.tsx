@@ -9,7 +9,7 @@ const CenteredEquation: React.FC<{ equation: string }> = ({ equation }) => (
       <BlockMath math={equation} />
     </div>
     <div className={styles.scrollMessage}>
-      数式が見切れいてる場合は、横にスクロールしてください。
+      数式が見切れてる場合は、横にスクロールしてください。
     </div>
   </>
 );
