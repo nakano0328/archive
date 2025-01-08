@@ -70,8 +70,7 @@ const GoogleForm: React.FC<GoogleFormProps> = ({ currentPath }) => {
             name="entry.911577316"
             placeholder="コメント"
             rows={10}
-            cols={40}
-            maxLength={400}
+            cols={30}
             required
             className="w-full p-2 border rounded"
           ></textarea>

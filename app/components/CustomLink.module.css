@@ -44,3 +44,24 @@
   margin: 0;
   text-transform: lowercase;
 }
+
+/* モバイル表示用のスタイル */
+@media screen and (max-width: 768px) {
+  .linkContainer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .linkImage {
+    width: 100%;
+    height: 200px;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .linkText {
+    width: 100%;
+    text-align: center;
+  }
+}

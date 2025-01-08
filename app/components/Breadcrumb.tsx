@@ -9,10 +9,7 @@ interface BreadcrumbProps {
 
 export default function Breadcrumb({ items }: BreadcrumbProps) {
   return (
-    <nav
-      aria-label="パンくずリスト"
-      className='breadcrumb'
-    >
+    <nav aria-label="パンくずリスト" className="breadcrumb">
       <ol
         style={{
           listStyle: "none",
@@ -21,6 +18,7 @@ export default function Breadcrumb({ items }: BreadcrumbProps) {
           gap: "8px",
           margin: 0,
           padding: "10px 10px 5px",
+          fontSize: "14px",
         }}
       >
         {/* ホーム文字 */}
@@ -36,7 +34,16 @@ export default function Breadcrumb({ items }: BreadcrumbProps) {
             key={index}
             style={{ display: "flex", alignItems: "center", color: "#000000" }}
           >
-            <span style={{ margin: '0px 8px', width: '0', height: '0', borderTop: '5px solid transparent', borderBottom: '5px solid transparent', borderLeft: '10px solid black' }} />
+            <span
+              style={{
+                margin: "0px 8px",
+                width: "0",
+                height: "0",
+                borderTop: "5px solid transparent",
+                borderBottom: "5px solid transparent",
+                borderLeft: "10px solid black",
+              }}
+            />
 
             <Link
               href={item.href}
