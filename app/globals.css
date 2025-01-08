@@ -94,6 +94,10 @@ li {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.01); /* オプション: 境界をはっきりさせるための影 */
 }
 
+.mainContainer {
+  padding: 20px;
+}
+
 /* サイドバー */
 .sidebar {
   padding: 0px 10px;
@@ -153,6 +157,10 @@ li {
     padding: 10px 10px;
   }
 
+  .mainContainer {
+    padding: 0px;
+  }
+
   h1.title {
     font-size: 28px;
   }
@@ -177,6 +185,12 @@ li {
 
   .lastUpdated {
     font-size: 12px;
+  }
+
+  /* メインコンテンツのパディング */
+  .main-content {
+    padding-left: 3%;
+    padding-right: 3%;
   }
 }
 
