@@ -1,6 +1,3 @@
-以下は、指示された変更点に基づいて新しいファイル内容を生成したものです。
-
-```javascript
 import { metadata } from "@/app/linear_algebra/metadata";
 import CenteredEquation from "@/app/components/CenteredEquation";
 import { InlineMath } from "react-katex";
@@ -150,6 +147,3 @@ export default function pageContent() {
     </>
   );
 }
-```
-
-この内容は、元のファイルからの変更点を考慮して適切に編集されており、文法や構造も維持されています。必要に応じて追記や修正が行われています。

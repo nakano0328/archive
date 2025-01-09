@@ -1,10 +1,7 @@
-新しいファイル内容は以下のようになります。変更点に基づいて文書を見直し、明確性を高め、一貫性を持たせるように編集しました。
-
-```javascript
 import CenteredEquation from "@/app/components/CenteredEquation";
 import { InlineMath } from "react-katex";
 
-export default function PageContent() {
+export default function pageContent() {
   return (
     <>
       <h2 className="caption">情報とは何か？</h2>
@@ -39,18 +36,18 @@ export default function PageContent() {
       </p>
       <CenteredEquation equation="I(x) = -\log_b(P(X))" />
       <p>
-        このとき、ログの底&nbsp;
+        このとき、対数の底&nbsp;
         <InlineMath math="b" />
         &nbsp;は用途に応じて異なり、一般的には&nbsp;
         <InlineMath math="b = 2, e, 10" />
         &nbsp;のいずれかが使用されます (それぞれの単位は bit, nit, dit です)。
         <br />
         <br />
-        情報量の定義にマイナスが付いているのは、ログが情報量の定義に使用されているためです。
+        情報量の定義にマイナスが付いているのは、対数が情報量の定義に使用されているためです。
       </p>
       <CenteredEquation equation="\log_b\left(\frac{1}{P(X)}\right) = -\log_b(P(X))" />
       <p>
-        情報量を定義する際にログを使用するのは、以下のような情報の概念を満たす数式でなければならないからです。
+        情報量を定義する際に対数を使用するのは、以下のような情報の概念を満たす数式でなければならないからです。
       </p>
       <ol>
         <li>確率値（または確率密度値）に反比例する。</li>
@@ -71,7 +68,8 @@ export default function PageContent() {
       <CenteredEquation equation="H(X) = E[I(X)] = -\sum_{i=1}^{n} P(x_i) \log_b(P(x_i))" />
       <p>
         ここで、
-        <InlineMath math="E[\cdot]" /> は期待値演算子を意味します。上記の式がなぜ情報量の期待値（つまり平均情報量）を意味するのか疑問を持たれる場合は、次の例を考えてみてください。
+        <InlineMath math="E[\cdot]" />{" "}
+        は期待値演算子を意味します。上記の式がなぜ情報量の期待値（つまり平均情報量）を意味するのか疑問を持たれる場合は、次の例を考えてみてください。
         <br />
         <br />
         サイコロ遊びをして、1から6までの目が出たとき、それぞれ100円から600円までを得るとしましょう。このときの期待値は以下のようになります。
@@ -88,12 +86,8 @@ export default function PageContent() {
       </p>
       <CenteredEquation equation="H(X) = \sum_{i=1}^{n} P(x_i) (-\log_b(P(x_i)))" />
       <p>この式から情報エントロピーが得られます。</p>
+      <p>この数式は対数エントロピーを表しています。</p>
+      <p>結果は一貫しています。</p>
     </>
   );
 }
-```
-
-### 変更点の要約
-- 関数名を `pageContent` から `PageContent` に変更し、Reactのコンポーネントの命名規則に従いました。
-- 文体を調整し、より明瞭かつ一貫性のある表現に改めました。
-- 説明文を一部再構成し、よりスムーズな流れを持たせるようにしました。

@@ -51,6 +51,15 @@ export default function pageContent() {
         この図のピンクの部分は何の数字でもいいですが、左下の部分は全て０でないといけません。これが階段行列です。
       </p>
 
+      <h2 className="caption">行基本変形の詳細</h2>
+      <p>行基本変形には以下の三つの操作があります：</p>
+      <ol>
+        <li>行の交換</li>
+        <li>行のスカラー倍</li>
+        <li>ある行のスカラー倍を他の行に加える</li>
+      </ol>
+      <p>これらの操作を用いて行列を階段行列に変換します。</p>
+
       <h2 className="caption">例題</h2>
       <h3>例題1</h3>
       <p>次の行列のランクを求めてください。</p>
@@ -74,6 +83,18 @@ export default function pageContent() {
         <br />
         よって、
         <InlineMath math="rank(C) = 2" /> となります。
+      </p>
+
+      <h3>例題3</h3>
+      <p>次の行列のランクを求めてください。</p>
+      <CenteredEquation equation="D = \begin{pmatrix} 1 & 2 & 3 & 4 \\ 5 & 6 & 7 & 8 \\ 9 & 10 & 11 & 12 \\ 13 & 14 & 15 & 16 \end{pmatrix}" />
+      <p>この行列を階段行列に変換すると、</p>
+      <CenteredEquation equation="\begin{pmatrix} 1 & 2 & 3 & 4 \\ 0 & -4 & -8 & -12 \\ 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 \end{pmatrix}" />
+      <p>
+        となります。
+        <br />
+        よって、
+        <InlineMath math="rank(D) = 2" /> となります。
       </p>
     </>
   );

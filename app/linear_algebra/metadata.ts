@@ -161,9 +161,9 @@ export const metadata: MetadataCollection = {
     topic: "linear_algebra",
   },
   pseudoinverse: {
-    title: "疑似逆行列",
-    tabtitle: `疑似逆行列 - ${siteTitle}`,
-    description: "行列の疑似逆行列について説明しています。",
+    title: "疑似行列",
+    tabtitle: `疑似行列 - ${siteTitle}`,
+    description: "行列の疑似行列について説明しています。",
     lastUpdated: "2024-12-29",
     topic: "linear_algebra",
   },

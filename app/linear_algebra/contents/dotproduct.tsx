@@ -173,31 +173,25 @@ export default function pageContent() {
         description="ベクトルの内積の表示を行っているコードを示しています。"
         target="_blank"
       />
-
-      <p>解説を見たい方は以下を見て下さい。</p>
-
-      <details>
-        <summary>解説を見る</summary>
-        <p>
-          内積は以下のように表されます。
-          <br />
-          &nbsp;&nbsp;&nbsp;
-          <InlineMath math="\bm{a}\cdot\bm{b} = \|\bm{a}\|\|\bm{b}\|\cos{\theta}" />
-          <br />
-          これを以下のように書き換えます。
-          <br />
-          &nbsp;&nbsp;&nbsp;
-          <InlineMath math="\bm{a}\cdot\bm{b} = \|\bm{a}\|\cos{\theta}\|\bm{b}\|" />
-          <br />
-          これはベクトル&nbsp;
-          <InlineMath math="\bm{a}" />
-          &nbsp;をベクトル&nbsp;
-          <InlineMath math="\bm{b}" />
-          &nbsp;に射影(projection)したものと&nbsp;
-          <InlineMath math="\bm{b}" />
-          &nbsp;のノルムの積を意味します。
-        </p>
-      </details>
+      <p>
+        内積は以下のように表されます。
+        <br />
+        &nbsp;&nbsp;&nbsp;
+        <InlineMath math="\bm{a}\cdot\bm{b} = \|\bm{a}\|\|\bm{b}\|\cos{\theta}" />
+        <br />
+        これを以下のように書き換えます。
+        <br />
+        &nbsp;&nbsp;&nbsp;
+        <InlineMath math="\bm{a}\cdot\bm{b} = \|\bm{a}\|\cos{\theta}\|\bm{b}\|" />
+        <br />
+        これはベクトル&nbsp;
+        <InlineMath math="\bm{a}" />
+        &nbsp;をベクトル&nbsp;
+        <InlineMath math="\bm{b}" />
+        &nbsp;に射影(projection)したものと&nbsp;
+        <InlineMath math="\bm{b}" />
+        &nbsp;のノルムの積を意味します。
+      </p>
       <br />
     </>
   );

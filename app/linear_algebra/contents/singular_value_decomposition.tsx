@@ -14,9 +14,9 @@ export default function pageContent() {
 
   return (
     <>
-      <h2 className="caption">特異値分解 (SVD) とは？</h2>
+      <h2 className="caption">特異値分解 とは？</h2>
       <p>
-        特異値分解 (Singular Value Decomposition, SVD)
+        特異値分解 (Singular Value Decomposition)
         は、行列を「回転」「スケーリング（伸縮）」「もう一度回転」という3つのステップに分解する数学的な手法です。
       </p>
       <p>
@@ -25,7 +25,7 @@ export default function pageContent() {
 
       <h2 className="caption">特異値分解の分解式</h2>
       <p>
-        SVDを使うと、行列 <InlineMath math="\mathbf{A}" />{" "}
+        特異値分解を使うと、行列 <InlineMath math="\mathbf{A}" />{" "}
         を次のように分解できます。
       </p>
       <CenteredEquation equation="\mathbf{A} = \mathbf{U} \mathbf{\Sigma} \mathbf{V}^T" />

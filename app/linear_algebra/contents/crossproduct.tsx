@@ -189,7 +189,7 @@ export default function pageContent() {
         まず初めに外積を式で表すと以下のようになります。
       </p>
 
-      <CenteredEquation equation="\bm{a}\times\bm{b}=5 \cdot 3 - 1 \cdot 1 = 15 - 1 = 14" />
+      <CenteredEquation equation="\bm{a}\times\bm{b}=3 \cdot 4 - 1 \cdot 1 = 12 - 1 = 11" />
 
       <p>
         これらのベクトルの外積をグラフで表すと以下のようになります。
@@ -216,7 +216,7 @@ export default function pageContent() {
       />
 
       <p>
-        この結果、外積は -14
+        この結果、外積は 11
         となります。この値はベクトルの方向に垂直な（つまり、2次元空間の外に向かう）z軸方向の大きさを示しています。
       </p>
     </>
