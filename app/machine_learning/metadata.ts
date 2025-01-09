@@ -6,7 +6,7 @@ export const metadata: MetadataCollection = {
     title: "オートエンコーダ",
     tabtitle: `オートエンコーダ - ${siteTitle}`,
     description: "オートエンコーダについて説明しています。",
-    lastUpdated: "2024-12-30",
+    lastUpdated: "2025-01-09",
     topic: "machine_learning",
   },
   adam: {
@@ -20,14 +20,14 @@ export const metadata: MetadataCollection = {
     title: "勾配降下法",
     tabtitle: `勾配降下法 - ${siteTitle}`,
     description: "勾配降下法について説明しています。",
-    lastUpdated: "2025-01-05",
+    lastUpdated: "2025-01-09",
     topic: "machine_learning",
   },
   informationentropy: {
     title: "情報エントロピー",
     tabtitle: `情報エントロピー - ${siteTitle}`,
     description: "情報エントロピーについて説明しています。",
-    lastUpdated: "2025-01-06",
+    lastUpdated: "2025-01-09",
     topic: "machine_learning",
   },
 };
