@@ -1,15 +1,7 @@
 import CenteredEquation from "@/app/components/CenteredEquation";
 import { InlineMath } from "react-katex";
-import ImageModal from "@/app/components/ImageModal";
-import { metadata } from "@/app/linear_algebra/metadata";
 
 export default function pageContent() {
-  const pagename: string = "linear_combination"; //ここを変更
-
-  const metaData = metadata[pagename];
-  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
-  const imagePath = `${basePath}/${metaData.topic}/${pagename}`;
-
   return (
     <>
       <h2 className="caption">線形結合とは</h2>
@@ -21,10 +13,6 @@ export default function pageContent() {
         を用いて、次のように表されます。
       </p>
       <CenteredEquation equation="c_1\bm{v}_1 + c_2\bm{v}_2 + \cdots + c_n\bm{v}_n" />
-      <ImageModal
-        imagePath={`${imagePath}/linear_combination.png`}
-        altText="線形結合の図"
-      />
       <p>
         この式は、ベクトル
         <InlineMath math="\bm{v}_1,\bm{v}_2,\cdots,\bm{v}_n" />
