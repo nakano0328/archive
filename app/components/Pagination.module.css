@@ -5,9 +5,22 @@
   margin-top: 20px;
 }
 
+h2.title {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: black;
+}
+
 /* 最大4列に制限する */
 @media (min-width: 1550px) {
   .paginationgrid {
     grid-template-columns: repeat(4, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  h2.title {
+    font-size: 20px;
+    margin-bottom: 0px;
   }
 }

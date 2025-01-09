@@ -69,13 +69,7 @@ export default function Pagination({
                     height={150} // 必須だが実際のスタイルに影響しない
                     className="thumb"
                   />
-                  <h2
-                    style={{
-                      fontSize: "24px",
-                      marginBottom: "10px",
-                      color: "black",
-                    }}
-                  >
+                  <h2 className={styles.title}>
                     {topicsMetadata[topic].title}
                   </h2>
                   <p style={{ marginBottom: "20px", color: "black" }}>
