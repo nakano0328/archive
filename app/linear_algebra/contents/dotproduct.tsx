@@ -22,8 +22,8 @@ export default function pageContent() {
         Product または Vector Product）の2種類があります。
         <br />
         それぞれの計算結果や意味、応用方法には大きな違いがあります。これをしっかり理解しておくことが重要です。
-        <br />
-        <br />
+      </p>
+      <p>
         ここでは<b>内積</b>
         について説明します。外積については以下のページをご覧ください。
       </p>
@@ -173,6 +173,8 @@ export default function pageContent() {
         description="ベクトルの内積の表示を行っているコードを示しています。"
         target="_blank"
       />
+      <br />
+      <h3>解説</h3>
       <p>
         内積は以下のように表されます。
         <br />

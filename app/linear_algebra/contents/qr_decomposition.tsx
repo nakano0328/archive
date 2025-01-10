@@ -28,8 +28,8 @@ export default function pageContent() {
       <h2 className="caption">QR分解の手法</h2>
       <p>
         QR分解の手法には、グラム・シュミットの直交化を使用する方法があります。
-        <br />
-        <br />
+      </p>
+      <p>
         グラム・シュミットの直交化は、線型独立なベクトルを作るための手法です。
         <br />
         詳しい方法については以下を参照してください。

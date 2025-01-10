@@ -43,10 +43,8 @@ export default function pageContent() {
         が直交する時、
         <InlineMath math="\bm{u} \perp \bm{b}" />
         と表します。
-        <br />
-        <br />
-        また、直交するベクトルの内積は0になります。
       </p>
+      <p>また、直交するベクトルの内積は0になります。</p>
       <CenteredEquation equation="\bm{u} \cdot \bm{b} = 0" />
 
       <h2 className="caption">直交化の手順</h2>

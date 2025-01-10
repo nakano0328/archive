@@ -26,7 +26,11 @@ const GoogleForm: React.FC<GoogleFormProps> = ({ currentPath }) => {
 
   return (
     <div className="space-y-4">
-      <p>本ページの内容についてのご意見をお聞かせください。</p>
+      <p>
+        本ページの内容についてのご意見をお聞かせください。
+        <br />
+        なお、頂いた意見はサイト改善のために用いられます。また、ページ下部に匿名で表示されます。
+      </p>
       {showMessage && (
         <div
           className="p-4 mb-4 text-green-700 bg-green-100 rounded-lg"
@@ -40,6 +44,8 @@ const GoogleForm: React.FC<GoogleFormProps> = ({ currentPath }) => {
           }}
         >
           送信が完了しました。ありがとうございます。
+          <br />
+          掲載には時間がかかりますので、しばらくお待ちください。
         </div>
       )}
 
@@ -51,46 +57,54 @@ const GoogleForm: React.FC<GoogleFormProps> = ({ currentPath }) => {
         onSubmit={handleSubmit}
         className="space-y-4"
       >
-        <p>
+        <div style={{ margin: "0px 10px" }}>
+          <p>
+            お名前：
+            <br />
+            <input
+              name="entry.1814434943"
+              placeholder="名前"
+              defaultValue="名無しのごんべ"
+              required
+              className="w-full p-2 border rounded commentform"
+            />
+          </p>
+          <p>
+            メールアドレス：
+            <br />
+            <input
+              name="entry.238144512"
+              placeholder="メールアドレス"
+              type="email"
+              className="w-full p-2 border rounded commentform"
+            />
+          </p>
+          <p>
+            コメント：
+            <br />
+            <textarea
+              name="entry.911577316"
+              placeholder="コメント"
+              rows={10}
+              cols={30}
+              required
+              className="w-full p-2 border rounded commentform"
+            ></textarea>
+          </p>
           <input
-            name="entry.1814434943"
-            placeholder="名前"
-            defaultValue="名無しのごんべ"
-            required
-            className="w-full p-2 border rounded"
+            type="hidden"
+            name="entry.2025028027"
+            value={`app${currentPath}`}
           />
-        </p>
-        <p>
-          <input
-            name="entry.238144512"
-            placeholder="メールアドレス"
-            type="email"
-            className="w-full p-2 border rounded"
-          />
-        </p>
-        <p>
-          <textarea
-            name="entry.911577316"
-            placeholder="コメント"
-            rows={10}
-            cols={30}
-            required
-            className="w-full p-2 border rounded"
-          ></textarea>
-        </p>
-        <input
-          type="hidden"
-          name="entry.2025028027"
-          value={`app${currentPath}`}
-        />
 
-        <input
-          type="submit"
-          id="submitbutton"
-          value="送信"
-          className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 cursor-pointer"
-          style={{ width: "90px", height: "30px", fontSize: "16px" }}
-        />
+          <input
+            type="submit"
+            id="submitbutton"
+            value="送信"
+            className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 cursor-pointer"
+            style={{ width: "90px", height: "30px", fontSize: "16px" }}
+          />
+        </div>
       </form>
     </div>
   );

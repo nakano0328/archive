@@ -67,6 +67,11 @@ p {
   line-height: 1.7; /* 行間を文字サイズの2倍に設定 */
 }
 
+pre {
+  font-size: 15px;
+  line-height: 1.2;
+}
+
 li {
   line-height: 1.8;
   margin-bottom: 0.5rem;
@@ -140,6 +145,11 @@ li {
   background-color: #0056b3;
 }
 
+input.commentform,
+textarea.commentform {
+  width: 90%;
+}
+
 /* レスポンシブ対応 */
 @media (max-width: 1050px) {
   .main-content {
@@ -177,6 +187,10 @@ li {
 
   p {
     font-size: 14px;
+  }
+
+  pre {
+    font-size: 12px;
   }
 
   li {

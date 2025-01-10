@@ -6,6 +6,7 @@ import GoogleForm from "@/app/components/GoogleForm";
 import Image from "next/image";
 import { formatDate } from "@/app/components/formatDate";
 import Table from "@/app/components/Table";
+import Googlecomment from "@/app/components/Googlecomment";
 
 import DotProductContent from "@/app/linear_algebra/contents/dotproduct";
 import CrossProductContent from "@/app/linear_algebra/contents/crossproduct";
@@ -161,6 +162,8 @@ export default async function Page(props: PageProps) {
             <GoogleForm currentPath={`/linear_algebra/${params.slug}`} />
           </div>
         </div>
+        <hr />
+        <Googlecomment />
         <div style={{ textAlign: "right", marginRight: "30px" }}>
           <a href="#">ページトップに戻る</a>
         </div>

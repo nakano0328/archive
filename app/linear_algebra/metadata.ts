@@ -6,7 +6,7 @@ export const metadata: MetadataCollection = {
     title: "内積とは",
     tabtitle: `内積とは - ${siteTitle}`,
     description: "内積の定義や計算方法、性質について説明しています。",
-    lastUpdated: "2024-11-26",
+    lastUpdated: "2025-01-09",
     topic: "linear_algebra",
   },
   crossproduct: {

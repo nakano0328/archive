@@ -82,8 +82,8 @@ export default function pageContent() {
         に対する固有ベクトルは
         <InlineMath math="\bm{x_1} = c_1\begin{pmatrix}1 \\ 1 \end{pmatrix}" />
         とわかります。
-        <br />
-        <br />
+      </p>
+      <p>
         <InlineMath math="\lambda=3" />
         の場合
       </p>
