@@ -10,6 +10,8 @@
 
 @media (max-width: 768px) {
   .basic {
-    height: 90%;
+    height: 70%;
+    margin: 0.5rem; /* モバイル向けに隙間を調整 */
+    width: calc(100% - 4rem); /* モバイル向けの幅を調整 */
   }
 }

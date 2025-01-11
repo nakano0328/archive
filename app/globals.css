@@ -162,9 +162,9 @@ textarea.commentform {
 /* スマートフォン向けのレスポンシブ対応 */
 @media (max-width: 768px) {
   .container {
-    max-width: 95%;
+    max-width: 98%;
     font-size: 14px;
-    padding: 10px 10px;
+    padding: 10px 5px;
   }
 
   .mainContainer {
@@ -203,19 +203,12 @@ textarea.commentform {
 
   /* メインコンテンツのパディング */
   .main-content {
-    padding-left: 3%;
-    padding-right: 3%;
+    padding-left: 2%;
+    padding-right: 2%;
   }
 }
 
 /* 画像のスタイル */
-.thumb {
-  width: 100%;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 5px;
-  margin-bottom: 10px;
-}
 
 .thumbpage {
   width: 100%;

@@ -46,22 +46,23 @@
 }
 
 /* モバイル表示用のスタイル */
-@media screen and (max-width: 768px) {
-  .linkContainer {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
+@media (max-width: 768px) {
   .linkImage {
-    width: 100%;
-    height: 200px;
-    margin-right: 0;
-    margin-bottom: 10px;
+    width: 30vw;
+    height: auto;
+    margin-right: 10px;
+    object-fit: cover;
   }
 
-  .linkText {
-    width: 100%;
-    text-align: center;
+  .siteName {
+    font-size: 16px;
+  }
+
+  .description {
+    font-size: 12px;
+  }
+
+  .linkContainer {
+    margin: 0;
   }
 }

@@ -1,17 +1,16 @@
 import Breadcrumb from "@/app/components/Breadcrumb";
-import { metadata as topicsMetadata } from "@/app/machine_learning/metadata"; // コンテンツのメタデータをインポート
+import { metadata as topicsMetadata } from "@/app/machine_learning/metadata";
 import { siteTitle } from "@/app/metadata";
 import Pagination from "@/app/components/Pagination_machine_learning";
 
-// ページのメタデータ（ブラウザのタイトル設定など）
+// metadataBaseの設定を追加
 export const metadata = {
   title: `機械学習 - ${siteTitle}`,
 };
 
-export default function LinearAlgebraContents() {
+export default function MachineLearningContents() {
   const topics = Object.keys(topicsMetadata);
 
-  // 最終更新日順にソート
   const sortedTopics = topics.sort((a, b) => {
     const dateA = new Date(topicsMetadata[a].lastUpdated).getTime();
     const dateB = new Date(topicsMetadata[b].lastUpdated).getTime();
@@ -20,10 +19,8 @@ export default function LinearAlgebraContents() {
 
   return (
     <>
-      <div style={{ padding: "20px" }}>
-        {/* Breadcrumbの表示 */}
-        <Breadcrumb items={[{ name: "機械学習", href: "/machine_learning" }]} />
-
+      <div className="mainContainer">
+        <Breadcrumb items={[{ name: "機械学習", href: "/linear_algebra" }]} />
         <Pagination
           items={sortedTopics}
           itemsPerPage={12}
