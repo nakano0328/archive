@@ -1,7 +1,7 @@
 import Breadcrumb from "@/app/components/Breadcrumb";
 import { metadata as topicsMetadata } from "@/app/machine_learning/metadata";
 import { siteTitle } from "@/app/metadata";
-import Pagination from "@/app/components/Pagination_machine_learning";
+import Pagination from "@/app/components/Pagination";
 
 // metadataBaseの設定を追加
 export const metadata = {
@@ -25,6 +25,7 @@ export default function MachineLearningContents() {
           items={sortedTopics}
           itemsPerPage={12}
           topicsMetadata={topicsMetadata}
+          title="machine_learning"
         />
       </div>
       <div style={{ textAlign: "right", marginRight: "30px" }}>

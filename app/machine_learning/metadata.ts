@@ -30,4 +30,11 @@ export const metadata: MetadataCollection = {
     lastUpdated: "2025-01-09",
     topic: "machine_learning",
   },
+  linearregression: {
+    title: "線形回帰",
+    tabtitle: `線形回帰 - ${siteTitle}`,
+    description: "線形回帰について説明しています。",
+    lastUpdated: "2025-01-15",
+    topic: "machine_learning",
+  },
 };

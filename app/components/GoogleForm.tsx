@@ -24,6 +24,10 @@ const GoogleForm: React.FC<GoogleFormProps> = ({ currentPath }) => {
     formRef.current?.reset();
   };
 
+  const pathSegments = currentPath.split("/");
+  pathSegments.splice(2, 0, "contents"); // インデックスは必要に応じて調整
+  const modifiedPath = pathSegments.join("/");
+
   return (
     <div className="space-y-4">
       <p>
@@ -94,7 +98,7 @@ const GoogleForm: React.FC<GoogleFormProps> = ({ currentPath }) => {
           <input
             type="hidden"
             name="entry.2025028027"
-            value={`app${currentPath}`}
+            value={`app${modifiedPath}`}
           />
 
           <input

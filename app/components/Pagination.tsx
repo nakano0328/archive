@@ -20,12 +20,14 @@ interface PaginationProps {
   items: string[];
   itemsPerPage: number;
   topicsMetadata: TopicMetadata;
+  title: string;
 }
 
 export default function Pagination({
   items,
   itemsPerPage,
   topicsMetadata,
+  title,
 }: PaginationProps) {
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -41,16 +43,17 @@ export default function Pagination({
   const handlePageChange = (pageNumber: number) => {
     const params = new URLSearchParams(searchParams.toString());
     params.set("page", pageNumber.toString());
-    router.push(`/machine_learning?${params.toString()}`);
+    router.push(`/${title}?${params.toString()}`);
   };
 
   return (
     <>
+      <p className={styles.precautions}>最終更新日順に並べています。</p>
       <div className={styles.paginationgrid}>
         {currentItems.map((topic) => (
           <Link
             key={topic}
-            href={`/machine_learning/${topic}`}
+            href={`/${title}/${topic}`}
             style={{ textDecoration: "none" }}
           >
             <Card2>
@@ -65,7 +68,7 @@ export default function Pagination({
                 <div className={styles.mobileLayout}>
                   {/* サムネイル画像の読み込み */}
                   <Image
-                    src={`${basePath}/machine_learning/${topic}/thumb.png`}
+                    src={`${basePath}/${title}/${topic}/thumb.png`}
                     alt={topicsMetadata[topic].title}
                     width={100} // 横幅はそのまま
                     height={100} // 必須だが実際のスタイルに影響しない

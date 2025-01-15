@@ -5,6 +5,12 @@
   margin-top: 20px;
 }
 
+p.precautions {
+  font-size: 14px;
+  color: #444;
+  margin-left: 10px;
+}
+
 p.title {
   font-size: 24px;
   margin-bottom: 10px;
@@ -54,14 +60,19 @@ p.description {
     flex: 1;
   }
 
-  p.title {
+  p.precautions {
     font-size: 12px;
+    margin-left: 0;
+  }
+
+  p.title {
+    font-size: 18px;
     margin-bottom: 0px;
     margin-top: 0;
   }
 
   p.description {
-    font-size: 10px;
+    font-size: 14px;
     margin-bottom: 10px;
   }
 

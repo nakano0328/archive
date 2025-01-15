@@ -1,7 +1,7 @@
 import Breadcrumb from "@/app/components/Breadcrumb";
 import { metadata as topicsMetadata } from "@/app/linear_algebra/metadata";
 import { siteTitle } from "@/app/metadata";
-import Pagination from "@/app/components/Pagination_linear_algebra";
+import Pagination from "@/app/components/Pagination";
 
 // metadataBaseの設定を追加
 export const metadata = {
@@ -25,6 +25,7 @@ export default function LinearAlgebraContents() {
           items={sortedTopics}
           itemsPerPage={12}
           topicsMetadata={topicsMetadata}
+          title="linear_algebra"
         />
       </div>
       <div style={{ textAlign: "right", marginRight: "30px" }}>
