@@ -1,9 +1,9 @@
+import { Suspense } from "react";
 import Breadcrumb from "@/app/components/Breadcrumb";
 import { metadata as topicsMetadata } from "@/app/machine_learning/metadata";
 import { siteTitle } from "@/app/metadata";
 import Pagination from "@/app/components/Pagination";
 
-// metadataBaseの設定を追加
 export const metadata = {
   title: `機械学習 - ${siteTitle}`,
 };
@@ -20,13 +20,15 @@ export default function MachineLearningContents() {
   return (
     <>
       <div className="mainContainer">
-        <Breadcrumb items={[{ name: "機械学習", href: "/linear_algebra" }]} />
-        <Pagination
-          items={sortedTopics}
-          itemsPerPage={12}
-          topicsMetadata={topicsMetadata}
-          title="machine_learning"
-        />
+        <Breadcrumb items={[{ name: "機械学習", href: "/machine_learning" }]} />
+        <Suspense fallback={<div>Loading...</div>}>
+          <Pagination
+            items={sortedTopics}
+            itemsPerPage={12}
+            topicsMetadata={topicsMetadata}
+            title="machine_learning"
+          />
+        </Suspense>
       </div>
       <div style={{ textAlign: "right", marginRight: "30px" }}>
         <a href="#">ページトップに戻る</a>
