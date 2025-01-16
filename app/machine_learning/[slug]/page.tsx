@@ -13,6 +13,8 @@ import Gradient_DescentContent from "@/app/machine_learning/contents/gradient_de
 import InformationEntropyContent from "@/app/machine_learning/contents/informationentropy";
 import LinearRegressionContent from "@/app/machine_learning/contents/linearregression";
 import ActivationFunctionContent from "@/app/machine_learning/contents/activationfunction";
+import vanishinggradientContent from "@/app/machine_learning/contents/vanishinggradient";
+import LogisticRegressionContent from "@/app/machine_learning/contents/logisticregression";
 
 interface PageProps {
   params: Promise<{
@@ -36,6 +38,8 @@ const contentComponents = {
   informationentropy: InformationEntropyContent,
   linearregression: LinearRegressionContent,
   activationfunction: ActivationFunctionContent,
+  vanishinggradient: vanishinggradientContent,
+  logisticregression: LogisticRegressionContent,
   // 他のコンポーネントを追加
 };
 

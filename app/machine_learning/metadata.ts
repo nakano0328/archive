@@ -44,4 +44,18 @@ export const metadata: MetadataCollection = {
     lastUpdated: "2025-01-16",
     topic: "machine_learning",
   },
+  vanishinggradient: {
+    title: "勾配消失問題",
+    tabtitle: `勾配消失問題 - ${siteTitle}`,
+    description: "勾配消失問題について説明しています。",
+    lastUpdated: "2025-01-16",
+    topic: "machine_learning",
+  },
+  logisticregression: {
+    title: "ロジスティック回帰",
+    tabtitle: `ロジスティック回帰 - ${siteTitle}`,
+    description: "ロジスティック回帰について説明しています。",
+    lastUpdated: "2025-01-16",
+    topic: "machine_learning",
+  },
 };
