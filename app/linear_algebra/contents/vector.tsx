@@ -3,7 +3,7 @@ import { InlineMath } from "react-katex";
 import ImageModal from "@/app/components/ImageModal";
 import CustomLink from "@/app/components/CustomLink";
 
-export default function pageContent() {
+export default function PageContent() {
   const pagename: string = "vector"; //ここを変更
 
   const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";

@@ -37,4 +37,11 @@ export const metadata: MetadataCollection = {
     lastUpdated: "2025-01-15",
     topic: "machine_learning",
   },
+  activationfunction: {
+    title: "活性化関数",
+    tabtitle: `活性化関数 - ${siteTitle}`,
+    description: "活性化関数について説明しています。",
+    lastUpdated: "2025-01-16",
+    topic: "machine_learning",
+  },
 };

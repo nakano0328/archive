@@ -1,7 +1,7 @@
 import CenteredEquation from "@/app/components/CenteredEquation";
 import { InlineMath } from "react-katex";
 
-export default function pageContent() {
+export default function PageContent() {
   return (
     <>
       <h2 className="caption">情報とは何か？</h2>

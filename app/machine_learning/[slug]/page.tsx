@@ -12,6 +12,7 @@ import AdamContent from "@/app/machine_learning/contents/adam";
 import Gradient_DescentContent from "@/app/machine_learning/contents/gradient_descent";
 import InformationEntropyContent from "@/app/machine_learning/contents/informationentropy";
 import LinearRegressionContent from "@/app/machine_learning/contents/linearregression";
+import ActivationFunctionContent from "@/app/machine_learning/contents/activationfunction";
 
 interface PageProps {
   params: Promise<{
@@ -34,6 +35,7 @@ const contentComponents = {
   gradient_descent: Gradient_DescentContent,
   informationentropy: InformationEntropyContent,
   linearregression: LinearRegressionContent,
+  activationfunction: ActivationFunctionContent,
   // 他のコンポーネントを追加
 };
 

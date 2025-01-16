@@ -3,7 +3,7 @@ import CenteredEquation from "@/app/components/CenteredEquation";
 import { InlineMath } from "react-katex";
 import ImageModal from "@/app/components/ImageModal";
 
-export default function pageContent() {
+export default function PageContent() {
   const pagename: string = "matrix_rank"; //ここを変更
 
   const metaData = metadata[pagename];

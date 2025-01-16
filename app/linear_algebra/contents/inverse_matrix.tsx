@@ -3,7 +3,7 @@ import CenteredEquation from "@/app/components/CenteredEquation";
 import { InlineMath } from "react-katex";
 import CustomLink from "@/app/components/CustomLink";
 
-export default function pageContent() {
+export default function PageContent() {
   const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
   return (
     <>

@@ -2,7 +2,7 @@ import { metadata } from "@/app/machine_learning/metadata";
 import ImageModal from "@/app/components/ImageModal";
 import CustomLink from "@/app/components/CustomLink";
 
-export default function pageContent() {
+export default function PageContent() {
   const pagename: string = "autoencoder"; //ここを変更
 
   const metaData = metadata[pagename];

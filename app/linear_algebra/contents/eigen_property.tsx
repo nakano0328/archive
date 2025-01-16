@@ -4,7 +4,7 @@ import { InlineMath } from "react-katex";
 import ImageModal from "@/app/components/ImageModal";
 import CustomLink from "@/app/components/CustomLink";
 
-export default function pageContent() {
+export default function PageContent() {
   const pagename: string = "eigen_property"; //ここを変更
 
   const metaData = metadata[pagename];

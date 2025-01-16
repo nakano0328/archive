@@ -4,7 +4,7 @@ import { InlineMath } from "react-katex";
 import ImageModal from "@/app/components/ImageModal";
 import GifModal from "@/app/components/GifModal";
 
-export default function pageContent() {
+export default function PageContent() {
   // コンポーネント名を大文字で始めるように修正
   const pageName: string = "gradient_descent"; // 変数名を camelCase に変更
 

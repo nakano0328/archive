@@ -1,7 +1,7 @@
 import CenteredEquation from "@/app/components/CenteredEquation";
 import { InlineMath } from "react-katex";
 
-export default function pageContent() {
+export default function PageContent() {
   return (
     <>
       <h2 className="caption">ガウス・ジョルダン消去法</h2>

@@ -1,6 +1,6 @@
 import { InlineMath } from "react-katex";
 
-export default function pageContent() {
+export default function PageContent() {
   return (
     <>
       <h2 className="caption">線形独立の定義</h2>
