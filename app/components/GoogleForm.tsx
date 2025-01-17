@@ -35,23 +35,6 @@ const GoogleForm: React.FC<GoogleFormProps> = ({ currentPath }) => {
         <br />
         なお、頂いた意見はサイト改善のために用いられます。また、ページ下部に匿名で表示されます。
       </p>
-      {showMessage && (
-        <div
-          className="p-4 mb-4 text-green-700 bg-green-100 rounded-lg"
-          style={{
-            backgroundColor: "#d4edda",
-            color: "#155724",
-            padding: "10px",
-            borderRadius: "5px",
-            marginBottom: "20px",
-            textAlign: "center",
-          }}
-        >
-          送信が完了しました。ありがとうございます。
-          <br />
-          掲載には時間がかかりますので、しばらくお待ちください。
-        </div>
-      )}
 
       <form
         ref={formRef}
@@ -100,6 +83,25 @@ const GoogleForm: React.FC<GoogleFormProps> = ({ currentPath }) => {
             name="entry.2025028027"
             value={`app${modifiedPath}`}
           />
+
+          {showMessage && (
+            <div
+              className="p-4 mb-4 text-green-700 bg-green-100 rounded-lg"
+              style={{
+                backgroundColor: "#d4edda",
+                color: "#155724",
+                padding: "10px",
+                borderRadius: "5px",
+                marginBottom: "20px",
+                textAlign: "center",
+                width: "90%",
+              }}
+            >
+              送信が完了しました。ありがとうございます。
+              <br />
+              掲載には時間がかかりますので、しばらくお待ちください。
+            </div>
+          )}
 
           <input
             type="submit"
