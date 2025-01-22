@@ -16,6 +16,7 @@ import ActivationFunctionContent from "@/app/machine_learning/contents/activatio
 import vanishinggradientContent from "@/app/machine_learning/contents/vanishinggradient";
 import LogisticRegressionContent from "@/app/machine_learning/contents/logisticregression";
 import BackPropagationContent from "@/app/machine_learning/contents/backpropagation";
+import SupportVectorMachineContent from "@/app/machine_learning/contents/supportvectormachine";
 
 interface PageProps {
   params: Promise<{
@@ -42,6 +43,7 @@ const contentComponents = {
   vanishinggradient: vanishinggradientContent,
   logisticregression: LogisticRegressionContent,
   backpropagation: BackPropagationContent,
+  supportvectormachine: SupportVectorMachineContent,
   // 他のコンポーネントを追加
 };
 

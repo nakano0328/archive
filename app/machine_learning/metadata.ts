@@ -65,4 +65,11 @@ export const metadata: MetadataCollection = {
     lastUpdated: "2025-01-22",
     topic: "machine_learning",
   },
+  supportvectormachine: {
+    title: "サポートベクターマシン",
+    tabtitle: `サポートベクターマシン - ${siteTitle}`,
+    description: "サポートベクターマシンについて説明しています。",
+    lastUpdated: "2025-01-25",
+    topic: "machine_learning",
+  },
 };
