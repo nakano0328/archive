@@ -69,7 +69,14 @@ export const metadata: MetadataCollection = {
     title: "サポートベクターマシン",
     tabtitle: `サポートベクターマシン - ${siteTitle}`,
     description: "サポートベクターマシンについて説明しています。",
-    lastUpdated: "2025-01-25",
+    lastUpdated: "2025-01-22",
+    topic: "machine_learning",
+  },
+  neural_networks: {
+    title: "ニューラルネットワーク",
+    tabtitle: `ニューラルネットワーク - ${siteTitle}`,
+    description: "ニューラルネットワークについて説明しています。",
+    lastUpdated: "2025-01-22",
     topic: "machine_learning",
   },
 };

@@ -82,7 +82,7 @@ export default function PageContent() {
         はラグランジュ乗数です。
       </p>
 
-      <h2 className="caption">4. カーネルトリック (Kernel Trick)</h2>
+      <h2 className="caption">カーネルトリック (Kernel Trick)</h2>
       <p>
         SVMは、線形分離が不可能なデータに対しても強力です。この場合、カーネルトリックを用いてデータを高次元空間にマッピングし、線形分離を可能にします。
       </p>
@@ -111,7 +111,7 @@ export default function PageContent() {
         これらのカーネルを利用することで、データを高次元に変換し、複雑な境界線を生成します。
       </p>
 
-      <h2 className="caption">5. SVMの特徴</h2>
+      <h2 className="caption">SVMの特徴</h2>
       <h3>メリット</h3>
       <ul>
         <li>高次元データの処理に適している。</li>
