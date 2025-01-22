@@ -58,4 +58,11 @@ export const metadata: MetadataCollection = {
     lastUpdated: "2025-01-16",
     topic: "machine_learning",
   },
+  backpropagation: {
+    title: "誤差逆伝播法",
+    tabtitle: `誤差逆伝播法 - ${siteTitle}`,
+    description: "誤差逆伝播法について説明しています。",
+    lastUpdated: "2025-01-22",
+    topic: "machine_learning",
+  },
 };
