@@ -18,6 +18,7 @@ import LogisticRegressionContent from "@/app/machine_learning/contents/logisticr
 import BackPropagationContent from "@/app/machine_learning/contents/backpropagation";
 import SupportVectorMachineContent from "@/app/machine_learning/contents/supportvectormachine";
 import NeuralNetworksContent from "@/app/machine_learning/contents/neural_networks";
+import DiffusionModelContent from "@/app/machine_learning/contents/diffusionmodel";
 
 interface PageProps {
   params: Promise<{
@@ -46,6 +47,7 @@ const contentComponents = {
   backpropagation: BackPropagationContent,
   supportvectormachine: SupportVectorMachineContent,
   neural_networks: NeuralNetworksContent,
+  diffusionmodel: DiffusionModelContent,
   // 他のコンポーネントを追加
 };
 

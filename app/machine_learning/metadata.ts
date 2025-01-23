@@ -79,4 +79,11 @@ export const metadata: MetadataCollection = {
     lastUpdated: "2025-01-22",
     topic: "machine_learning",
   },
+  diffusionmodel: {
+    title: "拡散モデル",
+    tabtitle: `拡散モデル - ${siteTitle}`,
+    description: "拡散モデルについて説明しています。",
+    lastUpdated: "2025-01-23",
+    topic: "machine_learning",
+  },
 };

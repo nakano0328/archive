@@ -167,6 +167,7 @@ li {
 input.commentform,
 textarea.commentform {
   width: 90%;
+  padding: 5px 3px;
 }
 
 /* レスポンシブ対応 */
@@ -204,6 +205,10 @@ textarea.commentform {
   h2.commentform {
     font-size: 20px;
     padding: 12px 8px;
+  }
+
+  h3 {
+    font-size: 18px;
   }
 
   p {
