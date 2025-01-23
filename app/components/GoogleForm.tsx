@@ -46,7 +46,7 @@ const GoogleForm: React.FC<GoogleFormProps> = ({ currentPath }) => {
       >
         <div style={{ margin: "0px 10px" }}>
           <p>
-            お名前：
+            お名前
             <br />
             <input
               name="entry.1814434943"
@@ -57,7 +57,7 @@ const GoogleForm: React.FC<GoogleFormProps> = ({ currentPath }) => {
             />
           </p>
           <p>
-            メールアドレス（任意）：
+            メールアドレス（任意）
             <br />
             <input
               name="entry.238144512"
@@ -67,7 +67,7 @@ const GoogleForm: React.FC<GoogleFormProps> = ({ currentPath }) => {
             />
           </p>
           <p>
-            コメント：
+            コメント
             <br />
             <textarea
               name="entry.911577316"

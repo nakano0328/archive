@@ -86,4 +86,11 @@ export const metadata: MetadataCollection = {
     lastUpdated: "2025-01-23",
     topic: "machine_learning",
   },
+  gan: {
+    title: "GAN",
+    tabtitle: `GAN - ${siteTitle}`,
+    description: "GANについて説明しています。",
+    lastUpdated: "2025-01-23",
+    topic: "machine_learning",
+  },
 };

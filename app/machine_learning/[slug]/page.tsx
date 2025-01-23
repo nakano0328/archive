@@ -19,6 +19,7 @@ import BackPropagationContent from "@/app/machine_learning/contents/backpropagat
 import SupportVectorMachineContent from "@/app/machine_learning/contents/supportvectormachine";
 import NeuralNetworksContent from "@/app/machine_learning/contents/neural_networks";
 import DiffusionModelContent from "@/app/machine_learning/contents/diffusionmodel";
+import GanContent from "@/app/machine_learning/contents/gan";
 
 interface PageProps {
   params: Promise<{
@@ -48,6 +49,7 @@ const contentComponents = {
   supportvectormachine: SupportVectorMachineContent,
   neural_networks: NeuralNetworksContent,
   diffusionmodel: DiffusionModelContent,
+  gan: GanContent,
   // 他のコンポーネントを追加
 };
 
