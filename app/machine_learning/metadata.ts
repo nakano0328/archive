@@ -114,4 +114,18 @@ export const metadata: MetadataCollection = {
     lastUpdated: "2025-01-24",
     topic: "machine_learning",
   },
+  classification_tree: {
+    title: "分類木",
+    tabtitle: `分類木 - ${siteTitle}`,
+    description: "分類木は、カテゴリ値の目標変数を持つ決定木の一種です。",
+    lastUpdated: "2025-01-24",
+    topic: "machine_learning",
+  },
+  regression_tree: {
+    title: "回帰木",
+    tabtitle: `回帰木 - ${siteTitle}`,
+    description: "回帰木は、連続値の目標変数を持つ決定木の一種です。",
+    lastUpdated: "2025-01-24",
+    topic: "machine_learning",
+  },
 };

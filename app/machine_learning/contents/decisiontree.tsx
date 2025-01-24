@@ -1,6 +1,4 @@
 import { metadata } from "@/app/machine_learning/metadata";
-import CenteredEquation from "@/app/components/CenteredEquation";
-import { InlineMath } from "react-katex";
 import ImageModal from "@/app/components/ImageModal";
 import CustomLink from "@/app/components/CustomLink";
 
@@ -10,7 +8,6 @@ export default function PageContent() {
   const metaData = metadata[pagename];
   const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
   const imagePath = `${basePath}/${metaData.topic}/${pagename}`;
-  const notePath = `https://colab.research.google.com/github/jeonglabo/nextjs/blob/main/notebook/${metaData.topic}/${pagename}`;
 
   return (
     <>
@@ -20,42 +17,73 @@ export default function PageContent() {
         <br />
         シンプルで解釈しやすいことから、統計学や機械学習の初学者から実務まで幅広く利用されています。
       </p>
-      <p>また、決定木は分類木と回帰木の2つを総称して決定木といいます。</p>
-
-      <h2 className="caption">分類木(Classification Tree)</h2>
       <p>
-        分類木は、目標変数（ターゲット）がカテゴリ値（クラスラベル）の場合に使用される決定木の一種で、データを木構造に基づいて分類する手法です。
+        また、決定木は分類木と回帰木の2つを総称して決定木といいます。
         <br />
-        ルートノードから始まり、データが内部ノードの条件によって分割され、最終的にリーフノードで予測クラスが決定されます。
+        それぞれについては以下のページらで紹介しています。
       </p>
-      <p>
-        例を用いて考えましょう。
-        <br />
-        ある人が「犬」か「猫」かを判定するために、身長と体重の2つの特徴量を使うことを考えます。
-        <br />
-        この
-        <CustomLink
-          href="/machine_learning/contents/decisiontree"
-          text="データ"
-        />
-        を使って、分類木を作成すると以下のようになります。
-      </p>
-      <ImageModal
-        src={`${imagePath}/classification_tree.png`}
-        alt="classification_tree"
-        width={400}
-        height={400}
+      <CustomLink
+        href="/machine_learning/classification_tree"
+        imageUrl={`${basePath}/machine_learning/classification_tree/thumb.png`}
+        altText="分類木のページのサムネ"
+        siteName={metadata.classification_tree.title}
+        description={metadata.classification_tree.description}
       />
-      <p>
-        上記の分類木を用いて、身長が10cm以下かつ体重が1kg以下の場合は「猫」、それ以外の場合は「犬」と判定されます。
-      </p>
-      <p>
-        分類木は、特徴量の重要度を計算することができるため、どの特徴量が予測に寄与しているかを理解することができます。
-        <br />
-        また、分類木は過学習しやすいため、適切な枝刈りを行うことが重要です。
-      </p>
+      <br />
+      <CustomLink
+        href="/machine_learning/regression_tree"
+        imageUrl={`${basePath}/machine_learning/regression_tree/thumb.png`}
+        altText="回帰木ページのサムネ"
+        siteName={metadata.regression_tree.title}
+        description={metadata.regression_tree.description}
+      />
 
-      <h2 className="caption">回帰木(Regression Tree)</h2>
+      <h2 className="caption">決定木の名称</h2>
+      <p>
+        決定木分析の際に使うそれぞれの樹形図内の各箇所の名称を以下に示します。
+      </p>
+      <ul>
+        <li>
+          <b>Root Node（ルートノード）</b>
+          <p>
+            木構造の最上位に位置するノードで、最初にデータを分割するノードです。
+          </p>
+        </li>
+        <li>
+          <b>Internal Node（内部ノード）</b>
+          <p>Root Node以外のノードで、データを分割するための条件を持ちます。</p>
+        </li>
+        <li>
+          <b>Leaf Node（リーフノード）</b>
+          <p>最下位のノードで、予測値が決定されるノードです。</p>
+        </li>
+        <li>
+          <b>Branch（枝）</b>
+          <p>ノード間を結ぶ線で、データの分割を表します。</p>
+        </li>
+      </ul>
+      <ImageModal imagePath={`${imagePath}/name.png`} altText="回帰木の名称" />
+
+      <h2 className="caption">決定木の改良</h2>
+      <p>
+        決定木はシンプルで解釈しやすい反面、過学習のリスクが高いという問題があります。
+        <br />
+        そのため、決定木の改良手法として以下の手法が提案されています。
+      </p>
+      <ul>
+        <li>
+          <b>ランダムフォレスト</b>
+          <p>
+            複数の決定木を組み合わせたアンサンブル学習手法で、過学習を抑える効果があります。
+          </p>
+        </li>
+        <li>
+          <b>勾配ブースティング木（Gradient Boosting Tree）</b>
+          <p>
+            前の決定木の誤差を次の決定木で補正する手法で、精度向上が期待できます。
+          </p>
+        </li>
+      </ul>
     </>
   );
 }

@@ -21,6 +21,8 @@ import NeuralNetworksContent from "@/app/machine_learning/contents/neural_networ
 import DiffusionModelContent from "@/app/machine_learning/contents/diffusionmodel";
 import GanContent from "@/app/machine_learning/contents/gan";
 import DecisiontreeContent from "@/app/machine_learning/contents/decisiontree";
+import ClassificationTreeContent from "@/app/machine_learning/contents/classification_tree";
+import RegressionTreeContent from "@/app/machine_learning/contents/regression_tree";
 
 interface PageProps {
   params: Promise<{
@@ -52,6 +54,8 @@ const contentComponents = {
   diffusionmodel: DiffusionModelContent,
   gan: GanContent,
   decisiontree: DecisiontreeContent,
+  classification_tree: ClassificationTreeContent,
+  regression_tree: RegressionTreeContent,
   // 他のコンポーネントを追加
 };
 
