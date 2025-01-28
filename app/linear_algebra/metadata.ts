@@ -202,5 +202,6 @@ export const metadata: MetadataCollection = {
     lastUpdated: "2025-01-28",
     topic: "linear_algebra",
   },
+
   // 他のトピックもここに追加できます
 };

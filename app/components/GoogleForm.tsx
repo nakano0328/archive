@@ -4,9 +4,13 @@ import React, { useRef, useState } from "react";
 
 interface GoogleFormProps {
   currentPath: string; // サーバーから取得する
+  underComment: boolean;
 }
 
-const GoogleForm: React.FC<GoogleFormProps> = ({ currentPath }) => {
+const GoogleForm: React.FC<GoogleFormProps> = ({
+  currentPath,
+  underComment = true,
+}) => {
   const [showMessage, setShowMessage] = useState(false);
   const formRef = useRef<HTMLFormElement | null>(null);
 
@@ -33,7 +37,11 @@ const GoogleForm: React.FC<GoogleFormProps> = ({ currentPath }) => {
       <p>
         本ページの内容についてのご意見をお聞かせください。
         <br />
-        なお、頂いた意見はサイト改善のために用いられます。また、ページ下部に匿名で表示されます。
+        {underComment && (
+          <>
+            なお、頂いた意見はサイト改善のために用いられます。また、ページ下部に匿名で表示される可能性があります。
+          </>
+        )}
       </p>
 
       <form

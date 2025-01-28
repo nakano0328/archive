@@ -1,6 +1,13 @@
 import { siteTitle } from "@/app/metadata";
+import GoogleForm from "@/app/components/GoogleForm";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
+interface PageProps {
+  params: Promise<{
+    slug: string;
+  }>;
+}
 
 export const metadata = {
   basePath: process.env.NEXT_PUBLIC_BASE_PATH || "",
@@ -26,11 +33,13 @@ export const metadata = {
   },
 };
 
-export default function Page() {
+export default async function Page(props: PageProps) {
+  const params = await props.params;
+
   return (
     <>
       <div style={{ marginTop: "2rem" }}>
-        <h1 className="title">お問い合わせについて</h1>
+        <h2 className="title">お問い合わせについて</h2>
       </div>
 
       <div className="lastUpdated">最終更新日: 2025/01/22</div>
@@ -44,6 +53,14 @@ export default function Page() {
         <br />
         (【at】を@に変更してください)
       </p>
+      <p>また、以下のコメントフォームからコメントを頂けます。</p>
+
+      <div style={{ margin: "5px" }}>
+        <h2 className="commentform">コメントフォーム</h2>
+        <div style={{ margin: "0px 10px" }}>
+          <GoogleForm currentPath={`/${params.slug}`} underComment={false} />
+        </div>
+      </div>
     </>
   );
 }

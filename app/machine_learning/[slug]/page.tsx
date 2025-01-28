@@ -144,7 +144,10 @@ export default async function Page(props: PageProps) {
         <div style={{ margin: "20px" }}>
           <h2 className="commentform">コメントフォーム</h2>
           <div style={{ margin: "0px 10px" }}>
-            <GoogleForm currentPath={`/machine_learning/${params.slug}`} />
+            <GoogleForm
+              currentPath={`/machine_learning/${params.slug}`}
+              underComment={true}
+            />
           </div>
         </div>
         <div style={{ textAlign: "right", marginRight: "30px" }}>
