@@ -128,4 +128,12 @@ export const metadata: MetadataCollection = {
     lastUpdated: "2025-01-24",
     topic: "machine_learning",
   },
+  randomforest: {
+    title: "ランダムフォレスト",
+    tabtitle: `ランダムフォレスト - ${siteTitle}`,
+    description:
+      "複数の決定木を組み合わせた強力なアンサンブル学習手法について学びます。",
+    lastUpdated: "2025-01-24",
+    topic: "machine_learning",
+  },
 };

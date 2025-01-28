@@ -23,6 +23,7 @@ import GanContent from "@/app/machine_learning/contents/gan";
 import DecisiontreeContent from "@/app/machine_learning/contents/decisiontree";
 import ClassificationTreeContent from "@/app/machine_learning/contents/classification_tree";
 import RegressionTreeContent from "@/app/machine_learning/contents/regression_tree";
+import RandomForestContent from "@/app/machine_learning/contents/randomforest";
 
 interface PageProps {
   params: Promise<{
