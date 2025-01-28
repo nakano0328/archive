@@ -76,6 +76,13 @@ export default function PageContent() {
           <p>
             複数の決定木を組み合わせたアンサンブル学習手法で、過学習を抑える効果があります。
           </p>
+          <CustomLink
+            href="/machine_learning/randomforest"
+            imageUrl={`${basePath}/machine_learning/randomforest/thumb.png`}
+            altText="ランダムフォレストのページのサムネ"
+            siteName={metadata.randomforest.title}
+            description={metadata.randomforest.description}
+          />
         </li>
         <li>
           <b>勾配ブースティング木（Gradient Boosting Tree）</b>

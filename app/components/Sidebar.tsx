@@ -60,9 +60,12 @@ const Sidebar: React.FC<SidebarProps> = ({ setQuery }) => {
       </div>
 
       <div className="policy-link">
-        <h3>
+        <h3 className="header">リンク集</h3>
+        <p className="link_list">
           <Link href="/policy">本サイトについて</Link>
-        </h3>
+          <br />
+          <Link href="/contact">お問い合わせ</Link>
+        </p>
       </div>
 
       <div className={styles.buttoncontainer}>

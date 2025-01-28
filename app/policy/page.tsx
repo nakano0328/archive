@@ -1,4 +1,5 @@
 import { siteTitle } from "@/app/metadata";
+import Link from "next/link";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
@@ -6,7 +7,7 @@ export const metadata = {
   basePath: process.env.NEXT_PUBLIC_BASE_PATH || "",
 
   title: `本サイトについて - ${siteTitle}`,
-  description: "本サイトの概要をお伝えします。",
+  description: "本サイトの概要が書かれています。",
   openGraph: {
     title: `本サイトについて - ${siteTitle}`,
     description: "本サイトについての概要が書かれています。",
@@ -62,13 +63,9 @@ export default function Page() {
       </p>
 
       <h2 className="caption">問い合わせ</h2>
+      <p>本サイトに関する問い合わせは、以下のページをご覧ください。</p>
       <p>
-        本サイトに関する問い合わせは、以下のメールアドレスまでお願いいたします。
-        <br />
-        <br />
-        XXX【at】example.com
-        <br />
-        (【at】を@に変更してください)
+        <Link href="/contact">お問い合わせ</Link>
       </p>
     </>
   );

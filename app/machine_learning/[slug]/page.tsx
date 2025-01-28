@@ -57,6 +57,7 @@ const contentComponents = {
   decisiontree: DecisiontreeContent,
   classification_tree: ClassificationTreeContent,
   regression_tree: RegressionTreeContent,
+  randomforest: RandomForestContent,
   // 他のコンポーネントを追加
 };
 

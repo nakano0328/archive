@@ -194,5 +194,13 @@ export const metadata: MetadataCollection = {
     lastUpdated: "2025-01-09",
     topic: "linear_algebra",
   },
+  lu_decomposition: {
+    title: "LU分解",
+    tabtitle: `LU分解 - ${siteTitle}`,
+    description:
+      "行列のLU分解の手法、計算方法、および連立方程式の解法への応用について解説しています。",
+    lastUpdated: "2025-01-28",
+    topic: "linear_algebra",
+  },
   // 他のトピックもここに追加できます
 };

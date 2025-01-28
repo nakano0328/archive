@@ -32,6 +32,7 @@ import matrix_rankContent from "@/app/linear_algebra/contents/matrix_rank";
 import singular_value_decompositionContent from "@/app/linear_algebra/contents/singular_value_decomposition";
 import pseudoinverseContent from "@/app/linear_algebra/contents/pseudoinverse";
 import linear_combinationContent from "@/app/linear_algebra/contents/linear_combination";
+import Lu_DecompositionContent from "@/app/linear_algebra/contents/lu_decomposition";
 
 interface PageProps {
   params: Promise<{
@@ -73,6 +74,7 @@ const contentComponents = {
   singular_value_decomposition: singular_value_decompositionContent,
   pseudoinverse: pseudoinverseContent,
   linear_combination: linear_combinationContent,
+  lu_decomposition: Lu_DecompositionContent,
   // 他のコンポーネントを追加
 };
 
