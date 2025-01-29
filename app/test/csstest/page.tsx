@@ -14,8 +14,7 @@ export default function Page() {
       <hr />
       <br />
       <h1>コメントフォーム</h1>
-      <GoogleForm currentPath="/test/csstest" />
-
+      <GoogleForm currentPath="/test/csstest" underComment={true} />
     </>
   );
 }

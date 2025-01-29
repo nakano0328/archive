@@ -182,7 +182,7 @@ export const metadata: MetadataCollection = {
     title: "疑似行列",
     tabtitle: `疑似行列 - ${siteTitle}`,
     description:
-      "行列の疑似行列（ムーア・ペンローズ逆行列）の定義、計算方法、および応用について詳述しています。",
+      "行列の疑似行列の定義、計算方法、および応用について詳述しています。",
     lastUpdated: "2025-01-09",
     topic: "linear_algebra",
   },
@@ -202,6 +202,5 @@ export const metadata: MetadataCollection = {
     lastUpdated: "2025-01-28",
     topic: "linear_algebra",
   },
-
   // 他のトピックもここに追加できます
 };

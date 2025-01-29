@@ -136,4 +136,12 @@ export const metadata: MetadataCollection = {
     lastUpdated: "2025-01-28",
     topic: "machine_learning",
   },
+  gradientboosting: {
+    title: "勾配ブースティング決定木",
+    tabtitle: `勾配ブースティング決定木 - ${siteTitle}`,
+    description:
+      "勾配ブースティング決定木は、アンサンブル学習の一種で複数の弱学習器を組み合わせて精度を向上させます。",
+    lastUpdated: "2025-01-29",
+    topic: "machine_learning",
+  },
 };

@@ -13,7 +13,7 @@ const HomePage: React.FC = () => {
       <hr />
       <br />
       <h1>コメントフォーム</h1>
-      <GoogleForm currentPath="/test/pagetest" />
+      <GoogleForm currentPath="/test/pagetest" underComment={true} />
     </div>
   );
 };
