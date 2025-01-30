@@ -60,7 +60,7 @@ const Sidebar: React.FC = () => {
         </div>
       </div>
 
-      <div className="policy-link">
+      <div className="policy-link" style={{ alignItems: "center" }}>
         <h3 className="header">リンク集</h3>
         <p className="link_list">
           <Link href="/policy">本サイトについて</Link>
