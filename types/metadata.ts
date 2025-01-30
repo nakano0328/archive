@@ -4,6 +4,7 @@ export interface MetaDataItem {
   description: string;
   lastUpdated: string;
   topic: string;
+  keywords: string[];
 }
 
 export interface MetadataCollection {

@@ -1,20 +1,21 @@
+"use client";
+
 import React, { useState } from "react";
 import styles from "@/app/components/chatbot.module.css";
 import Link from "next/link";
-
+import { useRouter } from "next/navigation";
 import ChatBot from "@/app/components/ChatBot";
-//import ChatBot from '@/app/components/OpenAIChatBot';
 
-interface SidebarProps {
-  setQuery: (query: string) => void; // 検索クエリを設定するための関数
-}
-
-const Sidebar: React.FC<SidebarProps> = ({ setQuery }) => {
-  const [inputValue, setInputValue] = useState<string>(""); // ローカルで入力を管理
+const Sidebar: React.FC = () => {
+  const [inputValue, setInputValue] = useState<string>("");
   const [showChat, setShowChat] = useState(false);
+  const router = useRouter();
 
   const handleSearch = () => {
-    setQuery(inputValue); // 検索ボタンを押した時にクエリを設定
+    if (inputValue.trim()) {
+      router.push(`/search?q=${encodeURIComponent(inputValue.trim())}`);
+      setInputValue(""); // 検索後に入力をクリア
+    }
   };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {

@@ -17,10 +17,10 @@ const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 export const metadata = {
   basePath: process.env.NEXT_PUBLIC_BASE_PATH || "",
 
-  title: `ホーム - ${siteTitle}`,
+  title: `${siteTitle}`,
   description: "ホームです。",
   openGraph: {
-    title: `ホーム - ${siteTitle}`,
+    title: `${siteTitle}`,
     description: "ホームです。",
     url: "https://jeonglabo.github.io/nextjs/",
     images: [
@@ -32,7 +32,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `ホーム - ${siteTitle}`,
+    title: `${siteTitle}`,
     description: "ホームです。",
     images: [`${basePath}/icon.png`],
   },
@@ -63,7 +63,7 @@ const mockData: CardData[] = [
     icon: "∫",
     backgroundColor: "#cfe2ff",
     link: "/calculus",
-  },
+  } /*
   {
     id: 4,
     title: "統計学",
