@@ -55,6 +55,14 @@ const mockData: CardData[] = [
     icon: "🤖",
     backgroundColor: "#d1c4e9",
     link: "/machine_learning",
+  },
+  {
+    id: 3,
+    title: "統計学",
+    description: "データ分析、確率論など",
+    icon: "📊",
+    backgroundColor: "#d4edda",
+    link: "/statistics",
   } /*
   {
     id: 3,
