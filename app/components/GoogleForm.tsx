@@ -54,13 +54,12 @@ const GoogleForm: React.FC<GoogleFormProps> = ({
       >
         <div style={{ margin: "0px 10px" }}>
           <p>
-            お名前
+            お名前（任意）
             <br />
             <input
               name="entry.1814434943"
               placeholder="名前"
               defaultValue="名無しのごんべ"
-              required
               className="w-full p-2 border rounded commentform"
             />
           </p>
