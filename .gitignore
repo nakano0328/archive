@@ -44,3 +44,6 @@ next-env.d.ts
 # OpenAI Chatbot
 app/components/OpenAIChatBot.tsx
 app/utils/api.ts
+
+# 内容改善プログラム
+update_pages.py
