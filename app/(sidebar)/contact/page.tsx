@@ -39,12 +39,10 @@ export default async function Page(props: PageProps) {
   return (
     <>
       <div style={{ marginTop: "2rem" }}>
-        <h2 className="title">お問い合わせについて</h2>
-      </div>
-
-      <div className="lastUpdated">最終更新日: 2025/01/22</div>
-
-      <h2 className="caption">問い合わせ</h2>
+        <h1 className="title">お問い合わせについて</h1>
+        <div className="lastUpdated">最終更新日: 2025/02/06</div>
+        <h2 className="caption">問い合わせ</h2>
+        {/*
       <p>
         本サイトに関する問い合わせは、以下のメールアドレスまでお願いいたします。
         <br />
@@ -54,6 +52,11 @@ export default async function Page(props: PageProps) {
         (【at】を@に変更してください)
       </p>
       <p>また、以下のコメントフォームからコメントを頂けます。</p>
+      */}
+        <p>
+          本サイトに関する問い合わせは、以下のコメントフォームからお願いいたします。
+        </p>
+      </div>
 
       <div style={{ margin: "5px" }}>
         <h2 className="commentform">コメントフォーム</h2>
