@@ -42,8 +42,8 @@ yarn-error.log*
 next-env.d.ts
 
 # OpenAI Chatbot
-app/components/OpenAIChatBot.tsx
-app/utils/api.ts
+# app/components/OpenAIChatBot.tsx
+# app/utils/api.ts
 
 # 内容改善プログラムのAPIキーとか
 config.py

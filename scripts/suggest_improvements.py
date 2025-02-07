@@ -16,14 +16,17 @@ load_dotenv(".env.local")
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 SPREADSHEET_URL = os.getenv("SPREADSHEET_URL")
 
-if not OPENAI_API_KEY or not SPREADSHEET_URL:
+if not OPENAI_API_KEY :
     raise ValueError(
-        "必要な環境変数が設定されていません。.env.localファイルを確認してください。"
+        "OPENAI_API_KEYが認証できません。.env.localファイルを確認してください。"
+    )
+elif not SPREADSHEET_URL:
+    raise ValueError(
+        "SPREADSHEET_URLが設定されていません。.env.localファイルを確認してください。"
     )
 
 # OpenAI API クライアントの初期化
 client = openai.Client(api_key=OPENAI_API_KEY)
-
 
 def load_and_process_spreadsheet(url):
     """Googleスプレッドシートからデータを取得し、不要な行や列を削除する"""

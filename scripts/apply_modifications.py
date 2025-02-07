@@ -7,7 +7,6 @@ GPT API を利用しファイル全体を修正するスクリプトです。
 import os
 import openai
 import difflib
-from config import OPENAI_API_KEY
 import datetime
 import re
 from dotenv import load_dotenv
@@ -20,7 +19,7 @@ OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
 if not OPENAI_API_KEY:
     raise ValueError(
-        "必要な環境変数が設定されていません。.env.localファイルを確認してください。"
+        "OPENAI_API_KEYが認証できません。.env.localファイルを確認してください。"
     )
 
 # OpenAI API クライアントの初期化
@@ -148,13 +147,6 @@ def update_metadata_date(directory, filename):
         # 正規表現パターン：
         # 対象キーの部分（例：autoencoder: { ... lastUpdated: "YYYY-MM-DD"）にマッチさせます
         pattern = rf'({re.escape(key)}\s*:\s*\{{[\s\S]*?lastUpdated:\s*")([0-9]{{4}}-[0-9]{{2}}-[0-9]{{2}})(")'
-        # 解説：
-        # - re.escape(key): キー名（例：autoencoder）をエスケープしてマッチ
-        # - \s*:\s*\{ : 「: {」の部分にマッチ
-        # - [\s\S]*? : 改行を含む任意の文字列（最短一致）
-        # - lastUpdated:\s*" : lastUpdated: " の部分にマッチ
-        # - ([0-9]{4}-[0-9]{2}-[0-9]{2}) : YYYY-MM-DD にマッチ（キャプチャグループ）
-        # - (" ) : 閉じのダブルクオーテーションにマッチ
 
         def replace_date(match):
             return match.group(1) + today + match.group(3)
