@@ -16,7 +16,7 @@ export const metadata: MetadataCollection = {
     tabtitle: `外積とは - ${siteTitle}`,
     description:
       "外積の定義、計算方法、幾何学的な意義、およびベクトル空間における応用例について解説しています。",
-    lastUpdated: "2025-01-09",
+    lastUpdated: "2025-02-07",
     topic: "linear_algebra",
     keywords: ["外積", "クロス積", "ベクトル積", "法線ベクトル"],
   },
