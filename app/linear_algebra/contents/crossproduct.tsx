@@ -14,15 +14,6 @@ export default function PageContent() {
 
   const dotmetaData = metadata.dotproduct;
 
-  // 3次元の外積の具体例に使うベクトルとその計算結果
-  const vectorA = [1, 2, 3];
-  const vectorB = [4, 5, 6];
-  const crossProduct = [
-    vectorA[1] * vectorB[2] - vectorA[2] * vectorB[1],
-    vectorA[2] * vectorB[0] - vectorA[0] * vectorB[2],
-    vectorA[0] * vectorB[1] - vectorA[1] * vectorB[0],
-  ];
-
   return (
     <>
       <h2 className="caption">ベクトル積について</h2>
