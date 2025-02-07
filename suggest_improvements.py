@@ -6,8 +6,20 @@ Googleスプレッドシートからデータを取得し、各対象tsxファ�
 import pandas as pd
 import openai
 from datetime import datetime, timedelta
-from config import OPENAI_API_KEY, SPREADSHEET_URL
 import os
+from dotenv import load_dotenv
+
+# .env.localファイルから環境変数を読み込む
+load_dotenv(".env.local")
+
+# 環境変数から設定を取得
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+SPREADSHEET_URL = os.getenv("SPREADSHEET_URL")
+
+if not OPENAI_API_KEY or not SPREADSHEET_URL:
+    raise ValueError(
+        "必要な環境変数が設定されていません。.env.localファイルを確認してください。"
+    )
 
 # OpenAI API クライアントの初期化
 client = openai.Client(api_key=OPENAI_API_KEY)
