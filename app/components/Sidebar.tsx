@@ -1,10 +1,10 @@
 "use client";
 
 import React, { useState } from "react";
-//import styles from "@/app/components/chatbot.module.css";
+import styles from "@/app/components/chatbot.module.css";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import ChatBot from "@/app/components/ChatBot";
+import ChatBot from "@/app/components/Rag";
 
 const Sidebar: React.FC = () => {
   const [inputValue, setInputValue] = useState<string>("");
@@ -69,15 +69,15 @@ const Sidebar: React.FC = () => {
         </p>
       </div>
 
-      {/*<div className={styles.buttoncontainer}>
+      <div className={styles.buttoncontainer}>
         <button
           className={styles.toggle}
           onClick={() => setShowChat(!showChat)}
         >
           💬 チャットアシスタント
         </button>
-      </div>*/}
-      {showChat && <ChatBot onClose={() => setShowChat(false)} />}
+      </div>
+      {showChat && <ChatBot />}
     </div>
   );
 };
