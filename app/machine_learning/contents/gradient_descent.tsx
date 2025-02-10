@@ -2,20 +2,21 @@ import { metadata } from "@/app/machine_learning/metadata";
 import CenteredEquation from "@/app/components/CenteredEquation";
 import { InlineMath } from "react-katex";
 import ImageModal from "@/app/components/ImageModal";
-import Image from "next/image";
+import GifModal from "@/app/components/GifModal";
 
-export default function pageContent() {
-  const pagename: string = "gradient_descent"; //ここを変更
+export default function PageContent() {
+  // コンポーネント名を大文字で始めるように修正
+  const pageName: string = "gradient_descent"; // 変数名を camelCase に変更
 
-  const metaData = metadata[pagename];
+  const metaData = metadata[pageName];
   const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
-  const imagePath = `${basePath}/${metaData.topic}/${pagename}`;
+  const imagePath = `${basePath}/${metaData.topic}/${pageName}`;
 
   return (
     <>
       <h2 className="caption">勾配降下法（Gradient Descent）とは</h2>
       <p>
-        勾配降下法は、関数の最小値を見つけるための方法で、1次微分係数を利用して関数の勾配に沿って最適な値を探す反復アルゴリズムです。
+        勾配降下法は、関数の最小値を見つけるための手法で、1次微分係数を利用して関数の勾配に沿って最適な値を探す反復アルゴリズムことです。
         <br />
         この手法は非線形関数や複雑な関数の最適化において特に有効です。
       </p>
@@ -32,7 +33,7 @@ export default function pageContent() {
         <li>
           <b>複雑な関数の最小値探索</b>
           <p>
-            勾配降下法は、関数の購買を利用して最小値を探す方法なので、非線形関数や閉じた形で解けない関数などの微分係数を直接計算するのが難しい場合でも適用可能です。
+            勾配降下法は、関数の勾配を利用して最小値を探す手法であり、非線形関数や閉じた形で解けない関数など、微分係数を直接計算するのが難しい場合でも適用可能です。
           </p>
         </li>
         <li>
@@ -43,15 +44,15 @@ export default function pageContent() {
         </li>
         <li>
           <b>効率的な計算</b>
-          <p>データが大きい場合でも効率的に最適化可能です。</p>
+          <p>データが大きい場合でも効率的に最適化が可能です。</p>
         </li>
       </ul>
       <h2 className="caption">勾配降下法の数式の導出</h2>
       <p>
-        勾配降下法の数学的な意味は関数の勾配を利用して、変数 x
-        の値をどこに移動させれば関数が最小値に到達するかを判断する方法です。
+        勾配降下法の数学的な意味は、関数の勾配を利用して変数 x
+        の値をどこに移動させれば関数が最小値に到達するかを判断することです。
         <br />
-        その時に、関数の勾配を用いて変数を更新します。
+        その際に、関数の勾配を用いて変数を更新します。
       </p>
       <ol>
         <li>
@@ -81,7 +82,7 @@ export default function pageContent() {
       <ul>
         <li>
           <b>大きなステップサイズ</b>
-          <p>速く収束する可能性がありますが、発散の危険性があります。</p>
+          <p>迅速に収束する可能性がありますが、発散の危険性があります。</p>
         </li>
         <li>
           <b>小さなステップサイズ</b>
@@ -94,12 +95,9 @@ export default function pageContent() {
       </ul>
       <p>以下のGIF画像で勾配降下法がどのように動作するか確認できます。</p>
 
-      <Image
-        src={`${imagePath}/gradient_descent_animation.gif`}
-        alt="行列式の計算方法"
-        width={800}
-        height={600}
-        style={{ width: "100%", height: "auto" }}
+      <GifModal
+        imagePath={`${imagePath}/gradient_descent_animation`}
+        altText="勾配降下法のアニメーション"
       />
     </>
   );

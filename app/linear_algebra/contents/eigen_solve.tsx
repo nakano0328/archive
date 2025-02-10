@@ -3,7 +3,7 @@ import CenteredEquation from "@/app/components/CenteredEquation";
 import { InlineMath } from "react-katex";
 import CustomLink from "@/app/components/CustomLink";
 
-export default function pageContent() {
+export default function PageContent() {
   const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
   return (
@@ -26,10 +26,8 @@ export default function pageContent() {
         &nbsp;は
         <InlineMath math="n\times1" />
         のベクトルです。
-        <br />
-        <br />
-        性質については以下のページにまとめています。
       </p>
+      <p>性質については以下のページにまとめています。</p>
 
       <CustomLink
         href="/linear_algebra/eigen_property"
@@ -104,10 +102,8 @@ export default function pageContent() {
         <InlineMath math="\lambda=1,3" />
         です。
       </p>
+      <p>次に、固有値に対応する固有ベクトルを求めます。</p>
       <p>
-        次に、固有値に対応する固有ベクトルを求めます。
-        <br />
-        <br />
         <InlineMath math="\lambda=1" />
         の場合
       </p>
@@ -130,8 +126,8 @@ export default function pageContent() {
         に対する固有ベクトルは
         <InlineMath math="\bm{x_1} = c_1\begin{pmatrix}1 \\ 1 \end{pmatrix}" />
         とわかります。
-        <br />
-        <br />
+      </p>
+      <p>
         <InlineMath math="\lambda=3" />
         の場合
       </p>
@@ -187,10 +183,8 @@ export default function pageContent() {
         <InlineMath math="\lambda=1,4,6" />
         です。
       </p>
+      <p>次に、固有値に対応する固有ベクトルを求めます。</p>
       <p>
-        次に、固有値に対応する固有ベクトルを求めます。
-        <br />
-        <br />
         <InlineMath math="\lambda=1" />
         の場合
       </p>
@@ -207,8 +201,8 @@ export default function pageContent() {
         に対する固有ベクトルは
         <InlineMath math="\bm{x_1} = c_1\begin{pmatrix}1 \\ -\frac{5}{3} \\ 1 \end{pmatrix}" />
         とわかります。
-        <br />
-        <br />
+      </p>
+      <p>
         <InlineMath math="\lambda=4" />
         の場合
       </p>
@@ -225,8 +219,8 @@ export default function pageContent() {
         に対する固有ベクトルは
         <InlineMath math="\bm{x_2} = c_2\begin{pmatrix}1 \\ -\frac{3}{2} \\ 0 \end{pmatrix}" />
         とわかります。
-        <br />
-        <br />
+      </p>
+      <p>
         <InlineMath math="\lambda=6" />
         の場合
       </p>

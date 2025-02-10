@@ -4,7 +4,7 @@ import { InlineMath } from "react-katex";
 import ImageModal from "@/app/components/ImageModal";
 import CustomLink from "@/app/components/CustomLink";
 
-export default function pageContent() {
+export default function PageContent() {
   const pagename: string = "eigen_property"; //ここを変更
 
   const metaData = metadata[pagename];
@@ -62,10 +62,8 @@ export default function pageContent() {
       <h2 className="caption">基底変換</h2>
       <p>
         固有ベクトルを基底とする座標変換を行うことで、行列の対角化が可能です。この基底変換によって、行列の計算や解析が容易になります。
-        <br />
-        <br />
-        以下に例を示します。
       </p>
+      <p>以下に例を示します。</p>
       <p>
         線形変換行列
         <InlineMath math="\mathbf{A} = \begin{bmatrix}2 & -1 \\ -1 & 2 \end{bmatrix}" />

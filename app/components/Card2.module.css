@@ -1,0 +1,19 @@
+.basic {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  height: 90%;
+}
+
+@media (max-width: 768px) {
+  .basic {
+    height: 70%;
+    margin: 0.5rem;
+    /* モバイル向けに隙間を調整 */
+    width: calc(100% - 4rem);
+    /* モバイル向けの幅を調整 */
+  }
+}

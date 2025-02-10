@@ -4,7 +4,7 @@ import { InlineMath } from "react-katex";
 import ImageModal from "@/app/components/ImageModal";
 import CustomLink from "@/app/components/CustomLink";
 
-export default function pageContent() {
+export default function PageContent() {
   const pagename: string = "dotproduct"; //ここを変更
 
   const metaData = metadata[pagename];
@@ -22,8 +22,8 @@ export default function pageContent() {
         Product または Vector Product）の2種類があります。
         <br />
         それぞれの計算結果や意味、応用方法には大きな違いがあります。これをしっかり理解しておくことが重要です。
-        <br />
-        <br />
+      </p>
+      <p>
         ここでは<b>内積</b>
         について説明します。外積については以下のページをご覧ください。
       </p>
@@ -173,31 +173,27 @@ export default function pageContent() {
         description="ベクトルの内積の表示を行っているコードを示しています。"
         target="_blank"
       />
-
-      <p>解説を見たい方は以下を見て下さい。</p>
-
-      <details>
-        <summary>解説を見る</summary>
-        <p>
-          内積は以下のように表されます。
-          <br />
-          &nbsp;&nbsp;&nbsp;
-          <InlineMath math="\bm{a}\cdot\bm{b} = \|\bm{a}\|\|\bm{b}\|\cos{\theta}" />
-          <br />
-          これを以下のように書き換えます。
-          <br />
-          &nbsp;&nbsp;&nbsp;
-          <InlineMath math="\bm{a}\cdot\bm{b} = \|\bm{a}\|\cos{\theta}\|\bm{b}\|" />
-          <br />
-          これはベクトル&nbsp;
-          <InlineMath math="\bm{a}" />
-          &nbsp;をベクトル&nbsp;
-          <InlineMath math="\bm{b}" />
-          &nbsp;に射影(projection)したものと&nbsp;
-          <InlineMath math="\bm{b}" />
-          &nbsp;のノルムの積を意味します。
-        </p>
-      </details>
+      <br />
+      <h3>解説</h3>
+      <p>
+        内積は以下のように表されます。
+        <br />
+        &nbsp;&nbsp;&nbsp;
+        <InlineMath math="\bm{a}\cdot\bm{b} = \|\bm{a}\|\|\bm{b}\|\cos{\theta}" />
+        <br />
+        これを以下のように書き換えます。
+        <br />
+        &nbsp;&nbsp;&nbsp;
+        <InlineMath math="\bm{a}\cdot\bm{b} = \|\bm{a}\|\cos{\theta}\|\bm{b}\|" />
+        <br />
+        これはベクトル&nbsp;
+        <InlineMath math="\bm{a}" />
+        &nbsp;をベクトル&nbsp;
+        <InlineMath math="\bm{b}" />
+        &nbsp;に射影(projection)したものと&nbsp;
+        <InlineMath math="\bm{b}" />
+        &nbsp;のノルムの積を意味します。
+      </p>
       <br />
     </>
   );

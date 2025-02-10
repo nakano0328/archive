@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState, useEffect, useRef } from "react";
 import styles from "@/app/components/chatbot.module.css";
 import { getBotResponse } from "@/app/utils/botResponses";
@@ -12,7 +14,8 @@ interface Message {
 const ChatBot: React.FC<{ onClose: () => void }> = ({ onClose }) => {
   const [messages, setMessages] = useState<Message[]>([
     {
-      text: "こんにちは！このチャットでのやり取りは、サービス向上やサイト改善のために匿名化して活用させていただきます。安心してご利用ください😊",
+      //text: "こんにちは！このチャットでのやり取りは、サービス向上やサイト改善のために匿名化して活用させていただきます。",
+      text: "現在開発中です。",
       isBot: true,
     },
   ]);

@@ -4,7 +4,7 @@ import { InlineMath } from "react-katex";
 import ImageModal from "@/app/components/ImageModal";
 import CustomLink from "@/app/components/CustomLink";
 
-export default function pageContent() {
+export default function PageContent() {
   const pagename: string = "gram_schmidt"; //ここを変更
 
   const metaData = metadata[pagename];
@@ -43,10 +43,8 @@ export default function pageContent() {
         が直交する時、
         <InlineMath math="\bm{u} \perp \bm{b}" />
         と表します。
-        <br />
-        <br />
-        また、直交するベクトルの内積は0になります。
       </p>
+      <p>また、直交するベクトルの内積は0になります。</p>
       <CenteredEquation equation="\bm{u} \cdot \bm{b} = 0" />
 
       <h2 className="caption">直交化の手順</h2>

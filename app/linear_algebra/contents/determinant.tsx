@@ -5,7 +5,7 @@ import ImageModal from "@/app/components/ImageModal";
 import CustomLink from "@/app/components/CustomLink";
 import Image from "next/image";
 
-export default function pageContent() {
+export default function PageContent() {
   const pagename: string = "determinant"; //ここを変更
 
   const metaData = metadata[pagename];

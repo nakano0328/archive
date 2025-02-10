@@ -3,7 +3,7 @@ import CenteredEquation from "@/app/components/CenteredEquation";
 import { InlineMath } from "react-katex";
 import ImageModal from "@/app/components/ImageModal";
 
-export default function pageContent() {
+export default function PageContent() {
   const pagename: string = "matrix"; //ここを変更
 
   const metaData = metadata[pagename];
@@ -12,9 +12,7 @@ export default function pageContent() {
 
   return (
     <>
-      <h2 className="caption">
-        行列とは
-      </h2>
+      <h2 className="caption">行列とは</h2>
       <p>
         行列は、数や式を表にしたものです。行列は、数学や物理学、工学などの様々な分野で利用されます。
         <br />
@@ -96,9 +94,7 @@ export default function pageContent() {
         altText="行と列を図として表したもの"
       />
 
-      <h2 className="caption">
-        特殊な行列
-      </h2>
+      <h2 className="caption">特殊な行列</h2>
       <h3>単位行列</h3>
       <p>
         単位行列は、対角成分が1で、それ以外の成分が0の正方行列です。単位行列は&nbsp;

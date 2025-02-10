@@ -1,0 +1,129 @@
+// app/statistics/[slug]/page.tsx
+import { notFound } from "next/navigation";
+import Breadcrumb from "@/app/components/Breadcrumb";
+import { metadata as StatisticsMetadata } from "@/app/statistics/metadata";
+import GoogleForm from "@/app/components/GoogleForm";
+import Image from "next/image";
+import { formatDate } from "@/app/components/formatDate";
+import Table from "@/app/components/Table";
+import Googlecomment from "@/app/components/Googlecomment";
+
+import fs from "fs";
+import path from "path";
+
+interface PageProps {
+  params: Promise<{
+    slug: string;
+  }>;
+}
+
+// 静的に生成するパスのパラメータを定義
+export async function generateStaticParams() {
+  const contentsDir = path.join(process.cwd(), "app/statistics/contents");
+  const files = fs.readdirSync(contentsDir);
+  return files
+    .filter((file) => file.endsWith(".tsx"))
+    .map((file) => ({
+      slug: file.replace(".tsx", ""),
+    }));
+}
+
+export async function generateMetadata(props: PageProps) {
+  const params = await props.params;
+  const metaData = StatisticsMetadata[params.slug];
+
+  if (!metaData) {
+    return {
+      title: "Not Found",
+      description: "Page not found",
+    };
+  }
+
+  const baseUrl = "https://jeonglabo.github.io/nextjs";
+
+  return {
+    title: metaData.tabtitle,
+    description: metaData.description,
+    openGraph: {
+      title: metaData.tabtitle,
+      description: metaData.description,
+      url: `${baseUrl}/statistics/${params.slug}`,
+      images: [
+        {
+          url: `${baseUrl}/statistics/${params.slug}/thumb.png`,
+          alt: metaData.description,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: metaData.tabtitle,
+      description: metaData.description,
+      images: [`${baseUrl}/statistics/${params.slug}/thumb.png`],
+    },
+  };
+}
+
+// ページコンポーネントの動的インポート例
+export default async function Page(props: PageProps) {
+  const params = await props.params;
+  const { slug } = params;
+  const ContentComponent = (await import(`../contents/${slug}`))?.default;
+  const metaData = StatisticsMetadata[params.slug];
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
+  if (!ContentComponent) {
+    notFound();
+  }
+
+  return (
+    <>
+      <div className="mainContainer">
+        <Breadcrumb
+          items={[
+            { name: "統計学", href: `/statistics` },
+            {
+              name: metaData.title,
+              href: `/statistics/${params.slug}`,
+            },
+          ]}
+        />
+
+        <Image
+          src={`${basePath}/${metaData.topic}/${params.slug}/thumb.png`}
+          alt={metaData.title}
+          width={100}
+          height={50}
+          className="thumbpage"
+        />
+        <hr />
+        <h1 className="title">{metaData.title}</h1>
+
+        <div className="lastUpdated">
+          最終更新日: {formatDate(metaData.lastUpdated)}
+        </div>
+        <p>{metaData.description}</p>
+
+        <Table />
+
+        {/* ページコンテンツ */}
+        <ContentComponent />
+        <hr />
+        <div style={{ margin: "5px" }}>
+          <h2 className="commentform">コメントフォーム</h2>
+          <div style={{ margin: "0px 10px" }}>
+            <GoogleForm
+              currentPath={`/statistics/${params.slug}`}
+              underComment={true}
+            />
+          </div>
+        </div>
+        <hr />
+        <Googlecomment />
+        <div style={{ textAlign: "right", marginRight: "30px" }}>
+          <a href="#">ページトップに戻る</a>
+        </div>
+      </div>
+    </>
+  );
+}

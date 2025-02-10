@@ -3,7 +3,7 @@ import CenteredEquation from "@/app/components/CenteredEquation";
 import { InlineMath } from "react-katex";
 import CustomLink from "@/app/components/CustomLink";
 
-export default function pageContent() {
+export default function PageContent() {
   const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
   return (
@@ -21,7 +21,6 @@ export default function pageContent() {
       <p>
         この行列は、非対角部分がすべて0です。このような行列を対角行列といいます。
       </p>
-
       <p>
         任意の行列を対角行列に変換することを<b>対角化</b>といいます。
       </p>
@@ -83,8 +82,8 @@ export default function pageContent() {
         に対する固有ベクトルは
         <InlineMath math="\bm{x_1} = c_1\begin{pmatrix}1 \\ 1 \end{pmatrix}" />
         とわかります。
-        <br />
-        <br />
+      </p>
+      <p>
         <InlineMath math="\lambda=3" />
         の場合
       </p>

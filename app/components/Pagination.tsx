@@ -1,8 +1,7 @@
-// app/components/Pagination.tsx
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
+import { useRouter, useSearchParams } from "next/navigation";
 import Card2 from "@/app/components/Card2";
 import { formatDate } from "@/app/components/formatDate";
 import Image from "next/image";
@@ -21,14 +20,18 @@ interface PaginationProps {
   items: string[];
   itemsPerPage: number;
   topicsMetadata: TopicMetadata;
+  title: string;
 }
 
 export default function Pagination({
   items,
   itemsPerPage,
   topicsMetadata,
+  title,
 }: PaginationProps) {
-  const [currentPage, setCurrentPage] = useState(1);
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const currentPage = Number(searchParams.get("page")) || 1;
 
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
@@ -38,17 +41,19 @@ export default function Pagination({
   const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
   const handlePageChange = (pageNumber: number) => {
-    setCurrentPage(pageNumber);
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    const params = new URLSearchParams(searchParams.toString());
+    params.set("page", pageNumber.toString());
+    router.push(`/${title}?${params.toString()}`);
   };
 
   return (
     <>
+      <p className={styles.precautions}>最終更新日順に並べています。</p>
       <div className={styles.paginationgrid}>
         {currentItems.map((topic) => (
           <Link
             key={topic}
-            href={`/machine_learning/${topic}`}
+            href={`/${title}/${topic}`}
             style={{ textDecoration: "none" }}
           >
             <Card2>
@@ -60,37 +65,26 @@ export default function Pagination({
                   height: "100%",
                 }}
               >
-                <div>
+                <div className={styles.mobileLayout}>
                   {/* サムネイル画像の読み込み */}
                   <Image
-                    src={`${basePath}/machine_learning/${topic}/thumb.png`}
+                    src={`${basePath}/${title}/${topic}/thumb.png`}
                     alt={topicsMetadata[topic].title}
-                    width={300} // 横幅はそのまま
-                    height={150} // 必須だが実際のスタイルに影響しない
-                    className="thumb"
+                    width={100} // 横幅はそのまま
+                    height={100} // 必須だが実際のスタイルに影響しない
+                    className={styles.thumb}
                   />
-                  <h2
-                    style={{
-                      fontSize: "24px",
-                      marginBottom: "10px",
-                      color: "black",
-                    }}
-                  >
-                    {topicsMetadata[topic].title}
-                  </h2>
-                  <p style={{ marginBottom: "20px", color: "black" }}>
-                    {topicsMetadata[topic].description}
-                  </p>
+                  <div className={styles.linkText}>
+                    <p className={styles.title}>
+                      {topicsMetadata[topic].title}
+                    </p>
+                    <p className={styles.description}>
+                      {topicsMetadata[topic].description}
+                    </p>
+                  </div>
                 </div>
                 {/* 最終更新日を右下に配置 */}
-                <div
-                  style={{
-                    textAlign: "right",
-                    fontSize: "12px",
-                    color: "#888",
-                    marginTop: "auto", // 最下部に配置
-                  }}
-                >
+                <div className={styles.lastUpdated}>
                   最終更新日: {formatDate(topicsMetadata[topic].lastUpdated)}
                 </div>
               </div>

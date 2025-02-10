@@ -3,7 +3,7 @@ import CenteredEquation from "@/app/components/CenteredEquation";
 import { InlineMath } from "react-katex";
 import CustomLink from "@/app/components/CustomLink";
 
-export default function pageContent() {
+export default function PageContent() {
   const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
   return (
     <>
@@ -153,6 +153,26 @@ export default function pageContent() {
         正則とは、行列&nbsp;
         <InlineMath math="A" />
         &nbsp;の行列式が0でないことを意味します。
+      </p>
+
+      <h2 className="caption">逆行列が存在しない行列の具体例</h2>
+
+      <p>以下に、逆行列 が存在しない行列の具体例を示します。</p>
+
+      <CenteredEquation equation="A = \begin{pmatrix} 1 & 2 \\ 2 & 4 \end{pmatrix}" />
+
+      <p>
+        行列&nbsp;
+        <InlineMath math="A" />
+        &nbsp;は、2行目が1行目の2倍であるため、 非可逆です。
+      </p>
+
+      <CenteredEquation equation="B = \begin{pmatrix} 0 & 0 \\ 1 & 2 \end{pmatrix}" />
+
+      <p>
+        行列&nbsp;
+        <InlineMath math="B" />
+        &nbsp;は、1行目がすべて0であるため、 逆行列が存在しません。
       </p>
     </>
   );

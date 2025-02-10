@@ -3,7 +3,7 @@ import { InlineMath } from "react-katex";
 import ImageModal from "@/app/components/ImageModal";
 import CustomLink from "@/app/components/CustomLink";
 
-export default function pageContent() {
+export default function PageContent() {
   const pagename: string = "norm"; //ここを変更
 
   const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
@@ -88,7 +88,8 @@ export default function pageContent() {
         <li>
           ベクトルのノルムが1の場合、そのベクトルは単位ベクトルと呼ばれます。
           <p>
-            基本的に、単位ベクトルはベクトルの向きだけを表すために使われます。<br />
+            基本的に、単位ベクトルはベクトルの向きだけを表すために使われます。
+            <br />
             単位ベクトルは以下のようにeで表されることが多いです。
             <br />
             また、任意のベクトルのみを使用しても、単位ベクトルを作ることができます。

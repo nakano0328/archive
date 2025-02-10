@@ -2,13 +2,13 @@ import { metadata } from "@/app/linear_algebra/metadata";
 import CenteredEquation from "@/app/components/CenteredEquation";
 import ImageModal from "@/app/components/ImageModal";
 
-export default function pageContent() {
+export default function PageContent() {
   const pagename: string = "matrix_ope"; //ここを変更
 
   const metaData = metadata[pagename];
   const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
   const imagePath = `${basePath}/${metaData.topic}/${pagename}`;
-  
+
   return (
     <>
       <h2 className="caption">行列の演算</h2>

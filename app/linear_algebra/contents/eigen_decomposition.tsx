@@ -1,7 +1,7 @@
 import CenteredEquation from "@/app/components/CenteredEquation";
 import { InlineMath } from "react-katex";
 
-export default function pageContent() {
+export default function PageContent() {
   return (
     <>
       <h2 className="caption">定義</h2>
@@ -47,10 +47,8 @@ export default function pageContent() {
             なので、
           </p>
           <CenteredEquation equation="\mathbf{A}^k = \mathbf{P} \mathbf{\Lambda}^k \mathbf{P}^{-1}" />
+          <p>となります。</p>
           <p>
-            となります。
-            <br />
-            <br />
             ここで、
             <InlineMath math="\mathbf{\Lambda}^k" /> は対角行列で、各要素は{" "}
             <InlineMath math="\lambda_i^k" /> です。

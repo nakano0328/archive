@@ -5,9 +5,91 @@
   margin-top: 20px;
 }
 
+p.precautions {
+  font-size: 14px;
+  color: #444;
+  margin-left: 10px;
+}
+
+p.title {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: black;
+  font-weight: bold;
+}
+
+p.description {
+  font-size: 16px;
+  color: #000000;
+  margin-bottom: 20px;
+}
+
+.thumb {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.linkText {
+  text-align: left;
+}
+
+.lastUpdated {
+  color: #888;
+  text-align: right;
+  font-size: 12px;
+  margin-top: auto;
+}
+
 /* 最大4列に制限する */
 @media (min-width: 1550px) {
   .paginationgrid {
     grid-template-columns: repeat(4, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .paginationgrid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .linkText {
+    flex: 1;
+  }
+
+  p.precautions {
+    font-size: 12px;
+    margin-left: 0;
+  }
+
+  p.title {
+    font-size: 18px;
+    margin-bottom: 0px;
+    margin-top: 0;
+  }
+
+  p.description {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  .thumb {
+    width: 20vw;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .lastUpdated {
+    font-size: 10px;
+  }
+
+  /* モバイル用の新しいレイアウト */
+  .mobileLayout {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
   }
 }

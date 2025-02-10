@@ -4,7 +4,7 @@ import { InlineMath } from "react-katex";
 import ImageModal from "@/app/components/ImageModal";
 import CustomLink from "@/app/components/CustomLink";
 
-export default function pageContent() {
+export default function PageContent() {
   const pagename: string = "adam"; //ここを変更
 
   const metaData = metadata[pagename];
@@ -14,10 +14,8 @@ export default function pageContent() {
   return (
     <>
       <h2 className="caption">モメンタムを用いた最適化手法 - ADAM</h2>
+      <p>※本投稿はAndrew Ng教授の講義を元にまとめた内容です。</p>
       <p>
-        ※本投稿はAndrew Ng教授の講義を元にまとめた内容です。
-        <br />
-        <br />
         Pythonライブラリを使ったディープラーニング学習アルゴリズムのチュートリアルでは、最適化を行う際にほとんどの場合、勾配降下法の代わりにADAM
         Optimizerを使用することが推奨されています。
         <br />

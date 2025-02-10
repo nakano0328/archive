@@ -6,31 +6,10 @@ import GoogleForm from "@/app/components/GoogleForm";
 import Image from "next/image";
 import { formatDate } from "@/app/components/formatDate";
 import Table from "@/app/components/Table";
+import Googlecomment from "@/app/components/Googlecomment";
 
-import DotProductContent from "@/app/linear_algebra/contents/dotproduct";
-import CrossProductContent from "@/app/linear_algebra/contents/crossproduct";
-import VectorContent from "@/app/linear_algebra/contents/vector";
-import NormContent from "@/app/linear_algebra/contents/norm";
-import BasisContent from "@/app/linear_algebra/contents/basis";
-import Lin_indepContent from "@/app/linear_algebra/contents/lin_indep";
-import Eq_MatrixContent from "@/app/linear_algebra/contents/eq_matrix";
-import MatrixContent from "@/app/linear_algebra/contents/matrix";
-import Matrix_opeContent from "@/app/linear_algebra/contents/matrix_ope";
-import Inverse_MatrixContent from "@/app/linear_algebra/contents/inverse_matrix";
-import DeterminantContent from "@/app/linear_algebra/contents/determinant";
-import Cofactor_matrixContent from "@/app/linear_algebra/contents/cofactor_matrix";
-import Eigen_SolveContent from "@/app/linear_algebra/contents/eigen_solve";
-import Eigen_PropertyContent from "@/app/linear_algebra/contents/eigen_property";
-import DiagonalizationContent from "@/app/linear_algebra/contents/diagonalization";
-import Eigen_DecompositionContent from "@/app/linear_algebra/contents/eigen_decomposition";
-import eigen_decomposition_transContent from "@/app/linear_algebra/contents/eigen_decomposition_trans";
-import gauss_jordan_eliminationContent from "@/app/linear_algebra/contents/gauss_jordan_elimination";
-import qr_decompositionContent from "@/app/linear_algebra/contents/qr_decomposition";
-import gram_schmidtContent from "@/app/linear_algebra/contents/gram_schmidt";
-import matrix_rankContent from "@/app/linear_algebra/contents/matrix_rank";
-import singular_value_decompositionContent from "@/app/linear_algebra/contents/singular_value_decomposition";
-import pseudoinverseContent from "@/app/linear_algebra/contents/pseudoinverse";
-import linear_combinationContent from "@/app/linear_algebra/contents/linear_combination";
+import fs from "fs";
+import path from "path";
 
 interface PageProps {
   params: Promise<{
@@ -40,40 +19,14 @@ interface PageProps {
 
 // 静的に生成するパスのパラメータを定義
 export async function generateStaticParams() {
-  // metadataのキーから静的パスを生成
-  return Object.keys(linearAlgebraMetadata).map((slug) => ({
-    slug: slug,
-  }));
+  const contentsDir = path.join(process.cwd(), "app/linear_algebra/contents");
+  const files = fs.readdirSync(contentsDir);
+  return files
+    .filter((file) => file.endsWith(".tsx"))
+    .map((file) => ({
+      slug: file.replace(".tsx", ""),
+    }));
 }
-
-// ページコンポーネントのマッピング
-const contentComponents = {
-  dotproduct: DotProductContent,
-  crossproduct: CrossProductContent,
-  vector: VectorContent,
-  norm: NormContent,
-  basis: BasisContent,
-  lin_indep: Lin_indepContent,
-  eq_matrix: Eq_MatrixContent,
-  matrix: MatrixContent,
-  matrix_ope: Matrix_opeContent,
-  inverse_matrix: Inverse_MatrixContent,
-  determinant: DeterminantContent,
-  cofactor_matrix: Cofactor_matrixContent,
-  eigen_solve: Eigen_SolveContent,
-  eigen_property: Eigen_PropertyContent,
-  diagonalization: DiagonalizationContent,
-  eigen_decomposition: Eigen_DecompositionContent,
-  eigen_decomposition_trans: eigen_decomposition_transContent,
-  gauss_jordan_elimination: gauss_jordan_eliminationContent,
-  qr_decomposition: qr_decompositionContent,
-  gram_schmidt: gram_schmidtContent,
-  matrix_rank: matrix_rankContent,
-  singular_value_decomposition: singular_value_decompositionContent,
-  pseudoinverse: pseudoinverseContent,
-  linear_combination: linear_combinationContent,
-  // 他のコンポーネントを追加
-};
 
 export async function generateMetadata(props: PageProps) {
   const params = await props.params;
@@ -111,10 +64,11 @@ export async function generateMetadata(props: PageProps) {
   };
 }
 
+// ページコンポーネントの動的インポート例
 export default async function Page(props: PageProps) {
   const params = await props.params;
-  const ContentComponent =
-    contentComponents[params.slug as keyof typeof contentComponents];
+  const { slug } = params;
+  const ContentComponent = (await import(`../contents/${slug}`))?.default;
   const metaData = linearAlgebraMetadata[params.slug];
   const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
@@ -158,9 +112,14 @@ export default async function Page(props: PageProps) {
         <div style={{ margin: "5px" }}>
           <h2 className="commentform">コメントフォーム</h2>
           <div style={{ margin: "0px 10px" }}>
-            <GoogleForm currentPath={`/linear_algebra/${params.slug}`} />
+            <GoogleForm
+              currentPath={`/linear_algebra/${params.slug}`}
+              underComment={true}
+            />
           </div>
         </div>
+        <hr />
+        <Googlecomment />
         <div style={{ textAlign: "right", marginRight: "30px" }}>
           <a href="#">ページトップに戻る</a>
         </div>

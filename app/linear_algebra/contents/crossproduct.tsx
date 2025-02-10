@@ -4,8 +4,8 @@ import { InlineMath } from "react-katex";
 import ImageModal from "@/app/components/ImageModal";
 import CustomLink from "@/app/components/CustomLink";
 
-export default function pageContent() {
-  const pagename: string = "crossproduct"; //ここを変更
+export default function PageContent() {
+  const pagename: string = "crossproduct";
 
   const metaData = metadata[pagename];
   const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
@@ -21,7 +21,8 @@ export default function pageContent() {
         ベクトル積には、内積（Dot Product または Inner Product）と外積（Cross
         Product または Vector Product）の2種類があります。
         <br />
-        それぞれの計算結果や意味、応用方法には大きな違いがあります。これをしっかり理解しておくことが重要です。
+        それぞれの計算結果や意味、応用方法には大きな違いがあります。これをしっかり
+        理解しておくことが重要です。
         <br />
         <br />
         ここでは<b>外積</b>
@@ -155,8 +156,7 @@ export default function pageContent() {
         equation="\begin{align*}
         \bm{a} &= \begin{bmatrix} 3 \\ 1 \end{bmatrix} \notag \\
         \bm{b} &= \begin{bmatrix} 1 \\ 4 \end{bmatrix}
-        \end{align*}
-        "
+        \end{align*}"
       />
 
       <p>
@@ -189,7 +189,7 @@ export default function pageContent() {
         まず初めに外積を式で表すと以下のようになります。
       </p>
 
-      <CenteredEquation equation="\bm{a}\times\bm{b}=5 \cdot 3 - 1 \cdot 1 = 15 - 1 = 14" />
+      <CenteredEquation equation="\bm{a}\times\bm{b}=3 \cdot 4 - 1 \cdot 1 = 12 - 1 = 11" />
 
       <p>
         これらのベクトルの外積をグラフで表すと以下のようになります。
@@ -216,8 +216,32 @@ export default function pageContent() {
       />
 
       <p>
-        この結果、外積は -14
+        この結果、外積は 11
         となります。この値はベクトルの方向に垂直な（つまり、2次元空間の外に向かう）z軸方向の大きさを示しています。
+      </p>
+
+      <h2 className="caption">具体例 - 3次元の外積</h2>
+
+      <p>
+        例として、ベクトル&nbsp;
+        <InlineMath math="\bm{A} = (1,2,3)" />
+        &nbsp;と&nbsp;
+        <InlineMath math="\bm{B} = (4,5,6)" />
+        &nbsp;の外積を計算します。
+      </p>
+
+      <CenteredEquation
+        equation="\begin{align*}
+        \bm{A} \times \bm{B} &= \begin{pmatrix} 2\times6-3\times5 \\ 3\times4-1\times6 \\ 1\times5-2\times4 \end{pmatrix} \\
+        &= \begin{pmatrix} 12-15 \\ 12-6 \\ 5-8 \end{pmatrix} \\
+        &= \begin{pmatrix} -3 \\ 6 \\ -3 \end{pmatrix}
+        \end{align*}"
+      />
+
+      <p>
+        上記の計算より、外積は&nbsp;
+        <InlineMath math="\bm{A} \times \bm{B} = (-3,6,-3)" />
+        &nbsp;となり、この結果は入力された2つの3次元ベクトルに垂直な方向を示しています。
       </p>
     </>
   );
